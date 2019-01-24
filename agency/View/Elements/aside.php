@@ -15,7 +15,7 @@
 					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'Announcement' ? 'active' : ''; ?>" href="/agency/announcement" aria-expanded="false"><i class="mdi mdi-emoticon"></i><span class="hide-menu">Announcement</span></a>
 				</li>
 				<li>
-					<a class="waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-emoticon"></i><span class="hide-menu">Transactions</span></a>
+					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'Transaction' ? 'active' : ''; ?>" href="#" aria-expanded="false"><i class="mdi mdi-emoticon"></i><span class="hide-menu">Transactions</span></a>
 				</li>
 				<?php endif; ?>
 				<li>

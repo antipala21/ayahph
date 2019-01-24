@@ -5,7 +5,8 @@ class TransactionController extends AppController {
 	public $uses = array(
 		'Agency',
 		'NurseMaid',
-		'Transaction'
+		'Transaction',
+		'HireRequest'
 	);
 
 	public function beforeFilter() {
@@ -14,8 +15,7 @@ class TransactionController extends AppController {
 	}
 
 	public function index () {
-
-	
+		
 	}
 
 	public function saveRequest () {
@@ -27,6 +27,8 @@ class TransactionController extends AppController {
 			$data['user_id'] = $this->Auth->user('id');
 
 			$result['sucess'] = false;
+
+			$this->log('[data] ' . json_encode($data), 'debug');
 
 			$this->Transaction->set($data);
 			if ($this->Transaction->save()) {

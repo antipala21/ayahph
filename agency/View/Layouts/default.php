@@ -70,8 +70,38 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	<!-- Chart JS -->
 	<script src="/agency/js/dashboard1.js"></script>
 
+	<style type="text/css">
+		.alert-minimalist {
+			background-color: rgb(241, 242, 240);
+			border-color: rgba(149, 149, 149, 0.3);
+			border-radius: 3px;
+			color: rgb(149, 149, 149);
+			padding: 10px;
+		}
+		.alert-minimalist > [data-notify="icon"] {
+			height: 50px;
+			margin-right: 12px;
+		}
+		.alert-minimalist > [data-notify="title"] {
+			color: rgb(51, 51, 51);
+			display: block;
+			font-weight: bold;
+			margin-bottom: 5px;
+		}
+		.alert-minimalist > [data-notify="message"] {
+			font-size: 80%;
+		}
+	</style>
+
 	<!-- REGISTRATION -->
 	<link href="/css/steps.css" rel="stylesheet" type="text/css">
+	<script src="/agency/js/bootstrap-notify.min.js"></script>
+	<script src="/agency/js/notification.js"></script>
+
+	<script type="text/javascript">
+		var hire_request_count = <?php echo isset($hire_request_count) ? $hire_request_count : 0; ?>;
+		var is_login = <?php echo $this->Session->read('Auth.User.id') ? 1 : 0; ?>;
+	</script>
 
 </head>
 <body class="fix-header fix-sidebar card-no-border">

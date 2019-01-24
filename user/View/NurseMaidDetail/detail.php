@@ -116,6 +116,14 @@
 				'div'=> false,
 				'class'=>'form-control',
 		)); ?>
+
+		<label for=""> Address * </label>
+		<?php echo $this->Form->input('user_address', array(
+				'required' => true,
+				'label' => false,
+				'div'=> false,
+				'class'=>'form-control',
+		)); ?>
 		<?php echo $this->Form->hidden('nurse_maid_id', array('value' => $nurse_maid['id'])); ?>
 		<?php echo $this->Form->hidden('agency_id', array('value' => $agency['id'])); ?>
 
@@ -135,9 +143,11 @@
 			var phone_number = $('#TransactionUserPhoneNumber').val();
 			var nurse_maid_id = $('#TransactionNurseMaidId').val();
 			var agency_id = $('#TransactionAgencyId').val();
+			var user_address = $('#TransactionUserAddress').val();
 
 			console.log('comment ' + comment);
 			console.log('phone_number ' + phone_number);
+			console.log('user_address ' + user_address);
 
 			$.ajax({
 				type: 'POST',
@@ -146,7 +156,8 @@
 					comment : comment,
 					user_phone_number : phone_number,
 					nurse_maid_id : nurse_maid_id,
-					agency_id : agency_id
+					agency_id : agency_id,
+					user_address : user_address
 				},
 				// dataType: 'json',
 				success: function(data){

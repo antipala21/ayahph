@@ -39,6 +39,11 @@
 
 	Router::connect('/account/requirements', array('controller' => 'Account', 'action' => 'updateRequirements'));
 
+	Router::connect('/transaction', array('controller' => 'Transaction', 'action' => 'index'));
+
+	// Notification
+	Router::connect('/notif/hire_request', array('controller' => 'Notification', 'action' => 'hire_request'));
+
 /**
  * Load all plugin routes. See the CakePlugin documentation on
  * how to customize the loading of plugin routes.

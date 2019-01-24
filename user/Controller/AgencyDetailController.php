@@ -1,0 +1,104 @@
+<?php
+App::uses('AppController', 'Controller');
+class AgencyDetailController extends AppController {
+
+	public $uses = array(
+		'User',
+		'Agency',
+		'Announcement'
+	);
+
+	public function beforeFilter() {
+		parent::beforeFilter();
+		// $this->Auth->allow('detail');
+	}
+
+	public function detail () {
+
+		$id = isset($this->params['id']) ? $this->params['id'] : null;
+
+		// trap if no id
+		if (!isset($id)) {
+			return $this->redirect('/');
+		}
+
+		$this->Agency->virtualFields['total_nursemaid'] = "SELECT COUNT(*) FROM `nurse_maids` WHERE `agency_id` = $id";
+		$this->Agency->virtualFields['male_nursemaid'] = "SELECT COUNT(*) FROM `nurse_maids` WHERE `agency_id` = $id AND `gender` = 1";
+		$this->Agency->virtualFields['female_nursemaid'] = "SELECT COUNT(*) FROM `nurse_maids` WHERE `agency_id` = $id AND `gender` = 0";
+		$this->Agency->virtualFields['current_available'] = "SELECT COUNT(*) FROM `nurse_maids` WHERE `agency_id` = $id AND `status` = 1";
+
+		$agency = $this->Agency->find('first', array(
+			'fields'=> array(
+				'Agency.id',
+				'Agency.name',
+				'Agency.email',
+				'Agency.address',
+				'Agency.image_url',
+				'Agency.description',
+				'Agency.phone_number',
+				'Agency.short_description',
+				'Agency.representative_name',
+				'Agency.total_nursemaid',
+				'Agency.male_nursemaid',
+				'Agency.female_nursemaid',
+				'Agency.current_available',
+			),
+			'conditions' => array(
+				'Agency.id' => $id,
+				'Agency.status' => 1,
+				'Agency.display_flg' => 1
+			)
+		));
+
+		// trap if agency not found
+		if (!isset($agency['Agency'])) {
+			return $this->redirect('/');
+		}
+
+		// myTools::display($agency);
+		// exit;
+
+		$this->set('agency', $agency['Agency']);
+		// $this->render('detail');
+
+		// myTools::outputSqlLogs($this->Agency);
+		// myTools::display($agency);
+		// exit;
+
+	}
+
+
+	public function announcement () {
+		$id = isset($this->params['id']) ? $this->params['id'] : null;
+
+		// trap if no id
+		if (!isset($id)) {
+			return $this->redirect('/');
+		}
+
+		$agency = $this->Agency->find('first', array(
+			'fields'=> array(
+				'Agency.id',
+				'Agency.name',
+				'Agency.email',
+			),
+			'conditions' => array(
+				'Agency.id' => $id,
+				'Agency.status' => 1,
+				'Agency.display_flg' => 1
+			)
+		));
+
+
+		$announcements = $this->Announcement->find('all', array(
+			'conditions' => array(
+				'Announcement.agency_id' => $id,
+				// 'Announcement.status' => 1
+			)
+		));
+
+		$this->set('announcements', $announcements);
+		$this->set('agency', $agency);
+	}
+
+}

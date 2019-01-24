@@ -1,0 +1,21 @@
+
+.img-responsive {
+	width: 35%;
+	display: block;
+	float: left;
+	margin: 7px;
+}
+
+.topbar .top-navbar {
+	min-height: 50px;
+	height: 50px;
+}
+
+.topbar .top-navbar .navbar-nav > .nav-item > .nav-link {
+	padding-top: 0;
+	padding-bottom: 0
+}
+
+.topbar .top-navbar .navbar-header .navbar-brand b {
+	line-height: 60px;
+}

@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+   RewriteEngine on
+   RewriteRule    (.*) user/webroot/$1 [L]
+   RewriteRule    admin/(.*) admin/webroot/$1 [L]
+   RewriteRule    agency/(.*) agency/webroot/$1 [L]
+</IfModule>

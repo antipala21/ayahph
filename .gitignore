@@ -17,7 +17,7 @@ admin/tmp/*
 app/tmp/*
 user/tmp/*
 agency/tmp/*
-config/database.php
+# config/database.php
 
 # IDE and editor specific files #
 #################################

@@ -19,9 +19,9 @@ user/tmp/*
 agency/tmp/*
 config/database.php
 
-agency/config/core.php
-user/config/core.php
-admin/config/core.php
+#agency/config/core.php
+#user/config/core.php
+#admin/config/core.php
 
 # IDE and editor specific files #
 #################################

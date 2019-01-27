@@ -6,17 +6,10 @@ class NurseMaidController extends AppController {
 
 	public function beforeFilter() {
 		parent::beforeFilter();
-		// $this->Auth->allow('index');
 	}
 
 	public function index(){
-
-// 		$then = DateTime::createFromFormat("Y/m/d", "1983/12/16");
-// $diff = $then->diff(new DateTime());
-// echo $diff->format("%y year %m month %d day\n");
-// exit;
-
-		$nursemaids = $this->NurseMaid->find('all', array(
+	$nursemaids = $this->NurseMaid->find('all', array(
 			'conditions' => array('NurseMaid.agency_id' => $this->Auth->user('id'))
 		));
 
@@ -39,6 +32,47 @@ class NurseMaidController extends AppController {
 			$this->Session->setFlash('Adding NurseMaid Fail', 'default', array(), 'nurse-maid-add-error');
 
 		}
+	}
+
+	public function detail () {
+
+		$nursemaid_id = isset($this->params['nursemaid_id']) ? $this->params['nursemaid_id'] : null;
+
+		$nursemaid = $this->NurseMaid->find('first', array(
+			'conditions' => array('NurseMaid.id' => $nursemaid_id)
+		));
+
+		if (!$nursemaid) {
+			return $this->redirect('/nursemaid');
+		}
+
+		$this->set('nurse_maid', $nursemaid['NurseMaid']);
+	}
+
+	public function edit () {
+		$nursemaid_id = isset($this->params['nursemaid_id']) ? $this->params['nursemaid_id'] : null;
+
+		$nursemaid = $this->NurseMaid->find('first', array(
+			'conditions' => array('NurseMaid.id' => $nursemaid_id)
+		));
+
+		if (!$nursemaid) {
+			return $this->redirect('/nursemaid');
+		}
+
+		if ($this->request->is('post')) {
+			$data = $this->request->data;
+
+			$this->NurseMaid->clear();
+			$this->NurseMaid->read(null, $data['NurseMaid']['id']);
+			$this->NurseMaid->set($data);
+			if ($this->NurseMaid->save()) {
+				$this->Session->setFlash('NurseMaid Updated', 'default', array(), 'nurse-maid-edit');
+			}
+			return $this->redirect('/nursemaid');
+		}
+
+		$this->set('nurse_maid', $nursemaid['NurseMaid']);
 	}
 
 }

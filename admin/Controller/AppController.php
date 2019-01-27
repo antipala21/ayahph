@@ -18,8 +18,8 @@ class AppController extends Controller {
 					'fields' => array('username' => 'user_id', 'password' => 'password')
 				)
 			),
-			'loginRedirect' => array('controller' => 'home', 'action' => 'index'),
-			'logoutRedirect' => array('controller' => 'login', 'action' => 'index'),
+			'loginRedirect' => array('controller' => 'Agency', 'action' => 'index'),
+			'logoutRedirect' => array('controller' => 'Login', 'action' => 'index'),
 			'loginAction' => '/login',
 			'authError' => 'Auth Error',
 			'loginError' => 'Login Error'

@@ -19,32 +19,8 @@ class RegisterController extends AppController {
 
 	public function index () {
 
-		// $gateway = new Braintree_Gateway([
-		//   'environment' => 'sandbox',
-		//   'merchantId' => 'tnnc2y3sq3ctj5cb',
-		//   'publicKey' => '9pzgf9x7z4g3hmz8',
-		//   'privateKey' => 'ee008d3d62a3f086dcb655424a3929d0'
-		// ]);
-
-		// echo($clientToken = $gateway->clientToken()->generate());
-
-		// /$this->Session->setFlash('Success', 'default', array(), 'success');
-		// $this->Session->setFlash(__('Account Updated Successfully'));
-
-		// $data = $this->Agency->find('all', array(
-		// 	'fields' => array('id', 'representative_name'),
-		// 	'conditions' => array('representative_name'=> 'asdf')
-		// ));
-
-		// mytools::display($data);
-		// exit;
-
-
-		// exit;
 		if ($this->request->is('post')) {
 			$data = $this->request->data;
-
-			// mytools::display($data);
 
 			$this->Agency->validate = false;
 			$this->Agency->create();
@@ -53,16 +29,7 @@ class RegisterController extends AppController {
 			if ($save) {
 
 				$this->Session->write('user_id', $save['Agency']['id']);
-				return $this->redirect(array('action' => 'legalDocuments'));
-
-				$this->Session->setFlash( __('Success'), 'default', array(), 'success');
-
-				$agency = $save['Agency'];
-				$agency['type'] = 'agency';
-
-				$this->Auth->login($agency);
-
-				return $this->redirect('/');
+				return $this->redirect('/register-legal-documents/');
 			} else {
 				exit('Fail');
 			}
@@ -76,8 +43,6 @@ class RegisterController extends AppController {
 	}
 
 	public function legalDocuments () {
-		// $user_id = $this->Session->read('user_id');
-		// $user_id = $this->Auth->user('id') ? $this->Auth->user('id') : $this->Session->read('user_id');
 		if ($this->Auth->user('id')) {
 			$user_id = $this->Auth->user('id');
 		} elseif($this->Session->read('user_id')) {
@@ -134,6 +99,11 @@ class RegisterController extends AppController {
 				$agency['type'] = 'agency';
 
 				$this->Auth->login($agency);
+
+				$this->Agency->clear();
+				$this->Agency->read(array('business_permit_flg'), $user_id);
+				$this->Agency->set(array('business_permit_flg' => 1));
+				$this->Agency->save();
 
 				return $this->redirect('/account/requirements');
 

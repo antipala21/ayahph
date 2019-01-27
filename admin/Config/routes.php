@@ -34,6 +34,8 @@
 	Router::connect('/agency-detail/:id', array('controller' => 'Agency', 'action' => 'detail'));
 	Router::connect('/user-detail/:id', array('controller' => 'User', 'action' => 'detail'));
 
+	Router::connect('/logout', array('controller' => 'Login', 'action' => 'logout'));
+
 /**
  * Load all plugin routes. See the CakePlugin documentation on
  * how to customize the loading of plugin routes.

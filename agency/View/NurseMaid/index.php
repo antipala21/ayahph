@@ -19,6 +19,13 @@
 			</div>
 		<?php endif; ?>
 
+		<?php $flash2 = $this->Session->flash('nurse-maid-edit'); ?>
+		<?php if($flash2): ?>
+			<div class="alert alert-success">
+				<?php echo $flash2; ?>
+			</div>
+		<?php endif; ?>
+
 		<!-- Row -->
 		<a href="/agency/nursemaid/add/" class="btn btn-success">Add Nursemaid</a>
 		<hr>
@@ -40,7 +47,9 @@
 						<?php if($nursemaids): ?>
 							<?php foreach ($nursemaids as $key => $value): ?>
 								<tr>
-									<td><?php echo $key+1; ?></td>
+									<td>
+										<a href="/agency/nursemaid/detail/<?php echo $value['NurseMaid']['id']; ?>"><?php echo $value['NurseMaid']['id']; ?></a>
+									</td>
 									<td><?php echo isset($value['NurseMaid']['first_name']) ? $value['NurseMaid']['first_name'] : '' ?></td>
 									<td><?php echo isset($value['NurseMaid']['gender']) ? Configure::read('gender_array')[$value['NurseMaid']['gender']] : '' ?></td>
 									<td><?php

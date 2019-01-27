@@ -33,6 +33,8 @@
 
 	Router::connect('/nursemaid', array('controller' => 'NurseMaid', 'action' => 'index'));
 	Router::connect('/nursemaid/add', array('controller' => 'NurseMaid', 'action' => 'add'));
+	Router::connect('/nursemaid/detail/:nursemaid_id', array('controller' => 'NurseMaid', 'action' => 'detail'));
+	Router::connect('/nursemaid/edit/:nursemaid_id', array('controller' => 'NurseMaid', 'action' => 'edit'));
 
 	Router::connect('/announcement', array('controller' => 'Announcement', 'action' => 'index'));
 	Router::connect('/announcement/add', array('controller' => 'Announcement', 'action' => 'add'));

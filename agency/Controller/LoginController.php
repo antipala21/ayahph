@@ -34,13 +34,17 @@ class LoginController extends AppController{
 				$agency['type'] = 'agency';
 
 				$this->Auth->login($agency);
-				// $this->setLoginLog();
+				if ($data['Agency']['business_permit_flg'] == 0) {
+					return $this->redirect('/register-legal-documents/');
+				}
+				$this->redirect($this->Auth->redirectUrl());
+
 
 				// $this->Session->setFlash(__('Welcome, '. $this->Auth->user('fname')));
-				$this->redirect($this->Auth->redirectUrl());
+				
 			}
-			elseif(isset($data['Agency']) && $data['Agency']['status'] == 0){
-				$this->render('/Register/register_confirm');
+			elseif(isset($data['Agency']) && $data['Agency']['business_permit_flg'] == 0){
+				return $this->redirect('/register-legal-documents/');
 			} else {
 				$this->Session->setFlash(__('Invalid username or password'));
 			}

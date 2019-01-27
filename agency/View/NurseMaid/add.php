@@ -78,11 +78,13 @@
 					<label for="">
 					Birthdate *
 					</label>
-					<?php echo $this->Form->input('birtdate', array(
+					<?php echo $this->Form->input('birthdate', array(
+						'type' => 'text',
 						'required' => true,
 						'label' => false,
 						'div'=> false,
 						'class'=>'form-control',
+						'autocomplete' => 'off'
 					)); ?>
 				</div>
 				<div class="form-row">
@@ -111,9 +113,10 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-		$("#NurseMaidBirtdate").datepicker({
+		$("#NurseMaidBirthdate").datepicker({
 			changeMonth: true,
-			changeYear: true
+			changeYear: true,
+			dateFormat: 'yy-mm-dd'
 		});
 	});
 </script>

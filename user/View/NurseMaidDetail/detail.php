@@ -1,5 +1,5 @@
+<link rel="stylesheet" href="/css/daterangepicker.css">
 <style type="text/css">
-
 	.row.nurse-item {
 		padding: 1em;
 		margin: 25px;
@@ -88,12 +88,17 @@
 	</div>
 </div>
 
+<a href="#success_modal" id="trigger_success_modal" class="btn btn-info" rel="modal:open"></a>
+<div class="modal hide" id="success_modal">
+	<div>
+		<p>Hire request sent!</p>
+	</div>
+</div>
 
-
-<?php echo $this->Form->create('Transaction', array(
+<?php echo $this->Form->create('Transaction',
+		array(
 			'id' => 'userHireForm',
 			'class' => 'modal',
-			// 'style' => 'display: inline-block;',
 			'url' => array('controller' => 'Transaction','action' => 'saveRequest'),
 		)); ?>
 
@@ -116,6 +121,17 @@
 				'class'=>'form-control',
 		)); ?>
 
+		<label for=""> Schedule Time * </label>
+		<?php echo $this->Form->input('transaction_time', array(
+				'type' => 'text',
+				'required' => true,
+				'label' => false,
+				'div'=> false,
+				'class'=>'form-control',
+				'autocomplete' => 'off',
+				'readonly' => true,
+			)); ?>
+
 		<label for=""> Address * </label>
 		<?php echo $this->Form->input('user_address', array(
 				'required' => true,
@@ -132,8 +148,28 @@
 		<a href="#close-modal" rel="modal:close" class="close-modal ">Close</a>
 <?php echo $this->Form->end(); ?>
 
+<script src="/js/daterangepicker.min.js"></script>
+
 <script type="text/javascript">
 	$(document).ready(function(){
+
+		var today_date_range =new Date();
+
+		$("#TransactionTransactionTime").daterangepicker({
+			startDate: today_date_range,
+			endDate: today_date_range,
+			timePicker: true,
+			timePicker12Hour:false,
+			timePickerIncrement:1,
+			opens: 'center',
+			drops: 'up',
+			ranges: {
+				'Today': [moment(), moment()]
+			},
+			locale : {
+				format:'YYYY-MM-DD HH:mm'
+			}
+		});
 
 		$('#userHireForm').submit(function(e){
 			e.preventDefault();
@@ -143,6 +179,7 @@
 			var nurse_maid_id = $('#TransactionNurseMaidId').val();
 			var agency_id = $('#TransactionAgencyId').val();
 			var user_address = $('#TransactionUserAddress').val();
+			var transaction_time = $('#TransactionTransactionTime').val();
 
 			console.log('comment ' + comment);
 			console.log('phone_number ' + phone_number);
@@ -156,7 +193,8 @@
 					user_phone_number : phone_number,
 					nurse_maid_id : nurse_maid_id,
 					agency_id : agency_id,
-					user_address : user_address
+					user_address : user_address,
+					transaction_time : transaction_time
 				},
 				// dataType: 'json',
 				success: function(data){
@@ -168,6 +206,7 @@
 				},
 				complete: function(){
 					$('.close-modal').click();
+					$('#trigger_success_modal').click();
 				}
 			});
 

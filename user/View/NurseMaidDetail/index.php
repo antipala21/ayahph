@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="/css/jquery-ui.css">
 <link rel="stylesheet" href="/css/daterangepicker.css">
 
 <style type="text/css">
@@ -119,7 +118,12 @@
 	</div>
 </div>
 
-
+<a href="#success_modal" id="trigger_success_modal" class="btn btn-info" rel="modal:open"></a>
+<div class="modal hide" id="success_modal">
+	<div>
+		<p>Hire request sent!</p>
+	</div>
+</div>
 
 <?php echo $this->Form->create('Transaction',
 		array(
@@ -174,7 +178,6 @@
 		<a href="#close-modal" rel="modal:close" class="close-modal ">Close</a>
 <?php echo $this->Form->end(); ?>
 
-<script src="/js/jquery-ui.js"></script>
 <script src="/js/daterangepicker.min.js"></script>
 
 <script type="text/javascript">
@@ -242,6 +245,7 @@
 				},
 				complete: function(){
 					$('.close-modal').click();
+					$('#trigger_success_modal').click();
 				}
 			});
 

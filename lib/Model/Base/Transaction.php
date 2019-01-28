@@ -13,4 +13,14 @@ class Transaction extends AppModel {
 			'order' => 'Transaction.id DESC'
 		));
 	}
+
+	public function hire_accept_count ($id, $status) {
+		return $this->find('count', array(
+			'conditions' => array(
+				'Transaction.status' => $status,
+				'Transaction.agency_id' => $id
+			),
+			'order' => 'Transaction.id DESC'
+		));
+	}
 }

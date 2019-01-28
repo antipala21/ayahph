@@ -84,7 +84,7 @@ class AppController extends Controller {
 			if(is_file($classFile2)){ require_once($classFile2); }
 		});
 
-		//supplier to ship notif...
+		// NOtification
 		$this->set('hire_request_count', $this->Transaction->hire_request_count($this->Auth->user('id'), 0));
 	}
 }

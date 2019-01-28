@@ -41,9 +41,12 @@
 	// Transactions
 	Router::connect('/ajax/send_hire_request', array('controller' => 'Transaction', 'action' => 'saveRequest'));
 
-
 	Router::connect('/account/requirements', array('controller' => 'Account', 'action' => 'updateRequirements'));
+
+	Router::connect('/schedules', array('controller' => 'Schedule', 'action' => 'index'));
 	
+	// Notification
+	Router::connect('/notif/hire_accept', array('controller' => 'Notification', 'action' => 'hire_accept'));
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on

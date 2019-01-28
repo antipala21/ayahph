@@ -6,29 +6,29 @@
 
 		var ENABLE_NOTIFICATION = true;
 
-		// Agency NOTIF
+		// User NOTIF
 		if (ENABLE_NOTIFICATION && is_login) {
 			setInterval(function(){
-				agency_hire_request_notif();
+				agency_hire_accept_notif();
 			},3000);
 		}
 
-		function agency_hire_request_notif () {
+		function agency_hire_accept_notif () {
 			$.ajax({
 				type: 'post',
-				url: 'http://' + HOST +'/agency/notif/hire_request',
+				url: 'http://' + HOST +'/notif/hire_accept',
 				data: {},
 				success: function(data){
 					var data = JSON.parse(data);
 					console.log(data.count);
-					if (data.count > hire_request_count) {
+					if (data.count > hire_accept_count) {
 							$.notify({
-								message: "New Hire Request!",
-								url: "/agency/transaction"
+								message: "Hire Request was accepted.",
+								// url: "/schedules"
 							},{
-								url_target: "_self"
+								// url_target: "_self"
 							});
-						hire_request_count = hire_request_count + 1;
+						hire_accept_count = hire_accept_count + 1;
 					}
 				},
 				error: function(){console.log('error')},

@@ -76,6 +76,15 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	<!-- REGISTRATION -->
 	<link href="/css/steps.css" rel="stylesheet" type="text/css">
 
+	<!-- Notification -->
+	<script src="/js/bootstrap-notify.min.js"></script>
+	<script src="/js/notification.js"></script>
+
+	<script type="text/javascript">
+		var hire_accept_count = <?php echo isset($hire_accept_count) ? $hire_accept_count : 0; ?>;
+		var is_login = <?php echo $this->Session->read('Auth.User.id') ? 1 : 0; ?>;
+	</script>
+
 	<!-- Modal -->
 	<script src="/js/jquery.modal.min.js"></script>
 	<link rel="stylesheet" href="/css/jquery.modal.min.css" />

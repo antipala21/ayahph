@@ -4,7 +4,7 @@ App::uses('Controller', 'Controller');
 
 class AppController extends Controller {
 	public $Session;
-	public $uses = array('Agency');
+	public $uses = array('Agency', 'Transaction');
 	public $ext = '.php';
 	public $components = array(
 		'Paginator',
@@ -55,5 +55,9 @@ class AppController extends Controller {
 			if(is_file($classFile1)){ require_once($classFile1); }
 			if(is_file($classFile2)){ require_once($classFile2); }
 		});
+
+		// Notification
+		$this->set('hire_accept_count', $this->Transaction->hire_accept_count($this->Auth->user('id'), 1));
+
 	}
 }

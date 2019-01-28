@@ -95,6 +95,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 	<!-- REGISTRATION -->
 	<link href="/css/steps.css" rel="stylesheet" type="text/css">
+
+	<!-- Notification -->
 	<script src="/agency/js/bootstrap-notify.min.js"></script>
 	<script src="/agency/js/notification.js"></script>
 

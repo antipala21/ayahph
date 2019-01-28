@@ -42,6 +42,10 @@
 	Router::connect('/account/requirements', array('controller' => 'Account', 'action' => 'updateRequirements'));
 
 	Router::connect('/transaction', array('controller' => 'Transaction', 'action' => 'index'));
+	Router::connect('/transaction/detail/:transaction_id', array('controller' => 'Transaction', 'action' => 'detail'));
+
+	Router::connect('/schedules', array('controller' => 'Schedule', 'action' => 'index'));
+	Router::connect('/schedule/detail/:schedule_id', array('controller' => 'Schedule', 'action' => 'detail'));
 
 	// Notification
 	Router::connect('/notif/hire_request', array('controller' => 'Notification', 'action' => 'hire_request'));

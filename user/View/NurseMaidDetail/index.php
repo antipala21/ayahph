@@ -1,5 +1,7 @@
-<style type="text/css">
+<link rel="stylesheet" href="/css/jquery-ui.css">
+<link rel="stylesheet" href="/css/daterangepicker.css">
 
+<style type="text/css">
 	.row.nurse-item {
 		padding: 1em;
 		margin: 25px;
@@ -64,7 +66,12 @@
 
 	.modal a.close-modal {
 		top: 1.5px;
-		right: 0
+		right: 0;
+	}
+
+	div#ui-datepicker-div {
+		z-index: 99 !important;
+	}
 
 </style>
 
@@ -99,7 +106,7 @@
 						<div class="col-md-2">
 							<div class="media-right align-self-center">
 								<a href="/agency-nursemaid-detail/<?php echo isset($value['NurseMaid']['id']) ? $value['NurseMaid']['id'] : null; ?>" class="btn btn-info">View</a><hr>
-								<a href="#userHireForm" class="btn btn-info" rel="modal:open">Hire Now</a><hr>
+								<a href="#userHireForm" class="btn btn-info hire_btn" rel="modal:open" data-nurse_maid_id="<?php echo $value['NurseMaid']['id'] ?>" data-agency_id="<?php echo $value['NurseMaid']['agency_id'] ?>">Hire Now</a><hr>
 							</div>
 						</div>
 					</div>
@@ -118,7 +125,6 @@
 		array(
 			'id' => 'userHireForm',
 			'class' => 'modal',
-			// 'style' => 'display: inline-block;',
 			'url' => array('controller' => 'Transaction','action' => 'saveRequest'),
 		)); ?>
 
@@ -141,6 +147,17 @@
 				'class'=>'form-control',
 		)); ?>
 
+		<label for=""> Schedule Time * </label>
+		<?php echo $this->Form->input('transaction_time', array(
+				'type' => 'text',
+				'required' => true,
+				'label' => false,
+				'div'=> false,
+				'class'=>'form-control',
+				'autocomplete' => 'off',
+				'readonly' => true,
+			)); ?>
+
 		<label for=""> Address * </label>
 		<?php echo $this->Form->input('user_address', array(
 				'required' => true,
@@ -148,8 +165,8 @@
 				'div'=> false,
 				'class'=>'form-control',
 		)); ?>
-		<?php echo $this->Form->hidden('nurse_maid_id', array('value' => $nurse_maid['id'])); ?>
-		<?php echo $this->Form->hidden('agency_id', array('value' => $agency['id'])); ?>
+		<?php echo $this->Form->hidden('nurse_maid_id', array('value' => null)); ?>
+		<?php echo $this->Form->hidden('agency_id', array('value' => null)); ?>
 
 		<br>
 		<br>
@@ -157,23 +174,52 @@
 		<a href="#close-modal" rel="modal:close" class="close-modal ">Close</a>
 <?php echo $this->Form->end(); ?>
 
-
+<script src="/js/jquery-ui.js"></script>
+<script src="/js/daterangepicker.min.js"></script>
 
 <script type="text/javascript">
 	$(document).ready(function(){
 
+		var today_date_range =new Date();
+
+		$("#TransactionTransactionTime").daterangepicker({
+			startDate: today_date_range,
+			endDate: today_date_range,
+			timePicker: true,
+			timePicker12Hour:false,
+			timePickerIncrement:1,
+			opens: 'center',
+			drops: 'up',
+			ranges: {
+				'Today': [moment(), moment()]
+			},
+			locale : {
+				format:'YYYY-MM-DD HH:mm'
+			}
+		});
+
+		$('a.hire_btn').click(function(){
+			$('#TransactionNurseMaidId').val($(this).attr('data-nurse_maid_id'));
+			$('#TransactionAgencyId').val($(this).attr('data-agency_id'));
+		});
+
 		$('#userHireForm').submit(function(e){
 			e.preventDefault();
 
-			var comment = $('#TransactionComment').val();
-			var phone_number = $('#TransactionUserPhoneNumber').val();
 			var nurse_maid_id = $('#TransactionNurseMaidId').val();
 			var agency_id = $('#TransactionAgencyId').val();
-			var user_address = $('#TransactionUserAddress').val();
 
+			var comment = $('#TransactionComment').val();
+			var phone_number = $('#TransactionUserPhoneNumber').val();
+			var user_address = $('#TransactionUserAddress').val();
+			var transaction_time = $('#TransactionTransactionTime').val();
+
+			console.log('nurse_maid_id ' + nurse_maid_id);
+			console.log('agency_id ' + agency_id);
 			console.log('comment ' + comment);
 			console.log('phone_number ' + phone_number);
 			console.log('user_address ' + user_address);
+			console.log('transaction_time ' + transaction_time);
 
 			$.ajax({
 				type: 'POST',
@@ -183,7 +229,8 @@
 					user_phone_number : phone_number,
 					nurse_maid_id : nurse_maid_id,
 					agency_id : agency_id,
-					user_address : user_address
+					user_address : user_address,
+					transaction_time : transaction_time
 				},
 				// dataType: 'json',
 				success: function(data){

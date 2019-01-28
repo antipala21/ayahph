@@ -90,8 +90,7 @@
 
 
 
-<?php echo $this->Form->create('Transaction',
-		array(
+<?php echo $this->Form->create('Transaction', array(
 			'id' => 'userHireForm',
 			'class' => 'modal',
 			// 'style' => 'display: inline-block;',

@@ -28,6 +28,16 @@ class TransactionController extends AppController {
 
 			$result['sucess'] = false;
 
+			$transaction_time = explode(' - ', $data['transaction_time']);
+			$this->log('[transaction_time] ' . json_encode($transaction_time), 'debug');
+
+			$transaction_start = $transaction_time[0];
+
+			$transaction_end = $transaction_time[1];
+
+			$data['transaction_start'] = $transaction_start;
+			$data['transaction_end'] = $transaction_end;
+
 			$this->log('[data] ' . json_encode($data), 'debug');
 
 			$this->Transaction->set($data);

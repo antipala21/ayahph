@@ -4,18 +4,18 @@
 	<div class="container-fluid">
 		<div class="row page-titles">
 			<div class="col-md-5 col-8 align-self-center">
-				<h3 class="text-themecolor">Transactions </h3>
+				<h3 class="text-themecolor">Schedules </h3>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-					<li class="breadcrumb-item active">Transaction list</li>
+					<li class="breadcrumb-item active">Schedule list</li>
 				</ol>
 			</div>
 		</div>
-		<h2>Hire Request</h2>
+		<h2>Schedules</h2>
 		<hr>
 		<div class="row">
 			<div class="col-md-12">
-				<table id="transaction_list" class="table table-striped table-bordered" style="width:100%">
+				<table id="schedule_list" class="table table-striped table-bordered" style="width:100%">
 					<thead>
 						<tr>
 							<th>ID</th>
@@ -23,15 +23,15 @@
 							<th>Comment</th>
 							<th>User Phone</th>
 							<th>Address</th>
-							<th>Schedule</th>
+							<th>Date</th>
 						</tr>
 					</thead>
 					<tbody>
-						<?php if($transactions): ?>
-							<?php foreach ($transactions as $key => $value): ?>
+						<?php if($schedules): ?>
+							<?php foreach ($schedules as $key => $value): ?>
 								<tr>
 									<td>
-										<a href="transaction/detail/<?php echo $value['Transaction']['id']; ?>"><?php echo $value['Transaction']['id']; ?></a>
+										<a href="schedule/detail/<?php echo $value['Transaction']['id']; ?>"><?php echo $value['Transaction']['id']; ?></a>
 									</td>
 									<td><?php echo isset($value['User']['display_name']) ? $value['User']['display_name'] : '' ?></td>
 									<td><?php echo isset($value['Transaction']['comment']) ? $value['Transaction']['comment'] : '' ?></td>
@@ -53,6 +53,6 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-		$('#transaction_list').DataTable();
+		$('#schedule_list').DataTable();
 	});
 </script>

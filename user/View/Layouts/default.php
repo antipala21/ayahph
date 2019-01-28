@@ -70,6 +70,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	<!-- Chart JS -->
 	<script src="/user/js/dashboard1.js"></script>
 
+	<!-- Moment -->
+	<script src="/user/js/moment.js"></script>
+
 	<!-- REGISTRATION -->
 	<link href="/css/steps.css" rel="stylesheet" type="text/css">
 

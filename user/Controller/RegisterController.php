@@ -44,13 +44,17 @@ class RegisterController extends AppController {
 			$save = $this->User->save();
 			if ($save) {
 
-				$user = $save['User'];
-				$user['type'] = 'user';
+				// $user = $save['User'];
+				// $user['type'] = 'user';
 
-				$this->Auth->login($user);
+				// $this->Auth->login($user);
 
-				$this->Session->setFlash( __('Success'), 'default', array(), 'success');
-				return $this->redirect('/');
+				// $this->Session->setFlash( __('Success'), 'default', array(), 'success');
+				// return $this->redirect('/');
+
+				$this->Session->write('user_id', $save['User']['id']);
+				return $this->redirect('/account/requirements');
+
 			}
 		}
 	}
@@ -59,6 +63,15 @@ class RegisterController extends AppController {
 		$this->autoRender = false;
 		// echo 'shit';
 		// echo json_encode(Braintree_ClientToken::generate());
+	}
+
+	
+
+	private function uploadAgreement ($permit = array(), $filename) {
+		move_uploaded_file(
+			$permit['tmp_name'], 
+			'img/agency_permit/'. $filename
+		);
 	}
 
 }

@@ -16,6 +16,9 @@
 				<li>
 					<a class="waves-effect waves-dark" href="/user/schedules" aria-expanded="false"><i class="mdi mdi-emoticon"></i><span class="hide-menu">Schedules</span></a>
 				</li>
+				<li>
+					<a class="waves-effect waves-dark" href="/announcements" aria-expanded="false"><i class="mdi mdi-emoticon"></i><span class="hide-menu">Announcement</span></a>
+				</li>
 				<?php endif; ?>
 				<li>
 					<a class="waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-help-circle"></i><span class="hide-menu">Help</span></a>

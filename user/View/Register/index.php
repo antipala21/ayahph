@@ -91,7 +91,7 @@
 				<section>
 					<div class="form-row">
 						<label for="">
-							User Name *
+							Name *
 						</label>
 						<?php echo $this->Form->input('name', array(
 							'required' => true,
@@ -100,12 +100,12 @@
 							'class'=>'form-control',
 						)); ?>
 						<div class="invalid-feedback">
-							Please provide User Name
+							Please provide Name
 						</div>
 					</div>
 					<div class="form-row">
 						<label for="">
-							User Address *
+							Address *
 						</label>
 						<?php echo $this->Form->input('address', array(
 							'required' => true,
@@ -114,28 +114,22 @@
 							'class'=>'form-control',
 						)); ?>
 						<div class="invalid-feedback">
-							Please provide User Address
+							Please provide Address
 						</div>
 					</div>
 					<div class="form-row">
 						<label for="">
-							User Representative Name *
+							Display Name *
 						</label>
-						<?php echo $this->Form->input('representative_name', array(
+						<?php echo $this->Form->input('display_name', array(
 							'required' => true,
 							'label' => false,
 							'div'=> false,
 							'class'=>'form-control',
 						)); ?>
 						<div class="invalid-feedback">
-							Please provide User Representative Name
+							Please provide display name
 						</div>
-					</div>
-					<div class="checkbox">
-						<label>
-							<input type="checkbox"> Create an account?
-							<span class="checkmark"></span>
-						</label>
 					</div>
 				</section>
 
@@ -144,7 +138,6 @@
 				<section>
 					<div class="product">
 						<h1>Finish!</h1>
-						<div id="dropin-container"></div>
 					</div>
 				</section>
 			</div>
@@ -235,8 +228,8 @@
 						return false;
 					}
 
-					if ($('#UserRepresentativeName').val().trim() == '') {
-						invalidateInput('#UserRepresentativeName');
+					if ($('#UserDisplayName').val().trim() == '') {
+						invalidateInput('#UserDisplayName');
 						return false;
 					}
 				}
@@ -297,21 +290,6 @@
 			$('.checkbox-circle label').removeClass('active');
 			$(this).addClass('active');
 		});
-
-		// Braintree
-		// var button = document.querySelector('#submit-button');
-
-		// braintree.dropin.create({
-		// 	authorization: 'sandbox_ypwwzxvh_tnnc2y3sq3ctj5cb',
-		// 	container: '#dropin-container'
-		// }, function (createErr, instance) {
-		// 	button.addEventListener('click', function () {
-		// 		instance.requestPaymentMethod(function (err, payload) {
-		// 			console.log('error ' +  JSON.stringify(err));
-		// 			console.log('payload ' +  JSON.stringify(payload));
-		// 		});
-		// 	});
-		// });
 
 	}); // end js
 </script>

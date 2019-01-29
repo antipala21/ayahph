@@ -49,7 +49,6 @@ class AccountController extends AppController {
 		));
 
 		if (!$user) {
-			exit;
 			return $this->redirect('/');
 		}
 		$this->set('user', $user['User']);
@@ -64,21 +63,30 @@ class AccountController extends AppController {
 		header("Pragma: no-cache");
 		header("Expires: 0");
 
+		if ($this->Auth->user('id')) {
+			$user_id = $this->Auth->user('id');
+		} elseif($this->Session->read('user_id')) {
+			$user_id = $this->Session->read('user_id');
+		} else {
+			return $this->redirect('/logout');
+		}
+		$this->set('user_id', $user_id);
+
 		if ($this->request->is('post')) {
 			$data = $this->request->data;
 
-			$filename = $this->Auth->user('id') . '_' . 'business_permit_' . str_replace(' ', '_', $this->Auth->user('display_name')) . '.jpg';
+			$filename = $this->Auth->user('id') . '_' . strtotime('now') . str_replace(' ', '_', $this->Auth->user('display_name')) . '.jpg';
 
-			$this->uploadAgreement($data['User']['business_permit_url'], $filename);
+			$this->uploadAgreement($data['User']['valid_id_url'], $filename);
 
 			$this->User->clear();
-			$this->User->read(array('business_permit_url'), $this->Auth->user('id'));
-			$this->User->set(array('business_permit_url' => $filename));
+			$this->User->read(array('valid_id_url'), $this->Auth->user('id'));
+			$this->User->set(array('valid_id_url' => $filename));
 			$this->User->save();
 		}
 
 		$user = $this->User->find('first', array(
-			'fields' => array('User.business_permit_url'),
+			'fields' => array('User.valid_id_url'),
 			'conditions' => array('User.id' => $this->Auth->user('id'))
 		));
 		// myTools::display($user);exit;
@@ -89,8 +97,20 @@ class AccountController extends AppController {
 	private function uploadAgreement ($permit = array(), $filename) {
 		move_uploaded_file(
 			$permit['tmp_name'], 
-			'img/business_permits/'. $filename
+			'img/user_ids/'. $filename
 		);
+	}
+
+	public function legalDocumentsDelete () {
+		$this->autoRender = false;
+		if ($this->request->is('post')) {
+			$data = $this->request->data;
+
+			$this->AgencyLegalDocument->delete($data['id']);
+			$filename = 'img/agency_permit/' . $data['filename'];
+			unlink($filename);
+			return true;
+		}
 	}
 
 	public function logout() {

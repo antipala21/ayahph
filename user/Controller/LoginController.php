@@ -33,8 +33,10 @@ class LoginController extends AppController{
 				$user['type'] = 'user';
 
 				$this->Auth->login($user);
+				if ($data['User']['valid_id_url'] == null) {
+					return $this->redirect('/account/requirements');
+				}
 
-				// $this->Session->setFlash(__('Welcome, '. $this->Auth->user('fname')));
 				$this->redirect($this->Auth->redirectUrl());
 			}
 			elseif(isset($data['User']) && $data['User']['status'] == 0){

@@ -28,6 +28,9 @@
 
 	Router::connect('/register/*', array('controller' => 'Register', 'action' => 'index'));
 	Router::connect('/register/legal-documents/*', array('controller' => 'Register', 'action' => 'legalDocuments'));
+	Router::connect('/register-legal-documents/', array('controller' => 'Register', 'action' => 'legalDocuments'));
+	Router::connect('/register-legal-documents/delete', array('controller' => 'Account', 'action' => 'legalDocumentsDelete'));
+	
 	Router::connect('/token', array('controller' => 'Register', 'action' => 'token'));
 
 	Router::connect('/logout', array('controller' => 'Account', 'action' => 'logout'));
@@ -45,6 +48,9 @@
 
 	Router::connect('/schedules', array('controller' => 'Schedule', 'action' => 'index'));
 	Router::connect('/schedule/detail/:schedule_id', array('controller' => 'Schedule', 'action' => 'detail'));
+
+	// announcement
+	Router::connect('/announcements', array('controller' => 'Announcement', 'action' => 'index'));
 	
 	// Notification
 	Router::connect('/notif/hire_accept', array('controller' => 'Notification', 'action' => 'hire_accept'));

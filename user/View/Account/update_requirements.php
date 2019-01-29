@@ -114,14 +114,14 @@
 				<div class="item form-group">
 
 					<?php $haspermit = 0; ?>
-					<?php $fileName = isset($user['User']['business_permit_url']) ? $user['User']['business_permit_url'] : ''; ?>
+					<?php $fileName = isset($user['User']['valid_id_url']) ? $user['User']['valid_id_url'] : ''; ?>
 
-					<img style="width: 25%; <?php echo isset($fileName) && !empty($fileName) ? '' : 'display: none'; ?>" src="<?php echo myTools::checkHost() . '/img/business_permits/' . $fileName ; ?>" id="test">
+					<img style="width: 25%; <?php echo isset($fileName) && !empty($fileName) ? '' : 'display: none'; ?>" src="<?php echo myTools::checkHost() . '/img/user_ids/' . $fileName ; ?>" id="test">
 
 					
 					<hr>
 					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Valid User ID</label>
-					<?php echo $this->Form->input('User.business_permit_url', array(
+					<?php echo $this->Form->input('User.valid_id_url', array(
 							'type' => 'file',
 							'autofocus' => 'autofocus',
 							'legend' => false,

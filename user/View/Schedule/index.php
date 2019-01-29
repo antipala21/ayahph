@@ -19,7 +19,7 @@
 					<thead>
 						<tr>
 							<th>ID</th>
-							<th>User Name</th>
+							<th>Agency Name</th>
 							<th>User Phone</th>
 							<th>Address</th>
 							<th>Schedule</th>
@@ -32,7 +32,7 @@
 									<td>
 										<a href="schedule/detail/<?php echo $value['Transaction']['id']; ?>"><?php echo $value['Transaction']['id']; ?></a>
 									</td>
-									<td><?php echo isset($value['User']['display_name']) ? $value['User']['display_name'] : '' ?></td>
+									<td><?php echo isset($value['Agency']['name']) ? $value['Agency']['name'] : '' ?></td>
 									<td><?php echo isset($value['Transaction']['user_phone_number']) ? $value['Transaction']['user_phone_number'] : '' ?></td>
 									<td><?php echo isset($value['Transaction']['user_address']) ? $value['Transaction']['user_address'] : '' ?></td>
 									<td><?php echo isset($value['Transaction']['transaction_start']) ? date('Y-m-d h:i:sa', strtotime($value['Transaction']['transaction_start'])) : '' ?></td>

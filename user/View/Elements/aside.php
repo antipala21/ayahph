@@ -14,7 +14,7 @@
 					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'account' ? 'active' : ''; ?>" href="/user/account" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">Profile</span></a>
 				</li>
 				<li>
-					<a class="waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-emoticon"></i><span class="hide-menu">Schedules</span></a>
+					<a class="waves-effect waves-dark" href="/user/schedules" aria-expanded="false"><i class="mdi mdi-emoticon"></i><span class="hide-menu">Schedules</span></a>
 				</li>
 				<?php endif; ?>
 				<li>

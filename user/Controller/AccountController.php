@@ -8,7 +8,7 @@ class AccountController extends AppController {
 
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->Auth->allow('index');
+		$this->Auth->allow('index', 'updateRequirements');
 	}
 
 	public function index () {
@@ -65,8 +65,17 @@ class AccountController extends AppController {
 
 		if ($this->Auth->user('id')) {
 			$user_id = $this->Auth->user('id');
+			$display_name = $this->Auth->user('display_name');
 		} elseif($this->Session->read('user_id')) {
 			$user_id = $this->Session->read('user_id');
+
+			$data = $this->User->find('first',array('conditions'=>array('User.id' => $user_id)));
+
+			$user = $data['User'];
+			$user['type'] = 'user';
+
+			$this->Auth->login($user);
+
 		} else {
 			return $this->redirect('/logout');
 		}

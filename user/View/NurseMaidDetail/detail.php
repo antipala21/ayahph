@@ -56,12 +56,13 @@
 							<img class="rounded-circle" src="https://randomuser.me/api/portraits/women/50.jpg">
 						</div>
 					</div>
-					<div class="col-md-8">
+					<div class="col-md-10">
 						<div class="media-body">
 							<h4>
 								<?php echo isset($nurse_maid['first_name']) ? $nurse_maid['first_name'] : '-' ?>
 								<?php echo isset($nurse_maid['last_lname']) ? $nurse_maid['last_lname'] : '-' ?>
 							</h4>
+							<h3 style="color: #eaa70a">Rating: <span><b><?php echo isset($nurse_maid['rating']) ? round($nurse_maid['rating'],2) : '-' ?></b></span></h3>
 							<p><?php echo isset($nurse_maid['self_introduction']) ? $nurse_maid['self_introduction'] : '-' ?></p>
 							<h4>Address</h4>
 							<p><?php echo isset($nurse_maid['address']) ? $nurse_maid['address'] : ' ' ?></p>
@@ -76,6 +77,21 @@
 								endif;
 							?></p>
 						</div>
+					</div>
+				</div>
+				<div class="row nurse-item">
+					<h2>Comments</h2>
+					<hr>
+					<div class="col-md-12">
+					<?php if($comments): ?>
+						<ul>
+						<?php foreach($comments as $key => $value): ?>
+							<li>
+							<p><?php echo isset($value['NurseMaidRating']['comment']) ? $value['NurseMaidRating']['comment'] : '' ?> <span><small> || <?php echo isset($value['NurseMaidRating']['created']) ? date('Y-m-d h:i:sa', strtotime($value['NurseMaidRating']['created'])) : '' ?></small></span></p>
+							</li>
+						<?php endforeach; ?>
+						</ul>
+					<?php endif; ?>
 					</div>
 				</div>
 			</div>
@@ -111,6 +127,7 @@
 				'label' => false,
 				'div'=> false,
 				'class'=>'form-control',
+				'autocomplete' => 'off'
 		)); ?>
 
 		<label for=""> Phone number * </label>
@@ -119,6 +136,7 @@
 				'label' => false,
 				'div'=> false,
 				'class'=>'form-control',
+				'autocomplete' => 'off'
 		)); ?>
 
 		<label for=""> Schedule Time * </label>
@@ -138,6 +156,7 @@
 				'label' => false,
 				'div'=> false,
 				'class'=>'form-control',
+				'autocomplete' => 'off'
 		)); ?>
 		<?php echo $this->Form->hidden('nurse_maid_id', array('value' => $nurse_maid['id'])); ?>
 		<?php echo $this->Form->hidden('agency_id', array('value' => $agency['id'])); ?>

@@ -48,6 +48,8 @@
 
 	Router::connect('/schedules', array('controller' => 'Schedule', 'action' => 'index'));
 	Router::connect('/schedule/detail/:schedule_id', array('controller' => 'Schedule', 'action' => 'detail'));
+	Router::connect('/to_rate', array('controller' => 'Schedule', 'action' => 'to_rate'));
+	Router::connect('/completeTransaction', array('controller' => 'Schedule', 'action' => 'completeTransaction'));
 
 	// announcement
 	Router::connect('/announcements', array('controller' => 'Announcement', 'action' => 'index'));

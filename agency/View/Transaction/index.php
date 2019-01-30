@@ -53,6 +53,8 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-		$('#transaction_list').DataTable();
+		$('#transaction_list').DataTable({
+			 "order": [[ 0, 'desc' ]]
+		});
 	});
 </script>

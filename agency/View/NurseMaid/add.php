@@ -64,6 +64,17 @@
 				</div>
 				<div class="form-row">
 					<label for="">
+					Phone Number *
+					</label>
+					<?php echo $this->Form->input('phone_number', array(
+						'required' => true,
+						'label' => false,
+						'div'=> false,
+						'class'=>'form-control',
+					)); ?>
+				</div>
+				<div class="form-row">
+					<label for="">
 					Gender *
 					</label>
 					<?php echo $this->Form->input('gender', array(

@@ -22,7 +22,7 @@ class NotificationController extends AppController {
 			$hire_accept = $this->Transaction->find('count', array(
 				'conditions' => array(
 					'Transaction.status' => 1,
-					'Transaction.agency_id' => $this->Auth->user('id'),
+					'Transaction.user_id' => $this->Auth->user('id'),
 					// 'Transaction.type' => 2 // unpaid bidding winner
 				)
 			));

@@ -53,6 +53,7 @@ class RegisterController extends AppController {
 				// return $this->redirect('/');
 
 				$this->Session->write('user_id', $save['User']['id']);
+				$this->Session->write('display_name', $save['User']['display_name']);
 				return $this->redirect('/account/requirements');
 
 			}

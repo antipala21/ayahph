@@ -141,6 +141,7 @@
 				'label' => false,
 				'div'=> false,
 				'class'=>'form-control',
+				'autocomplete' => 'off'
 		)); ?>
 
 		<label for=""> Phone number * </label>
@@ -149,6 +150,7 @@
 				'label' => false,
 				'div'=> false,
 				'class'=>'form-control',
+				'autocomplete' => 'off'
 		)); ?>
 
 		<label for=""> Schedule Time * </label>
@@ -168,6 +170,7 @@
 				'label' => false,
 				'div'=> false,
 				'class'=>'form-control',
+				'autocomplete' => 'off'
 		)); ?>
 		<?php echo $this->Form->hidden('nurse_maid_id', array('value' => null)); ?>
 		<?php echo $this->Form->hidden('agency_id', array('value' => null)); ?>

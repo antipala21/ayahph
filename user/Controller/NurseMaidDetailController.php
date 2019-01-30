@@ -2,7 +2,11 @@
 App::uses('AppController', 'Controller');
 class NurseMaidDetailController extends AppController {
 
-	public $uses = array('Agency', 'NurseMaid');
+	public $uses = array(
+		'Agency',
+		'NurseMaid',
+		'NurseMaidRating'
+	);
 
 	/************************************/
 	/******** THIS IS USER SIDE *********/
@@ -74,6 +78,8 @@ class NurseMaidDetailController extends AppController {
 	public function detail () {
 		$nursemaid_id = isset($this->params['nursemaid_id']) ? $this->params['nursemaid_id'] : null;
 
+		$this->NurseMaid->virtualFields['rating'] = "SELECT AVG(`rate`) FROM `nurse_maid_ratings` WHERE `nurse_maid_id` = $nursemaid_id";
+
 		$nurse_maid = $this->NurseMaid->find('first', array(
 			'fields' => array(
 				'NurseMaid.*',
@@ -101,6 +107,16 @@ class NurseMaidDetailController extends AppController {
 			return $this->redirect('/');
 		}
 
+		// comments
+		$comments = $this->NurseMaidRating->find('all', array(
+			'fields' => array(
+				'NurseMaidRating.comment',
+				'NurseMaidRating.created'
+			),
+			'conditions' => array('NurseMaidRating.nurse_maid_id' => $nursemaid_id)
+		));
+
+		$this->set('comments', $comments);
 		$this->set('nurse_maid', isset($nurse_maid['NurseMaid']) ? $nurse_maid['NurseMaid'] : null);
 		$this->set('agency', isset($nurse_maid['Agency']) ? $nurse_maid['Agency'] : null);
 

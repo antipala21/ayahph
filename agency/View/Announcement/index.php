@@ -28,7 +28,7 @@
 				<table id="announcement_list" class="table table-striped table-bordered" style="width:100%">
 					<thead>
 						<tr>
-							<th>No.</th>
+							<th>ID.</th>
 							<th>Content</th>
 							<th>Status</th>
 							<th>Added Date</th>
@@ -38,7 +38,7 @@
 						<?php if($announcements): ?>
 							<?php foreach ($announcements as $key => $value): ?>
 								<tr>
-									<td><?php echo $key+1; ?></td>
+									<td><?php echo $value['Announcement']['id']?></td>
 									<td><?php echo isset($value['Announcement']['content']) ? $value['Announcement']['content'] : '' ?></td>
 									<td><?php echo isset($value['Announcement']['status']) && $value['Announcement']['status'] ? 'Available' : 'Not Available' ?></td>
 									<td><?php echo isset($value['Announcement']['created']) ? $value['Announcement']['created'] : '' ?></td>
@@ -57,6 +57,8 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-		$('#announcement_list').DataTable();
+		$('#announcement_list').DataTable({
+			 "order": [[ 0, 'desc' ]]
+		});
 	});
 </script>

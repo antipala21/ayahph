@@ -56,10 +56,10 @@
 																<p class="m-t-30"><?php echo isset($value['Agency']['description']) ? $value['Agency']['description'] : '-' ?></p>
 															</div>
 															<div class="col-md-4 m-b-20">
+																<!-- <img src="/user/images/big/img4.jpg" alt="user" class="img-responsive radius">
 																<img src="/user/images/big/img4.jpg" alt="user" class="img-responsive radius">
 																<img src="/user/images/big/img4.jpg" alt="user" class="img-responsive radius">
-																<img src="/user/images/big/img4.jpg" alt="user" class="img-responsive radius">
-																<img src="/user/images/big/img4.jpg" alt="user" class="img-responsive radius">
+																<img src="/user/images/big/img4.jpg" alt="user" class="img-responsive radius"> -->
 															</div>
 														</div>
 														<div class="row">

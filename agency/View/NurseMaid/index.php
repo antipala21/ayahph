@@ -34,7 +34,7 @@
 				<table id="nurse_maid_list" class="table table-striped table-bordered" style="width:100%">
 					<thead>
 						<tr>
-							<th>No.</th>
+							<th>ID.</th>
 							<th>Name</th>
 							<th>Gender</th>
 							<th>Age</th>
@@ -77,6 +77,8 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-		$('#nurse_maid_list').DataTable();
+		$('#nurse_maid_list').DataTable({
+			 "order": [[ 0, 'desc' ]]
+		});
 	});
 </script>

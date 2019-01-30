@@ -12,6 +12,14 @@
 		<div class="row">
 			<div class="col-md-12">
 				<h2>Schedule</h2>
+				<?php echo $this->Form->create('Schedule',array(
+						'id' => 'userCompleteTransaction',
+						'url' => array('controller' => 'Schedule','action' => 'completeTransaction'),
+					)); ?>
+				<?php echo $this->Form->hidden('id', array('value' => $schedule['Transaction']['id'])); ?>
+				<input class="btn btn-success" type="submit" name="value_transaction" value="Complete">
+				<!-- <input class="btn btn-danger" type="submit" name="value_transaction" value="Decline"> -->
+				<?php echo $this->Form->end(); ?>
 				<hr>
 			</div>
 			<div class="col-md-8">

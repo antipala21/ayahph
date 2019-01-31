@@ -52,12 +52,12 @@
 							<img class="rounded-circle" src="https://randomuser.me/api/portraits/women/50.jpg">
 						</div>
 					</div>
+					<div class="col-md-8">
 					<?php echo $this->Form->create('NurseMaid', 
 							array(
 								'id' => 'nurseMaidAcountUpdate',
 								'style' => '',
 							)); ?>
-					<div class="col-md-8">
 						<div class="media-body">
 							<?php echo $this->Form->hidden('id', array('value' => $nurse_maid['id'])); ?>
 							<h4>First Name</h4>
@@ -109,7 +109,7 @@
 								)); ?>
 						</div>
 					</div>
-					<div class="col-lg-12 col-xlg-12 col-md-12 nurse-item-container">
+					<div class="col-12 nurse-item-container">
 						<div class="media-right align-self-center">
 							<button type="submit" class="btn btn-info">Save</button>
 							<hr>

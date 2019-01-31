@@ -52,6 +52,11 @@
 					</div>
 					<div class="col-md-8">
 						<div class="media-body">
+							<?php if(isset($nurse_maid['status']) && $nurse_maid['status']): ?>
+							<p>Status: Active</p>
+							<?php else: ?>
+							<p>Status: Not Active</p>
+							<?php endif; ?>
 							<h4>
 								<?php echo isset($nurse_maid['first_name']) ? $nurse_maid['first_name'] : '' ?>
 								<?php echo isset($nurse_maid['last_lname']) ? $nurse_maid['last_lname'] : '' ?>
@@ -76,6 +81,13 @@
 							<a href="/agency/nursemaid/edit/<?php echo $nurse_maid['id'] ?>" class="btn btn-info" rel="modal:open">Edit</a><hr>
 						</div>
 					</div>
+					<?php echo $this->Form->create('NurseMaid',array(
+						'id' => 'nurseMaidUpdateStatus',
+						)); ?>
+					<?php echo $this->Form->hidden('id', array('value' => $nurse_maid['id'])); ?>
+					<input class="btn btn-success" type="submit" name="value_transaction" value="Active">
+					<input class="btn btn-danger" type="submit" name="value_transaction" value="Not Active">
+					<?php echo $this->Form->end(); ?>
 				</div>
 			</div>
 		</div>

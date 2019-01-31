@@ -39,7 +39,8 @@
 	Router::connect('/agency-detail/announcement/:id', array('controller' => 'AgencyDetail', 'action' => 'announcement'));
 	Router::connect('/agency-nursemaid/:agency_id', array('controller' => 'NurseMaidDetail', 'action' => 'index'));
 	Router::connect('/agency-nursemaid-detail/:nursemaid_id', array('controller' => 'NurseMaidDetail', 'action' => 'detail'));
-	
+
+	Router::connect('/nursemaids', array('controller' => 'NurseMaid', 'action' => 'index'));
 
 	// Transactions
 	Router::connect('/ajax/send_hire_request', array('controller' => 'Transaction', 'action' => 'saveRequest'));

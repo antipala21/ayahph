@@ -27,9 +27,9 @@
 					<b>Schedule Time</b>
 					<p>
 						From: <br>
-						<span><?php echo date('Y-m-d h:i:sa', strtotime($transaction['Transaction']['transaction_start'])) ?></span>
+						<span><?php echo date('Y-m-d h:i:sa', strtotime($schedule['Transaction']['transaction_start'])) ?></span>
 						<br> To: <br>
-						<span><?php echo date('Y-m-d h:i:sa', strtotime($transaction['Transaction']['transaction_end'])) ?></span>
+						<span><?php echo date('Y-m-d h:i:sa', strtotime($schedule['Transaction']['transaction_end'])) ?></span>
 					</p>
 				</div>
 			</div>
@@ -46,7 +46,7 @@
 				</div>
 				<div>
 					<b>Address</b>
-					<p><?php echo $schedule['Transaction']['address'] ?></p>
+					<p><?php echo $schedule['Transaction']['user_address'] ?></p>
 				</div>
 				<div>
 					<b>Contact No.</b>

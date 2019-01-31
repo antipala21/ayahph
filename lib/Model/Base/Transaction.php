@@ -18,7 +18,7 @@ class Transaction extends AppModel {
 		return $this->find('count', array(
 			'conditions' => array(
 				'Transaction.status' => $status,
-				'Transaction.agency_id' => $id
+				'Transaction.user_id' => $id
 			),
 			'order' => 'Transaction.id DESC'
 		));

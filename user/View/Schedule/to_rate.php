@@ -180,8 +180,7 @@
 								<hr>
 								<button class="btn btn-success" type="submit" id="btn_rate_submit">Submit</button>
 							<?php echo $this->Form->end(); ?>
-						</div>
-					</div>
+							</div>
 						</div>
 						<div class="col-md-2">
 							<small><?php echo date('Y-m-d h:i:sa', strtotime($value['Transaction']['created'])) ?></small>

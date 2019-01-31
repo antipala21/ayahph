@@ -55,6 +55,8 @@ class NurseMaidDetailController extends AppController {
 			)
 		));
 
+		$this->NurseMaid->virtualFields['rating'] = "SELECT AVG(`rate`) FROM `nurse_maid_ratings` WHERE `nurse_maid_ratings`.`nurse_maid_id` = `NurseMaid`.`id`";
+
 		$nurse_maids = $this->NurseMaid->find('all', array(
 			'fields' => array(
 				'NurseMaid.*'

@@ -38,8 +38,12 @@
 						<?php if($announcements): ?>
 							<?php foreach ($announcements as $key => $value): ?>
 								<tr>
-									<td><?php echo $value['Announcement']['id']?></td>
-									<td><?php echo isset($value['Announcement']['content']) ? $value['Announcement']['content'] : '' ?></td>
+									<td>
+										<a href="/agency/announcement/detail/<?php echo $value['Announcement']['id']; ?>"><?php echo $value['Announcement']['id']; ?></a>
+									</td>
+									<td>
+										<a href="/agency/announcement/detail/<?php echo $value['Announcement']['id']; ?>"><?php echo isset($value['Announcement']['content']) ? $value['Announcement']['content'] : '' ?></a>
+									</td>
 									<td><?php echo isset($value['Announcement']['status']) && $value['Announcement']['status'] ? 'Available' : 'Not Available' ?></td>
 									<td><?php echo isset($value['Announcement']['created']) ? $value['Announcement']['created'] : '' ?></td>
 								</tr>

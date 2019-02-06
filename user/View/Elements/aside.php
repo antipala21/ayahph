@@ -10,20 +10,20 @@
 					|| $this->params['controller'] == 'AgencyDetail' ? 'active' : ''; ?>" href="/" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Agencies</span></a>
 				</li>
 				<li>
-					<a class="waves-effect waves-dark" href="/user/nursemaids" aria-expanded="false"><i class="mdi mdi-emoticon"></i><span class="hide-menu">Nursemaids</span></a>
+					<a class="waves-effect waves-dark" href="/user/nursemaids" aria-expanded="false"><i class="fa fa-user-md" aria-hidden="true"></i><span class="hide-menu">Nursemaids</span></a>
 				</li>
 				<?php if ($this->Session->read('Auth.User') || $this->Session->read('user_id')): ?>
 				<li>
 					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'account' ? 'active' : ''; ?>" href="/user/account" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">Profile</span></a>
 				</li>
 				<li>
-					<a class="waves-effect waves-dark" href="/user/schedules" aria-expanded="false"><i class="mdi mdi-emoticon"></i><span class="hide-menu">Schedules</span></a>
+					<a class="waves-effect waves-dark" href="/user/schedules" aria-expanded="false"><i class="fa fa-calendar-check-o" aria-hidden="true"></i><span class="hide-menu">Schedules</span></a>
 				</li>
 				<li>
-					<a class="waves-effect waves-dark" href="/user/to_rate" aria-expanded="false"><i class="mdi mdi-emoticon"></i><span class="hide-menu">To rate</span></a>
+					<a class="waves-effect waves-dark" href="/user/to_rate" aria-expanded="false"><i class="fa fa-star-o" aria-hidden="true"></i><span class="hide-menu">To rate</span></a>
 				</li>
 				<li>
-					<a class="waves-effect waves-dark" href="/announcements" aria-expanded="false"><i class="mdi mdi-emoticon"></i><span class="hide-menu">Announcement</span></a>
+					<a class="waves-effect waves-dark" href="/announcements" aria-expanded="false"><i class="fa fa-bullhorn" aria-hidden="true"></i><span class="hide-menu">Announcement</span></a>
 				</li>
 				<?php endif; ?>
 				<li>

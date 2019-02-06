@@ -26,6 +26,8 @@ class AgencyDetailController extends AppController {
 		$this->Agency->virtualFields['male_nursemaid'] = "SELECT COUNT(*) FROM `nurse_maids` WHERE `agency_id` = $id AND `gender` = 1";
 		$this->Agency->virtualFields['female_nursemaid'] = "SELECT COUNT(*) FROM `nurse_maids` WHERE `agency_id` = $id AND `gender` = 0";
 		$this->Agency->virtualFields['current_available'] = "SELECT COUNT(*) FROM `nurse_maids` WHERE `agency_id` = $id AND `status` = 1";
+		$this->Agency->virtualFields['total_transaction'] = "SELECT COUNT(*) FROM `transactions` WHERE `agency_id` = `Agency`.`id`";
+		$this->Agency->virtualFields['total_announcements'] = "SELECT COUNT(*) FROM `announcements` WHERE `agency_id` = `Agency`.`id`";
 
 		$agency = $this->Agency->find('first', array(
 			'fields'=> array(
@@ -42,6 +44,8 @@ class AgencyDetailController extends AppController {
 				'Agency.male_nursemaid',
 				'Agency.female_nursemaid',
 				'Agency.current_available',
+				'Agency.total_transaction',
+				'Agency.total_announcements',
 			),
 			'conditions' => array(
 				'Agency.id' => $id,

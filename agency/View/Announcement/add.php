@@ -40,7 +40,7 @@
 
 				<div class="form-row">
 					<br>
-					<button type="submit" class="btn btn-success">Submit</button>
+					<button type="submit" class="btn btn-success">Add</button>
 				</div>
 
 			<?php echo $this->Form->end(); ?>

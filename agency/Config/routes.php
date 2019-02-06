@@ -38,6 +38,7 @@
 
 	Router::connect('/announcement', array('controller' => 'Announcement', 'action' => 'index'));
 	Router::connect('/announcement/add', array('controller' => 'Announcement', 'action' => 'add'));
+	Router::connect('/announcement/detail/:id', array('controller' => 'Announcement', 'action' => 'detail'));
 
 	Router::connect('/account/requirements', array('controller' => 'Account', 'action' => 'updateRequirements'));
 

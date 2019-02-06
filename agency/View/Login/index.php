@@ -56,8 +56,8 @@
 					?>
 				
 			<?php echo $this->Form->end(); ?>
-			<p>For New People</p>
-			<p><a href="/agency/register">Register Here</a> (Or) go back to <a href="index.html">Home<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></p>
+			<p>For New Account</p>
+			<p><a href="/agency/register">Register Here</a> (Or) Login as <a href="/user/login">Client(User)<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></p>
 		</div>
 	</div>
 </div>

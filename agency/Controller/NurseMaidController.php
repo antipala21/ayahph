@@ -49,17 +49,20 @@ class NurseMaidController extends AppController {
 		if ($this->request->is('post')) {
 			$data = $this->request->data;
 
-			$new_status = isset($data['value_transaction']) && $data['value_transaction'] == 'Active' ? 1 : 0;
-			$this->log('[new_status] ' . $new_status, 'debug');
+			if (isset($data['value_transaction']) && $data['value_transaction'] == 'Delete') {
+				$this->NurseMaid->delete($data['NurseMaid']['id']);
+				return $this->redirect('/nursemaid');
+			} else {
+				$new_status = isset($data['value_transaction']) && $data['value_transaction'] == 'Active' ? 1 : 0;
+				$this->log('[new_status] ' . $new_status, 'debug');
 
-			$this->NurseMaid->clear();
-			$this->NurseMaid->read(array('status'), $data['NurseMaid']['id']);
-			$this->NurseMaid->set(array('status' => $new_status)); // on hire , not active
-			$this->NurseMaid->save();
+				$this->NurseMaid->clear();
+				$this->NurseMaid->read(array('status'), $data['NurseMaid']['id']);
+				$this->NurseMaid->set(array('status' => $new_status)); // on hire , not active
+				$this->NurseMaid->save();
 
-			return $this->redirect('/nursemaid/detail/' . $nursemaid_id);
-
-			// $nursemaid['NurseMaid']['status'] = $new_status;
+				return $this->redirect('/nursemaid/detail/' . $nursemaid_id);
+			}
 		}
 
 		$this->set('nurse_maid', $nursemaid['NurseMaid']);

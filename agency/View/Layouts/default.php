@@ -23,6 +23,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	?>
 	<!-- Bootstrap Core CSS -->
 	<link href="/agency/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/font-awesome.min.css" rel="stylesheet">
 	<!-- chartist CSS -->
 	<!-- <link href="/user/plugins/chartist-js/dist/chartist.min.css" rel="stylesheet">
 	<link href="/user/plugins/chartist-js/dist/chartist-init.css" rel="stylesheet">

@@ -87,6 +87,7 @@
 					<?php echo $this->Form->hidden('id', array('value' => $nurse_maid['id'])); ?>
 					<input class="btn btn-success" type="submit" name="value_transaction" value="Active">
 					<input class="btn btn-danger" type="submit" name="value_transaction" value="Not Active">
+					<input class="btn btn-danger" type="submit" name="value_transaction" value="Delete">
 					<?php echo $this->Form->end(); ?>
 				</div>
 			</div>

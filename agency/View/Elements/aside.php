@@ -9,16 +9,16 @@
 					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'Account' ? 'active' : ''; ?>" href="/agency/account" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">Profile</span></a>
 				</li>
 				<li>
-					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'Nursemaid' ? 'active' : ''; ?>" href="/agency/nursemaid/" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Nursemaid</span></a>
+					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'Nursemaid' ? 'active' : ''; ?>" href="/agency/nursemaid/" aria-expanded="false"><i class="fa fa-user-md" aria-hidden="true"></i><span class="hide-menu">Nursemaid</span></a>
 				</li>
 				<li>
-					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'Announcement' ? 'active' : ''; ?>" href="/agency/announcement" aria-expanded="false"><i class="mdi mdi-emoticon"></i><span class="hide-menu">Announcement</span></a>
+					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'Announcement' ? 'active' : ''; ?>" href="/agency/announcement" aria-expanded="false"><i class="fa fa-bullhorn" aria-hidden="true"></i><span class="hide-menu">Announcement</span></a>
 				</li>
 				<li>
-					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'Transaction' ? 'active' : ''; ?>" href="/agency/transaction" aria-expanded="false"><i class="mdi mdi-emoticon"></i><span class="hide-menu">Transactions</span></a>
+					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'Transaction' ? 'active' : ''; ?>" href="/agency/transaction" aria-expanded="false"><i class="fa fa-briefcase" aria-hidden="true"></i><span class="hide-menu">Transactions</span></a>
 				</li>
 				<li>
-					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'Schedule' ? 'active' : ''; ?>" href="/agency/schedules" aria-expanded="false"><i class="mdi mdi-emoticon"></i><span class="hide-menu">Schedules</span></a>
+					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'Schedule' ? 'active' : ''; ?>" href="/agency/schedules" aria-expanded="false"><i class="fa fa-calendar-check-o" aria-hidden="true"></i><span class="hide-menu">Schedules</span></a>
 				</li>
 				<?php endif; ?>
 				<li>

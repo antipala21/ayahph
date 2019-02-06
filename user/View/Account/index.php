@@ -151,20 +151,7 @@
 					</div>
 					<div class="row">
 						<div class="col-md-4">
-							<div class="profile-work">
-								<p>Top Nursemaid</p>
-								<a href="">Test one</a><br/>
-								<a href="">Test one</a><br/>
-								<a href="">Test one</a><br/>
-								<a href="">Test one</a><br/>
-								<p>Other info</p>
-								<a href="">Exmaple</a><br/>
-								<a href="">Exmaple</a><br/>
-								<a href="">Exmaple</a><br/>
-								<a href="">Exmaple</a><br/>
-								<a href="">Exmaple</a><br/>
-								<a href="">Exmaple</a><br/>
-							</div>
+							
 						</div>
 						<div class="col-md-8">
 							<div class="tab-content profile-tab" id="myTabContent">
@@ -230,7 +217,7 @@
 											<label>Total transactions</label>
 										</div>
 										<div class="col-md-6">
-											<p>121</p>
+											<p><?php echo isset($user['total_transaction']) ? $user['total_transaction'] : 0 ?></p>
 										</div>
 									</div>
 									<hr>

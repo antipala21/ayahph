@@ -13,6 +13,7 @@ class AccountController extends AppController {
 
 	public function index () {
 
+		$this->User->virtualFields['total_transaction'] = "SELECT COUNT(*) FROM `transactions` WHERE `user_id` = `User`.`id`";
 		$user = $this->User->find('first', array(
 			'conditions' => array('User.id' => $this->Auth->user('id'))
 		));

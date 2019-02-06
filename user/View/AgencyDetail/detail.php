@@ -149,17 +149,9 @@
 					<div class="row">
 						<div class="col-md-4">
 							<div class="profile-work">
-								<h5>Top Nursemaid (<span><a class="link" href="/agency-nursemaid/<?php echo $agency['id']; ?>">View all</a></span>)</h5>
-								<ol>
-									<li><a href="">Test one</a></li>
-									<li><a href="">Test one</a></li>
-									<li><a href="">Test one</a></li>
-									<li><a href="">Test one</a></li>
-									<li><a href="">Test one</a></li>
-								</ol>
+								<h5>Nursemaid (<span><a class="link" href="/agency-nursemaid/<?php echo $agency['id']; ?>">View all</a></span>)</h5>
 								<br>
-								<p>Other Info</p>
-								<a class="link" href="/agency-detail/announcement/<?php echo $agency['id']; ?>">Announcements</a><br/>
+								<h5>Announcements (<span><a class="link" href="/agency-detail/announcement/<?php echo $agency['id']; ?>">View all</a></span>)</h5>
 							</div>
 						</div>
 						<div class="col-md-8">
@@ -236,15 +228,6 @@
 								<div class="tab-pane fade" id="overview" role="tabpanel" aria-labelledby="overview-tab">
 									<div class="row">
 										<div class="col-md-6">
-											<label>Total transactions</label>
-										</div>
-										<div class="col-md-6">
-											<p>##</p>
-										</div>
-									</div>
-									<hr>
-									<div class="row">
-										<div class="col-md-6">
 											<label>Total Nursemaid</label>
 										</div>
 										<div class="col-md-6">
@@ -270,15 +253,6 @@
 										</div>
 									</div>
 									<hr>
-									<div class="row">
-										<div class="col-md-6">
-											<label>Total Anouncement</label>
-										</div>
-										<div class="col-md-6">
-											<p>##</p>
-										</div>
-									</div>
-									<hr>
 								</div>
 
 								<!-- Transactions -->
@@ -288,7 +262,7 @@
 											<label>Total transactions</label>
 										</div>
 										<div class="col-md-6">
-											<p>##</p>
+											<p><?php echo isset($agency['total_transaction']) ? $agency['total_transaction'] : 0; ?></p>
 										</div>
 									</div>
 									<hr>
@@ -297,7 +271,7 @@
 											<label>Total Anouncement</label>
 										</div>
 										<div class="col-md-6">
-											<p>##</p>
+											<p><?php echo isset($agency['total_announcements']) ? $agency['total_announcements'] : 0; ?></p>
 										</div>
 									</div>
 									<hr>

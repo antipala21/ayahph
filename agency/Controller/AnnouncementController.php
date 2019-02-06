@@ -44,4 +44,32 @@ class AnnouncementController extends AppController {
 		}
 	}
 
+	public function detail () {
+		$id = isset($this->params['id']) ? $this->params['id'] : null;
+
+		$announcement = $this->Announcement->find('first', array(
+			'conditions' => array('Announcement.id' => $id)
+		));
+
+		if (!$announcement) {
+			return $this->redirect('/announcement');
+		}
+
+		$this->set('data', $announcement);
+
+		if ($this->request->is('post')) {
+			$data = $this->request->data;
+
+			if (isset($data['delete']) && $data['delete'] == 'delete') {
+				$this->Announcement->delete($data['Announcement']['id']);
+			} else {
+				$this->Announcement->clear();
+				$this->Announcement->read(array('content'), $data['Announcement']['id']);
+				$this->Announcement->set(array('content' => $data['Announcement']['content']));
+				$this->Announcement->save();
+			}
+			return $this->redirect('/announcement');
+		}
+	}
+
 }

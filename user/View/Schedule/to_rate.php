@@ -71,44 +71,58 @@
 	}
 
 	*{
-    margin: 0;
-    padding: 0;
-}
-.rate {
-    float: left;
-    height: 46px;
-    padding: 0 10px;
-}
-.rate:not(:checked) > input {
-    position:absolute;
-    top:-9999px;
-}
-.rate:not(:checked) > label {
-    float:right;
-    width:1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:30px;
-    color:#ccc;
-}
-.rate:not(:checked) > label:before {
-    content: '★ ';
-}
-.rate > input:checked ~ label {
-    color: #ffc700;    
-}
-.rate:not(:checked) > label:hover,
-.rate:not(:checked) > label:hover ~ label {
-    color: #deb217;  
-}
-.rate > input:checked + label:hover,
-.rate > input:checked + label:hover ~ label,
-.rate > input:checked ~ label:hover,
-.rate > input:checked ~ label:hover ~ label,
-.rate > label:hover ~ input:checked ~ label {
-    color: #c59b08;
-}
+		margin: 0;
+		padding: 0;
+	}
+	.rate {
+		float: left;
+		height: 46px;
+		padding: 0 10px;
+	}
+	.rate:not(:checked) > input {
+		position:absolute;
+		top:-9999px;
+	}
+	.rate:not(:checked) > label {
+		float:right;
+		width:1em;
+		overflow:hidden;
+		white-space:nowrap;
+		cursor:pointer;
+		font-size:30px;
+		color:#ccc;
+	}
+	.rate:not(:checked) > label:before {
+		content: '★ ';
+	}
+	.rate > input:checked ~ label {
+		color: #ffc700;    
+	}
+	.rate:not(:checked) > label:hover,
+	.rate:not(:checked) > label:hover ~ label {
+		color: #deb217;  
+	}
+	.rate > input:checked + label:hover,
+	.rate > input:checked + label:hover ~ label,
+	.rate > input:checked ~ label:hover,
+	.rate > input:checked ~ label:hover ~ label,
+	.rate > label:hover ~ input:checked ~ label {
+		color: #c59b08;
+	}
+
+	[type="radio"]:not(:checked) + label:before,
+	[type="radio"]:not(:checked) + label:after {
+		border: none;
+	}
+	[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:after {
+		background: none;
+	}
+	[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:before, [type="radio"].with-gap:checked + label:after {
+		border: none;
+	}
+	[type="radio"]:not(:checked) + label {
+		padding-left: 35px;
+	}
 
 /* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
 
@@ -160,15 +174,15 @@
 
 								<div class="rate">
 									<input type="radio" id="star5" name="rate" value="5" />
-									<label for="star5" title="5 Star">5 stars</label>
+									<label for="star5" title="5 Star"> </label>
 									<input type="radio" id="star4" name="rate" value="4" />
-									<label for="star4" title="4 Star">4 stars</label>
+									<label for="star4" title="4 Star"> </label>
 									<input type="radio" id="star3" name="rate" value="3" />
-									<label for="star3" title="3 Star">3 stars</label>
+									<label for="star3" title="3 Star"> </label>
 									<input type="radio" id="star2" name="rate" value="2" />
-									<label for="star2" title="2 Star">2 stars</label>
+									<label for="star2" title="2 Star"> </label>
 									<input type="radio" id="star1" name="rate" value="1" />
-									<label for="star1" title="1 Star">1 star</label>
+									<label for="star1" title="1 Star"> </label>
 								</div>
 
 								<?php echo $this->Form->input('comment', array(

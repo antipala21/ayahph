@@ -9,6 +9,9 @@
 					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'Agency' ? 'active' : ''; ?>" href="/admin/agencies" aria-expanded="false"><i class="fa fa-users" aria-hidden="true"></i><span class="hide-menu">Agencies</span></a>
 				</li>
 				<li>
+					<a class="waves-effect waves-dark" href="/admin/nursemaids" aria-expanded="false"><i class="fa fa-user-md" aria-hidden="true"></i><span class="hide-menu">Nursemaids</span></a>
+				</li>
+				<li>
 					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'User' ? 'active' : ''; ?>" href="/admin/users" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i><span class="hide-menu">Users</span></a>
 				</li>
 				<li>

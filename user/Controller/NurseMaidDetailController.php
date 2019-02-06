@@ -115,7 +115,10 @@ class NurseMaidDetailController extends AppController {
 				'NurseMaidRating.comment',
 				'NurseMaidRating.created'
 			),
-			'conditions' => array('NurseMaidRating.nurse_maid_id' => $nursemaid_id)
+			'conditions' => array(
+				'NurseMaidRating.nurse_maid_id' => $nursemaid_id,
+				'NurseMaidRating.status' => 1
+			)
 		));
 
 		$this->set('comments', $comments);

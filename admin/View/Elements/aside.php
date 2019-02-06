@@ -6,16 +6,19 @@
 			<ul id="sidebarnav">
 				<?php if ($this->Session->read('Auth.User')): ?>
 				<li>
-					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'Agency' ? 'active' : ''; ?>" href="/admin/agencies" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Agencies</span></a>
+					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'Agency' ? 'active' : ''; ?>" href="/admin/agencies" aria-expanded="false"><i class="fa fa-users" aria-hidden="true"></i><span class="hide-menu">Agencies</span></a>
 				</li>
 				<li>
-					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'User' ? 'active' : ''; ?>" href="/admin/users" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Users</span></a>
+					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'User' ? 'active' : ''; ?>" href="/admin/users" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i><span class="hide-menu">Users</span></a>
 				</li>
 				<li>
-					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'Transaction' ? 'active' : ''; ?>" href="/admin/transactions" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Transactions</span></a>
+					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'Transaction' ? 'active' : ''; ?>" href="/admin/transactions" aria-expanded="false"><i class="fa fa-briefcase" aria-hidden="true"></i><span class="hide-menu">Transactions</span></a>
 				</li>
 				<li>
-					<a class="waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-emoticon"></i><span class="hide-menu">Schedules</span></a>
+					<a class="waves-effect waves-dark" href="#" aria-expanded="false"><i class="fa fa-calendar-check-o" aria-hidden="true"></i><span class="hide-menu">Schedules</span></a>
+				</li>
+				<li>
+					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'Transaction' ? 'active' : ''; ?>" href="/admin/nursemaid_ratings" aria-expanded="false"><i class="fa fa-comments-o" aria-hidden="true"></i><span class="hide-menu">Rating and Feedbacks</span></a>
 				</li>
 				<?php endif; ?>
 			</ul>

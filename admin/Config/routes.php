@@ -30,9 +30,11 @@
 	Router::connect('/transactions', array('controller' => 'Transaction', 'action' => 'index'));
 	Router::connect('/users', array('controller' => 'User', 'action' => 'index'));
 	Router::connect('/agencies', array('controller' => 'Agency', 'action' => 'index'));
+	Router::connect('/nursemaid_ratings', array('controller' => 'NurseMaidRating', 'action' => 'index'));
 
 	Router::connect('/agency-detail/:id', array('controller' => 'Agency', 'action' => 'detail'));
 	Router::connect('/user-detail/:id', array('controller' => 'User', 'action' => 'detail'));
+	Router::connect('/nursemaid_raing-detail/:id', array('controller' => 'NurseMaidRating', 'action' => 'detail'));
 
 	Router::connect('/logout', array('controller' => 'Login', 'action' => 'logout'));
 

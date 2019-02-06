@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 30, 2019 at 04:59 PM
+-- Generation Time: Feb 06, 2019 at 04:25 PM
 -- Server version: 5.6.37
 -- PHP Version: 7.1.8
 
@@ -74,7 +74,7 @@ INSERT INTO `agencies` (`id`, `email`, `password`, `status`, `name`, `descriptio
 (1, 'agency1@test.com', '99fbb8b890506f686aa62915e90bba06a2bd07d0', 1, 'Agency One Edit e', 'short edit eee is a test description Edtdfdf', 'Edited descritpon Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation', 'Juan', 'Cebu City phf', '09876423000eee', '', 1, 1, '', '2018-12-24 09:57:38', '2019-01-23 14:48:04'),
 (4, 'agency2@test.com', '99fbb8b890506f686aa62915e90bba06a2bd07d0', 1, 'Number 2 Agency', 'This is a test description Edtdfdf', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation', 'Sample', 'Cebu city', '09876423', '', 0, 1, '', '2019-01-05 15:33:46', '2019-01-05 15:33:46'),
 (5, 'agency3@test.com', '99fbb8b890506f686aa62915e90bba06a2bd07d0', 1, 'agency number twe', 'This is a test description Edtdfdf', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation', 'Test', 'Cebu city', '09876423', '', 0, 1, '', '2019-01-05 15:45:38', '2019-01-05 15:45:38'),
-(6, 'agency4@test.com', '99fbb8b890506f686aa62915e90bba06a2bd07d0', 0, 'testtest', 'This is a test description Edtdfdf', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation', 'tset se t', 'testtest ', '009090909090', '', 0, 0, '', '2019-01-05 15:48:44', '2019-01-17 15:35:03');
+(6, 'agency4@test.com', '99fbb8b890506f686aa62915e90bba06a2bd07d0', 1, 'testtest', 'This is a test description Edtdfdf', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation', 'tset se t', 'testtest ', '009090909090', '', 1, 1, '', '2019-01-05 15:48:44', '2019-02-06 13:14:24');
 
 -- --------------------------------------------------------
 
@@ -88,7 +88,14 @@ CREATE TABLE IF NOT EXISTS `agency_legal_documents` (
   `filename` varchar(100) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `agency_legal_documents`
+--
+
+INSERT INTO `agency_legal_documents` (`id`, `agency_id`, `filename`, `created`, `modified`) VALUES
+(1, 6, '6-c08b6b17376ef39d3762a0eeb8c1cb160_file.jpg', '2019-02-06 13:12:35', '2019-02-06 13:12:35');
 
 -- --------------------------------------------------------
 
@@ -103,14 +110,15 @@ CREATE TABLE IF NOT EXISTS `announcements` (
   `status` tinyint(4) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `announcements`
 --
 
 INSERT INTO `announcements` (`id`, `agency_id`, `content`, `status`, `created`, `modified`) VALUES
-(1, 1, 'teset announcement', 0, '2019-01-30 15:03:09', '2019-01-30 15:03:09');
+(1, 1, 'teset announcement edit', 0, '2019-01-30 15:03:09', '2019-02-06 13:59:47'),
+(2, 6, 'adfad dasf sd', 0, '2019-02-06 13:47:22', '2019-02-06 13:47:22');
 
 -- --------------------------------------------------------
 
@@ -153,21 +161,21 @@ CREATE TABLE IF NOT EXISTS `nurse_maids` (
   `image_url` varchar(100) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `nurse_maids`
 --
 
 INSERT INTO `nurse_maids` (`id`, `agency_id`, `first_name`, `middle_name`, `last_lname`, `self_introduction`, `gender`, `birthdate`, `status`, `address`, `phone_number`, `image_url`, `created`, `modified`) VALUES
-(1, 1, 'asdf', NULL, 'asdf', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation', 1, '2010-01-05', 1, 'Cebu City', '097967546', '', '2019-01-05 17:43:36', '2019-01-05 17:43:36'),
+(1, 1, 'asdf', NULL, 'asdf', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation', 1, '2010-01-05', 0, 'Cebu City', '097967546', '', '2019-01-05 17:43:36', '2019-02-06 16:24:51'),
 (6, 1, 'nursemaid one', NULL, 'sdfjs', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation', 1, '1994-01-05', 1, 'Mandaue City', '', '', '2019-01-05 18:04:00', '2019-01-05 18:04:00'),
 (7, 1, 'asdff', NULL, 'sfdsf', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation', 0, '1990-01-06', 1, 'Talisay City', '', '', '2019-01-06 06:57:29', '2019-01-06 06:57:29'),
-(8, 7, 'test nurse', NULL, 'etst', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation', 1, '2000-01-06', 1, 'Lapu-lapu City', '', '', '2019-01-06 07:03:31', '2019-01-06 07:03:31'),
 (9, 1, 'Nurse one', 'midle', NULL, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation', 1, '2010-01-07', 1, 'Cebu City', '', '', '2019-01-07 15:34:16', '2019-01-07 15:34:16'),
 (10, 1, 'Nurse two', 'middel two', NULL, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation', 0, '2010-12-10', 1, 'Cebu City', '', '', '2019-01-07 15:35:04', '2019-01-07 15:35:04'),
-(16, 14, 'dfd', 'dfdf', 'sdfdsf', 'sdfdsf', 1, '2009-01-01', 1, 'asdfbb b', '', '', '2019-01-27 14:41:46', '2019-01-27 14:42:58'),
-(17, 1, 'ggwp', 'ggwp', NULL, NULL, 1, '2009-01-27', 1, 'ggwp', '879768978', '', '2019-01-30 15:13:46', '2019-01-30 15:13:46');
+(17, 1, 'ggwp', 'ggwp', 'dasf afa fads fad fad fad fd ', ' adf adf af f afd asf dfd fad daf afa ', 1, '2009-01-27', 0, 'ggwp', '879768978', '', '2019-01-30 15:13:46', '2019-01-31 15:33:14'),
+(18, 5, 'ggww', 'gwgwgw', NULL, NULL, 1, '2019-01-09', 1, 'asdfbb b', '22323', '', '2019-01-31 15:05:14', '2019-01-31 15:05:14'),
+(19, 6, 'ghgh', 'ghgh', NULL, NULL, 1, '2010-02-10', 1, 'Cebu', '475667567', '', '2019-02-06 13:14:52', '2019-02-06 13:14:52');
 
 -- --------------------------------------------------------
 
@@ -181,18 +189,21 @@ CREATE TABLE IF NOT EXISTS `nurse_maid_ratings` (
   `agency_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `rate` int(11) NOT NULL DEFAULT '5',
+  `status` tinyint(4) NOT NULL DEFAULT '1',
   `comment` text NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `nurse_maid_ratings`
 --
 
-INSERT INTO `nurse_maid_ratings` (`id`, `nurse_maid_id`, `agency_id`, `user_id`, `rate`, `comment`, `created`, `modified`) VALUES
-(8, 1, 1, 22, 5, 'nuuu', '2019-01-30 16:19:59', '2019-01-30 16:19:59'),
-(9, 1, 1, 22, 3, 'sfdsfdsf', '2019-01-30 16:30:32', '2019-01-30 16:30:32');
+INSERT INTO `nurse_maid_ratings` (`id`, `nurse_maid_id`, `agency_id`, `user_id`, `rate`, `status`, `comment`, `created`, `modified`) VALUES
+(10, 1, 1, 22, 5, 1, 'sdfdfd', '2019-01-31 15:08:25', '2019-01-31 15:08:25'),
+(11, 1, 1, 22, 4, 1, 'sdfdfd', '2019-01-31 15:08:30', '2019-01-31 15:08:30'),
+(12, 18, 5, 22, 3, 1, 'sdfdfd', '2019-01-31 15:08:36', '2019-01-31 15:08:36'),
+(13, 19, 6, 14, 2, 1, 'asdfdsf', '2019-02-06 13:26:57', '2019-02-06 13:26:57');
 
 -- --------------------------------------------------------
 
@@ -214,21 +225,19 @@ CREATE TABLE IF NOT EXISTS `transactions` (
   `type` tinyint(4) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `transactions`
 --
 
 INSERT INTO `transactions` (`id`, `agency_id`, `nurse_maid_id`, `user_id`, `comment`, `user_phone_number`, `user_address`, `transaction_start`, `transaction_end`, `status`, `type`, `created`, `modified`) VALUES
-(1, 1, 1, 22, 'test hire', '3232323', 'mambaling', '2019-01-30 22:30:00', '2019-01-30 22:30:00', 3, 0, '2019-01-30 14:30:15', '2019-01-30 16:19:59'),
-(3, 1, 1, 22, 'asdf', 'asdfdsf', 'asdfdsf', '2019-01-30 23:24:00', '2019-01-30 23:24:00', 0, 0, '2019-01-30 15:24:22', '2019-01-30 16:21:17'),
-(4, 1, 1, 22, 'sdfdsf', '4354535', 'dddggg', '2019-01-30 23:26:00', '2019-01-30 23:26:00', 0, 0, '2019-01-30 15:26:52', '2019-01-30 15:26:52'),
-(5, 1, 1, 22, 'adfdsf', '243432', 'dsfdsf', '2019-01-30 23:27:00', '2019-01-30 23:27:00', 0, 0, '2019-01-30 15:27:51', '2019-01-30 15:27:50'),
-(6, 1, 1, 22, 'adfdsf', '243432', 'dsfdsf', '2019-01-30 23:27:00', '2019-01-30 23:27:00', 0, 0, '2019-01-30 15:29:45', '2019-01-30 15:29:45'),
-(7, 1, 1, 22, 'adfdsf', '243432', 'dsfdsf', '2019-01-30 23:27:00', '2019-01-30 23:27:00', 0, 0, '2019-01-30 15:30:07', '2019-01-30 15:30:07'),
-(8, 1, 1, 22, 'adfdsf', '243432', 'dsfdsf', '2019-01-30 23:27:00', '2019-01-30 23:27:00', 0, 0, '2019-01-30 15:30:59', '2019-01-30 15:30:59'),
-(10, 1, 1, 22, 'asdf', 'asdf', 'asdf', '2019-01-31 00:21:00', '2019-01-31 00:21:00', 3, 0, '2019-01-30 16:21:09', '2019-01-30 16:30:32');
+(1, 1, 1, 22, 'test hire', '3232323', 'mambaling', '2019-01-30 22:30:00', '2019-01-30 22:30:00', 3, 0, '2019-01-30 14:30:15', '2019-01-31 15:08:26'),
+(3, 1, 1, 22, 'asdf', 'asdfdsf', 'asdfdsf', '2019-01-30 23:24:00', '2019-01-30 23:24:00', 1, 0, '2019-01-30 15:24:22', '2019-01-31 14:46:51'),
+(10, 1, 1, 22, 'asdf', 'asdf', 'asdf', '2019-01-31 00:21:00', '2019-01-31 00:21:00', 3, 0, '2019-01-30 16:21:09', '2019-01-31 15:08:30'),
+(11, 1, 1, 22, 'wefdsf', 'adsfdsf', 'adsff', '2019-01-31 23:04:00', '2019-01-31 23:04:00', 0, 0, '2019-01-31 15:04:40', '2019-01-31 15:04:40'),
+(12, 5, 18, 22, 'adfdf', 'adsfdasf', 'adsfd', '2019-01-31 23:05:00', '2019-01-31 23:05:00', 3, 0, '2019-01-31 15:05:38', '2019-01-31 15:08:36'),
+(13, 6, 19, 14, 'tete', '44343', 'sfdf', '2019-02-06 21:15:00', '2019-02-06 21:15:00', 3, 0, '2019-02-06 13:15:29', '2019-02-06 13:26:57');
 
 -- --------------------------------------------------------
 
@@ -351,12 +360,12 @@ ALTER TABLE `agencies`
 -- AUTO_INCREMENT for table `agency_legal_documents`
 --
 ALTER TABLE `agency_legal_documents`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `announcements`
 --
 ALTER TABLE `announcements`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `hire_requests`
 --
@@ -366,17 +375,17 @@ ALTER TABLE `hire_requests`
 -- AUTO_INCREMENT for table `nurse_maids`
 --
 ALTER TABLE `nurse_maids`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `nurse_maid_ratings`
 --
 ALTER TABLE `nurse_maid_ratings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `users`
 --

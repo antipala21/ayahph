@@ -102,7 +102,16 @@ class myTools{
 		return $result;
 	}
 
-	
+	public static function getProfileImgSrc ($filename) {
+		if (empty($filename)) {
+			return '/images/picture.jpg';
+		}
+		if (file_exists(ROOT . '/user/webroot/images/' . $filename)) {
+			return '/images/' . $filename;
+		}
+		return '/images/picture.jpg';
+	}
+
 	/**
 		check server host
 	*/

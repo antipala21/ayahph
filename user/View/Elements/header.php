@@ -42,7 +42,8 @@
 				<!-- Profile -->
 				<!-- ============================================================== -->
 				<li class="nav-item dropdown">
-				    <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="/user/account"><img src="/user/images/users/1.jpg" alt="user" class="profile-pic m-r-10" /><?php echo $this->Session->read('Auth.User.email') ?></a>
+					<?php $url = $this->Session->read('Auth.User.image_url') ? $this->Session->read('Auth.User.id') . '_profile.jpg' : 'picture.jpg'; ?>
+					<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="/user/account"><img src="/user/images/<?php echo $url; ?>" alt="user" class="profile-pic m-r-10" /><?php echo $this->Session->read('Auth.User.email') ?></a>
 				</li>
 			</ul>
 			<?php endif; ?>

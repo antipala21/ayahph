@@ -32,7 +32,10 @@
 			</ul>
 			<?php if (!$this->Session->read('Auth.User') && !$this->Session->read('user_id')): ?>
 			<div class="text-center m-t-30">
-				<a href="/user/login" class="btn waves-effect waves-light btn-warning hidden-md-down">Login</a>
+				<a href="/user/login" class="btn waves-effect waves-light btn-warning hidden-md-down">Login as Client</a>
+				<br>
+				<br>
+				<a href="/agency/login" class="btn waves-effect waves-light btn-warning hidden-md-down">Login as Agency</a>
 			</div>
 			<?php endif; ?>
 		</nav>

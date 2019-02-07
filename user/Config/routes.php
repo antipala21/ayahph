@@ -30,6 +30,7 @@
 	Router::connect('/register/legal-documents/*', array('controller' => 'Register', 'action' => 'legalDocuments'));
 	Router::connect('/register-legal-documents/', array('controller' => 'Register', 'action' => 'legalDocuments'));
 	Router::connect('/register-legal-documents/delete', array('controller' => 'Account', 'action' => 'legalDocumentsDelete'));
+	Router::connect('/checkEmail', array('controller' => 'Account', 'action' => 'checkEmail'));
 	
 	Router::connect('/token', array('controller' => 'Register', 'action' => 'token'));
 
@@ -46,6 +47,7 @@
 	Router::connect('/ajax/send_hire_request', array('controller' => 'Transaction', 'action' => 'saveRequest'));
 
 	Router::connect('/account/requirements', array('controller' => 'Account', 'action' => 'updateRequirements'));
+	Router::connect('/account/ajax_image_upload', array('controller' => 'Account', 'action' => 'ajax_image_upload'));
 
 	Router::connect('/schedules', array('controller' => 'Schedule', 'action' => 'index'));
 	Router::connect('/schedule/detail/:schedule_id', array('controller' => 'Schedule', 'action' => 'detail'));

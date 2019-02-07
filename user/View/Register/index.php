@@ -37,7 +37,7 @@
 							'class'=>'form-control',
 						)); ?>
 						<div class="invalid-feedback">
-							Please provide an email.
+							Please provide a valid email.
 						</div>
 					</div>
 					<div class="form-row">
@@ -151,7 +151,30 @@
 
 		function validateEmail($email) {
 			var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-			return emailReg.test( $email );
+			return emailReg.test($email);
+		}
+
+		function validEmail ($email) {
+			$.ajax({
+				type: 'POST',
+				url: '/checkEmail',
+				data: {
+					email : $email
+				},
+				success: function(data){
+					var res = JSON.parse(data);
+					console.log(res.result);
+					return res.result;
+					// if (res.result) {
+					// 	return false;
+					// }
+					// return true;
+				},
+				error: function(error){
+					console.log(error);
+					return false;
+				}
+			});
 		}
 
 		$(document).keypress(function(e) {
@@ -160,9 +183,12 @@
 			}
 		});
 
-		function invalidateInput (el) {
+		function invalidateInput (el, text = false) {
 			$(el).css('border-color', '#dc3545');
 			$(el).next().css('display', 'block');
+			if (text) {
+				$(el).next().text(text);
+			}
 		}
 
 		var successStep =  false;
@@ -187,9 +213,34 @@
 					// email validtion
 					if (_email != '') {
 						if (!validateEmail(_email)) {
-							invalidateInput('#UserEmail');
+							invalidateInput('#UserEmail', 'Please provide a valid email.');
 							return false;
 						}
+						// else if (!validEmail(_email)) {
+						// 	console.log('wtf');
+						// 	invalidateInput('#UserEmail', 'Email is already taken.');
+						// 	return false;
+						// }
+						$.ajax({
+							type: 'POST',
+							url: '/checkEmail',
+							data: {
+								email : _email
+							},
+							success: function(data){
+								var res = JSON.parse(data);
+								console.log(res.result);
+								if (res.result) {
+									invalidateInput('#UserEmail', 'Email is already taken.');
+									return false;
+								}
+								return true;
+							},
+							error: function(error){
+								console.log(error);
+								return false;
+							}
+						});
 					} else {
 						invalidateInput('#UserEmail');
 						return false;

@@ -8,10 +8,19 @@ class AccountController extends AppController {
 
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->Auth->allow('index', 'updateRequirements');
+		$this->Auth->allow(
+			'index',
+			'updateRequirements',
+			'checkEmail'
+		);
 	}
 
 	public function index () {
+		header("Pragma-directive: no-cache");
+		header("Cache-directive: no-cache");
+		header("Cache-control: no-cache");
+		header("Pragma: no-cache");
+		header("Expires: 0");
 
 		$this->User->virtualFields['total_transaction'] = "SELECT COUNT(*) FROM `transactions` WHERE `user_id` = `User`.`id`";
 		$user = $this->User->find('first', array(
@@ -119,6 +128,45 @@ class AccountController extends AppController {
 			$this->AgencyLegalDocument->delete($data['id']);
 			$filename = 'img/agency_permit/' . $data['filename'];
 			unlink($filename);
+			return true;
+		}
+	}
+
+	public function checkEmail () {
+		$this->autoRender = false;
+		if ($this->request->is('ajax')) {
+			$data = $this->request->data;
+			$result['result'] = false;
+
+			$check = $this->User->find('count', array(
+				'conditions' => array('User.email' => $data['email'])
+			));
+			if ($check) {
+				$result['result'] = true;
+			}
+			return json_encode($result);
+		}
+	}
+
+	public function ajax_image_upload () {
+		$this->layout = false;
+		$this->autoRender = false;
+
+		if ($this->request->is('ajax')) {
+
+			$data = $this->request->data['profile-image'];
+
+			list($type, $data) = explode(';', $data);
+			list(, $data)      = explode(',', $data);
+			$data = base64_decode($data);
+
+			$fileName = $this->Auth->user('id') . '_' . 'profile' . '.jpg';
+
+			file_put_contents('images/'. $fileName, $data);
+
+			$this->User->clear();
+			$this->User->read(null, $this->Auth->user('id'));
+			$this->User->saveField('image_url', $fileName);
 			return true;
 		}
 	}

@@ -124,7 +124,7 @@
 					<div class="row">
 						<div class="col-md-4">
 							<div class="profile-img">
-								<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+								<img src="<?php echo myTools::getProfileImgSrcAgency($agency['image_url']); ?>" alt=""/>
 							</div>
 						</div>
 						<div class="col-md-6">
@@ -148,6 +148,7 @@
 					</div>
 					<div class="row">
 						<div class="col-md-4">
+							<hr>
 							<div class="profile-work">
 								<h5>Nursemaid (<span><a class="link" href="/agency-nursemaid/<?php echo $agency['id']; ?>">View all</a></span>)</h5>
 								<br>

@@ -47,7 +47,7 @@
 									<div class="card-block">
 										<div class="profiletimeline">
 											<div class="sl-item">
-												<div class="sl-left"> <img src="/user/images/users/1.jpg" alt="user" class="img-circle"> </div>
+												<div class="sl-left"> <img src="<?php echo myTools::getProfileImgSrcAgency($value['Agency']['image_url']); ?>" alt="user" class="img-circle"> </div>
 												<div class="sl-right">
 													<div><a href="#" class="link"><?php echo isset($value['Agency']['name']) ? $value['Agency']['name'] : '-' ?></a>
 														<p><?php echo isset($value['Agency']['short_description']) ? $value['Agency']['short_description'] : '-' ?></p>

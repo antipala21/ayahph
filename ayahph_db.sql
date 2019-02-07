@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 06, 2019 at 04:25 PM
+-- Generation Time: Feb 07, 2019 at 02:59 PM
 -- Server version: 5.6.37
 -- PHP Version: 7.1.8
 
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `agencies` (
   `representative_name` varchar(50) NOT NULL,
   `address` varchar(100) NOT NULL,
   `phone_number` varchar(50) NOT NULL,
-  `image_url` varchar(50) NOT NULL,
+  `image_url` varchar(50) DEFAULT NULL,
   `business_permit_flg` tinyint(4) NOT NULL DEFAULT '0',
   `display_flg` tinyint(4) NOT NULL DEFAULT '0',
   `api_token` varchar(100) NOT NULL,
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `agencies` (
 --
 
 INSERT INTO `agencies` (`id`, `email`, `password`, `status`, `name`, `description`, `short_description`, `representative_name`, `address`, `phone_number`, `image_url`, `business_permit_flg`, `display_flg`, `api_token`, `created`, `modified`) VALUES
-(1, 'agency1@test.com', '99fbb8b890506f686aa62915e90bba06a2bd07d0', 1, 'Agency One Edit e', 'short edit eee is a test description Edtdfdf', 'Edited descritpon Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation', 'Juan', 'Cebu City phf', '09876423000eee', '', 1, 1, '', '2018-12-24 09:57:38', '2019-01-23 14:48:04'),
+(1, 'agency1@test.com', '99fbb8b890506f686aa62915e90bba06a2bd07d0', 1, 'Agency One Edit e', 'short edit eee is a test description Edtdfdf', 'Edited descritpon Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation', 'Juan', 'Cebu City phf', '09876423000eee', '1_profile.jpg', 1, 1, '', '2018-12-24 09:57:38', '2019-02-07 14:56:29'),
 (4, 'agency2@test.com', '99fbb8b890506f686aa62915e90bba06a2bd07d0', 1, 'Number 2 Agency', 'This is a test description Edtdfdf', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation', 'Sample', 'Cebu city', '09876423', '', 0, 1, '', '2019-01-05 15:33:46', '2019-01-05 15:33:46'),
 (5, 'agency3@test.com', '99fbb8b890506f686aa62915e90bba06a2bd07d0', 1, 'agency number twe', 'This is a test description Edtdfdf', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation', 'Test', 'Cebu city', '09876423', '', 0, 1, '', '2019-01-05 15:45:38', '2019-01-05 15:45:38'),
 (6, 'agency4@test.com', '99fbb8b890506f686aa62915e90bba06a2bd07d0', 1, 'testtest', 'This is a test description Edtdfdf', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation', 'tset se t', 'testtest ', '009090909090', '', 1, 1, '', '2019-01-05 15:48:44', '2019-02-06 13:14:24');
@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS `announcements` (
   `status` tinyint(4) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `announcements`
@@ -161,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `nurse_maids` (
   `image_url` varchar(100) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `nurse_maids`
@@ -256,6 +256,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `gender` varchar(1) NOT NULL DEFAULT '1',
   `phone_number` varchar(100) NOT NULL,
   `image_url` varchar(100) DEFAULT NULL,
+  `address` varchar(100) DEFAULT NULL,
   `api_token` varchar(100) DEFAULT NULL,
   `city` int(11) NOT NULL,
   `municipality` int(11) NOT NULL,
@@ -265,17 +266,19 @@ CREATE TABLE IF NOT EXISTS `users` (
   `valid_id_url` varchar(50) DEFAULT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `email`, `password`, `status`, `display_name`, `fname`, `lname`, `gender`, `phone_number`, `image_url`, `api_token`, `city`, `municipality`, `brangay`, `street`, `house_number`, `valid_id_url`, `created`, `modified`) VALUES
-(1, 'user1@test.com', 'fcf401f9fe8f4b4db40acf88b387064afb127388', 0, 'Nancy Binaygggg', NULL, 'Nancy gg', '0', '099999', NULL, NULL, 0, 0, '', NULL, NULL, '1_1548859109Nancy_Binaygggg.jpg', '2018-12-24 10:17:02', '2019-01-30 14:38:29'),
-(2, 'user2@test.com', 'fcf401f9fe8f4b4db40acf88b387064afb127388', 0, 'uiyuiui', NULL, NULL, '1', '', NULL, NULL, 0, 0, '', NULL, NULL, NULL, '2019-01-15 15:26:20', '2019-01-15 15:26:20'),
-(22, 'test@test.com', 'fcf401f9fe8f4b4db40acf88b387064afb127388', 0, 'adsfd', NULL, NULL, '1', '', NULL, NULL, 0, 0, '', NULL, NULL, '22_1548860313adsfd.jpg', '2019-01-30 14:58:25', '2019-01-30 14:58:33'),
-(14, 'user10@test.com', 'fcf401f9fe8f4b4db40acf88b387064afb127388', 0, 'Tin2x', NULL, NULL, '1', '', NULL, NULL, 0, 0, '', NULL, NULL, NULL, '2019-01-29 14:40:29', '2019-01-29 15:04:05');
+INSERT INTO `users` (`id`, `email`, `password`, `status`, `display_name`, `fname`, `lname`, `gender`, `phone_number`, `image_url`, `address`, `api_token`, `city`, `municipality`, `brangay`, `street`, `house_number`, `valid_id_url`, `created`, `modified`) VALUES
+(1, 'user1@test.com', 'fcf401f9fe8f4b4db40acf88b387064afb127388', 0, 'Nancy Binaygggg', NULL, 'Nancy gg', '0', '099999', NULL, NULL, NULL, 0, 0, '', NULL, NULL, '1_1548859109Nancy_Binaygggg.jpg', '2018-12-24 10:17:02', '2019-01-30 14:38:29'),
+(2, 'user2@test.com', 'fcf401f9fe8f4b4db40acf88b387064afb127388', 0, 'uiyuiui', NULL, NULL, '1', '', NULL, NULL, NULL, 0, 0, '', NULL, NULL, NULL, '2019-01-15 15:26:20', '2019-01-15 15:26:20'),
+(22, 'test@test.com', 'fcf401f9fe8f4b4db40acf88b387064afb127388', 0, 'adsfd', NULL, NULL, '1', '', NULL, NULL, NULL, 0, 0, '', NULL, NULL, '22_1548860313adsfd.jpg', '2019-01-30 14:58:25', '2019-01-30 14:58:33'),
+(14, 'user10@test.com', 'fcf401f9fe8f4b4db40acf88b387064afb127388', 0, 'Tin2x', NULL, NULL, '1', '', NULL, NULL, NULL, 0, 0, '', NULL, NULL, NULL, '2019-01-29 14:40:29', '2019-01-29 15:04:05'),
+(23, 'user12@test.com', 'fcf401f9fe8f4b4db40acf88b387064afb127388', 0, 'User display name', NULL, NULL, '1', '', '23_profile.jpg', 'Mandaue City', NULL, 0, 0, '', NULL, NULL, NULL, '2019-02-07 13:14:09', '2019-02-07 14:12:19'),
+(24, 'user133@test.com', 'fcf401f9fe8f4b4db40acf88b387064afb127388', 0, 'test', NULL, NULL, '1', '', '24_profile.jpg', 'test', NULL, 0, 0, '', NULL, NULL, NULL, '2019-02-07 14:15:18', '2019-02-07 14:20:14');
 
 --
 -- Indexes for dumped tables
@@ -365,7 +368,7 @@ ALTER TABLE `agency_legal_documents`
 -- AUTO_INCREMENT for table `announcements`
 --
 ALTER TABLE `announcements`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `hire_requests`
 --
@@ -375,7 +378,7 @@ ALTER TABLE `hire_requests`
 -- AUTO_INCREMENT for table `nurse_maids`
 --
 ALTER TABLE `nurse_maids`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `nurse_maid_ratings`
 --
@@ -390,7 +393,7 @@ ALTER TABLE `transactions`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

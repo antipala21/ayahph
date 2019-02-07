@@ -112,6 +112,16 @@ class myTools{
 		return '/images/picture.jpg';
 	}
 
+	public static function getProfileImgSrcAgency ($filename) {
+		if (empty($filename)) {
+			return '/agency/images/picture.jpg';
+		}
+		if (file_exists(ROOT . '/agency/webroot/images/' . $filename)) {
+			return '/agency/images/' . $filename;
+		}
+		return '/agency/images/picture.jpg';
+	}
+
 	/**
 		check server host
 	*/

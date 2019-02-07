@@ -101,6 +101,10 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	<script src="/agency/js/bootstrap-notify.min.js"></script>
 	<script src="/agency/js/notification.js"></script>
 
+	<!-- Modal -->
+	<script src="/js/jquery.modal.min.js"></script>
+	<link rel="stylesheet" href="/css/jquery.modal.min.css" />
+
 	<script type="text/javascript">
 		var hire_request_count = <?php echo isset($hire_request_count) ? $hire_request_count : 0; ?>;
 		var is_login = <?php echo $this->Session->read('Auth.User.id') ? 1 : 0; ?>;

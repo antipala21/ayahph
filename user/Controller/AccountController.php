@@ -11,7 +11,8 @@ class AccountController extends AppController {
 		$this->Auth->allow(
 			'index',
 			'updateRequirements',
-			'checkEmail'
+			'checkEmail',
+			'logout'
 		);
 	}
 
@@ -172,6 +173,7 @@ class AccountController extends AppController {
 	}
 
 	public function logout() {
+		$this->Session->destroy();
 		$this->redirect($this->Auth->logout());
 	}
 

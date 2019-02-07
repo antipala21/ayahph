@@ -143,7 +143,11 @@
 											'style' => 'display:none'
 									)); ?>
 							</div>
-							<button class="btn btn-primary hide" id="save_image">Save Image</button>
+							<center>
+								<button class="btn btn-primary hide" id="save_image">Save Image</button>
+							</center>
+							<hr>
+							<br>
 						</div>
 						<div class="col-md-6">
 							<div class="profile-head">

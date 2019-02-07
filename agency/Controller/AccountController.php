@@ -9,10 +9,16 @@ class AccountController extends AppController {
 
 	public function beforeFilter() {
 		parent::beforeFilter();
-		// $this->Auth->allow('index');
+		$this->Auth->allow('logout');
 	}
 
 	public function index () {
+
+		header("Pragma-directive: no-cache");
+		header("Cache-directive: no-cache");
+		header("Cache-control: no-cache");
+		header("Pragma: no-cache");
+		header("Expires: 0");
 
 		$agency = $this->Agency->find('first', array(
 			'conditions' => array('Agency.id' => $this->Auth->user('id'))
@@ -90,7 +96,31 @@ class AccountController extends AppController {
 		}
 	}
 
+	public function ajax_image_upload () {
+		$this->layout = false;
+		$this->autoRender = false;
+
+		if ($this->request->is('ajax')) {
+
+			$data = $this->request->data['profile-image'];
+
+			list($type, $data) = explode(';', $data);
+			list(, $data)      = explode(',', $data);
+			$data = base64_decode($data);
+
+			$fileName = $this->Auth->user('id') . '_' . 'profile' . '.jpg';
+
+			file_put_contents('images/'. $fileName, $data);
+
+			$this->Agency->clear();
+			$this->Agency->read(null, $this->Auth->user('id'));
+			$this->Agency->saveField('image_url', $fileName);
+			return true;
+		}
+	}
+
 	public function logout() {
+		$this->Session->destroy();
 		$this->redirect($this->Auth->logout());
 	}
 

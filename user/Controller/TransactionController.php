@@ -29,7 +29,6 @@ class TransactionController extends AppController {
 			$result['sucess'] = false;
 
 			$transaction_time = explode(' - ', $data['transaction_time']);
-			$this->log('[transaction_time] ' . json_encode($transaction_time), 'debug');
 
 			$transaction_start = $transaction_time[0];
 
@@ -38,11 +37,21 @@ class TransactionController extends AppController {
 			$data['transaction_start'] = $transaction_start;
 			$data['transaction_end'] = $transaction_end;
 
-			$this->log('[data] ' . json_encode($data), 'debug');
+			// check duplicate transactions
+			$check = $this->Transaction->find('count', array(
+				'conditions' => array(
+					'Transaction.user_id' => $this->Auth->user('id'),
+					'Transaction.nurse_maid_id' => $data['nurse_maid_id'],
+					'Transaction.status' => 0
+				)
+			));
 
-			$this->Transaction->set($data);
-			if ($this->Transaction->save()) {
-				$result['sucess'] = true;
+			if (!$check) {
+				$this->Transaction->create();
+				$this->Transaction->set($data);
+				if ($this->Transaction->save()) {
+					$result['sucess'] = true;
+				}
 			}
 
 			return json_encode($result);

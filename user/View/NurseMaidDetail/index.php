@@ -126,6 +126,15 @@
 	</div>
 </div>
 
+<a href="#fail_modal" id="trigger_fail_modal" class="btn btn-info" rel="modal:open"></a>
+<div class="modal hide" id="fail_modal">
+	<div>
+		<p>Fail send request!</p>
+		<p>1. Already requested for this nursemaid.</p>
+		<p>2. Network Error.</p>
+	</div>
+</div>
+
 <?php echo $this->Form->create('Transaction',
 		array(
 			'id' => 'userHireForm',
@@ -221,12 +230,12 @@
 			var user_address = $('#TransactionUserAddress').val();
 			var transaction_time = $('#TransactionTransactionTime').val();
 
-			console.log('nurse_maid_id ' + nurse_maid_id);
-			console.log('agency_id ' + agency_id);
-			console.log('comment ' + comment);
-			console.log('phone_number ' + phone_number);
-			console.log('user_address ' + user_address);
-			console.log('transaction_time ' + transaction_time);
+			// console.log('nurse_maid_id ' + nurse_maid_id);
+			// console.log('agency_id ' + agency_id);
+			// console.log('comment ' + comment);
+			// console.log('phone_number ' + phone_number);
+			// console.log('user_address ' + user_address);
+			// console.log('transaction_time ' + transaction_time);
 
 			$.ajax({
 				type: 'POST',
@@ -242,14 +251,17 @@
 				// dataType: 'json',
 				success: function(data){
 					var res = JSON.parse(data);
+					if (res.sucess) {
+						$('.close-modal').click();
+						$('#trigger_success_modal').click();
+					} else {
+						$('.close-modal').click();
+						$('#trigger_fail_modal').click();
+					}
 				},
 				error: function(error){
 					console.log('error' + error);
 					console.log(error);
-				},
-				complete: function(){
-					$('.close-modal').click();
-					$('#trigger_success_modal').click();
 				}
 			});
 

@@ -51,7 +51,10 @@
 										<a href="/agency/nursemaid/detail/<?php echo $value['NurseMaid']['id']; ?>"><?php echo $value['NurseMaid']['id']; ?></a>
 									</td>
 									<td><?php echo isset($value['NurseMaid']['first_name']) ? $value['NurseMaid']['first_name'] : '' ?></td>
-									<td><?php echo isset($value['NurseMaid']['gender']) ? Configure::read('gender_array')[$value['NurseMaid']['gender']] : '' ?></td>
+									<td><?php
+										$_gender = Configure::read('gender_array');
+										echo isset($value['NurseMaid']['gender']) ? $_gender[$value['NurseMaid']['gender']] : '';
+										?></td>
 									<td><?php
 										if(isset($value['NurseMaid']['birthdate'])):
 											$datetime1 = new DateTime($value['NurseMaid']['birthdate']);

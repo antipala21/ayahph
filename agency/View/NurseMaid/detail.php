@@ -65,7 +65,10 @@
 							<h4>Address</h4>
 							<p><?php echo isset($nurse_maid['address']) ? $nurse_maid['address'] : ' ' ?></p>
 							<h4>Gender</h4>
-							<p><?php echo isset($nurse_maid['gender']) ? Configure::read('gender_array')[$nurse_maid['gender']] : '-' ?></p>
+							<p><?php 
+								$gender_array = Configure::read('gender_array');
+								echo isset($nurse_maid['gender']) ? $gender_array[$nurse_maid['gender']] : '-';
+								?></p>
 							<h4>Age</h4>
 							<p><?php
 								if(isset($nurse_maid['birthdate'])):

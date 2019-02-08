@@ -28,6 +28,7 @@
 	Router::connect('/register/*', array('controller' => 'Register', 'action' => 'index'));
 	Router::connect('/register-legal-documents/', array('controller' => 'Register', 'action' => 'legalDocuments'));
 	Router::connect('/register-legal-documents/delete', array('controller' => 'Account', 'action' => 'legalDocumentsDelete'));
+	Router::connect('/checkEmail', array('controller' => 'Account', 'action' => 'checkEmail'));
 
 	Router::connect('/logout', array('controller' => 'Account', 'action' => 'logout'));
 

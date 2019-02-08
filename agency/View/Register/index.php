@@ -150,6 +150,33 @@
 <script type="text/javascript">
 	$(function(){
 
+		var email_thru_flg = false;
+
+		$(document).ready(function(){
+			$('#AgencyEmail').focusout(function(){
+				var usersEmail = this.value;
+				$.ajax({
+					type: 'POST',
+					url: '/agency/checkEmail',
+					data: {
+						email : usersEmail
+					},
+					success: function(data){
+						var res = JSON.parse(data);
+						if (res.result) {
+							email_thru_flg = false;
+						} else {
+							email_thru_flg = true;
+						}
+					},
+					error: function(error){
+						console.log(error);
+						email_thru_flg = false;
+					}
+				});
+			});
+		});
+
 		function validateEmail($email) {
 			var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 			return emailReg.test( $email );
@@ -161,9 +188,12 @@
 			}
 		});
 
-		function invalidateInput (el) {
+		function invalidateInput (el, text = false) {
 			$(el).css('border-color', '#dc3545');
 			$(el).next().css('display', 'block');
+			if (text) {
+				$(el).next().text(text);
+			}
 		}
 
 		var successStep =  false;
@@ -189,6 +219,10 @@
 					if (_email != '') {
 						if (!validateEmail(_email)) {
 							invalidateInput('#AgencyEmail');
+							return false;
+						}
+						else if (!email_thru_flg) {
+							invalidateInput('#AgencyEmail', 'Email is already taken.');
 							return false;
 						}
 					} else {

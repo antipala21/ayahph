@@ -9,7 +9,10 @@ class AccountController extends AppController {
 
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->Auth->allow('logout');
+		$this->Auth->allow(
+			'logout',
+			'checkEmail'
+		);
 	}
 
 	public function index () {
@@ -93,6 +96,22 @@ class AccountController extends AppController {
 			$filename = 'img/agency_permit/' . $data['filename'];
 			unlink($filename);
 			return true;
+		}
+	}
+
+	public function checkEmail () {
+		$this->autoRender = false;
+		if ($this->request->is('ajax')) {
+			$data = $this->request->data;
+			$result['result'] = false;
+
+			$check = $this->Agency->find('count', array(
+				'conditions' => array('Agency.email' => $data['email'])
+			));
+			if ($check) {
+				$result['result'] = true;
+			}
+			return json_encode($result);
 		}
 	}
 

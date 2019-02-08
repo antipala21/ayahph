@@ -149,32 +149,36 @@
 <script type="text/javascript">
 	$(function(){
 
+		var email_thru_flg = false;
+
+		$(document).ready(function(){
+			$('#UserEmail').focusout(function(){
+				var usersEmail = this.value;
+				$.ajax({
+					type: 'POST',
+					url: '/checkEmail',
+					data: {
+						email : usersEmail
+					},
+					success: function(data){
+						var res = JSON.parse(data);
+						if (res.result) {
+							email_thru_flg = false;
+						} else {
+							email_thru_flg = true;
+						}
+					},
+					error: function(error){
+						console.log(error);
+						email_thru_flg = false;
+					}
+				});
+			});
+		});
+
 		function validateEmail($email) {
 			var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 			return emailReg.test($email);
-		}
-
-		function validEmail ($email) {
-			$.ajax({
-				type: 'POST',
-				url: '/checkEmail',
-				data: {
-					email : $email
-				},
-				success: function(data){
-					var res = JSON.parse(data);
-					console.log(res.result);
-					return res.result;
-					// if (res.result) {
-					// 	return false;
-					// }
-					// return true;
-				},
-				error: function(error){
-					console.log(error);
-					return false;
-				}
-			});
 		}
 
 		$(document).keypress(function(e) {
@@ -192,6 +196,10 @@
 		}
 
 		var successStep =  false;
+
+		$('#UserEmail').keyup(function(){
+			console.log('test');
+		});
 
 		$("#wizard").steps({
 			headerTag: "h4",
@@ -216,31 +224,10 @@
 							invalidateInput('#UserEmail', 'Please provide a valid email.');
 							return false;
 						}
-						// else if (!validEmail(_email)) {
-						// 	console.log('wtf');
-						// 	invalidateInput('#UserEmail', 'Email is already taken.');
-						// 	return false;
-						// }
-						$.ajax({
-							type: 'POST',
-							url: '/checkEmail',
-							data: {
-								email : _email
-							},
-							success: function(data){
-								var res = JSON.parse(data);
-								console.log(res.result);
-								if (res.result) {
-									invalidateInput('#UserEmail', 'Email is already taken.');
-									return false;
-								}
-								return true;
-							},
-							error: function(error){
-								console.log(error);
-								return false;
-							}
-						});
+						else if (!email_thru_flg) {
+							invalidateInput('#UserEmail', 'Email is already taken.');
+							return false;
+						}
 					} else {
 						invalidateInput('#UserEmail');
 						return false;

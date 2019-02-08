@@ -1,0 +1,13 @@
+<app-port-api>
+    <signal>
+        <signalHost>dev-node.nativecamp.net</signalHost>
+        <signalPort>3000</signalPort>
+    </signal>
+    <broadcastSignal>
+        <signalHost>dev-node.nativecamp.net</signalHost>
+        <signalPort>3001</signalPort>
+    </broadcastSignal>
+    <defaultTextbook>
+        <id>1004</id>
+    </defaultTextbook>
+</app-port-api>

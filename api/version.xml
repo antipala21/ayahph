@@ -1,0 +1,24 @@
+<app-version-api>
+    <android>
+        <version>2.3.0</version>
+        <version-name>Latest Version</version-name>
+        <version-description><![CDATA[さらに使いやすくなったアプリをご利用ください！<br>「更新する」ボタンを押してから「アップデート」または「更新」を押してください。<br>※もし、繰り返しこの表示がされる場合は、GooglePlay側でアップデートが正常に完了していません。]]></version-description>
+        <version-description-en><![CDATA[Please use the application which became easier to use! <br> Please press "Update" button and then "Update" or "Update". <br> ※ If this display is repeated, the update has not been completed successfully on GooglePlay side.]]></version-description-en>
+        <version-description-th><![CDATA[กรุณาใช้แอพลิเคชันที่กลายเป็นง่ายต่อการใช้! <br> กรุณากดปุ่ม "Update" แล้วคลิก "Update" หรือ "Update" <br> ※หากซ้ำการแสดงผลนี้การอัปเดตยังไม่เสร็จสมบูรณ์ในฝั่ง Google Play]]></version-description-th>
+        <version-description-ko><![CDATA[사용하기 쉽게 된 응용 프로그램을 사용하십시오! <br> "업데이트"버튼을 누른 후 "업데이트"또는 "업데이트"버튼을 누르십시오. <br> ※이 표시가 반복되면 Google Play 측에서 업데이트가 완료되지 않았습니다.]]></version-description-ko>
+        <force-update>1</force-update>
+        <!-- 1:強制アップデート,2:通知のみ -->
+        <store-url>https://play.google.com/store/apps/details?id=com.nativecamp.nativecamp</store-url>
+    </android>
+    <ios>
+        <version>2.1.0</version>
+        <version-name>Version 2</version-name>
+        <version-description><![CDATA[さらに使いやすくなったアプリをご利用ください！<br>「更新する」ボタンを押してから「アップデート」または「更新」を押してください。<br>※もし、繰り返しこの表示がされる場合は、AppStore側でアップデートが正常に完了していません。<br>AppStoreの下部メニューにある「アップデート」画面を開いてから画面全体を下に引っ張って離すとアップデート情報が更新されます。]]></version-description>
+        <version-description-en><![CDATA[Please use the application which became easier to use! <br> Please press "Update" button and then "Update" or "Update". <br> ※ If this display is repeated, the update has not been completed successfully on the AppStore side. <br> After opening the "Update" screen in the bottom menu of AppStore, pull down the entire screen and release it to update the update information.]]></version-description-en>
+        <version-description-th><![CDATA[กรุณาใช้แอพลิเคชันที่กลายเป็นง่ายต่อการใช้! <br> กรุณากดปุ่ม "Update" แล้วคลิก "Update" หรือ "Update" <br> ※หากจอแสดงผลนี้ซ้ำแล้วซ้ำอีกการอัปเดตไม่เสร็จสมบูรณ์ในฝั่ง AppStore <br> หลังจากเปิดหน้าจอ "Update" ในเมนูด้านล่างของ AppStore ให้ดึงหน้าจอทั้งหมดลงและปล่อยให้อัพเดตข้อมูลอัพเดท]]></version-description-th>
+        <version-description-ko><![CDATA[사용하기 쉽게 된 응용 프로그램을 사용하십시오! <br> "업데이트"버튼을 누른 후 "업데이트"또는 "업데이트"버튼을 누르십시오. <br> ※이 표시가 반복되면 AppStore 측에서 업데이트가 성공적으로 완료되지 않았습니다. <br> AppStore의 하단 메뉴에서 '업데이트'화면을 연 후 전체 화면을 풀어 놓아서 업데이트 정보를 업데이트하십시오.]]></version-description-ko>
+        <force-update>1</force-update>
+        <!-- 1:強制アップデート,2:通知のみ -->
+        <store-url>https://itunes.apple.com/jp/app/id1039733719</store-url>
+    </ios>
+</app-version-api>

@@ -1,0 +1,40 @@
+# This will be changes for version 17 api
+
+msgid "Teacher who is good at Free Talk"
+msgstr "フリートークが得意"
+
+msgid "Callan half-price Teacher"
+msgstr "カラン半額"
+
+msgid "Beginner Teacher"
+msgstr "予約無料"
+
+msgid "Native Speaker"
+msgstr "ネイティブ"
+
+msgid "NEW"
+msgstr "新しい"
+
+msgid "I am good at teaching materials lessons"
+msgstr "教材レッスンが得意"
+
+msgid "For medium / advanced users"
+msgstr "中/上級者向き"
+
+msgid "For beginners"
+msgstr "初心者向き"
+
+msgid "Children support possible"
+msgstr "こども対応可"
+
+msgid "For seniors"
+msgstr "シニア向き"
+
+msgid "Grammar · vocabulary"
+msgstr "文法・ボキャブラリー"
+
+msgid "Europe region"
+msgstr "ヨーロッパ地域"
+
+msgid "pronunciation"
+msgstr "発音"

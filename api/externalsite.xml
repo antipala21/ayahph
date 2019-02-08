@@ -1,0 +1,16 @@
+<app-external-urls>
+	<external-urls>
+		<site-url>
+			<site-name>axes</site-name>
+			<site-domain>axes-payment.com</site-domain>
+		</site-url>
+		<site-url>
+			<site-name>nativecamp</site-name>
+			<site-domain>nativecamp.net</site-domain>
+		</site-url>
+		<site-url>
+			<site-name>about:blank</site-name>
+			<site-domain>about:blank</site-domain>
+		</site-url>
+	</external-urls>
+</app-external-urls>

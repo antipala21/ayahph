@@ -1,0 +1,2646 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2014-08-05 16:24+0900\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: Controller/AppointmentController.php:59
+msgid "Action could not be processed for the meantime."
+msgstr "今処理実行できません。"
+
+#: Controller/AppointmentController.php:71
+msgid "Schedule is already reserved on your other class."
+msgstr "他の授業を既にご登録済みです。"
+
+#: Controller/AppointmentController.php:73
+msgid "Schedule is not available for reservation."
+msgstr "スケジュールを予約できません。"
+
+#: Controller/AppointmentController.php:81
+msgid "Reservation registered."
+msgstr "予約を登録しました。"
+
+#: Controller/AppointmentController.php:97
+msgid "You have canceled your reservation."
+msgstr "予約をキャンセルしました。"
+
+#: Controller/AppointmentController.php:99
+msgid "Lesson schedule could not be found."
+msgstr "授業スケジュールを見つかりませんでした。"
+
+#: Controller/InquiryController.php:91;102
+msgid "Invalid inquiry"
+msgstr "無効なお問い合わせです。"
+
+#: Controller/LoginController.php:38;99;153
+msgid "Your account is not yet activated please check your email for the activation link"
+msgstr "あなたのアカウントはまだ本登録が完了していません。当サイトからお送りしたメールをご確認下さい。"
+
+#: Controller/LoginController.php:40;68
+msgid "Email or password is incorrect"
+msgstr "メールアドレス、またはパスワードに誤りがあります。"
+
+#: Controller/PaymentController.php:74
+msgid "Registration has been completed."
+msgstr "登録を完了しました。"
+
+#: Controller/PaymentController.php:76
+msgid "Registration failed due to payment error."
+msgstr "決"
+
+#: View/Account/change_email.php:1
+#: View/Account/change_email_complete.php:1
+#: View/Account/change_email_confirm.php:1
+#: View/Account/complete.php:1
+msgid "Change Email Address"
+msgstr "メールアドレスを変更"
+
+#: View/Account/change_email.php:13
+#: View/Account/change_email_confirm.php:6
+#: View/Account/index.php:240
+#: View/Forgot/index.php:6
+#: View/Inquiry/confirm_inquiry.php:12
+#: View/Inquiry/confirm_reply.php:12
+#: View/Login/index.php:12
+#: View/Register/confirm_register.php:7
+#: View/Register/index.php:12
+msgid "Email"
+msgstr "メール"
+
+#: View/Account/change_email.php:21
+#: View/Inquiry/confirm_inquiry.php:27
+#: View/Inquiry/confirm_reply.php:27
+#: View/Register/confirm_register.php:20
+#: View/Register/index.php:59
+msgid "Continue"
+msgstr "送信する"
+
+#: View/Account/change_email_complete.php:5
+msgid "Email was changed successfully"
+msgstr "メールアドレスを変更しました。"
+
+#: View/Account/change_email_complete.php:8
+#: View/Account/change_pass_complete.php:8
+#: View/Account/complete.php:8
+#: View/Account/index.php:11
+#: View/AccountDeactivation/complete.php:6
+#: View/Errors/missing_action.ctp:4
+#: View/Errors/missing_controller.ctp:4
+#: View/Errors/missing_view.ctp:4
+#: View/Forgot/activate.php:7
+#: View/Forgot/complete.php:8
+#: View/Forgot/sent.php:5
+#: View/Inquiry/complete.php:8
+#: View/Register/activate_email.php:7
+#: View/Register/complete.php:8
+#: View/Register/confirm_email.php:7
+msgid "Back to Top"
+msgstr "トップへ戻る"
+
+#: View/Account/change_email_confirm.php:13
+#: View/Account/change_pass.php:35
+#: View/Account/index.php:227
+#: View/Forgot/change_pass.php:29
+msgid "Save"
+msgstr "保存する"
+
+#: View/Account/change_pass.php:1
+#: View/Account/change_pass_complete.php:1
+#: View/Account/index.php:256
+#: View/Forgot/change_pass.php:1
+#: View/Layouts/default.php:59
+msgid "Change Password"
+msgstr "パスワードを変更"
+
+#: View/Account/change_pass.php:13
+msgid "Current Password"
+msgstr "現在のパスワード"
+
+#: View/Account/change_pass.php:20
+msgid "New Password"
+msgstr "新しいパスワード"
+
+#: View/Account/change_pass.php:27
+msgid "Confirm New Password"
+msgstr "新しいパスワードを確認"
+
+#: View/Account/change_pass_complete.php:5
+msgid "Password was changed successfully"
+msgstr "パスワードを変更しました。"
+
+#: View/Account/complete.php:5
+msgid "Your email address has been changed."
+msgstr "あなたのメールアドレスを変更しました。"
+
+#: View/Account/index.php:12
+msgid "User Points"
+msgstr "ユーザーのポイント"
+
+#: View/Account/index.php:20
+msgid "Profile Image:"
+msgstr "プロフィール画像"
+
+#: View/Account/index.php:49
+msgid "Submit"
+msgstr "送信する"
+
+#: View/Account/index.php:62
+msgid "Lesson Schedule"
+msgstr "指定されたページを表示できませんでした。"
+
+#: View/Account/index.php:76
+msgid "Lesson History"
+msgstr "レッスン履歴"
+
+#: View/Account/index.php:77
+msgid "Appointment"
+msgstr "予約"
+
+#: View/Account/index.php:83
+msgid "Messages"
+msgstr "メッセージ"
+
+#: View/Account/index.php:98
+#: View/Message/index.php:1
+msgid "Message List"
+msgstr "メッセージ一覧"
+
+#: View/Account/index.php:112
+msgid "Nickname"
+msgstr "お名前"
+
+#: View/Account/index.php:119
+msgid "Gender"
+msgstr "性別"
+
+#: View/Account/index.php:122
+msgid "Male"
+msgstr "男性"
+
+#: View/Account/index.php:123
+msgid "Female"
+msgstr "女性"
+
+#: View/Account/index.php:135
+msgid "Date of birth"
+msgstr "生年月日"
+
+#: View/Account/index.php:159
+msgid "Native Language"
+msgstr "母国語"
+
+#: View/Account/index.php:183
+msgid "A desired item with the free trial "
+msgstr "無料体験で希望する項目"
+
+#: View/Account/index.php:190
+msgid "Item you want to learn it from becoming a member "
+msgstr "会員になってから学習したい項目"
+
+#: View/Account/index.php:202
+msgid "Ratio of conversation "
+msgstr "会話の比率"
+
+#: View/Account/index.php:214
+msgid "English level of your own"
+msgstr "ご自身の英会話レベル"
+
+#: View/Account/index.php:227
+msgid "Finish"
+msgstr "完了"
+
+#: View/Account/index.php:248
+#: View/Forgot/change_pass.php:14
+#: View/Login/index.php:18
+#: View/Register/confirm_register.php:13
+#: View/Register/index.php:18
+msgid "Password"
+msgstr "パスワード"
+
+#: View/Account/index.php:255
+#: View/Layouts/default.php:58
+msgid "Change Email"
+msgstr "メールを変更"
+
+#: View/Account/index.php:261
+msgid "User Course"
+msgstr "ユーザーコース"
+
+#: View/Account/index.php:268
+msgid "User Point"
+msgstr "ユーザーポイント"
+
+#: View/Account/index.php:275
+#: View/Course/confirm.php:1
+#: View/Course/index.php:1
+#: View/Layouts/default.php:69
+msgid "Purchase Course"
+msgstr "購入コース"
+
+#: View/Account/index.php:276
+#: View/Layouts/default.php:68
+#: View/Points/confirm.php:1
+#: View/Points/index.php:1
+msgid "Purchase Points"
+msgstr "購入ポイント"
+
+#: View/Account/index.php:281
+#: View/Layouts/default.php:60
+msgid "Deactivate Account"
+msgstr "アカウントを退会する"
+
+#: View/AccountDeactivation/complete.php:1
+#: View/AccountDeactivation/index.php:1
+msgid "Membership Deactivation"
+msgstr "会員無効"
+
+#: View/AccountDeactivation/complete.php:3
+msgid "Your account is now deactivated."
+msgstr "あなたのアカウントを退会しました。"
+
+#: View/AccountDeactivation/index.php:5
+msgid "Deactivate"
+msgstr "退会"
+
+#: View/Appointment/detail.php:3
+#: View/Waiting/detail.php:3
+msgid "Wait Flash"
+msgstr "待機フラッシュ"
+
+#: View/Appointment/detail.php:7
+#: View/Waiting/detail.php:7
+msgid "Take a class"
+msgstr "クラスを受けます。"
+
+#: View/Appointment/detail.php:8
+#: View/Waiting/detail.php:8
+msgid "Send a message"
+msgstr "メッセージを"
+
+#: View/Appointment/detail.php:13
+#: View/Waiting/detail.php:13
+msgid "Name"
+msgstr "名前"
+
+#: View/Appointment/detail.php:14
+#: View/Waiting/detail.php:14
+msgid "Country"
+msgstr "国"
+
+#: View/Appointment/detail.php:15
+#: View/Waiting/detail.php:15
+msgid "Birthday"
+msgstr "誕生日"
+
+#: View/Appointment/detail.php:16
+#: View/Waiting/detail.php:16
+msgid "Sex"
+msgstr "性別"
+
+#: View/Appointment/detail.php:17
+#: View/Waiting/detail.php:17
+msgid "Education"
+msgstr "学歴"
+
+#: View/Appointment/detail.php:18
+#: View/Waiting/detail.php:18
+msgid "Hobbies"
+msgstr "興味"
+
+#: View/Appointment/detail.php:21
+#: View/Waiting/detail.php:21
+msgid "Message from the teacher"
+msgstr "講師からのメッセージ"
+
+#: View/Class/index.php:3
+msgid "Leave Chat"
+msgstr "チャットを出る"
+
+#: View/Class/index.php:7
+msgid "Textbook flash display"
+msgstr "教料書フラッシュ表示"
+
+#: View/Course/confirm.php:10
+#: View/Membership/confirm.php:8
+#: View/Points/confirm.php:12
+msgid "Proceed to Payment"
+msgstr "決済へ進む"
+
+#: View/Elements/header.php:8
+#: View/Layouts/default.php:49
+#: View/Login/index.php:1
+msgid "Login"
+msgstr "ログイン"
+
+#: View/Elements/header.php:9
+#: View/Layouts/default.php:48
+#: View/Register/index.php:1
+msgid "Register"
+msgstr "登録"
+
+#: View/Elements/header.php:11
+#: View/Layouts/default.php:72
+msgid "Logout"
+msgstr "ログアウト"
+
+#: View/Elements/paginator.php:3
+msgid "First"
+msgstr "ログアウト"
+
+#: View/Elements/paginator.php:5
+msgid "Previous"
+msgstr "前"
+
+#: View/Elements/paginator.php:9
+msgid "Next"
+msgstr "次"
+
+#: View/Elements/paginator.php:11
+msgid "Last"
+msgstr "最終"
+
+#: View/Elements/teacherWaitingList.php:2
+msgid "Instructor Online"
+msgstr "オンライン中の講師"
+
+#: View/Elements/teacherWaitingList.php:3;4
+msgid "All"
+msgstr "全て"
+
+#: View/Elements/teacherWaitingList.php:27
+msgid "No teachers found."
+msgstr "講師が見つかりませんでした。"
+
+#: View/Errors/missing_action.ctp:1
+#: View/Errors/missing_controller.ctp:1
+#: View/Errors/missing_view.ctp:1
+msgid "The page cannot be found"
+msgstr "ページを表示できませんでした。"
+
+#: View/Errors/missing_action.ctp:2
+#: View/Errors/missing_controller.ctp:2
+#: View/Errors/missing_view.ctp:2
+msgid "The page you are looking for has been moved or doesn't exist anymore."
+msgstr "ページを移動された可能性と、削除された可能性があります。"
+
+#: View/Faq/index.php:1
+#: View/Layouts/default.php:46;65
+msgid "Faq"
+msgstr "FAQ"
+
+#: View/Forgot/activate.php:1
+#: View/Register/activate_email.php:1
+msgid "Invalid Activation Code"
+msgstr "URLに誤りがあります。再度お試し下さい。"
+
+#: View/Forgot/activate.php:4
+#: View/Register/activate_email.php:4
+msgid "Invalid activation code or the code has expired."
+msgstr "URLに誤りがあります。再度お試し下さい。"
+
+#: View/Forgot/change_pass.php:2
+msgid "To reset your password, enter your new password in the fields below."
+msgstr "パスワードを再登録するために、新しいパスワードを下記のフィールドに入力してください。"
+
+#: View/Forgot/change_pass.php:21
+#: View/Register/index.php:24
+msgid "Confirm Password"
+msgstr "パスワードを確認する"
+
+#: View/Forgot/complete.php:1
+msgid "Password Recovery Completed"
+msgstr "パスワード再登録完了"
+
+#: View/Forgot/complete.php:5
+msgid "Your new password is now active."
+msgstr "あなたの新しいパスワードが有効になります。"
+
+#: View/Forgot/index.php:1
+#: View/Forgot/sent.php:1
+msgid "Forgot Password"
+msgstr "パスワードを忘れた場合"
+
+#: View/Forgot/index.php:2
+msgid "Please enter the email address registered on your account"
+msgstr "アカウントで登録したメールアドを入力してください。"
+
+#: View/Forgot/index.php:13
+msgid "Send"
+msgstr "送信"
+
+#: View/Forgot/sent.php:3
+msgid "Your password reset email was sent - check your mail"
+msgstr "パスワードの再登録の確認メールを送信しました。－お送りしたメールをチェックしてください。"
+
+#: View/Home/index.php:7
+msgid "pt"
+msgstr "pt"
+
+#: View/Home/index.php:12
+msgid "Notice"
+msgstr "お知らせ"
+
+#: View/Home/index.php:19
+msgid "Service introduction area"
+msgstr "サービス紹介エリア"
+
+#: View/Inquiry/complete.php:1
+msgid "Inquiry Successfully Completed"
+msgstr "お問い合わせが完了しました。"
+
+#: View/Inquiry/complete.php:5
+msgid "Inquiry  has been completed."
+msgstr "お問い合わせが完了しました。"
+
+#: View/Inquiry/confirm_inquiry.php:1
+msgid "Inquiry Confirmation"
+msgstr "お問い合わせ認証"
+
+#: View/Inquiry/confirm_inquiry.php:6
+#: View/Inquiry/confirm_reply.php:6
+#: View/Inquiry/detail.php:8
+#: View/Inquiry/index.php:15
+#: View/Inquiry/reply.php:17
+msgid "Category"
+msgstr "カテゴリ"
+
+#: View/Inquiry/confirm_inquiry.php:18
+#: View/Inquiry/confirm_reply.php:18
+#: View/Inquiry/index.php:41
+#: View/Inquiry/reply.php:31
+#: View/Layouts/default.php:62
+#: View/MessageNew/index.php:73
+#: Plugin/DebugKit/View/Elements/log_panel.ctp:27
+#: Plugin/DebugKit/View/Elements/timer_panel.ctp:42;66
+msgid "Message"
+msgstr "メッセージ"
+
+#: View/Inquiry/confirm_inquiry.php:25
+#: View/Inquiry/confirm_reply.php:25
+msgid "Back"
+msgstr "戻る"
+
+#: View/Inquiry/confirm_reply.php:1
+msgid "Inquiry Reply Confirmation"
+msgstr "お問い合わせ返信"
+
+#: View/Inquiry/detail.php:1
+msgid "Inquiry detail"
+msgstr "お問い合わせ詳細"
+
+#: View/Inquiry/detail.php:9
+msgid "Contents"
+msgstr "内容"
+
+#: View/Inquiry/detail.php:10
+#: Plugin/DebugKit/View/Elements/log_panel.ctp:27
+msgid "Time"
+msgstr "時間"
+
+#: View/Inquiry/detail.php:30
+msgid "Reply"
+msgstr "受信する"
+
+#: View/Inquiry/index.php:1
+msgid "Inquiry list"
+msgstr "お問い合わせ一覧"
+
+#: View/Inquiry/index.php:27
+#: View/Inquiry/reply.php:24
+msgid "Reply to email:"
+msgstr "返信先メールアドレス"
+
+#: View/Inquiry/index.php:55
+#: View/Inquiry/reply.php:45
+#: View/MessageNew/index.php:81
+#: View/MessageView/index.php:22
+msgid "Send Message"
+msgstr "メッセージを送信"
+
+#: View/Inquiry/reply.php:1
+msgid "Inquiry reply"
+msgstr "お問い合わせ返信"
+
+#: View/Layouts/default.php:47;66
+msgid "Inquiry"
+msgstr "お問い合わせ"
+
+#: View/Layouts/default.php:55
+msgid "Wait"
+msgstr "待機"
+
+#: View/Layouts/default.php:57
+msgid "My Page"
+msgstr "マイページ"
+
+#: View/Layouts/default.php:63
+#: View/Message/index.php:11
+#: View/MessageNew/index.php:54
+msgid "New Message"
+msgstr "新しいメッセージ"
+
+#: View/Login/index.php:25
+msgid "Forgot Password?"
+msgstr "パスワードを忘れた場合"
+
+#: View/Login/index.php:28
+msgid "Remember me"
+msgstr "ログイン情報を記憶"
+
+#: View/Login/index.php:34
+msgid "Sign In"
+msgstr "サインイン"
+
+#: View/MessageNew/index.php:66
+msgid "Recipient"
+msgstr "受信者"
+
+#: View/MessageView/index.php:1
+msgid "Message View"
+msgstr "メッセジー見る"
+
+#: View/MessageView/index.php:75
+msgid "Back to Message List"
+msgstr "メッセジー一覧へ戻る"
+
+#: View/Payment/complete.php:3
+msgid "Go to Top Page"
+msgstr "トップページへ移動"
+
+#: View/Points/index.php:13
+msgid " - "
+msgstr ""
+
+#: View/Points/index.php:13
+msgid "Points Course"
+msgstr "ポイントコース"
+
+#: View/Register/complete.php:1
+msgid "Registration Successfully Completed"
+msgstr "会員登録が完了しました。"
+
+#: View/Register/complete.php:5
+msgid "Registration  has been completed."
+msgstr "登録完了です"
+
+#: View/Register/confirm_email.php:1
+msgid "Confirmation Email Sent"
+msgstr "確認メール送信しました。"
+
+#: View/Register/confirm_email.php:4
+msgid "Please check your email and confirm your email address."
+msgstr "お送りしたメールをご確認の上、メールアドレスをご確認下さい。"
+
+#: View/Register/confirm_register.php:1
+msgid "Confirm Your Registration"
+msgstr "登録を確認してください"
+
+#: View/Register/index.php:54
+msgid "I agree to the Terms"
+msgstr "規約に同意して進む"
+
+#: View/Errors/error400.ctp:21
+#: View/Errors/error500.ctp:21
+msgid "Error"
+msgstr "エラー"
+
+ # NC-3274
+ # - region
+ msgid "Asia"
+ msgstr "アジア"
+
+ msgid "North Ameria"
+ msgstr "北米"
+
+ msgid "South America"
+ msgstr "南アメリカ"
+
+ msgid "Oceania"
+ msgstr "オセアニア"
+
+ msgid "Europe"
+ msgstr "ヨーロッパ"
+
+ msgid "Africa"
+ msgstr "アフリカ"
+
+ msgid "Middle East"
+ msgstr "中東"
+
+ #- nationalty
+ msgid "Dominican"
+ msgstr "ドミニカ共和国"
+
+ msgid "Caymanian"
+ msgstr "ケイマン諸島"
+
+ msgid "Uruguayan"
+ msgstr "ウルグアイ"
+
+ msgid "Bolivian"
+ msgstr "ボリビア"
+
+ msgid "Brazilian"
+ msgstr "ブラジル"
+
+ msgid "Bahamians"
+ msgstr "バハマ"
+
+ msgid "Paraguayan"
+ msgstr "パラグアイ"
+
+ msgid "Guyanese"
+ msgstr "ガイアナ"
+
+ msgid "Chilean"
+ msgstr "チリ"
+
+ msgid "Ecuadorian"
+ msgstr "エクアドルの"
+
+ msgid "Colombian"
+ msgstr "コロンビア"
+
+ msgid "Costa Rican"
+ msgstr "コスタリカの"
+
+ msgid "Cuban"
+ msgstr "キューバ"
+
+ msgid "French Guianan"
+ msgstr "フランス"
+
+ msgid "Surinamese"
+ msgstr "スリナム"
+
+ msgid "Salvadorian"
+ msgstr "サルバドール"
+
+ msgid "Venezuelan"
+ msgstr "ベネズエラ"
+
+ msgid "Peruvian"
+ msgstr "ペルー"
+
+ msgid "Belizeans"
+ msgstr "ベリーズ"
+
+ msgid "Argentinian"
+ msgstr "アルゼンチン"
+
+ msgid "Aruban"
+ msgstr "アルバン"
+
+ msgid "Barbudan"
+ msgstr "ブーバーダ"
+
+ msgid "Barbadians"
+ msgstr "バルバドス"
+
+ msgid "Dominican"
+ msgstr "ドミニカ共和国"
+
+ msgid "American Samoan"
+ msgstr "アメリカンサモアン"
+
+ msgid "Samoan"
+ msgstr "サモアン"
+
+ msgid "Solomon Islander"
+ msgstr "ソロモン・アイランダー"
+
+ msgid "Guamanian"
+ msgstr "グアマン"
+
+ msgid "Cook Islanders"
+ msgstr "クックアイランダーズ"
+
+ msgid "Fijian"
+ msgstr "フィジー"
+
+ msgid "New Caledonian"
+ msgstr "ニューカレドニア"
+
+ msgid "Tongan"
+ msgstr "トンガ"
+
+ msgid "New Zealander"
+ msgstr "ニュージーランド"
+
+ msgid "I-Kiribati"
+ msgstr "キリバス"
+
+ msgid "Papua New Guinean"
+ msgstr "パプアニューギニア"
+
+ msgid "Ni-Vanuatu"
+ msgstr "ニッケルバヌアツ"
+
+ msgid "Australian"
+ msgstr "オーストラリア"
+
+ msgid "Palauan"
+ msgstr "パラオ"
+
+ msgid "French Polynesian"
+ msgstr "フランス領ポリネシア"
+
+ msgid "Martinican"
+ msgstr "マルティニーク"
+
+ msgid "Sint Maarten"
+ msgstr "シントマールテン"
+
+ msgid "Saint Lucian"
+ msgstr "セントルシアン"
+
+ msgid "Montserratian"
+ msgstr "モントセラト"
+
+ msgid "Grenadian"
+ msgstr "グレナダ"
+
+ msgid "Nevisian"
+ msgstr "ネビス"
+
+ msgid "Mexican"
+ msgstr "メキシコ"
+
+ msgid "Haitian"
+ msgstr "ハイチ"
+
+ msgid "Panamanian"
+ msgstr "パナマ"
+
+ msgid "Nicaraguan"
+ msgstr "ニカラグア"
+
+ msgid "Guatemalan"
+ msgstr "グアテマラ"
+
+ msgid "Miquelonnais"
+ msgstr "ミケロネイス"
+
+ msgid "Puerto Rican"
+ msgstr "プエルトリコ"
+
+ msgid "Jamaican"
+ msgstr "ジャマイカ"
+
+ msgid "Honduran"
+ msgstr "ホンジュラス"
+
+ msgid "Guadeloupean"
+ msgstr "グアドループーン"
+
+ msgid "Tunisian"
+ msgstr "チュニジア"
+
+ msgid "Saba"
+ msgstr "サバ"
+
+ msgid "American"
+ msgstr "アメリカ"
+
+ msgid "Tobagonian"
+ msgstr "トバゴニア"
+
+ msgid "U.S. Virgin Island"
+ msgstr "米ヴァージンアイランド"
+
+ msgid "Bermudians"
+ msgstr "バミューダ"
+
+ msgid "Turks and Caicos Islander"
+ msgstr "タークスカイコス諸島"
+
+ msgid "Canadian"
+ msgstr "カナダ"
+
+ msgid "British Virgin Island"
+ msgstr "英領ヴァージン諸島"
+
+ msgid "Vincentian"
+ msgstr "ビンセンシオ"
+
+ msgid "Anguillan"
+ msgstr "アンギラ"
+
+ msgid "Curaçaoan"
+ msgstr "キュラソーアン"
+
+ msgid "Polish"
+ msgstr "ポーランド語"
+
+ msgid "Portuguese"
+ msgstr "ポルトガル"
+
+ msgid "Maltese"
+ msgstr "マルタ"
+
+ msgid "Italian"
+ msgstr "イタリア"
+
+ msgid "Icelander"
+ msgstr "アイスランド"
+
+ msgid "Romanian"
+ msgstr "ルーマニア"
+
+ msgid "Bulgarian"
+ msgstr "ブルガリア"
+
+ msgid "Belgian"
+ msgstr "ベルギー"
+
+ msgid "Albanian"
+ msgstr "アルバニア"
+
+ msgid "Macedonian"
+ msgstr "マケドニア"
+
+ msgid "Montenegrin"
+ msgstr "モンテネグリン"
+
+ msgid "Dutch"
+ msgstr "オランダ"
+
+ msgid "Monégasque"
+ msgstr "モナコ"
+
+ msgid "Norwegian"
+ msgstr "ノルウェー"
+
+ msgid "Latvian"
+ msgstr "ラトビア"
+
+ msgid "Luxembourgish"
+ msgstr "ルクセンブルク"
+
+ msgid "British"
+ msgstr "イギリス"
+
+ msgid "Austrian"
+ msgstr "オーストリア"
+
+ msgid "Lithuanian"
+ msgstr "リトアニア"
+
+ msgid "Liechtenstein"
+ msgstr "リヒテンシュタイン"
+
+ msgid "Herzegovinian"
+ msgstr "ヘルツェゴビヤ"
+
+ msgid "Serbian"
+ msgstr "セルビア"
+
+ msgid "Irish"
+ msgstr "アイルランド"
+
+ msgid "Swedish"
+ msgstr "スウェーデン"
+
+ msgid "Cypriot"
+ msgstr "キプロス"
+
+ msgid "Spanish"
+ msgstr "スペイン"
+
+ msgid "Finnish"
+ msgstr "フィンランド"
+
+ msgid "German"
+ msgstr "ドイツ"
+
+ msgid "Faroe Islanders"
+ msgstr "フェロー島"
+
+ msgid "Gibraltarian‎"
+ msgstr "ジブラルタ"
+
+ msgid "Slovak"
+ msgstr "スロバキア"
+
+ msgid "French"
+ msgstr "フランス"
+
+ msgid "Sammarinese"
+ msgstr "サマリー"
+
+ msgid "Greek"
+ msgstr "ギリシャ"
+
+ msgid "Danish"
+ msgstr "デンマーク"
+
+ msgid "Estonian"
+ msgstr "エストニア"
+
+ msgid "Slovenian"
+ msgstr "スロベニア"
+
+ msgid "Hungarians"
+ msgstr "ハンガリー"
+
+ msgid "Croatian"
+ msgstr "クロアチア"
+
+ msgid "Greenlander"
+ msgstr "グリーンランド"
+
+ msgid "Swiss"
+ msgstr "スイス"
+
+ msgid "Andorran"
+ msgstr "アンドラ"
+
+ msgid "Czech"
+ msgstr "チェコ"
+
+ msgid "Maldivian"
+ msgstr "モルディブ"
+
+ msgid "Yemeni"
+ msgstr "イエメン"
+
+ msgid "Nepali"
+ msgstr "ネパール"
+
+ msgid "Vietnamese"
+ msgstr "ベトナム"
+
+ msgid "Malaysian"
+ msgstr "マレーシア"
+
+ msgid "Omani"
+ msgstr "オマーン"
+
+ msgid "Filipino"
+ msgstr "フィリピン"
+
+ msgid "Qatari"
+ msgstr "カタール"
+
+ msgid "Saudi"
+ msgstr "サウジ"
+
+ msgid "Taiwanese"
+ msgstr "台湾"
+
+ msgid "Palestinian"
+ msgstr "パレスチナ"
+
+ msgid "Ukrainian"
+ msgstr "ウクライナ"
+
+ msgid "Turkmen"
+ msgstr "トルクメン"
+
+ msgid "Timorese"
+ msgstr "ティモレ"
+
+ msgid "Pakistani"
+ msgstr "パキスタン"
+
+ msgid "Uzbekistani"
+ msgstr "ウズベキスタン"
+
+ msgid "Tajik"
+ msgstr "タジク"
+
+ msgid "Singaporean"
+ msgstr "シンガポール"
+
+ msgid "Syrian"
+ msgstr "シリア"
+
+ msgid "Turkish"
+ msgstr "トルコ"
+
+ msgid "Thai"
+ msgstr "タイ"
+
+ msgid "Russian"
+ msgstr "ロシア"
+
+ msgid "Chinese""
+ msgstr "中国"
+
+ msgid "Kuwaiti"
+ msgstr "クウェート
+
+ msgid "Korean"
+ msgstr "韓国"
+
+ msgid "Bahraini"
+ msgstr "バーレーン"
+
+ msgid "Cambodian"
+ msgstr "カンボジア"
+
+ msgid "Kyrgyz"
+ msgstr "キルギス"
+
+ msgid "Japanese"
+ msgstr "日本"
+
+ msgid "Jordanian"
+ msgstr "ヨルダン"
+
+ msgid "Iranian"
+ msgstr "イラン"
+
+ msgid "Iraqi"
+ msgstr "イラク"
+
+ msgid "Indian"
+ msgstr "インド"
+
+ msgid "Israeli"
+ msgstr "イスラエル"
+
+ msgid "Indonesian"
+ msgstr "インドネシア"
+
+ msgid "Bruneian""
+ msgstr "ブルネイ
+
+ msgid "Hong Kongese"
+ msgstr "香港"
+
+ msgid "Bhutanese"
+ msgstr "ブータン"
+
+ msgid "Belarussian"
+ msgstr "ベラルーシ"
+
+ msgid "Georgian"
+ msgstr "ジョージア"
+
+ msgid "Laotian"
+ msgstr "ラオス"
+
+ msgid "Lebanese"
+ msgstr "レバノン"
+
+ msgid "Kazakhstani"
+ msgstr "カザフスタン"
+
+ msgid "Macanese"
+ msgstr "マカネーゼ"
+
+ msgid "Mongolia"
+ msgstr "モンゴル"
+
+ msgid "Myanmar"
+ msgstr "ミャンマー"
+
+ msgid "Moldovan"
+ msgstr "モルドバ"
+
+ msgid "Emirati"
+ msgstr "エミラティ"
+
+ msgid "Afghan"
+ msgstr "アフガニスタン"
+
+ msgid "Egyptian"
+ msgstr "エジプト"
+
+ msgid "Armenian"
+ msgstr "アルメニア"
+
+ msgid "Sri Lankans"
+ msgstr "スリランカ"
+
+ msgid "Bangladeshi"
+ msgstr "バングラデシュ"
+
+ msgid "Azerbaijani"
+ msgstr "アゼルバイジャン"
+
+ msgid "Mosotho"
+ msgstr "モスコ"
+
+ msgid "Togolese"
+ msgstr "トーゴ"
+
+ msgid "Congolese"
+ msgstr "コンゴ"
+
+ msgid "Zimbabwean"
+ msgstr "ジンバブエ"
+
+ msgid "Ivorian"
+ msgstr "イボリアン"
+
+ msgid "Cameroonian"
+ msgstr "カメルーン"
+
+ msgid "Burkinabé"
+ msgstr "ブルキナベ"
+
+ msgid "Djiboutian"
+ msgstr "ジブチ"
+
+ msgid "Chadian"
+ msgstr "チャディアン"
+
+ msgid "Cape Verdeans"
+ msgstr "ケープ・ベルデス"
+
+ msgid "African"
+ msgstr "アフリカ"
+
+ msgid "Congolese"
+ msgstr "コンゴ"
+
+ msgid "Burundian"
+ msgstr "ブルンジ"
+
+ msgid "Benin"
+ msgstr "ベニン"
+
+ msgid "Angolan"
+ msgstr "アンゴラ"
+
+ msgid "Mahoran"
+ msgstr "マホラン"
+
+ msgid "Ugandan"
+ msgstr "ウガンダ"
+
+ msgid "Zambian"
+ msgstr "ザンビア"
+
+ msgid "Tanzanian"
+ msgstr "タンザニア"
+
+ msgid "Motswana"
+ msgstr "モツワナ"
+
+ msgid "South African"
+ msgstr "南アフリカ"
+
+ msgid "Swazi"
+ msgstr "スワジ"
+
+ msgid "Algerian"
+ msgstr "アルジェリア"
+
+ msgid "Réunionese"
+ msgstr "レユニオン"
+
+ msgid "Kenyan"
+ msgstr "ケニア"
+
+ msgid "Comorian"
+ msgstr "コモロ"
+
+ msgid "Mauritanian"
+ msgstr "モーリタニア"
+
+ msgid "Liberian"
+ msgstr "リベリア"
+
+ msgid "Libyan"
+ msgstr "リビア"
+
+ msgid "Moroccan"
+ msgstr "モロッコ"
+
+ msgid "Malagasy"
+ msgstr "マダガスカル"
+
+ msgid "Nigerien"
+ msgstr "ナイジェリアン"
+
+ msgid "Malian"
+ msgstr "マリアン"
+
+ msgid "Namibian"
+ msgstr "ナミビア"
+
+ msgid "Mozambican"
+ msgstr "モザンビーク"
+
+ msgid "Malawian"
+ msgstr "マラウイ"
+
+ msgid "Rwandan"
+ msgstr "ルワンダ"
+
+ msgid "Guinea-Bissauan"
+ msgstr "ギニアビサウ"
+
+ msgid "Seychellois"
+ msgstr "セイシェロワ"
+
+ msgid "Gambian"
+ msgstr "ガンビア"
+
+ msgid "Ethiopian"
+ msgstr "エチオピア"
+
+ msgid "São Toméan"
+ msgstr "サントメアン"
+
+ msgid "South Sudanese"
+ msgstr "南スーダン"
+
+ msgid "Gabonese"
+ msgstr "ガボン"
+
+ msgid "Somali"
+ msgstr "ソマリ"
+
+ msgid "Senegalese"
+ msgstr "セネガル"
+
+ msgid "Sierra Leonean"
+ msgstr "シエラレオネン"
+
+ msgid "Ghanaian"
+ msgstr "ガーナ"
+
+ msgid "Nigerian"
+ msgstr "ナイジェリア"
+
+ msgid "Guinean"
+ msgstr "ギニアン"
+
+ msgid "Equatoguinean"
+ msgstr "イートトゥグーニャン"
+
+ msgid "Sudanese"
+ msgstr "スーダン"
+
+ msgid "Mauritian"
+ msgstr "モーリシャス"
+
+
+ # NC-3274
+# - region
+msgid "Asia"
+msgstr "アジア"
+
+msgid "North America"
+msgstr "北米"
+
+msgid "South America"
+msgstr "南アメリカ"
+
+msgid "Oceania"
+msgstr "オセアニア"
+
+msgid "Europe"
+msgstr "ヨーロッパ"
+
+msgid "Africa"
+msgstr "アフリカ"
+
+#- nationalty
+msgid "Dominican"
+msgstr "ドミニカ共和国"
+
+msgid "Caymanian"
+msgstr "ケイマン諸島"
+
+msgid "Uruguayan"
+msgstr "ウルグアイ"
+
+msgid "Bolivian"
+msgstr "ボリビア"
+
+msgid "Brazilian"
+msgstr "ブラジル"
+
+msgid "Bahamians"
+msgstr "バハマ"
+
+msgid "Paraguayan"
+msgstr "パラグアイ"
+
+msgid "Guyanese"
+msgstr "ガイアナ"
+
+msgid "Chilean"
+msgstr "チリ"
+
+msgid "Ecuadorian"
+msgstr "エクアドルの"
+
+msgid "Colombian"
+msgstr "コロンビア"
+
+msgid "Costa Rican"
+msgstr "コスタリカの"
+
+msgid "Cuban"
+msgstr "キューバ"
+
+msgid "French Guianan"
+msgstr "フランス"
+
+msgid "Surinamese"
+msgstr "スリナム"
+
+msgid "Salvadorian"
+msgstr "サルバドール"
+
+msgid "Venezuelan"
+msgstr "ベネズエラ"
+
+msgid "Peruvian"
+msgstr "ペルー"
+
+msgid "Belizeans"
+msgstr "ベリーズ"
+
+msgid "Argentinian"
+msgstr "アルゼンチン"
+
+msgid "Aruban"
+msgstr "アルバン"
+
+msgid "Barbudan"
+msgstr "ブーバーダ"
+
+msgid "Barbadians"
+msgstr "バルバドス"
+
+msgid "Dominican"
+msgstr "ドミニカ共和国"
+
+msgid "American Samoan"
+msgstr "アメリカンサモアン"
+
+msgid "Samoan"
+msgstr "サモアン"
+
+msgid "Solomon Islander"
+msgstr "ソロモン・アイランダー"
+
+msgid "Guamanian"
+msgstr "グアマン"
+
+msgid "Cook Islanders"
+msgstr "クックアイランダーズ"
+
+msgid "Fijian"
+msgstr "フィジー"
+
+msgid "New Caledonian"
+msgstr "ニューカレドニア"
+
+msgid "Tongan"
+msgstr "トンガ"
+
+msgid "New Zealander"
+msgstr "ニュージーランド"
+
+msgid "I-Kiribati"
+msgstr "キリバス"
+
+msgid "Papua New Guinean"
+msgstr "パプアニューギニア"
+
+msgid "Ni-Vanuatu"
+msgstr "ニッケルバヌアツ"
+
+msgid "Australian"
+msgstr "オーストラリア"
+
+msgid "Palauan"
+msgstr "パラオ"
+
+msgid "French Polynesian"
+msgstr "フランス領ポリネシア"
+
+msgid "Martinican"
+msgstr "マルティニーク"
+
+msgid "Sint Maarten"
+msgstr "シントマールテン"
+
+msgid "Saint Lucian"
+msgstr "セントルシアン"
+
+msgid "Montserratian"
+msgstr "モントセラト"
+
+msgid "Grenadian"
+msgstr "グレナダ"
+
+msgid "Nevisian"
+msgstr "ネビス"
+
+msgid "Mexican"
+msgstr "メキシコ"
+
+msgid "Haitian"
+msgstr "ハイチ"
+
+msgid "Panamanian"
+msgstr "パナマ"
+
+msgid "Nicaraguan"
+msgstr "ニカラグア"
+
+msgid "Guatemalan"
+msgstr "グアテマラ"
+
+msgid "Miquelonnais"
+msgstr "ミケロネイス"
+
+msgid "Puerto Rican"
+msgstr "プエルトリコ"
+
+msgid "Jamaican"
+msgstr "ジャマイカ"
+
+msgid "Honduran"
+msgstr "ホンジュラス"
+
+msgid "Guadeloupean"
+msgstr "グアドループーン"
+
+msgid "Tunisian"
+msgstr "チュニジア"
+
+msgid "Saba"
+msgstr "サバ"
+
+msgid "American"
+msgstr "アメリカ"
+
+msgid "Tobagonian"
+msgstr "トバゴニア"
+
+msgid "U.S. Virgin Island"
+msgstr "米ヴァージンアイランド"
+
+msgid "Bermudians"
+msgstr "バミューダ"
+
+msgid "Turks and Caicos Islander"
+msgstr "タークスカイコス諸島"
+
+msgid "Canadian"
+msgstr "カナダ"
+
+msgid "British Virgin Island"
+msgstr "英領ヴァージン諸島"
+
+msgid "Vincentian"
+msgstr "ビンセンシオ"
+
+msgid "Anguillan"
+msgstr "アンギラ"
+
+msgid "Curaçaoan"
+msgstr "キュラソーアン"
+
+msgid "Polish"
+msgstr "ポーランド語"
+
+msgid "Portuguese"
+msgstr "ポルトガル"
+
+msgid "Maltese"
+msgstr "マルタ"
+
+msgid "Italian"
+msgstr "イタリア"
+
+msgid "Icelander"
+msgstr "アイスランド"
+
+msgid "Romanian"
+msgstr "ルーマニア"
+
+msgid "Bulgarian"
+msgstr "ブルガリア"
+
+msgid "Belgian"
+msgstr "ベルギー"
+
+msgid "Albanian"
+msgstr "アルバニア"
+
+msgid "Macedonian"
+msgstr "マケドニア"
+
+msgid "Montenegrin"
+msgstr "モンテネグリン"
+
+msgid "Dutch"
+msgstr "オランダ"
+
+msgid "Monégasque"
+msgstr "モナコ"
+
+msgid "Norwegian"
+msgstr "ノルウェー"
+
+msgid "Latvian"
+msgstr "ラトビア"
+
+msgid "Luxembourgish"
+msgstr "ルクセンブルク"
+
+msgid "British"
+msgstr "イギリス"
+
+msgid "Austrian"
+msgstr "オーストリア"
+
+msgid "Lithuanian"
+msgstr "リトアニア"
+
+msgid "Liechtenstein"
+msgstr "リヒテンシュタイン"
+
+msgid "Herzegovinian"
+msgstr "ヘルツェゴビヤ"
+
+msgid "Serbian"
+msgstr "セルビア"
+
+msgid "Irish"
+msgstr "アイルランド"
+
+msgid "Swedish"
+msgstr "スウェーデン"
+
+msgid "Cypriot"
+msgstr "キプロス"
+
+msgid "Spanish"
+msgstr "スペイン"
+
+msgid "Finnish"
+msgstr "フィンランド"
+
+msgid "German"
+msgstr "ドイツ"
+
+msgid "Faroe Islanders"
+msgstr "フェロー島"
+
+msgid "Gibraltarian‎"
+msgstr "ジブラルタ"
+
+msgid "Slovak"
+msgstr "スロバキア"
+
+msgid "French"
+msgstr "フランス"
+
+msgid "Sammarinese"
+msgstr "サマリー"
+
+msgid "Greek"
+msgstr "ギリシャ"
+
+msgid "Danish"
+msgstr "デンマーク"
+
+msgid "Estonian"
+msgstr "エストニア"
+
+msgid "Slovenian"
+msgstr "スロベニア"
+
+msgid "Hungarians"
+msgstr "ハンガリー"
+
+msgid "Croatian"
+msgstr "クロアチア"
+
+msgid "Greenlander"
+msgstr "グリーンランド"
+
+msgid "Swiss"
+msgstr "スイス"
+
+msgid "Andorran"
+msgstr "アンドラ"
+
+msgid "Czech"
+msgstr "チェコ"
+
+msgid "Maldivian"
+msgstr "モルディブ"
+
+msgid "Yemeni"
+msgstr "イエメン"
+
+msgid "Nepali"
+msgstr "ネパール"
+
+msgid "Vietnamese"
+msgstr "ベトナム"
+
+msgid "Malaysian"
+msgstr "マレーシア"
+
+msgid "Omani"
+msgstr "オマーン"
+
+msgid "Filipino"
+msgstr "フィリピン"
+
+msgid "Qatari"
+msgstr "カタール"
+
+msgid "Saudi"
+msgstr "サウジ"
+
+msgid "Taiwanese"
+msgstr "台湾"
+
+msgid "Palestinian"
+msgstr "パレスチナ"
+
+msgid "Ukrainian"
+msgstr "ウクライナ"
+
+msgid "Turkmen"
+msgstr "トルクメン"
+
+msgid "Timorese"
+msgstr "ティモレ"
+
+msgid "Pakistani"
+msgstr "パキスタン"
+
+msgid "Uzbekistani"
+msgstr "ウズベキスタン"
+
+msgid "Tajik"
+msgstr "タジク"
+
+msgid "Singaporean"
+msgstr "シンガポール"
+
+msgid "Syrian"
+msgstr "シリア"
+
+msgid "Turkish"
+msgstr "トルコ"
+
+msgid "Thai"
+msgstr "タイ"
+
+msgid "Russian"
+msgstr "ロシア"
+
+msgid "Chinese""
+msgstr "中国"
+
+msgid "Kuwaiti"
+msgstr "クウェート
+msgid "Korean"
+msgstr "韓国"
+
+msgid "Bahraini"
+msgstr "バーレーン"
+
+msgid "Cambodian"
+msgstr "カンボジア"
+
+msgid "Kyrgyz"
+msgstr "キルギス"
+
+msgid "Japanese"
+msgstr "日本"
+
+msgid "Jordanian"
+msgstr "ヨルダン"
+
+msgid "Iranian"
+msgstr "イラン"
+
+msgid "Iraqi"
+msgstr "イラク"
+
+msgid "Indian"
+msgstr "インド"
+
+msgid "Israeli"
+msgstr "イスラエル"
+
+msgid "Indonesian"
+msgstr "インドネシア"
+
+msgid "Bruneian""
+msgstr "ブルネイ
+msgid "Hong Kongese"
+msgstr "香港"
+
+msgid "Bhutanese"
+msgstr "ブータン"
+
+msgid "Belarussian"
+msgstr "ベラルーシ"
+
+msgid "Georgian"
+msgstr "ジョージア"
+
+msgid "Laotian"
+msgstr "ラオス"
+
+msgid "Lebanese"
+msgstr "レバノン"
+
+msgid "Kazakhstani"
+msgstr "カザフスタン"
+
+msgid "Macanese"
+msgstr "マカネーゼ"
+
+msgid "Mongolia"
+msgstr "モンゴル"
+
+msgid "Myanmar"
+msgstr "ミャンマー"
+
+msgid "Moldovan"
+msgstr "モルドバ"
+
+msgid "Emirati"
+msgstr "エミラティ"
+
+msgid "Afghan"
+msgstr "アフガニスタン"
+
+msgid "Egyptian"
+msgstr "エジプト"
+
+msgid "Armenian"
+msgstr "アルメニア"
+
+msgid "Sri Lankans"
+msgstr "スリランカ"
+
+msgid "Bangladeshi"
+msgstr "バングラデシュ"
+
+msgid "Azerbaijani"
+msgstr "アゼルバイジャン"
+
+msgid "Mosotho"
+msgstr "モスコ"
+
+msgid "Togolese"
+msgstr "トーゴ"
+
+msgid "Congolese"
+msgstr "コンゴ"
+
+msgid "Zimbabwean"
+msgstr "ジンバブエ"
+
+msgid "Ivorian"
+msgstr "イボリアン"
+
+msgid "Cameroonian"
+msgstr "カメルーン"
+
+msgid "Burkinabé"
+msgstr "ブルキナベ"
+
+msgid "Djiboutian"
+msgstr "ジブチ"
+
+msgid "Chadian"
+msgstr "チャディアン"
+
+msgid "Cape Verdeans"
+msgstr "ケープ・ベルデス"
+
+msgid "African"
+msgstr "アフリカ"
+
+msgid "Congolese"
+msgstr "コンゴ"
+
+msgid "Burundian"
+msgstr "ブルンジ"
+
+msgid "Benin"
+msgstr "ベニン"
+
+msgid "Angolan"
+msgstr "アンゴラ"
+
+msgid "Mahoran"
+msgstr "マホラン"
+
+msgid "Ugandan"
+msgstr "ウガンダ"
+
+msgid "Zambian"
+msgstr "ザンビア"
+
+msgid "Tanzanian"
+msgstr "タンザニア"
+
+msgid "Motswana"
+msgstr "モツワナ"
+
+msgid "South African"
+msgstr "南アフリカ"
+
+msgid "Swazi"
+msgstr "スワジ"
+
+msgid "Algerian"
+msgstr "アルジェリア"
+
+msgid "Réunionese"
+msgstr "レユニオン"
+
+msgid "Kenyan"
+msgstr "ケニア"
+
+msgid "Comorian"
+msgstr "コモロ"
+
+msgid "Mauritanian"
+msgstr "モーリタニア"
+
+msgid "Liberian"
+msgstr "リベリア"
+
+msgid "Libyan"
+msgstr "リビア"
+
+msgid "Moroccan"
+msgstr "モロッコ"
+
+msgid "Malagasy"
+msgstr "マダガスカル"
+
+msgid "Nigerien"
+msgstr "ナイジェリアン"
+
+msgid "Malian"
+msgstr "マリアン"
+
+msgid "Namibian"
+msgstr "ナミビア"
+
+msgid "Mozambican"
+msgstr "モザンビーク"
+
+msgid "Malawian"
+msgstr "マラウイ"
+
+msgid "Rwandan"
+msgstr "ルワンダ"
+
+msgid "Guinea-Bissauan"
+msgstr "ギニアビサウ"
+
+msgid "Seychellois"
+msgstr "セイシェロワ"
+
+msgid "Gambian"
+msgstr "ガンビア"
+
+msgid "Ethiopian"
+msgstr "エチオピア"
+
+msgid "São Toméan"
+msgstr "サントメアン"
+
+msgid "South Sudanese"
+msgstr "南スーダン"
+
+msgid "Gabonese"
+msgstr "ガボン"
+
+msgid "Somali"
+msgstr "ソマリ"
+
+msgid "Senegalese"
+msgstr "セネガル"
+
+msgid "Sierra Leonean"
+msgstr "シエラレオネン"
+
+msgid "Ghanaian"
+msgstr "ガーナ"
+
+msgid "Nigerian"
+msgstr "ナイジェリア"
+
+msgid "Guinean"
+msgstr "ギニアン"
+
+msgid "Equatoguinean"
+msgstr "イートトゥグーニャン"
+
+msgid "Sudanese"
+msgstr "スーダン"
+
+msgid "Mauritian"
+msgstr "モーリシャス"
+
+# NC-3347
+# country_names
+msgid "Andorra"
+msgstr "アンドラ"
+
+msgid "United Arab Emirates"
+msgstr "アラブ首長国連邦"
+
+msgid "Afghanistan"
+msgstr "アフガニスタン"
+
+msgid "Antigua and Barbuda"
+msgstr "アンティグア・バーブーダ"
+
+msgid "Anguilla"
+msgstr "アンギラ"
+
+msgid "Albania"
+msgstr "アルバニア"
+
+msgid "Armenia"
+msgstr "アルメニア"
+
+msgid "Angola"
+msgstr "アンゴラ"
+
+msgid "Argentina"
+msgstr "アルゼンチン"
+
+msgid "American Samoa"
+msgstr "アメリカ領サモア"
+
+msgid "Austria"
+msgstr "オーストリア"
+
+msgid "Australia"
+msgstr "オーストラリア"
+
+msgid "Aruba"
+msgstr "アルバ"
+
+msgid "Azerbaijan"
+msgstr "アゼルバイジャン "
+
+msgid "Bosnia and Herzegovina"
+msgstr "ボスニア・ヘルツェゴビナ"
+
+msgid "Barbados"
+msgstr "バルバドス"
+
+msgid "Bangladesh"
+msgstr "バングラデシュ"
+
+msgid "Belgium"
+msgstr "ベルギー"
+
+msgid "Burkina Faso"
+msgstr "ブルキナファソ"
+
+msgid "Bulgaria"
+msgstr "ブルガリア"
+
+msgid "Bahrain"
+msgstr "バーレーン"
+
+msgid "Burundi"
+msgstr "ブルンジ"
+
+msgid "Benin"
+msgstr "ベナン"
+
+msgid "Bermuda"
+msgstr "バミューダ諸島"
+
+msgid "Brunei"
+msgstr "ブルネイ"
+
+msgid "Bolivia"
+msgstr "ボリビア"
+
+msgid "Bonaire Sint Eustatius and Saba"
+msgstr "ボネール、シント・ユースタティウスとサバ"
+
+msgid "Brazil"
+msgstr "ブラジル"
+
+msgid "Bahamas"
+msgstr "バハマ"
+
+msgid "Bhutan"
+msgstr "ブータ"
+
+msgid "Botswana"
+msgstr "ボツワナ"
+
+msgid "Belarus"
+msgstr "ベラルーシ"
+
+msgid "Belize"
+msgstr "ベリーズ"
+
+msgid "Canada"
+msgstr "カナダ"
+
+msgid "Democratic Republic of the Congo"
+msgstr "コンゴ民主共和国"
+
+msgid "Central African Republic"
+msgstr "中央アフリカ共和国"
+
+msgid "Switzerland"
+msgstr "スイス"
+
+msgid "Ivory Coast"
+msgstr "コートジボワール"
+
+msgid "Cook Islands"
+msgstr "クック諸島"
+
+msgid "Chile"
+msgstr "チリ"
+
+msgid "Cameroon"
+msgstr "カメルーン "
+
+msgid "China"
+msgstr "中国"
+
+msgid "Colombia"
+msgstr "コロンビア"
+
+msgid "Costa Rica"
+msgstr "コスタリカ"
+
+msgid "Cuba"
+msgstr "キューバ"
+
+msgid "Cape Verde"
+msgstr "カーボベルデ"
+
+msgid "Curacao"
+msgstr "キュラソー"
+
+msgid "Cyprus"
+msgstr "キプロス"
+
+msgid "Czech Republic"
+msgstr "チェコ"
+
+msgid "Germany"
+msgstr "ドイツ"
+
+msgid "Djibouti"
+msgstr "ジブチ"
+
+msgid "Denmark"
+msgstr "デンマーク"
+
+msgid "Dominica"
+msgstr "ドミニカ"
+
+msgid "Dominican Republic"
+msgstr "ドミニカ共和国"
+
+msgid "Algeria"
+msgstr "アルジェリア"
+
+msgid "Ecuador"
+msgstr "エクアドル"
+
+msgid "Estonia"
+msgstr "エストニア"
+
+msgid "Egypt"
+msgstr "エジプト"
+
+msgid "Spain"
+msgstr "スペイン"
+
+msgid "Ethiopia"
+msgstr "エチオピア"
+
+msgid "Finland"
+msgstr "フィンランド"
+
+msgid "Fiji"
+msgstr "フィジー"
+
+msgid "Faroe Islands"
+msgstr "フェロー諸島"
+
+msgid "France"
+msgstr "フランス"
+
+msgid "Gabon"
+msgstr "ガボン"
+
+msgid "United Kingdom"
+msgstr "イギリス"
+
+msgid "Grenada"
+msgstr "グレナダ"
+
+msgid "Georgia"
+msgstr "ジョージア"
+
+msgid "French Guiana"
+msgstr "フランス領ギアナ"
+
+msgid "Ghana"
+msgstr "ガーナ"
+
+msgid "Gibraltar"
+msgstr "ジブラルタル"
+
+msgid "Greenland"
+msgstr "グリーンランド"
+
+msgid "Gambia"
+msgstr "ガンビア"
+
+msgid "Guinea"
+msgstr "ギニア"
+
+msgid "Guadeloupe"
+msgstr "グアドループ"
+
+msgid "Equatorial Guinea"
+msgstr "赤道ギニア"
+
+msgid "Greece"
+msgstr "ギリシャ"
+
+msgid "Guatemala"
+msgstr "グアテマラ"
+
+msgid "Guam"
+msgstr "グアム"
+
+msgid "Guinea-Bissau"
+msgstr "ギニアビサウ"
+
+msgid "Guyana"
+msgstr "ガイアナ"
+
+msgid "Hong Kong"
+msgstr "香港"
+
+msgid "Honduras"
+msgstr "ホンジュラス"
+
+msgid "Croatia"
+msgstr "クロアチア"
+
+msgid "Haiti"
+msgstr "ハイチ"
+
+msgid "Hungary"
+msgstr "ハンガリー"
+
+msgid "Indonesia"
+msgstr "インドネシア"
+
+msgid "Ireland"
+msgstr "アイルランド"
+
+msgid "Israel"
+msgstr "イスラエル"
+
+msgid "India"
+msgstr "インド"
+
+msgid "Iraq"
+msgstr "イラク"
+
+msgid "Iran"
+msgstr "イラン"
+
+msgid "Iceland"
+msgstr "アイスランド"
+
+msgid "Italy"
+msgstr "イタリア"
+
+msgid "Jamaica"
+msgstr "ジャマイカ"
+
+msgid "Jordan"
+msgstr "ヨルダン"
+
+msgid "日本"
+msgstr "日本"
+
+msgid "Japan"
+msgstr "日本"
+
+msgid "Kenya"
+msgstr "ケニア"
+
+msgid "Kyrgyzstan"
+msgstr "キルギス"
+
+msgid "Cambodia"
+msgstr "カンボジア"
+
+msgid "Kiribati"
+msgstr "キリバス"
+
+msgid "Comoros"
+msgstr "コモロ"
+
+msgid "Saint Kitts and Nevis"
+msgstr "セントクリストファー・ネイビス"
+
+msgid "South Korea"
+msgstr "韓国"
+
+msgid "Kuwait"
+msgstr "クウェート"
+
+msgid "Cayman Islands"
+msgstr "ケイマン諸島"
+
+msgid "Kazakhstan"
+msgstr "カザフスタン"
+
+msgid "Laos"
+msgstr "ラオス"
+
+msgid "Lebanon"
+msgstr "レバノン"
+
+msgid "Saint Lucia"
+msgstr "セントルシア"
+
+msgid "Liechtenstein"
+msgstr "リヒテンシュタイン"
+
+msgid "Sri Lanka"
+msgstr "スリランカ"
+
+msgid "Liberia"
+msgstr "リベリア"
+
+msgid "Lesotho"
+msgstr "レソト"
+
+msgid "Lithuania"
+msgstr "リトアニア"
+
+msgid "Luxembourg"
+msgstr "ルクセンブルク"
+
+msgid "Latvia"
+msgstr "ラトビア"
+
+msgid "Libya"
+msgstr "リビア"
+
+msgid "Morocco"
+msgstr "モロッコ"
+
+msgid "Monaco"
+msgstr "モナコ"
+
+msgid "Moldova"
+msgstr "モルドバ"
+
+msgid "Montenegro"
+msgstr "モンテネグロ"
+
+msgid "Madagascar"
+msgstr "マダガスカル"
+
+msgid "Macedonia"
+msgstr "マケドニア"
+
+msgid "Mali"
+msgstr "マリ"
+
+msgid "Myanmar"
+msgstr "ミャンマー"
+
+msgid "Mongolia"
+msgstr "モンゴル国"
+
+msgid "Macau"
+msgstr "マカオ"
+
+msgid "Martinique"
+msgstr "マルティニーク島"
+
+msgid "Mauritania"
+msgstr "モーリタニア"
+
+msgid "Montserrat"
+msgstr "モントセラト"
+
+msgid "Malta"
+msgstr "マルタ"
+
+msgid "Mauritius"
+msgstr "モーリシャス"
+
+msgid "Maldives"
+msgstr "モルディブ"
+
+msgid "Malawi"
+msgstr "マラウイ"
+
+msgid "Mexico"
+msgstr "メキシコ"
+
+msgid "Malaysia"
+msgstr "マレーシア"
+
+msgid "Mozambique"
+msgstr "モザンビーク"
+
+msgid "Namibia"
+msgstr "ナミビア"
+
+msgid "New Caledonia"
+msgstr "ニューカレドニア"
+
+msgid "Niger"
+msgstr "ニジェール"
+
+msgid "Nigeria"
+msgstr "ナイジェリア"
+
+msgid "Nicaragua"
+msgstr "ニカラグア"
+
+msgid "Netherlands"
+msgstr "オランダ"
+
+msgid "Norway"
+msgstr "ノルウェー"
+
+msgid "Nepal"
+msgstr "ネパール"
+
+msgid "New Zealand"
+msgstr "ニュージーランド"
+
+msgid "Oman"
+msgstr "オマーン"
+
+msgid "Panama"
+msgstr "パナマ"
+
+msgid "Peru"
+msgstr "ペルー"
+
+msgid "French Polynesia"
+msgstr "フランス領ポリネシア"
+
+msgid "Papua New Guinea"
+msgstr "パプアニューギニア"
+
+msgid "Philippines"
+msgstr "フィリピン"
+
+msgid "Pakistan"
+msgstr "パキスタン"
+
+msgid "Poland"
+msgstr "ポーランド"
+
+msgid "Saint Pierre and Miquelon"
+msgstr "サンピエール島・ミクロン島"
+
+msgid "Puerto Rico"
+msgstr "プエルトリコ"
+
+msgid "Palestinian Territory"
+msgstr "パレスチナ"
+
+msgid "Portugal"
+msgstr "ポルトガル"
+
+msgid "Palau"
+msgstr "パラオ"
+
+msgid "Paraguay"
+msgstr "パラグアイ"
+
+msgid "Qatar"
+msgstr "カタール"
+
+msgid "Reunion Island"
+msgstr "レユニオン島"
+
+msgid "Romania"
+msgstr "ルーマニア"
+
+msgid "Serbia"
+msgstr "セルビア"
+
+msgid "Russia"
+msgstr "ロシア"
+
+msgid "Rwanda"
+msgstr "ルワンダ"
+
+msgid "Saudi Arabia"
+msgstr "サウジアラビア"
+
+msgid "Solomon Islands"
+msgstr "ソロモン諸島"
+
+msgid "Seychelles"
+msgstr "セーシェル"
+
+msgid "Sudan"
+msgstr "スーダン"
+
+msgid "Sweden"
+msgstr "スウェーデン"
+
+msgid "Singapore"
+msgstr "シンガポール"
+
+msgid "Slovenia"
+msgstr "スロベニア"
+
+msgid "Slovakia"
+msgstr "スロバキア"
+
+msgid "Sierra Leone"
+msgstr "シエラレオネ"
+
+msgid "San Marino"
+msgstr "サンマリノ"
+
+msgid "Senegal"
+msgstr "セネガル"
+
+msgid "Somalia"
+msgstr "ソマリア"
+
+msgid "Suriname"
+msgstr "スリナム"
+
+msgid "South Sudan"
+msgstr "南スーダン"
+
+msgid "Sao Tome and Principe"
+msgstr "サントメ・プリンシペ"
+
+msgid "El Salvador"
+msgstr "エルサルバドル"
+
+msgid "Sint Maarten (Dutch Part)"
+msgstr "シント・マールテン"
+
+msgid "Syria"
+msgstr "シリア"
+
+msgid "Eswatini"
+msgstr "エスワティニ"
+
+msgid "Turks and Caicos Islands"
+msgstr "タークス・カイコス諸島"
+
+msgid "Chad"
+msgstr "チャド"
+
+msgid "Togo"
+msgstr "トーゴ"
+
+msgid "Thailand"
+msgstr "タイ王国"
+
+msgid "Tajikistan"
+msgstr "タジキスタン"
+
+msgid "East Timor"
+msgstr "東ティモール"
+
+msgid "Turkmenistan"
+msgstr "トルクメニスタン"
+
+msgid "Tunisia"
+msgstr "チュニジア"
+
+msgid "Tonga"
+msgstr "トンガ"
+
+msgid "Turkey"
+msgstr "トルコ"
+
+msgid "Trinidad and Tobago"
+msgstr "トリニダード・トバゴ"
+
+msgid "Taiwan"
+msgstr "台湾"
+
+msgid "Tanzania"
+msgstr "タンザニア"
+
+msgid "Ukraine"
+msgstr "ウクライナ"
+
+msgid "Uganda"
+msgstr "ウガンダ"
+
+msgid "United States"
+msgstr "アメリカ合衆国"
+
+msgid "Uruguay"
+msgstr "ウルグアイ"
+
+msgid "Uzbekistan"
+msgstr "ウズベキスタン"
+
+msgid "Saint Vincent and The Grenadines"
+msgstr "セントビンセント・グレナディーン"
+
+msgid "Venezuela"
+msgstr "ベネズエラ"
+
+msgid "Virgin Islands British"
+msgstr "イギリス領ヴァージン諸島"
+
+msgid "Virgin Islands US"
+msgstr "アメリカ領ヴァージン諸島"
+
+msgid "Vietnam"
+msgstr "ベトナム"
+
+msgid "Vanuatu"
+msgstr "バヌアツ"
+
+msgid "Samoa"
+msgstr "サモア"
+
+msgid "Yemen"
+msgstr "イエメン"
+
+msgid "Mayotte"
+msgstr "マヨット"
+
+msgid "South Africa"
+msgstr "南アフリカ"
+
+msgid "Zambia"
+msgstr "ザンビア"
+
+msgid "Zimbabwe"
+msgstr "ジンバブエ"
+
+msgid "Bosnia"
+msgstr "ボスニア"
+
+msgid "Eritrea"
+msgstr "エリトリア"
+
+msgid "Marshall Islands"
+msgstr "マーシャル諸島"
+
+msgid "Micronesia"
+msgstr "ミクロネシア"
+
+msgid "Scotland"
+msgstr "スコットランド"
+
+msgid "Wales"
+msgstr "ウェールズ"
+
+msgid "Nauru"
+msgstr "ナウル"
+
+msgid "Northern Ireland"
+msgstr "北アイルランド"
+
+msgid "Tuvalu"
+msgstr "ツバル"
+
+#This will be changes for version 17 api
+
+msgid "about"
+msgstr "について"

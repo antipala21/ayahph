@@ -1,0 +1,1490 @@
+
+ # NC-3274
+ # - region
+ msgid "Asia"
+ msgstr "아시아"
+
+ msgid "North America"
+ msgstr "북아메리카"
+
+ msgid "South America"
+ msgstr "남아메리카"
+
+ msgid "Oceania"
+ msgstr "오세아니아"
+
+ msgid "Europe"
+ msgstr "유럽"
+
+ msgid "Africa"
+ msgstr "아프리카"
+
+ msgid "Middle East"
+ msgstr "중동"
+
+
+#This will be changes for version 17 api
+
+#Country Name
+
+msgid "Andorra"
+msgstr "안도라"
+
+msgid "United Arab Emirates"
+msgstr "아랍에미리트"
+
+msgid "Afghanistan"
+msgstr "아프가니스탄"
+
+msgid "Antigua and Barbuda"
+msgstr "앤티가 바부다"
+
+msgid "Anguilla"
+msgstr "앵귈라"
+
+msgid "Albania"
+msgstr "알바니아"
+
+msgid "Armenia"
+msgstr "아르메니아"
+
+msgid "Angola"
+msgstr "앙골라"
+
+msgid "Netherlands Antilles"
+msgstr "네덜란드령 안틸레스"
+
+msgid "Antarctica"
+msgstr "남극"
+
+msgid "Argentina"
+msgstr "아르헨티나"
+
+msgid "American Samoa"
+msgstr "아메리칸사모아"
+
+msgid "Austria"
+msgstr "오스트리아"
+
+msgid "Australia"
+msgstr "오스트레일리아"
+
+msgid "Aruba"
+msgstr "아루바"
+
+msgid "Åland Islands"
+msgstr "올란드 제도"
+
+msgid "Azerbaijan"
+msgstr "아제르바이잔"
+
+msgid "Bosnia and Herzegovina"
+msgstr "보스니아 헤르체고비나"
+
+msgid "Barbados"
+msgstr "바베이도스"
+
+msgid "Bangladesh"
+msgstr "방글라데시"
+
+msgid "Belgium"
+msgstr "벨기에"
+
+msgid "Burkina Faso"
+msgstr "부르키나파소"
+
+msgid "Bulgaria"
+msgstr "불가리아"
+
+msgid "Bahrain"
+msgstr "바레인"
+
+msgid "Burundi"
+msgstr "부룬디"
+
+msgid "Benin"
+msgstr "베냉"
+
+msgid "Saint Barthélemy"
+msgstr "세인트 바데 레미"
+
+msgid "Bermuda"
+msgstr "버뮤다"
+
+msgid "Brunei Darussalam"
+msgstr "브루나이"
+
+msgid "Bolivia"
+msgstr "볼리비아"
+
+msgid "Bonaire"
+msgstr "보네르 섬"
+
+msgid "Bonaire Sint Eustatius and Saba"
+msgstr "보네르 신트 유스타 티 우스와 사바"
+
+msgid "Brazil"
+msgstr "브라질"
+
+msgid "Bahamas"
+msgstr "바하마"
+
+msgid "Bhutan"
+msgstr "부탄"
+
+msgid "Bouvet Island"
+msgstr "부베 섬"
+
+msgid "Botswana"
+msgstr "보츠와나"
+
+msgid "Belarus"
+msgstr "벨라루스"
+
+msgid "Belize"
+msgstr "벨리즈"
+
+msgid "Canada"
+msgstr "캐나다"
+
+msgid "Cocos (Keeling) Islands"
+msgstr "코코스 제도"
+
+msgid "Congo (Democratic Republic of the)"
+msgstr "콩고 민주 공화국"
+
+msgid "Democratic Republic of the Congo"
+msgstr "콩고 민주 공화국"
+
+msgid "Central African Republic"
+msgstr "중앙아프리카 공화국"
+
+msgid "Congo"
+msgstr "콩고 공화국"
+
+msgid "Switzerland"
+msgstr "스위스"
+
+msgid "Côte d'Ivoire"
+msgstr "코트디부아르"
+
+msgid "Cook Islands"
+msgstr "쿡 제도"
+
+msgid "Chile"
+msgstr "칠레"
+
+msgid "Cameroon"
+msgstr "카메룬"
+
+msgid "China"
+msgstr "중화인민공화국"
+
+msgid "Colombia"
+msgstr "콜롬비아"
+
+msgid "Costa Rica"
+msgstr "코스타리카"
+
+msgid "Cuba"
+msgstr "쿠바"
+
+msgid "Cabo Verde"
+msgstr "카보베르데"
+
+msgid "Curaçao"
+msgstr "쿠라 사오"
+
+msgid "Christmas Island"
+msgstr "크리스마스 섬"
+
+msgid "Cyprus"
+msgstr "키프로스"
+
+msgid "Czech Republic"
+msgstr "체코 공화국"
+
+msgid "Czechia"
+msgstr "체코"
+
+msgid "Germany"
+msgstr "독일"
+
+msgid "Djibouti"
+msgstr "지부티"
+
+msgid "Denmark"
+msgstr "덴마크"
+
+msgid "Dominica"
+msgstr "도미니카 연방"
+
+msgid "Dominican Republic"
+msgstr "도미니카 공화국"
+
+msgid "Algeria"
+msgstr "알제리"
+
+msgid "Ecuador"
+msgstr "에콰도르"
+
+msgid "Estonia"
+msgstr "에스토니아"
+
+msgid "Egypt"
+msgstr "이집트"
+
+msgid "Western Sahara"
+msgstr "서사하라"
+
+msgid "Eritrea"
+msgstr "에리트레아"
+
+msgid "Spain"
+msgstr "스페인"
+
+msgid "Ethiopia"
+msgstr "에티오피아"
+
+msgid "Finland"
+msgstr "핀란드"
+
+msgid "Fiji"
+msgstr "피지"
+
+msgid "Falkland Islands (Malvinas)"
+msgstr "포클랜드 제도"
+
+msgid "Micronesia (Federated States of)"
+msgstr "미크로네시아 연방"
+
+msgid "Faroe Islands"
+msgstr "페로 제도"
+
+msgid "France"
+msgstr "프랑스"
+
+msgid "Gabon"
+msgstr "가봉"
+
+msgid "United Kingdom"
+msgstr "영국"
+
+msgid "United Kingdom of Great Britain and Northern Ireland"
+msgstr "영국 대 브리튼 및 북 아일랜드"
+
+msgid "Grenada"
+msgstr "그레나다"
+
+msgid "Georgia"
+msgstr "조지아"
+
+msgid "French Guiana"
+msgstr "프랑스령 기아나"
+
+msgid "Guernsey"
+msgstr "건지 섬"
+
+msgid "Ghana"
+msgstr "가나"
+
+msgid "Gibraltar"
+msgstr "지브롤터"
+
+msgid "Greenland"
+msgstr "그린란드"
+
+msgid "Gambia"
+msgstr "감비아"
+
+msgid "Guinea"
+msgstr "기니"
+
+msgid "Guadeloupe"
+msgstr "과들루프"
+
+msgid "Equatorial Guinea"
+msgstr "적도 기니"
+
+msgid "Greece"
+msgstr "그리스"
+
+msgid "South Georgia and the South Sandwich Islands"
+msgstr "사우스조지아 사우스샌드위치 제도"
+
+msgid "Guatemala"
+msgstr "과테말라"
+
+msgid "Guam"
+msgstr "괌"
+
+msgid "Guinea Bissau"
+msgstr "기니비사우"
+
+msgid "Guyana"
+msgstr "가이아나"
+
+msgid "Hong Kong"
+msgstr "홍콩"
+
+msgid "Heard Island and McDonald Islands"
+msgstr "허드 맥도널드 제도"
+
+msgid "Honduras"
+msgstr "온두라스"
+
+msgid "Croatia"
+msgstr "크로아티아"
+
+msgid "Haiti"
+msgstr "아이티"
+
+msgid "Hungary"
+msgstr "헝가리"
+
+msgid "Indonesia"
+msgstr "인도네시아"
+
+msgid "Ireland"
+msgstr "아일랜드"
+
+msgid "Israel"
+msgstr "이스라엘"
+
+msgid "Isle of Man"
+msgstr "맨 섬"
+
+msgid "India"
+msgstr "인도"
+
+msgid "British Indian Ocean Territory"
+msgstr "영국령 인도양 지역"
+
+msgid "Iraq"
+msgstr "이라크"
+
+msgid "Iran"
+msgstr "이란"
+
+msgid "Iceland"
+msgstr "아이슬란드"
+
+msgid "Italy"
+msgstr "이탈리아"
+
+msgid "Jersey"
+msgstr "저지 섬"
+
+msgid "Jamaica"
+msgstr "자메이카"
+
+msgid "Jordan"
+msgstr "요르단"
+
+msgid "Japan"
+msgstr "일본"
+
+msgid "Kenya"
+msgstr "케냐"
+
+msgid "Kyrgyzstan"
+msgstr "키르기스스탄"
+
+msgid "Cambodia"
+msgstr "캄보디아"
+
+msgid "Kiribati"
+msgstr "키리바시"
+
+msgid "Comoros"
+msgstr "코모로"
+
+msgid "Saint Kitts and Nevis"
+msgstr "세인트키츠 네비스"
+
+msgid "North Korea"
+msgstr "북한"
+
+msgid "South Korea"
+msgstr "대한민국"
+
+msgid "Kuwait"
+msgstr "쿠웨이트"
+
+msgid "Cayman Islands"
+msgstr "케이맨 제도"
+
+msgid "Kazakhstan"
+msgstr "카자흐스탄"
+
+msgid "Lao People's Democratic Republic"
+msgstr "라오스 인민 민주주의 공화국"
+
+msgid "Lebanon"
+msgstr "레바논"
+
+msgid "Saint Lucia"
+msgstr "세인트루시아"
+
+msgid "Scotland"
+msgstr "스코틀랜드"
+
+msgid "Liechtenstein"
+msgstr "리히텐슈타인"
+
+msgid "Sri Lanka"
+msgstr "스리랑카"
+
+msgid "Liberia"
+msgstr "라이베리아"
+
+msgid "Lesotho"
+msgstr "레소토"
+
+msgid "Lithuania"
+msgstr "리투아니아"
+
+msgid "Luxembourg"
+msgstr "룩셈부르크"
+
+msgid "Latvia"
+msgstr "라트비아"
+
+msgid "Libya"
+msgstr "리비아"
+
+msgid "Morocco"
+msgstr "모로코"
+
+msgid "Monaco"
+msgstr "모나코"
+
+msgid "Moldova"
+msgstr "몰도바"
+
+msgid "Montenegro"
+msgstr "몬테네그로"
+
+msgid "Saint Martin"
+msgstr "세인트 마틴"
+
+msgid "Madagascar"
+msgstr "마다가스카르"
+
+msgid "Marshall Islands"
+msgstr "마셜 제도"
+
+msgid "Macedonia"
+msgstr "마케도니아"
+
+msgid "Mali"
+msgstr "말리"
+
+msgid "Myanmar"
+msgstr "미얀마"
+
+msgid "Mongolia"
+msgstr "몽골"
+
+msgid "Macao"
+msgstr "마카오"
+
+msgid "Northern Mariana Islands"
+msgstr "북마리아나 제도"
+
+msgid "Martinique"
+msgstr "마르티니크"
+
+msgid "Mauritania"
+msgstr "모리타니"
+
+msgid "Montserrat"
+msgstr "몬트세랫"
+
+msgid "Malta"
+msgstr "몰타"
+
+msgid "Mauritius"
+msgstr "모리셔스"
+
+msgid "Maldives"
+msgstr "몰디브"
+
+msgid "Malawi"
+msgstr "말라위"
+
+msgid "Mexico"
+msgstr "멕시코"
+
+msgid "Malaysia"
+msgstr "말레이시아"
+
+msgid "Mozambique"
+msgstr "모잠비크"
+
+msgid "Namibia"
+msgstr "나미비아"
+
+msgid "New Caledonia"
+msgstr "누벨칼레도니"
+
+msgid "Niger"
+msgstr "니제르"
+
+msgid "Norfolk Island"
+msgstr "노퍽 섬"
+
+msgid "Nigeria"
+msgstr "나이지리아"
+
+msgid "Nicaragua"
+msgstr "니카라과"
+
+msgid "Netherlands"
+msgstr "네덜란드"
+
+msgid "Norway"
+msgstr "노르웨이"
+
+msgid "Nepal"
+msgstr "네팔"
+
+msgid "Nauru"
+msgstr "나우루"
+
+msgid "Niue"
+msgstr "니우에"
+
+msgid "New Zealand"
+msgstr "뉴질랜드"
+
+msgid "Oman"
+msgstr "오만"
+
+msgid "Panama"
+msgstr "파나마"
+
+msgid "Peru"
+msgstr "페루"
+
+msgid "French Polynesia"
+msgstr "프랑스령 폴리네시아"
+
+msgid "Papua New Guinea"
+msgstr "파푸아뉴기니"
+
+msgid "Philippines"
+msgstr "필리핀"
+
+msgid "Pakistan"
+msgstr "파키스탄"
+
+msgid "Poland"
+msgstr "폴란드"
+
+msgid "Saint Pierre and Miquelon"
+msgstr "생피에르 미클롱"
+
+msgid "Pitcairn"
+msgstr "핏케언 제도"
+
+msgid "Puerto Rico"
+msgstr "푸에르토리코"
+
+msgid "Palestine"
+msgstr "ปาเลสไตน์"
+
+msgid "Palestinian Territory"
+msgstr "팔레스타인 영토"
+
+msgid "Portugal"
+msgstr "포르투갈"
+
+msgid "Palau"
+msgstr "팔라우"
+
+msgid "Paraguay"
+msgstr "파라과이"
+
+msgid "Qatar"
+msgstr "카타르"
+
+msgid "Réunion"
+msgstr "레위니옹"
+
+msgid "Romania"
+msgstr "루마니아"
+
+msgid "Serbia"
+msgstr "세르비아"
+
+msgid "Russian Federation"
+msgstr "러시아 연방"
+
+msgid "Rwanda"
+msgstr "르완다"
+
+msgid "Saudi Arabia"
+msgstr "사우디아라비아"
+
+msgid "Solomon Islands"
+msgstr "솔로몬 제도"
+
+msgid "Seychelles"
+msgstr "세이셸"
+
+msgid "Sudan"
+msgstr "수단"
+
+msgid "Sweden"
+msgstr "스웨덴"
+
+msgid "Singapore"
+msgstr "싱가포르"
+
+msgid "Saint Helena"
+msgstr "เซนต์เฮเลนา"
+
+msgid "Slovenia"
+msgstr "슬로베니아"
+
+msgid "Svalbard and Jan Mayen"
+msgstr "스발바르 얀마옌"
+
+msgid "Slovakia"
+msgstr "슬로바키아"
+
+msgid "Sierra Leone"
+msgstr "시에라리온"
+
+msgid "San Marino"
+msgstr "산마리노"
+
+msgid "Senegal"
+msgstr "세네갈"
+
+msgid "Somalia"
+msgstr "소말리아"
+
+msgid "Suriname"
+msgstr "수리남"
+
+msgid "South Sudan"
+msgstr "남수단"
+
+msgid "Sao Tome and Principe"
+msgstr "상투메 프린시페"
+
+msgid "El Salvador"
+msgstr "엘살바도르"
+
+msgid "Sint Maarten"
+msgstr "신트마르턴"
+
+msgid "Syrian Arab Republic"
+msgstr "시리아"
+
+msgid "Eswatini"
+msgstr "스와질란드"
+
+msgid "Turks and Caicos Islands"
+msgstr "터크스 케이커스 제도"
+
+msgid "Chad"
+msgstr "차드"
+
+msgid "French Southern Territories"
+msgstr "프랑스령 남방 및 남극"
+
+msgid "Togo"
+msgstr "토고"
+
+msgid "Thailand"
+msgstr "태국"
+
+msgid "Tajikistan"
+msgstr "타지키스탄"
+
+msgid "Tokelau"
+msgstr "토켈라우"
+
+msgid "Timor-Leste"
+msgstr "동티모르"
+
+msgid "Turkmenistan"
+msgstr "투르크메니스탄"
+
+msgid "Tunisia"
+msgstr "튀니지"
+
+msgid "Tonga"
+msgstr "통가"
+
+msgid "Turkey"
+msgstr "터키"
+
+msgid "Trinidad and Tobago"
+msgstr "트리니다드 토바고"
+
+msgid "Tuvalu"
+msgstr "투발루"
+
+msgid "Taiwan"
+msgstr "대만"
+
+msgid "Tanzania"
+msgstr "탄자니아"
+
+msgid "Ukraine"
+msgstr "우크라이나"
+
+msgid "Uganda"
+msgstr "우간다"
+
+msgid "United States Minor Outlying Islands"
+msgstr "미국령 군소 제도"
+
+msgid "United States of America"
+msgstr "아메리카 합중국"
+
+msgid "United States"
+msgstr "미국"
+
+msgid "Uruguay"
+msgstr "우루과이"
+
+msgid "Uzbekistan"
+msgstr "우즈베키스탄"
+
+msgid "Holy See"
+msgstr "바티칸 시국"
+
+msgid "Saint Vincent and the Grenadines"
+msgstr "세인트빈센트 그레나딘"
+
+msgid "Venezuela"
+msgstr "베네수엘라"
+
+msgid "Virgin Islands"
+msgstr "영국령 버진아일랜드"
+
+msgid "Vietnam"
+msgstr "베트남"
+
+msgid "Vanuatu"
+msgstr "바누아투"
+
+msgid "Wallis and Futuna"
+msgstr "왈리스 퓌튀나"
+
+msgid "Wales"
+msgstr "웨일즈"
+
+msgid "Samoa"
+msgstr "사모아"
+
+msgid "Yemen"
+msgstr "예멘"
+
+msgid "Mayotte"
+msgstr "마요트"
+
+msgid "South Africa"
+msgstr "남아프리카 공화국"
+
+msgid "Zambia"
+msgstr "잠비아"
+
+msgid "Zimbabwe"
+msgstr "짐바브웨"
+
+
+#Nationality
+
+
+msgid "Angolan"
+msgstr "앙골라"
+
+msgid "Burkinabe"
+msgstr "부르 키나베"
+
+msgid "Burundian"
+msgstr "부룬디"
+
+msgid "Beninese"
+msgstr "베네 시안"
+
+msgid "Batswana"
+msgstr "Batswana"
+
+msgid "Congolese"
+msgstr "콩고"
+
+msgid "Central African"
+msgstr "중앙 아프리카 공화국"
+
+msgid "Congolese"
+msgstr "콩고"
+
+msgid "Ivorian"
+msgstr "아이보리 안"
+
+msgid "Cameroonian"
+msgstr "카메룬 사람"
+
+msgid "Cape Verdean"
+msgstr "케이프 베르데"
+
+msgid "Djibouti"
+msgstr "지부티"
+
+msgid "Algerian"
+msgstr "알제리의"
+
+msgid "Egyptian"
+msgstr "이집트 사람"
+
+msgid "Ethiopian"
+msgstr "에티오피아 사람"
+
+msgid "Gabonese"
+msgstr "가봉"
+
+msgid "Ghanaian"
+msgstr "가나의"
+
+msgid "Gambian"
+msgstr "감비아 사람"
+
+msgid "Guinean"
+msgstr "기니"
+
+msgid "Equatorial Guinean"
+msgstr "적도 기니"
+
+msgid "Guinea-Bissauan"
+msgstr "기니 비사우"
+
+msgid "Kenyan"
+msgstr "케냐"
+
+msgid "Comoran"
+msgstr "코모 란"
+
+msgid "Liberian"
+msgstr "라이베리아 인"
+
+msgid "Mosotho"
+msgstr "Mosotho"
+
+msgid "Libyan"
+msgstr "리비아 사람"
+
+msgid "Moroccan"
+msgstr "모로코 사람"
+
+msgid "Malagasy"
+msgstr "마다가스카르"
+
+msgid "Malian"
+msgstr "말리안"
+
+msgid "Mauritanian"
+msgstr "모리셔스 인"
+
+msgid "Mauritian"
+msgstr "모리셔스의"
+
+msgid "Malawian"
+msgstr "말라위 사람"
+
+msgid "Mozambican"
+msgstr "모잠비크"
+
+msgid "Namibian"
+msgstr "나미비아의"
+
+msgid "Nigerien"
+msgstr "나이지리아 엔"
+
+msgid "Nigerian"
+msgstr "나이지리아 인"
+
+msgid "Réunionese"
+msgstr "Réunionese"
+
+msgid "Rwandan"
+msgstr "르완다"
+
+msgid "Seychellois"
+msgstr "세이셸 로이스"
+
+msgid "Sudanese"
+msgstr "수단 인"
+
+msgid "Sierra Leonean"
+msgstr "시에라 리온 남"
+
+msgid "Senegalese"
+msgstr "세네갈"
+
+msgid "Somali"
+msgstr "소 말리"
+
+msgid "Sudanese"
+msgstr "수단 인"
+
+msgid "São Toméan"
+msgstr "상투 메간"
+
+msgid "Swazi"
+msgstr "스와질랜드"
+
+msgid "Chadian"
+msgstr "차드"
+
+msgid "Togolese"
+msgstr "토고"
+
+msgid "Tunisian"
+msgstr "튀니지 사람"
+
+msgid "Tanzanian"
+msgstr "탄자니아의"
+
+msgid "Ugandan"
+msgstr "우간다의"
+
+msgid "Mahoran"
+msgstr "마호 란"
+
+msgid "South African"
+msgstr "남아프리카 공화국"
+
+msgid "Zambian"
+msgstr "잠비아 사람"
+
+msgid "Zimbabwean"
+msgstr "짐바브웨 사람"
+
+msgid "Eritrean"
+msgstr "에리트레아"
+
+msgid "Emirian"
+msgstr "에미 리안"
+
+msgid "Afghan"
+msgstr "아프가니스탄 사람"
+
+msgid "Bangladeshi"
+msgstr "방글라데시"
+
+msgid "Bahraini"
+msgstr "바레인"
+
+msgid "Bruneian"
+msgstr "브루 네이"
+
+msgid "Bhutanese"
+msgstr "부탄 인"
+
+msgid "Chinese"
+msgstr "중국말"
+
+msgid "Hong Kongese"
+msgstr "홍콩 사람"
+
+msgid "Indonesian"
+msgstr "인도네시아 인"
+
+msgid "Israeli"
+msgstr "이스라엘 인"
+
+msgid "Indian"
+msgstr "옥수수"
+
+msgid "Japanese"
+msgstr "일본어"
+
+msgid "Kyrgyz"
+msgstr "키르 기 스"
+
+msgid "Cambodian"
+msgstr "캄보디아 인"
+
+msgid "South Korean"
+msgstr "대한민국 사람"
+
+msgid "Kuwaiti"
+msgstr "쿠웨이트"
+
+msgid "Kazakhstani"
+msgstr "카자흐스탄"
+
+msgid "Laotian"
+msgstr "라오스 어"
+
+msgid "Sri Lankan"
+msgstr "스리랑카 인"
+
+msgid "Burmese"
+msgstr "버마 사람"
+
+msgid "Mongolia"
+msgstr "몽골리아"
+
+msgid "Macanese"
+msgstr "마카오 사람"
+
+msgid "Maldivan"
+msgstr "Maldivan"
+
+msgid "Malaysian"
+msgstr "말레이시아 인"
+
+msgid "Nepalese"
+msgstr "네팔"
+
+msgid "Omani"
+msgstr "오만"
+
+msgid "Filipino"
+msgstr "필리핀 사람"
+
+msgid "Pakistani"
+msgstr "파키스탄 인"
+
+msgid "Qatari"
+msgstr "카타르 어"
+
+msgid "Saudi"
+msgstr "사우디"
+
+msgid "Singaporean"
+msgstr "싱가포르"
+
+msgid "Thai"
+msgstr "태국 사람"
+
+msgid "Tajik"
+msgstr "타직"
+
+msgid "East Timor"
+msgstr "동 티모르"
+
+msgid "East Timorese"
+msgstr "동 티모르"
+
+msgid "Turkmen"
+msgstr "투르크멘 말"
+
+msgid "Taiwanese"
+msgstr "대만 사람"
+
+msgid "Uzbekistani"
+msgstr "우즈베키스탄"
+
+msgid "Vietnamese"
+msgstr "베트남 사람"
+
+msgid "Yemenite"
+msgstr "예멘 사람"
+
+msgid "Andorran"
+msgstr "안도 란"
+
+msgid "Albanian"
+msgstr "알바니아"
+
+msgid "Austrian"
+msgstr "오스트리아 사람"
+
+msgid "Azerbaijani"
+msgstr "아제르바이잔"
+
+msgid "Herzegovinian"
+msgstr "헤르 제고 비안"
+
+msgid "Belgian"
+msgstr "벨기에 사람"
+
+msgid "Bulgarian"
+msgstr "불가리아 사람"
+
+msgid "Belarusian"
+msgstr "벨로루시의"
+
+msgid "Swiss"
+msgstr "스위스"
+
+msgid "Cypriot"
+msgstr "키프로스"
+
+msgid "Czech"
+msgstr "체코 사람"
+
+msgid "German"
+msgstr "독일 사람"
+
+msgid "Danish"
+msgstr "덴마크 말"
+
+msgid "Estonian"
+msgstr "에스토니아 사람"
+
+msgid "Spanish"
+msgstr "스페인 사람"
+
+msgid "Finnish"
+msgstr "핀란드어"
+
+msgid "Faroe Islanders"
+msgstr "페로 섬 주민"
+
+msgid "French"
+msgstr "프랑스 국민"
+
+msgid "British"
+msgstr "영국인"
+
+msgid "Gibraltarian‎"
+msgstr "지브롤터 주의자"
+
+msgid "Greenlander"
+msgstr "그린 랜더"
+
+msgid "Greek"
+msgstr "그리스 사람"
+
+msgid "Croatian"
+msgstr "크로아티아 사람"
+
+msgid "Hungarian"
+msgstr "헝가리 인"
+
+msgid "Irish"
+msgstr "아일랜드의"
+
+msgid "Icelander"
+msgstr "아이슬란드 사람"
+
+msgid "Italian"
+msgstr "이탈리아 사람"
+
+msgid "Liechtensteiner"
+msgstr "리히텐슈타인"
+
+msgid "Lithuanian"
+msgstr "리투아니아 사람"
+
+msgid "Luxembourger"
+msgstr "룩셈부르크"
+
+msgid "Latvian"
+msgstr "라트비아 사람"
+
+msgid "Monacan"
+msgstr "모나 칸"
+
+msgid "Moldovan"
+msgstr "몰도바"
+
+msgid "Montenegrin"
+msgstr "몬테네그로 사람"
+
+msgid "Macedonian"
+msgstr "마케도니아 어"
+
+msgid "Maltese"
+msgstr "몰티즈"
+
+msgid "Dutch"
+msgstr "네덜란드 사람"
+
+msgid "Norwegian"
+msgstr "노르웨이 인"
+
+msgid "Polish"
+msgstr "광택"
+
+msgid "Portuguese"
+msgstr "포르투갈 인"
+
+msgid "Romanian"
+msgstr "루마니아 사람"
+
+msgid "Serbian"
+msgstr "세르비아 사람"
+
+msgid "Russian"
+msgstr "러시아인"
+
+msgid "Swedish"
+msgstr "스웨덴어"
+
+msgid "Slovenian"
+msgstr "슬로베니아"
+
+msgid "Slovakian"
+msgstr "슬로바키아의"
+
+msgid "San Marinese"
+msgstr "산 마리 네스"
+
+msgid "Ukrainian"
+msgstr "우크라이나 말"
+
+msgid "Scottish"
+msgstr "스코틀랜드 사람"
+
+msgid "Welsh"
+msgstr "웨일스 말"
+
+msgid "Northern Irish"
+msgstr "북 아일랜드"
+
+msgid "Bosnian"
+msgstr "보스니아 인"
+
+msgid "Bosnia"
+msgstr "보스니아"
+
+msgid "Armenian"
+msgstr "아르메니아 사람"
+
+msgid "Georgian"
+msgstr "조르지아 주 사람"
+
+msgid "Iraqi"
+msgstr "사람"
+
+msgid "Iranian"
+msgstr "이란의"
+
+msgid "Jordanian"
+msgstr "요르단의"
+
+msgid "Lebanese"
+msgstr "레바논 인"
+
+msgid "Palestinian"
+msgstr "팔레스타인 사람"
+
+msgid "Syrian"
+msgstr "시리아 인"
+
+msgid "Turkish"
+msgstr "터키어"
+
+msgid "Anguillan"
+msgstr "앵 귈라"
+
+msgid "Bermudians"
+msgstr "버뮤다 인"
+
+msgid "Saba"
+msgstr "사바"
+
+msgid "Canadian"
+msgstr "캐나다 사람"
+
+msgid "Curaçaoan"
+msgstr "쿠라 사오 안"
+
+msgid "Guadeloupean"
+msgstr "과들루프 피안"
+
+msgid "Honduran"
+msgstr "온두라스"
+
+msgid "Haitian"
+msgstr "아이티 섬 사람"
+
+msgid "Kittian and Nevisian"
+msgstr "키티 안 및 네비스"
+
+msgid "Martinican"
+msgstr "마티니 칸"
+
+msgid "Montserratian"
+msgstr "몬세 라트 사람"
+
+msgid "Miquelonnais"
+msgstr "미켈로 네스"
+
+msgid "Puerto Rican"
+msgstr "푸에르토 리코"
+
+msgid "Sint Maarten"
+msgstr "신트 마르텐"
+
+msgid "Turks and Caicos Islander"
+msgstr "터크 스 케이 커스 섬 주민"
+
+msgid "American"
+msgstr "미국 사람"
+
+msgid "British Virgin Island"
+msgstr "영국령 버진 아일랜드"
+
+msgid "U.S. Virgin Island"
+msgstr "미국령 버진 아일랜드"
+
+msgid "Samoan"
+msgstr "사모아"
+
+msgid "Australian"
+msgstr "오스트레일리아 사람"
+
+msgid "Cook Islanders"
+msgstr "쿡 아일랜드 주민"
+
+msgid "Fijian"
+msgstr "피지 어"
+
+msgid "Guamanian"
+msgstr "구아 마니 어"
+
+msgid "I-Kiribati"
+msgstr "I-키리바시"
+
+msgid "New Caledonian"
+msgstr "뉴 칼레도니아"
+
+msgid "New Zealander"
+msgstr "뉴질랜드 사람"
+
+msgid "French Polynesian"
+msgstr "프랑스 령 폴리네시아 인"
+
+msgid "Papua New Guinean"
+msgstr "파푸아 뉴기니"
+
+msgid "Palauan"
+msgstr "팔라우"
+
+msgid "Solomon Islander"
+msgstr "솔로몬 섬 주민"
+
+msgid "Tongan"
+msgstr "통가"
+
+msgid "Ni-Vanuatu"
+msgstr "니우 바누아투"
+
+msgid "Samoan"
+msgstr "사모아"
+
+msgid "Marshallese"
+msgstr "마샬 류의"
+
+msgid "Micronesian"
+msgstr "미크로네시아 인"
+
+msgid "Nauruan"
+msgstr "나우안"
+
+msgid "Tuvaluan"
+msgstr "투 팔랑"
+
+msgid "Barbudans"
+msgstr "Barbudans"
+
+msgid "Argentinean"
+msgstr "아르헨티나의"
+
+msgid "Aruban"
+msgstr "아루 반"
+
+msgid "Barbadian"
+msgstr "바베이도스"
+
+msgid "Bolivian"
+msgstr "볼리비아 사람"
+
+msgid "Brazilian"
+msgstr "브라질 사람"
+
+msgid "Bahamian"
+msgstr "바하마의"
+
+msgid "Belizean"
+msgstr "벨리 지언"
+
+msgid "Chilean"
+msgstr "칠레"
+
+msgid "Colombian"
+msgstr "콜롬비아 사람"
+
+msgid "Costa Rican"
+msgstr "코스타리카 사람"
+
+msgid "Cuban"
+msgstr "쿠바 사람"
+
+msgid "Dominican"
+msgstr "도미니카 공화국 사람"
+
+msgid "Dominican"
+msgstr "도미니카 공화국 사람"
+
+msgid "Ecuadorean"
+msgstr "에콰도르의"
+
+msgid "Grenadian"
+msgstr "그레나다"
+
+msgid "French Guianan"
+msgstr "프랑스 령 기아나"
+
+msgid "Guatemalan"
+msgstr "과테말라 사람"
+
+msgid "Guyanese"
+msgstr "가이아나 사람"
+
+msgid "Jamaican"
+msgstr "자메이카 사람"
+
+msgid "Caymanian"
+msgstr "케이맨"
+
+msgid "Saint Lucian"
+msgstr "세인트 루시아"
+
+msgid "Mexican"
+msgstr "멕시코 인"
+
+msgid "Nicaraguan"
+msgstr "니카라과"
+
+msgid "Panamanian"
+msgstr "파나마의"
+
+msgid "Peruvian"
+msgstr "페루"
+
+msgid "Paraguayan"
+msgstr "파라과이 사람"
+
+msgid "Surinamer"
+msgstr "수리남"
+
+msgid "Salvadoran"
+msgstr "살바도르의"
+
+msgid "Trinidadian or Tobagonian"
+msgstr "트리니다 드 또는 토바고"
+
+msgid "Uruguayan"
+msgstr "우루과이 사람"
+
+msgid "Vincentian"
+msgstr "빈센트 안"
+
+msgid "Venezuelan"
+msgstr "베네수엘라 사람"
+
+msgid "について"
+msgstr "대해"

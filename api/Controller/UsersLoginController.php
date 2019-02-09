@@ -1,16 +1,9 @@
 <?php
-/****************************************
-*																				*
-*  Users Login for API                  *
-*  Author: John Mart Belamide						*
-*  September 2015												*
-*																				*
-****************************************/
 App::uses('AppController', 'Controller');
 App::uses('ApiCommonController', 'Controller');
 App::uses('User', 'Model/Base');
 class UsersLoginController extends AppController {
-	public $uses = array('User','UsersLoginHistory');
+	public $uses = array('User');
 
 	public function beforeFilter() {
 
@@ -21,20 +14,24 @@ class UsersLoginController extends AppController {
 	public function index() {
 		$this->autoRender = false;
 
-		$data = json_decode($this->request->input(),true);
+		$request_data = json_decode(stripslashes($this->request->data['params']));
+		$data = (array) $request_data;
+
+		$this->log('[username] ' . $data['users_email'], 'debug');
+		$this->log('[password] ' . $data['password'], 'debug');
 
 		if (!$data) {
-			$response['error']['id'] = Configure::read('error.invalid_request');
-			$response['error']['message'] = __('Invalid request');
+			$response['error']['id'] = 'Invalid request';
+			$response['error']['message'] = 'Invalid request';
 		} else if (!isset($data['users_email']) || empty($data['users_email'])) {
-			$response['error']['id'] = Configure::read('error.users_email_is_required');
-			$response['error']['message'] = __('users_email is required');
-		} else if (!isset($data['users_password']) || empty($data['users_password']))  {
-			$response['error']['id'] = Configure::read('error.users_password_is_required');
-			$response['error']['message'] = __('users_password is required');
+			$response['error']['id'] = 'Email is required';
+			$response['error']['message'] = 'users_email is required';
+		} else if (!isset($data['password']) || empty($data['password']))  {
+			$response['error']['id'] = 'Password is required';
+			$response['error']['message'] = 'password is required';
 		} else {
 			$email = $data['users_email'];
-			$password =  AuthComponent::password($data['users_password']);
+			$password =  AuthComponent::password($data['password']);
 			$conditions = array(
 				'AND' => array(
 					'User.email' => $email,
@@ -42,59 +39,29 @@ class UsersLoginController extends AppController {
 					'status !=' => 9
 				)
 			);
-			$User = $this->User->useReplica()->find('first',array(
+			$User = $this->User->find('first',array(
 				'conditions' => $conditions,
 				'fields' => array(
 					'id',
 					'status',
-					'api_token'
-					),
-				'recursive' => -1
+					'api_token',
+					'display_name'
 				)
-			);
+			));
+			$this->log('[User] ' . json_encode($User), 'debug');
 			if (isset($User['User'])) {
+				$api_token = $User['User']['api_token'];
+				$user_display_name = $User['User']['display_name'];
 				if ($User['User']['status'] == 0) {
-					$api_token = empty($User['User']['api_token']) ? $this->generateAPIToken($this->request->clientIp()) : $User['User']['api_token'];
-						$this->User->read(array('api_token'), $User['User']['id']);
-						$this->User->set(array('api_token' => $api_token));
-						$this->User->save();
-					$response['users_api_token'] = $api_token;
-					$response['users_status'] = 'temporary_user';
+					$response['id'] = $User['User']['id'];
+					$response['user_display_name'] = $user_display_name;
 				} else {
-					$api_token = empty($User['User']['api_token']) ? $this->generateAPIToken($this->request->clientIp()) : $User['User']['api_token'];
-
-					if ( empty($User['User']['api_token']) ) { // update if token is empty
-						$this->User->read(array('api_token'), $User['User']['id']);
-						$this->User->validate = false;
-						$this->User->set(array('api_token' => $api_token));
-						$this->User->save();
-					}
-
-					$this->setLoginLog($User['User']['id']);
-
-					//log ip NC-1694 ADDED IP LOGS.
-					IpLogTable::add($User['User']['id'],2);
-
-					$response['users_api_token'] = $api_token;
+					$response['id'] = $User['User']['id'];
+					$response['user_display_name'] = $user_display_name;
 				}
 			} else {
-				$accountTemporary = $this->User->find('first',array(
-					'conditions'=>array(
-						'email' => $email,
-						'User.status =' => 0
-					),
-					'fields' => array(
-						'User.email',
-						'User.api_token'
-					)
-				));
-				if(!empty($accountTemporary)) {
-					$response['users_api_token'] = $accountTemporary['User']['api_token'];
-					$response['users_status'] = 'incorrect_password_temporary_user';
-				} else {
-					$response['error']['id'] = Configure::read('error.email_and_password_is_incorrect');
-					$response['error']['message'] = __('The combination of email and password you have entered is incorrect.');
-				}
+				$response['error']['id'] = 'Error email and password';
+				$response['error']['message'] = 'Error email and password';
 			}
 		}
 		return json_encode($response);
@@ -106,15 +73,15 @@ class UsersLoginController extends AppController {
 	*/
 	private function setLoginLog($id){
 
-		$this->User->validate = array();
-		$this->User->read(null,$id);
-		$this->User->set('last_login_time',myTools::myDate());
-		$this->User->save();
+	// 	$this->User->validate = array();
+	// 	$this->User->read(null,$id);
+	// 	$this->User->set('last_login_time',myTools::myDate());
+	// 	$this->User->save();
 
-		$this->UsersLoginHistory->read(null);
-		$this->UsersLoginHistory->set('user_id',$id);
-		$this->UsersLoginHistory->set('login_time',myTools::myDate());
-		$this->UsersLoginHistory->save();
+	// 	$this->UsersLoginHistory->read(null);
+	// 	$this->UsersLoginHistory->set('user_id',$id);
+	// 	$this->UsersLoginHistory->set('login_time',myTools::myDate());
+	// 	$this->UsersLoginHistory->save();
 	}
 
 	/**

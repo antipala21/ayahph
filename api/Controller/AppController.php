@@ -46,8 +46,8 @@ class AppController extends Controller {
 			'loginRedirect' => array('controller' => 'home', 'action' => 'index'),
 			'logoutRedirect' => array('controller' => 'login', 'action' => 'index'),
 			'loginAction' => '/login',
-			'authError' => '再度ログインしなおしてください。',
-			'loginError' => 'メールアドレス、またはパスワードに誤りがあります。'
+			'authError' => 'Please login again',
+			'loginError' => 'E-mail address or password is incorrect'
 		)
 	);
 	public $mySlack = NULL;
@@ -63,8 +63,8 @@ class AppController extends Controller {
 		));
 
 		/*Autoload Model*/
-		App::import('Model',array('CommonTable'));
-		App::import('Model',array('DefineMaster'));
+		// App::import('Model',array('CommonTable'));
+		// App::import('Model',array('DefineMaster'));
 
 		/*for content type*/
 		ob_start();
@@ -72,12 +72,8 @@ class AppController extends Controller {
 
 		/*Autoload Lib*/
 		App::uses('myTools','Lib');
-		App::uses('myMailer','Lib');
-		App::uses('myError','Lib');
-		App::uses('pushNotification', 'Lib');
-		App::uses('teacherPushNotification', 'Lib');
-		App::uses('mySlack', 'Lib');
-		App::uses('myMemcached', 'Lib');
+		// App::uses('myMailer','Lib');
+		// App::uses('myError','Lib');
 
 		/*Autoload table class*/
 		spl_autoload_register(function($class){
@@ -88,7 +84,7 @@ class AppController extends Controller {
 		});
 
 		/*Autoload Lib*/
-		Configure::load('my');
+		// Configure::load('my');
 		Configure::load('const');
 
 		/*meta title*/
@@ -107,14 +103,6 @@ class AppController extends Controller {
 		}
 		if (!empty($meta['description'])) {
 			$this->set('meta_description',$meta['description']);
-		}
-		if (!myTools::checkCompanyIP($_SERVER['REMOTE_ADDR'])) {
-			$maintenance = MaintenanceTable::getMaintenance();
-			if ($maintenance) {
-				$this->set('maintenance',$maintenance);
-				$this->layout = 'maintenance';
-				$this->Auth->deny('*');
-			}
 		}
 
 	}

@@ -1,0 +1,8 @@
+<app-internal-urls>
+	<internal-urls>
+		<site-url>
+			<site-name>cosmopier</site-name>
+			<site-domain>user/mobapp/e-station</site-domain>
+		</site-url>
+	</internal-urls>
+</app-internal-urls>

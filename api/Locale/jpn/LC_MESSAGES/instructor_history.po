@@ -1,0 +1,8 @@
+# This will be changes for version 17 api
+
+msgid "months"
+msgstr "ヶ月"
+
+msgid "Year"
+msgstr "年"
+

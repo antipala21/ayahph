@@ -1,0 +1,4 @@
+# This will be changes for version 17 api
+
+msgid "about"
+msgstr "について"

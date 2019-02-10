@@ -50,7 +50,9 @@
 									<td>
 										<a href="/agency/nursemaid/detail/<?php echo $value['NurseMaid']['id']; ?>"><?php echo $value['NurseMaid']['id']; ?></a>
 									</td>
-									<td><?php echo isset($value['NurseMaid']['first_name']) ? $value['NurseMaid']['first_name'] : '' ?></td>
+									<td>
+										<a href="/agency/nursemaid/detail/<?php echo $value['NurseMaid']['id']; ?>"><?php echo isset($value['NurseMaid']['first_name']) ? $value['NurseMaid']['first_name'] : '' ?></a>
+									</td>
 									<td><?php
 										$_gender = Configure::read('gender_array');
 										echo isset($value['NurseMaid']['gender']) ? $_gender[$value['NurseMaid']['gender']] : '';

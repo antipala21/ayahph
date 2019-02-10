@@ -81,7 +81,7 @@
 					</div>
 					<div class="col-lg-12 col-xlg-12 col-md-12 nurse-item-container">
 						<div class="media-right align-self-center">
-							<a href="/agency/nursemaid/edit/<?php echo $nurse_maid['id'] ?>" class="btn btn-info" rel="modal:open">Edit</a><hr>
+							<a href="/agency/nursemaid/edit/<?php echo $nurse_maid['id'] ?>" class="btn btn-info">Edit</a><hr>
 						</div>
 					</div>
 					<?php echo $this->Form->create('NurseMaid',array(

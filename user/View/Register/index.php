@@ -93,7 +93,7 @@
 						<label for="">
 							Name *
 						</label>
-						<?php echo $this->Form->input('name', array(
+						<?php echo $this->Form->input('fname', array(
 							'required' => true,
 							'label' => false,
 							'div'=> false,

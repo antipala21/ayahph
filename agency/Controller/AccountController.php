@@ -17,19 +17,9 @@ class AccountController extends AppController {
 
 	public function index () {
 
-		header("Pragma-directive: no-cache");
-		header("Cache-directive: no-cache");
-		header("Cache-control: no-cache");
-		header("Pragma: no-cache");
-		header("Expires: 0");
-
 		$agency = $this->Agency->find('first', array(
 			'conditions' => array('Agency.id' => $this->Auth->user('id'))
 		));
-
-		// myTools::display($this->Auth->user('id'));
-		// var_dump($agency);
-		// exit;
 
 		if (!$agency) {
 			return $this->redirect('/');

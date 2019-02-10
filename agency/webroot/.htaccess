@@ -2,6 +2,6 @@
     RewriteEngine On
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_URI} !^/(user/webroot/)?(css|js|files|flash|fonts|images|img|sound|video|mobapp/css|mobapp/images|mobapp/js|mobapp_android/images|mobapp_android/js|mobile/css|mobile/images|mobile/fonts|mobile/js|pr/css|pr/images|ps/js)/(.*)$
+    RewriteCond %{REQUEST_URI} !^/(agency/webroot/)?(css|js|files|flash|fonts|images|img|sound|video|mobapp/css|mobapp/images|mobapp/js|mobapp_android/images|mobapp_android/js|mobile/css|mobile/images|mobile/fonts|mobile/js|pr/css|pr/images|ps/js)/(.*)$
     RewriteRule ^(.*)$ index.php [QSA,L]
 </IfModule>

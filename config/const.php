@@ -20,3 +20,8 @@ $config['sort_key'] = array(
 	2 => 'rating',
 	3 => 'total_transaction'
 );
+
+$config['sort_nursemaid'] = array(
+	0 => 'rating',
+	1 => 'total_hire'
+);

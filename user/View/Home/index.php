@@ -35,7 +35,7 @@
 				'id' => 'sort_key',
 				'div' => array('class' => 'form-group sort_key'),
 				'empty' => '---',
-				'default' => isset($get['order']) ? $sort_value[$get['order']] : ''
+				'default' => isset($get['order']) && in_array($get['order'], Configure::read('sort_key')) ? $sort_value[$get['order']] : ''
 			)); ?>
 		</div>
 		<!-- Row -->

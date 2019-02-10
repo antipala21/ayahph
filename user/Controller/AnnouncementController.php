@@ -14,7 +14,8 @@ class AnnouncementController extends AppController {
 		$announcements = $this->Announcement->find('all', array(
 			'fields' => array(
 				'Announcement.*',
-				'Agency.name'
+				'Agency.name',
+				'Agency.image_url'
 			),
 			'joins' => array(
 				array(

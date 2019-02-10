@@ -98,7 +98,10 @@
 									<?php echo isset($value['NurseMaid']['first_name']) ? $value['NurseMaid']['first_name'] : ' ' ?>
 									<?php echo isset($value['NurseMaid']['last_lname']) ? $value['NurseMaid']['last_lname'] : ' ' ?>
 								</h4>
-								<h5 style="color: #eaa70a">Rating: <span><b><?php echo isset($value['NurseMaid']['rating']) ? round($value['NurseMaid']['rating'],2) : '-' ?></b></span></h5>
+								<h5 style="color: #eaa70a">Rating: <span>
+									<b>
+										<?php echo isset($value['NurseMaid']['rating']) ? round($value['NurseMaid']['rating'],2) . ' <i class="fa fa-star text-warning" aria-hidden="true"></i>' : '-' ?>
+									</b></span></h5>
 								<p><?php echo isset($value['NurseMaid']['self_introduction']) ? $value['NurseMaid']['self_introduction'] : ' ' ?></p>
 							</div>
 						</div>

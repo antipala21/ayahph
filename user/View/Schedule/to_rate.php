@@ -141,7 +141,7 @@
 					<div class="row nurse-item">
 						<div class="col-md-2">
 							<div class="media-left align-self-center">
-								<img style="width: 100%" class="rounded-circle" src="/user/images/users/1.jpg">
+								<img style="width: 100%" class="rounded-circle" src="<?php echo myTools::getProfileImgSrcAgency($value['NurseMaid']['image_url']); ?>">
 							</div>
 						</div>
 						<div class="col-md-4">

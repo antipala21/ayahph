@@ -13,3 +13,10 @@ $config['status'] = array(
 	0 => 'Not Active',
 	1 => 'Active'
 );
+
+$config['sort_key'] = array(
+	0 => 'total_nursemaid',
+	1 => 'current_available',
+	2 => 'rating',
+	3 => 'total_transaction'
+);

@@ -19,11 +19,25 @@
 	.alert-minimalist > [data-notify="message"] {
 		font-size: 80%;
 	}
+	.form-group.sort_key {
+		width: 300px;
+	}
 </style>
 
 <div class="page-wrapper">
 	<div class="container-fluid">
 		<br>
+		<div>
+			<?php echo $this->Form->input('Sort', array(
+				'options' => Configure::read('sort_key'),
+				'label' => 'Sort By ',
+				'class' => 'form-control',
+				'id' => 'sort_key',
+				'div' => array('class' => 'form-group sort_key'),
+				'empty' => '---',
+				'default' => isset($get['order']) ? $sort_value[$get['order']] : ''
+			)); ?>
+		</div>
 		<!-- Row -->
 		<div class="row">
 			<?php if($agencies): ?>
@@ -55,12 +69,6 @@
 															<div class="col-md-8 m-b-20">
 																<p class="m-t-30"><?php echo isset($value['Agency']['description']) ? $value['Agency']['description'] : '-' ?></p>
 															</div>
-															<div class="col-md-4 m-b-20">
-																<!-- <img src="/user/images/big/img4.jpg" alt="user" class="img-responsive radius">
-																<img src="/user/images/big/img4.jpg" alt="user" class="img-responsive radius">
-																<img src="/user/images/big/img4.jpg" alt="user" class="img-responsive radius">
-																<img src="/user/images/big/img4.jpg" alt="user" class="img-responsive radius"> -->
-															</div>
 														</div>
 														<div class="row">
 															<div class="col-md-4 m-b-20">
@@ -70,6 +78,11 @@
 													</div>
 												</div>
 											</div>
+										</div>
+										<h4 class="font-medium m-t-30">Reviews</h4>
+										<hr>
+										<div class="like-comm"> <a href="javascript:void(0)" class="link m-r-10"><?php echo isset($value['Agency']['rating_count']) ? $value['Agency']['rating_count'] : 0; ?> comment</a> <a href="javascript:void(0)" class="link m-r-10">
+											<i class="fa fa-star text-warning" aria-hidden="true"></i> <?php echo round($value['Agency']['rating'], 2) ?></a>
 										</div>
 									</div>
 								</div>
@@ -102,9 +115,6 @@
 												<a href="/agency-detail/<?php echo $id; ?>" class="btn btn-info">View Agency</a>
 											</div>
 										</div>
-										<h4 class="font-medium m-t-30">Reviews</h4>
-										<hr>
-										<div class="like-comm"> <a href="javascript:void(0)" class="link m-r-10">2 comment</a> <a href="javascript:void(0)" class="link m-r-10"><i class="fa fa-heart text-danger"></i> 5 Love</a> </div>
 									</div>
 								</div>
 
@@ -129,3 +139,16 @@
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+	(function(){
+		$(document).ready(function(){
+
+			// Sort Trigger
+			$('#sort_key').change(function(){
+				window.location.href = "/?order=" + $("#sort_key option:selected" ).text();
+			});
+
+		});
+	})();
+</script>

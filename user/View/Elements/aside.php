@@ -19,10 +19,14 @@
 					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'account' ? 'active' : ''; ?>" href="/user/account" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">Profile</span></a>
 				</li>
 				<li>
-					<a class="waves-effect waves-dark" href="/user/schedules" aria-expanded="false"><i class="fa fa-calendar-check-o" aria-hidden="true"></i><span class="hide-menu">Schedules</span></a>
+					<a class="waves-effect waves-dark <?php echo 
+					$this->params['controller'] == 'Schedule'
+					&& ($this->params['action'] == 'index' || $this->params['action'] == 'detail') ? 'active' : ''; ?>" href="/user/schedules" aria-expanded="false"><i class="fa fa-calendar-check-o" aria-hidden="true"></i><span class="hide-menu">Schedules</span></a>
 				</li>
 				<li>
-					<a class="waves-effect waves-dark" href="/user/to_rate" aria-expanded="false"><i class="fa fa-star-o" aria-hidden="true"></i><span class="hide-menu">To rate</span></a>
+					<a class="waves-effect waves-dark <?php echo 
+					$this->params['controller'] == 'Schedule'
+					&& $this->params['action'] == 'to_rate' ? 'active' : ''; ?>" href="/user/to_rate" aria-expanded="false"><i class="fa fa-star-o" aria-hidden="true"></i><span class="hide-menu">To rate</span></a>
 				</li>
 				<li>
 					<a class="waves-effect waves-dark" href="/announcements" aria-expanded="false"><i class="fa fa-bullhorn" aria-hidden="true"></i><span class="hide-menu">Announcement</span></a>

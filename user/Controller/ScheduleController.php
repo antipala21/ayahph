@@ -108,6 +108,7 @@ class ScheduleController extends AppController {
 				'NurseMaid.first_name',
 				'NurseMaid.last_lname',
 				'NurseMaid.address',
+				'NurseMaid.image_url',
 			),
 			'joins' => array(
 				array(

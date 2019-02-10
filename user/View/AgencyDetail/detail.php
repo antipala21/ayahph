@@ -129,9 +129,8 @@
 						</div>
 						<div class="col-md-6">
 							<div class="profile-head">
-								<h5><?php echo $agency['name'] ?></h5>
+								<h2><?php echo $agency['name'] ?></h2>
 								<h6><?php echo $agency['description'] ?></h6>
-								<p class="proile-rating">RANKINGS : <span>8/10</span></p>
 								<ul class="nav nav-tabs" id="myTab" role="tablist">
 									<li class="nav-item">
 										<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
@@ -150,9 +149,10 @@
 						<div class="col-md-4">
 							<hr>
 							<div class="profile-work">
-								<h5>Nursemaid (<span><a class="link" href="/agency-nursemaid/<?php echo $agency['id']; ?>">View all</a></span>)</h5>
 								<br>
-								<h5>Announcements (<span><a class="link" href="/agency-detail/announcement/<?php echo $agency['id']; ?>">View all</a></span>)</h5>
+								<h5>Rating: <span><?php echo round($agency['rating'], 2) ?> <i class="fa fa-star text-warning" aria-hidden="true"></i></span></h5>
+								<h5><a class="link" href="/agency-nursemaid/<?php echo $agency['id']; ?>">Nursemaids list (<?php echo isset($agency['total_nursemaid']) ? $agency['total_nursemaid'] : '0'  ?>) <i class="fa fa-external-link" aria-hidden="true"></i></a></h5>
+								<h5><a class="link" href="/agency-detail/announcement/<?php echo $agency['id']; ?>">Announcements list (<?php echo isset($agency['total_announcements']) ? $agency['total_announcements'] : 0; ?>) <i class="fa fa-external-link" aria-hidden="true"></i></a></h5>
 							</div>
 						</div>
 						<div class="col-md-8">

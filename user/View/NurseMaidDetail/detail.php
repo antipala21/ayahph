@@ -66,7 +66,7 @@
 								<?php echo isset($nurse_maid['first_name']) ? $nurse_maid['first_name'] : '-' ?>
 								<?php echo isset($nurse_maid['last_lname']) ? $nurse_maid['last_lname'] : '-' ?>
 							</h4>
-							<h3 style="color: #eaa70a">Rating: <span><b><?php echo isset($nurse_maid['rating']) ? round($nurse_maid['rating'],2) : '-' ?></b></span></h3>
+							<h3 style="color: #eaa70a">Rating: <span><b><?php echo isset($nurse_maid['rating']) ? round($nurse_maid['rating'],2) . ' <i class="fa fa-star text-warning" aria-hidden="true"></i>' : '-' ?></b></span></h3>
 							<p><?php echo isset($nurse_maid['self_introduction']) ? $nurse_maid['self_introduction'] : '-' ?></p>
 							<h4>Address</h4>
 							<p><?php echo isset($nurse_maid['address']) ? $nurse_maid['address'] : ' ' ?></p>

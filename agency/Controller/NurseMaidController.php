@@ -24,9 +24,10 @@ class NurseMaidController extends AppController {
 
 			$this->NurseMaid->set($data);
 
-			if ($this->NurseMaid->save()) {
+			$save = $this->NurseMaid->save();
+			if ($save) {
 				$this->Session->setFlash('Adding NurseMaid Success', 'default', array(), 'nurse-maid-add');
-				return $this->redirect('/nursemaid');
+				return $this->redirect('/nursemaid/detail/' . $save['NurseMaid']['id']);
 			}
 
 			$this->Session->setFlash('Adding NurseMaid Fail', 'default', array(), 'nurse-maid-add-error');

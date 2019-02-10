@@ -43,10 +43,27 @@
 				<div class="form-row">
 					<br>
 					<button type="submit" class="btn btn-success">Update</button>
-					<button type="submit" name="delete" value="delete" class="btn btn-danger">Delete</button>
+					<button type="submit" name="delete" value="delete" class="btn btn-danger hide" id="delete_btn">Delete</button>
+					<button id="confirm" class="btn btn-danger">Delete</button>
 				</div>
 
 			<?php echo $this->Form->end(); ?>
 		</div>
 	</div>
 </div>
+
+<script>
+	$(document).ready(function(){
+
+		$('#confirm').click(function(e){
+			e.preventDefault();
+			var confirm_delete = confirm("Confirm Delete?");
+			if (confirm_delete) {
+				$('#delete_btn').click();
+			} else {
+				return;
+			}
+		});
+
+	});
+</script>

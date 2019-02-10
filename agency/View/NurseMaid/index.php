@@ -12,13 +12,6 @@
 			</div>
 		</div>
 
-		<?php $flash = $this->Session->flash('nurse-maid-add'); ?>
-		<?php if($flash): ?>
-			<div class="alert alert-success">
-				<?php echo $flash; ?>
-			</div>
-		<?php endif; ?>
-
 		<?php $flash2 = $this->Session->flash('nurse-maid-edit'); ?>
 		<?php if($flash2): ?>
 			<div class="alert alert-success">

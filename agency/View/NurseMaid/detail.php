@@ -44,6 +44,14 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-12 col-xlg-12 col-md-12 nurse-item-container">
+
+				<?php $flash = $this->Session->flash('nurse-maid-add'); ?>
+				<?php if($flash): ?>
+					<div class="alert alert-success">
+						<?php echo $flash; ?>
+					</div>
+				<?php endif; ?>
+
 				<div class="row nurse-item">
 					<div class="col-md-2">
 						<div class="media-left align-self-center">
@@ -94,10 +102,27 @@
 					<?php echo $this->Form->hidden('id', array('value' => $nurse_maid['id'])); ?>
 					<input class="btn btn-success" type="submit" name="value_transaction" value="Available">
 					<input class="btn btn-danger" type="submit" name="value_transaction" value="Not Available">
-					<input class="btn btn-danger" type="submit" name="value_transaction" value="Delete">
+					<input class="btn btn-danger hide" type="submit" name="value_transaction" value="Delete" id="delete_btn">
+					<button id="confirm" class="btn btn-danger">Delete</button>
 					<?php echo $this->Form->end(); ?>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+<script>
+	$(document).ready(function(){
+
+		$('#confirm').click(function(e){
+			e.preventDefault();
+			var confirm_delete = confirm("Confirm Delete?");
+			if (confirm_delete) {
+				$('#delete_btn').click();
+			} else {
+				return;
+			}
+		});
+
+	});
+</script>

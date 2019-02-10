@@ -53,7 +53,11 @@
 				<div class="row nurse-item">
 					<div class="col-md-2">
 						<div class="media-left align-self-center">
-							<img class="rounded-circle" src="https://randomuser.me/api/portraits/women/50.jpg">
+							<?php if(isset($nurse_maid['image_url']) && !empty($nurse_maid['image_url'])): ?>
+								<img style="width: 125px;" class="rounded-circle" src="<?php echo myTools::getProfileImgSrcAgency($nurse_maid['image_url']); ?>" alt="Avatar">
+							<?php else: ?>
+								<img class="rounded-circle" src="https://randomuser.me/api/portraits/women/50.jpg">
+							<?php endif; ?>
 						</div>
 					</div>
 					<div class="col-md-10">

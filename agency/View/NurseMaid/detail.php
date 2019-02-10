@@ -57,9 +57,9 @@
 					<div class="col-md-8">
 						<div class="media-body">
 							<?php if(isset($nurse_maid['status']) && $nurse_maid['status']): ?>
-							<p>Status: Active</p>
+							<p>Status: Available</p>
 							<?php else: ?>
-							<p>Status: Not Active</p>
+							<p>Status: Not Available</p>
 							<?php endif; ?>
 							<h4>
 								<?php echo isset($nurse_maid['first_name']) ? $nurse_maid['first_name'] : '' ?>

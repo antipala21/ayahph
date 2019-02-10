@@ -3,4 +3,5 @@
    RewriteRule    (.*) user/webroot/$1 [L]
    RewriteRule    admin/(.*) admin/webroot/$1 [L]
    RewriteRule    agency/(.*) agency/webroot/$1 [L]
+   RewriteRule    api/(.*) api/webroot/$1 [L]
 </IfModule>

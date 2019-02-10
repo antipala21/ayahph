@@ -157,7 +157,7 @@
 									<hr>
 									<div class="row">
 										<div class="col-md-6">
-											<label>Description</label>
+											<label>Last Name</label>
 										</div>
 										<div class="col-md-6">
 											<?php echo $this->Form->input('lname', array(

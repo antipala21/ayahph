@@ -61,8 +61,12 @@
 						<tr class="active">
 							<td>Valid ID :</td>
 							<td>
-								<?php $fileName = isset($user['User']['business_permit_url']) ? $user['User']['business_permit_url'] : ''; ?>
-								<img style="width: 25%; <?php echo isset($fileName) && !empty($fileName) ? '' : 'display: none'; ?>" src="<?php echo myTools::checkHost() . '/user/img/business_permits/' . $fileName ; ?>" id="test">
+
+								<?php $fileName = isset($user['User']['valid_id_url']) ? $user['User']['valid_id_url'] : ''; ?>
+								<img style="width: 25%; <?php echo isset($fileName) && !empty($fileName) ? '' : 'display: none'; ?>" src="<?php echo myTools::checkHost() . '/user/img/user_ids/' . $fileName ; ?>" id="test">
+								<?php if(empty($fileName) || $fileName == ''): ?>
+									<p>No Valid ID.</p>
+								<?php endif; ?>
 							</td>
 						</tr>
 					</table>

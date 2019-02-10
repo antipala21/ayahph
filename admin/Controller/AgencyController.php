@@ -5,7 +5,8 @@ class AgencyController extends AppController {
 	public $uses = array(
 		'Agency',
 		'User',
-		'Admin'
+		'Admin',
+		'AgencyLegalDocument'
 	);
 
 	public function beforeFilter() {
@@ -27,6 +28,12 @@ class AgencyController extends AppController {
 		$agency = $this->Agency->find('first', array(
 			'conditions' => array('Agency.id' => $id)
 		));
+
+		$documents = $this->AgencyLegalDocument->find('all', array(
+			'conditions' => array('AgencyLegalDocument.agency_id' => $id)
+		));
+
+		$this->set('documents', $documents);
 		$this->set('agency', $agency);
 
 		if ($this->request->is('post')) {

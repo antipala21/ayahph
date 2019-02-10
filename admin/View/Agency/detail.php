@@ -90,8 +90,14 @@
 						<tr class="active">
 							<td>Business Permit :</td>
 							<td>
-								<?php $fileName = isset($agency['Agency']['business_permit_url']) ? $agency['Agency']['business_permit_url'] : ''; ?>
-								<img style="width: 25%; <?php echo isset($fileName) && !empty($fileName) ? '' : 'display: none'; ?>" src="<?php echo myTools::checkHost() . '/agency/img/agency_permit/' . $fileName ; ?>" id="test">
+								<?php if($documents): ?>
+									<?php foreach($documents as $key => $value): ?>
+										<img class="legal_docu rounded d-block" src="/agency/img/agency_permit/<?php echo $value['AgencyLegalDocument']['filename']; ?>">
+										<hr>
+									<?php endforeach; ?>
+								<?php else: ?>
+									<p>Empty.</p>
+								<?php endif; ?>
 							</td>
 						</tr>
 					</table>

@@ -70,14 +70,10 @@ class AccountController extends AppController {
 	}
 
 	public function updateRequirements () {
-
 		$documents = $this->AgencyLegalDocument->find('all', array(
-			// 'fields' => array('Agency.business_permit_url'),
 			'conditions' => array('AgencyLegalDocument.agency_id' => $this->Auth->user('id'))
 		));
-		// myTools::display($agency);exit;
 		$this->set('documents', $documents);
-
 	}
 
 	private function uploadAgreement ($permit = array(), $filename) {

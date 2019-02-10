@@ -18,7 +18,7 @@
 				<table id="agency_list" class="table table-striped table-bordered" style="width:100%">
 					<thead>
 						<tr>
-							<th>No.</th>
+							<th>ID</th>
 							<th>Display name</th>
 							<th>Last name</th>
 							<th>Gender</th>
@@ -31,7 +31,9 @@
 						<?php if($users): ?>
 							<?php foreach ($users as $key => $value): ?>
 								<tr>
-									<td><?php echo $key+1; ?></td>
+									<td>
+										<a href="/admin/user-detail/<?php echo $value['User']['id']; ?>"><?php echo $value['User']['id']; ?></a>
+									</td>
 									<td>
 										<a href="/admin/user-detail/<?php echo $value['User']['id']; ?>"><?php echo isset($value['User']['display_name']) ? $value['User']['display_name'] : '' ?></a>
 									</td>

@@ -33,6 +33,12 @@
 					<button class="btn btn-warning">Deactivate</button>
 				</div>
 				</form>
+				<br>
+				<?php if(isset($agency['Agency']['image_url']) && !empty($agency['Agency']['image_url'])): ?>
+					<img style="width: 250px;" id="view-profile-pic" src="<?php echo myTools::getProfileImgSrcAgency($agency['Agency']['image_url']); ?>" alt="Avatar">
+				<?php else: ?>
+					<img style="width: 250px;" id="view-profile-pic" src="/agency/images/picture.jpg" alt="Avatar">
+				<?php endif; ?>
 
 				<hr>
 				<div class="table table-responsive">

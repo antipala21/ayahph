@@ -5,6 +5,13 @@
 			<div class="col-md-12">
 				<legend>User Details</legend>
 				<hr>
+
+				<?php if(isset($user['User']['image_url']) && !empty($user['User']['image_url'])): ?>
+					<img style="width: 250px;" id="view-profile-pic" src="<?php echo myTools::getProfileImgSrc($user['User']['image_url']); ?>" alt="Avatar">
+				<?php else: ?>
+					<img style="width: 250px;" id="view-profile-pic" src="/user/images/picture.jpg" alt="Avatar">
+				<?php endif; ?>
+
 				<div class="table table-responsive">
 					<table class="table">
 						<tr class="">

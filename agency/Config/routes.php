@@ -43,6 +43,7 @@
 
 	Router::connect('/account/requirements', array('controller' => 'Account', 'action' => 'updateRequirements'));
 	Router::connect('/account/ajax_image_upload', array('controller' => 'Account', 'action' => 'ajax_image_upload'));
+	Router::connect('/account/ajax_nursemaid_image_upload', array('controller' => 'NurseMaid', 'action' => 'ajax_nursemaid_image_upload'));
 	
 	Router::connect('/transaction', array('controller' => 'Transaction', 'action' => 'index'));
 	Router::connect('/transaction/detail/:transaction_id', array('controller' => 'Transaction', 'action' => 'detail'));

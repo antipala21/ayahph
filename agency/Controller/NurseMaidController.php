@@ -36,6 +36,12 @@ class NurseMaidController extends AppController {
 
 	public function detail () {
 
+		header("Pragma-directive: no-cache");
+		header("Cache-directive: no-cache");
+		header("Cache-control: no-cache");
+		header("Pragma: no-cache");
+		header("Expires: 0");
+
 		$nursemaid_id = isset($this->params['nursemaid_id']) ? $this->params['nursemaid_id'] : null;
 
 		$nursemaid = $this->NurseMaid->find('first', array(
@@ -53,7 +59,7 @@ class NurseMaidController extends AppController {
 				$this->NurseMaid->delete($data['NurseMaid']['id']);
 				return $this->redirect('/nursemaid');
 			} else {
-				$new_status = isset($data['value_transaction']) && $data['value_transaction'] == 'Active' ? 1 : 0;
+				$new_status = isset($data['value_transaction']) && $data['value_transaction'] == 'Available' ? 1 : 0;
 				$this->log('[new_status] ' . $new_status, 'debug');
 
 				$this->NurseMaid->clear();
@@ -69,6 +75,13 @@ class NurseMaidController extends AppController {
 	}
 
 	public function edit () {
+
+		header("Pragma-directive: no-cache");
+		header("Cache-directive: no-cache");
+		header("Cache-control: no-cache");
+		header("Pragma: no-cache");
+		header("Expires: 0");
+
 		$nursemaid_id = isset($this->params['nursemaid_id']) ? $this->params['nursemaid_id'] : null;
 
 		$nursemaid = $this->NurseMaid->find('first', array(
@@ -92,6 +105,30 @@ class NurseMaidController extends AppController {
 		}
 
 		$this->set('nurse_maid', $nursemaid['NurseMaid']);
+	}
+
+	public function ajax_nursemaid_image_upload () {
+		$this->layout = false;
+		$this->autoRender = false;
+
+		if ($this->request->is('ajax')) {
+
+			$data = $this->request->data['profile-image'];
+			$nurse_maid_id = $this->request->data['nurse_maid_id'];
+
+			list($type, $data) = explode(';', $data);
+			list(, $data)      = explode(',', $data);
+			$data = base64_decode($data);
+
+			$fileName = $nurse_maid_id . '_' . 'nursemaid_profile' . '.jpg';
+
+			file_put_contents('images/'. $fileName, $data);
+
+			$this->NurseMaid->clear();
+			$this->NurseMaid->read(null, $nurse_maid_id);
+			$this->NurseMaid->saveField('image_url', $fileName);
+			return true;
+		}
 	}
 
 }

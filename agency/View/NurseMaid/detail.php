@@ -47,7 +47,11 @@
 				<div class="row nurse-item">
 					<div class="col-md-2">
 						<div class="media-left align-self-center">
-							<img class="rounded-circle" src="https://randomuser.me/api/portraits/women/50.jpg">
+							<?php if(isset($nurse_maid['image_url']) && !empty($nurse_maid['image_url'])): ?>
+								<img style="width: 125px;" class="rounded-circle" id="view-profile-pic" src="<?php echo myTools::getProfileImgSrcAgency($nurse_maid['image_url']); ?>" alt="Avatar">
+							<?php else: ?>
+								<img class="rounded-circle" id="view-profile-pic" src="https://randomuser.me/api/portraits/women/50.jpg">
+							<?php endif; ?>
 						</div>
 					</div>
 					<div class="col-md-8">
@@ -88,8 +92,8 @@
 						'id' => 'nurseMaidUpdateStatus',
 						)); ?>
 					<?php echo $this->Form->hidden('id', array('value' => $nurse_maid['id'])); ?>
-					<input class="btn btn-success" type="submit" name="value_transaction" value="Active">
-					<input class="btn btn-danger" type="submit" name="value_transaction" value="Not Active">
+					<input class="btn btn-success" type="submit" name="value_transaction" value="Available">
+					<input class="btn btn-danger" type="submit" name="value_transaction" value="Not Available">
 					<input class="btn btn-danger" type="submit" name="value_transaction" value="Delete">
 					<?php echo $this->Form->end(); ?>
 				</div>

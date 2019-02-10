@@ -168,6 +168,9 @@ class AccountController extends AppController {
 			$this->User->clear();
 			$this->User->read(null, $this->Auth->user('id'));
 			$this->User->saveField('image_url', $fileName);
+
+			$this->Session->write('Auth.User.image_url', $fileName);
+
 			return true;
 		}
 	}

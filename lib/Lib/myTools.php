@@ -107,7 +107,7 @@ class myTools{
 			return '/images/picture.jpg';
 		}
 		if (file_exists(ROOT . '/user/webroot/images/' . $filename)) {
-			return '/images/' . $filename;
+			return '/images/' . $filename . '?v=' . strtotime("now");
 		}
 		return '/images/picture.jpg';
 	}
@@ -117,7 +117,7 @@ class myTools{
 			return '/agency/images/picture.jpg';
 		}
 		if (file_exists(ROOT . '/agency/webroot/images/' . $filename)) {
-			return '/agency/images/' . $filename;
+			return '/agency/images/' . $filename . '?v=' . strtotime("now");
 		}
 		return '/agency/images/picture.jpg';
 	}

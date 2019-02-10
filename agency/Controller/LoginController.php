@@ -37,11 +37,7 @@ class LoginController extends AppController{
 				if ($data['Agency']['business_permit_flg'] == 0) {
 					return $this->redirect('/register-legal-documents/');
 				}
-				$this->redirect($this->Auth->redirectUrl());
-
-
-				// $this->Session->setFlash(__('Welcome, '. $this->Auth->user('fname')));
-				
+				return $this->redirect('/account');
 			}
 			elseif(isset($data['Agency']) && $data['Agency']['business_permit_flg'] == 0){
 				return $this->redirect('/register-legal-documents/');

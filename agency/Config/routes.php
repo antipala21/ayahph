@@ -41,6 +41,7 @@
 	Router::connect('/announcement/add', array('controller' => 'Announcement', 'action' => 'add'));
 	Router::connect('/announcement/detail/:id', array('controller' => 'Announcement', 'action' => 'detail'));
 
+	Router::connect('/account', array('controller' => 'Account', 'action' => 'index'));
 	Router::connect('/account/requirements', array('controller' => 'Account', 'action' => 'updateRequirements'));
 	Router::connect('/account/ajax_image_upload', array('controller' => 'Account', 'action' => 'ajax_image_upload'));
 	Router::connect('/account/ajax_nursemaid_image_upload', array('controller' => 'NurseMaid', 'action' => 'ajax_nursemaid_image_upload'));

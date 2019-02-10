@@ -42,9 +42,11 @@
 	Router::connect('/announcement/detail/:id', array('controller' => 'Announcement', 'action' => 'detail'));
 
 	Router::connect('/account', array('controller' => 'Account', 'action' => 'index'));
+	Router::connect('/account/payment', array('controller' => 'Account', 'action' => 'payment'));
 	Router::connect('/account/requirements', array('controller' => 'Account', 'action' => 'updateRequirements'));
 	Router::connect('/account/ajax_image_upload', array('controller' => 'Account', 'action' => 'ajax_image_upload'));
 	Router::connect('/account/ajax_nursemaid_image_upload', array('controller' => 'NurseMaid', 'action' => 'ajax_nursemaid_image_upload'));
+	Router::connect('/account/success_card', array('controller' => 'Account', 'action' => 'success_card'));
 	
 	Router::connect('/transaction', array('controller' => 'Transaction', 'action' => 'index'));
 	Router::connect('/transaction/detail/:transaction_id', array('controller' => 'Transaction', 'action' => 'detail'));

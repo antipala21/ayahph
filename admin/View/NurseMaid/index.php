@@ -59,6 +59,8 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-		$('#nursemaid_list').DataTable();
+		$('#nursemaid_list').DataTable({
+			 "order": [[ 0, 'desc' ]]
+		});
 	});
 </script>

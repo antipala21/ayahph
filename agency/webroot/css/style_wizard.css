@@ -115,7 +115,7 @@ body {
     .steps ul.step-2:before {
       content: "Enter Agency Information"; }
     .steps ul.step-3:before {
-      content: "Card Authentication"; }
+      content: "Finish"; }
     .steps ul.step-4:before {
       content: "Billing Method"; }
 

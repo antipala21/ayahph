@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="/user/fonts/material-design-iconic-font/css/material-design-iconic-font.css">
+<link rel="stylesheet" href="/user/css/jquery-ui.css">
 <link href="/css/style_wizard.css" rel="stylesheet" type="text/css">
 
 <div class="page-wrapper" style="min-height: 818px; margin-right: 240px;">
@@ -91,7 +92,7 @@
 				<section>
 					<div class="form-row">
 						<label for="">
-							Name *
+							First Name *
 						</label>
 						<?php echo $this->Form->input('fname', array(
 							'required' => true,
@@ -119,6 +120,51 @@
 					</div>
 					<div class="form-row">
 						<label for="">
+							Birthday *
+						</label>
+						<?php echo $this->Form->input('birthdate', array(
+							'type' => 'text',
+							'required' => true,
+							'label' => false,
+							'div'=> false,
+							'class'=>'form-control',
+						)); ?>
+						<div class="invalid-feedback">
+							Please provide Brithday
+						</div>
+					</div>
+					<div class="form-row">
+						<label for="">
+							Gender *
+						</label>
+						<?php echo $this->Form->input('gender', array(
+							'options' => Configure::read('gender_array'),
+							'required' => true,
+							'label' => false,
+							'div'=> false,
+							'class'=>'form-control',
+							'empty' => '--'
+						)); ?>
+						<div class="invalid-feedback">
+							Please provide Gender
+						</div>
+					</div>
+					<div class="form-row">
+						<label for="">
+							Phone number *
+						</label>
+						<?php echo $this->Form->input('phone_number', array(
+							'required' => true,
+							'label' => false,
+							'div'=> false,
+							'class'=>'form-control',
+						)); ?>
+						<div class="invalid-feedback">
+							Please provide Phone number
+						</div>
+					</div>
+					<div class="form-row">
+						<label for="">
 							Display Name *
 						</label>
 						<?php echo $this->Form->input('display_name', array(
@@ -137,13 +183,16 @@
 				<h4></h4>
 				<section>
 					<div class="product">
-						<h1>Finish!</h1>
+						<h3>Almost Done!</h3>
+						<p>Next step, payment and legal document.</p>
+						<p>Guidelines and Agreement....</p>
 					</div>
 				</section>
 			</div>
 		<?php echo $this->Form->end(); ?>
 	</div>
 </div>
+<script src="/user/js/jquery-ui.js"></script>
 <script src="/user/js/jquery.steps.js"></script>
 <script src="/js/dropin.min.js"></script>
 <script type="text/javascript">
@@ -188,6 +237,7 @@
 		});
 
 		function invalidateInput (el, text = false) {
+			$(el).focus();
 			$(el).css('border-color', '#dc3545');
 			$(el).next().css('display', 'block');
 			if (text) {
@@ -256,13 +306,28 @@
 
 				// Agency Info Validation
 				if (currentIndex == 1) {
-					if ($('#UserName').val().trim() == '') {
-						invalidateInput('#UserName');
+					if ($('#UserFname').val().trim() == '') {
+						invalidateInput('#UserFname');
 						return false;
 					}
 
 					if ($('#UserAddress').val().trim() == '') {
 						invalidateInput('#UserAddress');
+						return false;
+					}
+
+					if ($('#UserBirthdate').val().trim() == '') {
+						invalidateInput('#UserBirthdate');
+						return false;
+					}
+
+					if ($('#UserGender').val().trim() == '') {
+						invalidateInput('#UserGender');
+						return false;
+					}
+
+					if ($('#UserPhoneNumber').val().trim() == '') {
+						invalidateInput('#UserPhoneNumber');
 						return false;
 					}
 
@@ -328,6 +393,13 @@
 			$('.checkbox-circle label').removeClass('active');
 			$(this).addClass('active');
 		});
+
+		$("#UserBirthdate").datepicker({
+			changeMonth: true,
+			changeYear: true,
+			dateFormat: 'yy-mm-dd'
+		});
+
 
 	}); // end js
 </script>

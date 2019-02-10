@@ -125,6 +125,30 @@ class AccountController extends AppController {
 		}
 	}
 
+	public function payment () {
+		$member = $this->Agency->find('count', array(
+			'conditions' => array(
+				'Agency.id' => $this->Auth->user('id'),
+				'Agency.status' => 1
+			)
+		));
+		if ($member) {
+			return $this->redirect('/account');
+		}
+	}
+
+	public function success_card () {
+		$this->layout = false;
+		$this->autoRender = false;
+		if ($this->request->is('ajax')) {
+			$this->Agency->clear();
+			$this->Agency->read(array('status'), $this->Auth->user('id'));
+			$this->Agency->set(array('status'=> 1));
+			$this->Agency->save();
+		}
+		return true;
+	}
+
 	public function logout() {
 		$this->Session->destroy();
 		$this->redirect($this->Auth->logout());

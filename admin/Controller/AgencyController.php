@@ -40,8 +40,8 @@ class AgencyController extends AppController {
 			$data = $this->request->data;
 			$data_value = isset($data['data_value']) ? $data['data_value'] : 1;
 			$this->Agency->clear();
-			$this->Agency->read(array('status', 'display_flg'), $id);
-			$this->Agency->set(array('status' => $data_value, 'display_flg' => $data_value));
+			$this->Agency->read(array('display_flg'), $id);
+			$this->Agency->set(array('display_flg' => $data_value));
 			if ($this->Agency->save()) {
 				$this->Session->setFlash('Agency Upated Success', 'default', array(), 'success');
 				return $this->redirect('/agencies');

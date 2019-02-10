@@ -6,6 +6,16 @@ class NurseMaidController extends AppController {
 
 	public function beforeFilter() {
 		parent::beforeFilter();
+		$member = $this->Agency->find('count', array(
+			'conditions' => array(
+				'Agency.id' => $this->Auth->user('id'),
+				'Agency.status' => 0
+			)
+		));
+		if ($member) {
+			$this->Session->setFlash('Please enter payment card first.', 'default', array(), 'payment_msg');
+			return $this->redirect('/account/payment');
+		}
 	}
 
 	public function index(){

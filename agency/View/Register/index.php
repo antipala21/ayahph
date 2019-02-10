@@ -131,14 +131,43 @@
 							Please provide Agency Representative Name
 						</div>
 					</div>
+					<div class="form-row">
+						<label for="">
+							Phone Number *
+						</label>
+						<?php echo $this->Form->input('phone_number', array(
+							'required' => true,
+							'label' => false,
+							'div'=> false,
+							'class'=>'form-control',
+						)); ?>
+						<div class="invalid-feedback">
+							Please provide Phone number
+						</div>
+					</div>
+					<div class="form-row">
+						<label for="">
+							Description *
+						</label>
+						<?php echo $this->Form->input('description', array(
+							'required' => true,
+							'label' => false,
+							'div'=> false,
+							'class'=>'form-control',
+						)); ?>
+						<div class="invalid-feedback">
+							Please provide Description
+						</div>
+					</div>
 				</section>
 
 				<!-- SECTION 3 -->
 				<h4></h4>
 				<section>
 					<div class="product">
-						<small>4111111111111210</small>
-						<div id="dropin-container"></div>
+						<h3>Almost Done!</h3>
+						<p>Next step, payment and legal document.</p>
+						<p>Guidelines and Agreement....</p>
 					</div>
 				</section>
 			</div>
@@ -146,7 +175,6 @@
 	</div>
 </div>
 <script src="/agency/js/jquery.steps.js"></script>
-<script src="/agency/js/dropin.min.js"></script>
 <script type="text/javascript">
 	$(function(){
 
@@ -267,6 +295,17 @@
 						invalidateInput('#AgencyRepresentativeName');
 						return false;
 					}
+
+					if ($('#AgencyPhoneNumber').val().trim() == '') {
+						invalidateInput('#AgencyPhoneNumber');
+						return false;
+					}
+
+					if ($('#AgencyDescription').val().trim() == '') {
+						invalidateInput('#AgencyDescription');
+						return false;
+					}
+
 				}
 
 				if ( newIndex === 1 ) {
@@ -324,21 +363,6 @@
 		$('.checkbox-circle label').click(function(){
 			$('.checkbox-circle label').removeClass('active');
 			$(this).addClass('active');
-		});
-
-		// Braintree
-		var button = document.querySelector('#submit-button');
-
-		braintree.dropin.create({
-			authorization: 'sandbox_ypwwzxvh_tnnc2y3sq3ctj5cb',
-			container: '#dropin-container'
-		}, function (createErr, instance) {
-			button.addEventListener('click', function () {
-				instance.requestPaymentMethod(function (err, payload) {
-					console.log('error ' +  JSON.stringify(err));
-					console.log('payload ' +  JSON.stringify(payload));
-				});
-			});
 		});
 
 	}); // end js

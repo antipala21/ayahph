@@ -55,6 +55,8 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-		$('#agency_list').DataTable();
+		$('#agency_list').DataTable({
+			 "order": [[ 0, 'desc' ]]
+		});
 	});
 </script>

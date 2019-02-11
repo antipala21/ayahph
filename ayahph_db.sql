@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 11, 2019 at 03:55 PM
+-- Generation Time: Feb 11, 2019 at 04:54 PM
 -- Server version: 5.6.37
 -- PHP Version: 7.1.8
 
@@ -137,6 +137,8 @@ CREATE TABLE IF NOT EXISTS `nurse_maids` (
   `last_lname` varchar(100) DEFAULT NULL,
   `self_introduction` text,
   `gender` tinyint(4) DEFAULT NULL,
+  `marital_status` tinyint(4) DEFAULT '0',
+  `years_experience` int(11) DEFAULT NULL,
   `birthdate` date NOT NULL,
   `status` tinyint(4) NOT NULL DEFAULT '1',
   `address` varchar(100) DEFAULT NULL,
@@ -144,7 +146,14 @@ CREATE TABLE IF NOT EXISTS `nurse_maids` (
   `image_url` varchar(100) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `nurse_maids`
+--
+
+INSERT INTO `nurse_maids` (`id`, `agency_id`, `first_name`, `middle_name`, `last_lname`, `self_introduction`, `gender`, `marital_status`, `years_experience`, `birthdate`, `status`, `address`, `phone_number`, `image_url`, `created`, `modified`) VALUES
+(1, 1, 'Inday', 'day', 'Daday', 'Ako desu Ako desu Ako desu Ako desu Ako desu Ako desu  eeee', 0, 3, 3, '2013-02-01', 1, 'Cebu City', '11111', '', '2019-02-11 16:37:47', '2019-02-11 16:48:36');
 
 -- --------------------------------------------------------
 
@@ -358,7 +367,7 @@ ALTER TABLE `hire_requests`
 -- AUTO_INCREMENT for table `nurse_maids`
 --
 ALTER TABLE `nurse_maids`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `nurse_maid_ratings`
 --

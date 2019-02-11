@@ -9,6 +9,7 @@ class TransactionController extends AppController {
 
 	public function beforeFilter() {
 		parent::beforeFilter();
+		$this->Auth->allow(array('token'));
 	}
 
 	public function index() {
@@ -82,6 +83,11 @@ class TransactionController extends AppController {
 				return $this->redirect('/schedules');
 			}
 		}
+	}
+
+	public function token() {
+		$this->autoRender = false;
+		echo json_encode(Braintree_ClientToken::generate());
 	}
 
 

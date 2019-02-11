@@ -4,7 +4,8 @@ class AccountController extends AppController {
 
 	public $uses = array(
 		'Agency',
-		'AgencyLegalDocument'
+		'AgencyLegalDocument',
+		'Payment'
 	);
 
 	public function beforeFilter() {
@@ -135,6 +136,54 @@ class AccountController extends AppController {
 		if ($member) {
 			return $this->redirect('/account');
 		}
+
+		if ($this->request->is('post')) {
+			$data = $this->request->data;
+
+			// process payment to each supplier
+			$result = Braintree_Transaction::sale([
+				'amount' => $data['amount'],
+				'orderId' => '123',
+				'merchantAccountId' => 'ayahph',
+				'paymentMethodNonce' => $data['payment_method_nonce'],
+				'customer' => [
+					'firstName' => 'Test name',
+					'lastName' => 'Testlastname',
+				],
+				'options' => [
+					'submitForSettlement' => true
+				]
+			]);
+
+			// success payment
+			if ($result->success == true) {
+
+				$this->Agency->clear();
+				$this->Agency->read(array('status'), $this->Auth->user('id'));
+				$this->Agency->set(array('status'=> 1));
+				$this->Agency->save();
+
+				$pay_data = array(
+					'Payment' => array(
+						'payment_id' => $result->transaction->id,
+						'agency_id' => $this->Auth->user('id'),
+						// 'transaction_date' => $result->transaction->createdAt->date,
+						'transaction_date' => date('Y-m-d H:i:s', strtotime("now")),
+						'type' => $result->transaction->type,
+						'customer_name' => $data['firstname'],
+						'card_no' => $result->transaction->creditCard['last4'],
+						'card_type' => $result->transaction->creditCard['cardType'],
+						'amount' => $result->transaction->amount
+					)
+				);
+
+				$this->Payment->create();
+				$this->Payment->set($pay_data);
+				$this->Payment->save();
+			}
+			return $this->redirect('/account');
+		}
+
 	}
 
 	public function success_card () {

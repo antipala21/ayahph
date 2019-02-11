@@ -37,6 +37,7 @@
 	Router::connect('/user-detail/:id', array('controller' => 'User', 'action' => 'detail'));
 	Router::connect('/nursemaid_raing-detail/:id', array('controller' => 'NurseMaidRating', 'action' => 'detail'));
 	Router::connect('/nursemaid-detail/:id', array('controller' => 'NurseMaid', 'action' => 'detail'));
+	Router::connect('/payments', array('controller' => 'Payment', 'action' => 'index'));
 
 	Router::connect('/logout', array('controller' => 'Login', 'action' => 'logout'));
 

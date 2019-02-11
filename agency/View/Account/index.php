@@ -151,9 +151,15 @@
 						</div>
 						<div class="col-md-6">
 							<div class="profile-head">
-								<h5><?php echo $agency['name'] ?></h5>
+								<h2><?php echo $agency['name'] ?></h2>
 								<h6><?php echo $agency['description'] ?></h6>
-								<p class="proile-rating">RANKINGS : <span>8/10</span></p>
+								<p style="margin: 0px;" class="proile-rating">STATUS : <span><?php echo isset($agency['status']) && $agency['status'] ? 'Member' : 'Temporary'; ?></span></p>
+								<?php if(isset($agency['status']) && $agency['status'] == 0): ?>
+								<p style="margin: 0px;" class="proile-rating">
+									NOTE: To activate your account please go to  <span><a href="/agency/account/payment">payment</a> section.</span>
+								</p>
+								<?php endif; ?>
+								<br>
 								<ul class="nav nav-tabs" id="myTab" role="tablist">
 									<li class="nav-item">
 										<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>

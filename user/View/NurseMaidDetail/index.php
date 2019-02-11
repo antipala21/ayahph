@@ -103,7 +103,30 @@
 									<?php echo isset($value['NurseMaid']['first_name']) ? $value['NurseMaid']['first_name'] : ' ' ?>
 									<?php echo isset($value['NurseMaid']['last_lname']) ? $value['NurseMaid']['last_lname'] : ' ' ?>
 								</h4>
-								<h5 style="color: #eaa70a">Rating: <span><b><?php echo isset($value['NurseMaid']['rating']) ? round($value['NurseMaid']['rating'],2) . ' <i class="fa fa-star text-warning" aria-hidden="true"></i>' : '-' ?></b></span></h5>
+								<h5 style="color: #eaa70a">Rating: <span><b><?php echo isset($value['NurseMaid']['rating']) ? round($value['NurseMaid']['rating'],2) . ' <i class="fa fa-star text-warning" aria-hidden="true"></i>' : '-' ?></b></span>
+								</h5>
+								<h5>Total hire: 
+									<span>
+										<?php echo isset($value['NurseMaid']['total_hire']) ? $value['NurseMaid']['total_hire'] : '0' ?>
+									</span>
+								</h5>
+								<h5>Gender: 
+									<span>
+										<?php 
+										$gender_array = Configure::read('gender_array');
+										echo isset($value['NurseMaid']['total_hire']) ? $gender_array[$value['NurseMaid']['gender']] : '-' ?>
+									</span>
+								</h5>
+								<h5>Age: 
+									<span>
+										<?php 
+										if(isset($value['NurseMaid']['birthdate'])):
+											$datetime1 = new DateTime($value['NurseMaid']['birthdate']);
+											$interval = $datetime1->diff( new DateTime());
+											echo $interval->format('%y yrs');
+										endif; ?>
+									</span>
+								</h5>
 								<p><?php echo isset($value['NurseMaid']['self_introduction']) ? $value['NurseMaid']['self_introduction'] : ' ' ?></p>
 							</div>
 						</div>

@@ -25,3 +25,10 @@ $config['sort_nursemaid'] = array(
 	0 => 'rating',
 	1 => 'total_hire'
 );
+
+$config['marital_status'] = array(
+	0 => 'Single',
+	1 => 'Married',
+	2 => 'Widowed',
+	3 => 'Divorced'
+);

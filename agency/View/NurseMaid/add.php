@@ -38,6 +38,7 @@
 						'label' => false,
 						'div'=> false,
 						'class'=>'form-control',
+						'autocomplete' => 'off'
 					)); ?>
 				</div>
 				<div class="form-row">
@@ -49,40 +50,19 @@
 						'label' => false,
 						'div'=> false,
 						'class'=>'form-control',
+						'autocomplete' => 'off'
 					)); ?>
 				</div>
 				<div class="form-row">
 					<label for="">
 					Last Name *
 					</label>
-					<?php echo $this->Form->input('last_name', array(
+					<?php echo $this->Form->input('last_lname', array(
 						'required' => true,
 						'label' => false,
 						'div'=> false,
 						'class'=>'form-control',
-					)); ?>
-				</div>
-				<div class="form-row">
-					<label for="">
-					Phone Number *
-					</label>
-					<?php echo $this->Form->input('phone_number', array(
-						'required' => true,
-						'label' => false,
-						'div'=> false,
-						'class'=>'form-control',
-					)); ?>
-				</div>
-				<div class="form-row">
-					<label for="">
-					Gender *
-					</label>
-					<?php echo $this->Form->input('gender', array(
-						'options' => Configure::read('gender_array'),
-						'required' => true,
-						'label' => false,
-						'div'=> false,
-						'class'=>'form-control',
+						'autocomplete' => 'off'
 					)); ?>
 				</div>
 				<div class="form-row">
@@ -100,9 +80,69 @@
 				</div>
 				<div class="form-row">
 					<label for="">
+					Gender *
+					</label>
+					<?php echo $this->Form->input('gender', array(
+						'options' => Configure::read('gender_array'),
+						'required' => true,
+						'label' => false,
+						'div'=> false,
+						'class'=>'form-control',
+					)); ?>
+				</div>
+				<div class="form-row">
+					<label for="">
+					Marital Status *
+					</label>
+					<?php echo $this->Form->input('marital_status', array(
+						'options' => Configure::read('marital_status'),
+						'required' => true,
+						'label' => false,
+						'div'=> false,
+						'class'=>'form-control',
+						'empty' => '--'
+					)); ?>
+				</div>
+				<div class="form-row">
+					<label for="">
+					Phone Number *
+					</label>
+					<?php echo $this->Form->input('phone_number', array(
+						'required' => true,
+						'label' => false,
+						'div'=> false,
+						'class'=>'form-control',
+						'autocomplete' => 'off'
+					)); ?>
+				</div>
+				<div class="form-row">
+					<label for="">
+					Years of experience *
+					</label>
+					<?php echo $this->Form->input('years_experience', array(
+						'type' => 'number',
+						'required' => true,
+						'label' => false,
+						'div'=> false,
+						'class'=>'form-control',
+					)); ?>
+				</div>
+				<div class="form-row">
+					<label for="">
 					Address *
 					</label>
 					<?php echo $this->Form->input('address', array(
+						'required' => true,
+						'label' => false,
+						'div'=> false,
+						'class'=>'form-control',
+					)); ?>
+				</div>
+				<div class="form-row">
+					<label for="">
+					Self Introduction *
+					</label>
+					<?php echo $this->Form->input('self_introduction', array(
 						'required' => true,
 						'label' => false,
 						'div'=> false,

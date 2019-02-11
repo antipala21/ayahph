@@ -83,6 +83,15 @@
 									echo $interval->format('%y yrs');
 								endif;
 							?></p>
+							<h4>Marital Status</h4>
+							<p><?php
+								$marital_status_arr = Configure::read('marital_status');
+								echo isset($nurse_maid['marital_status']) ? $marital_status_arr[$nurse_maid['marital_status']] : '--' ?>
+							</p>
+							<h4>Phone number</h4>
+							<p><?php echo isset($nurse_maid['phone_number']) ? $nurse_maid['phone_number'] : ' ' ?></p>
+							<h4>No. of years experience</h4>
+							<p><?php echo isset($nurse_maid['years_experience']) ? $nurse_maid['years_experience'] : ' ' ?></p>
 						</div>
 					</div>
 				</div>

@@ -192,6 +192,13 @@
 										'required' => true,
 										'value' => $nurse_maid['first_name']
 									)); ?>
+							<h4>Midle Name</h4>
+									<?php echo $this->Form->input('middle_name', array(
+										'label' => false,
+										'class' => 'form-control',
+										'required' => true,
+										'value' => $nurse_maid['middle_name']
+									)); ?>
 							<h4>Last Name</h4>
 									<?php echo $this->Form->input('last_lname', array(
 										'label' => false,
@@ -231,6 +238,36 @@
 									'autocomplete' => 'off',
 									'class'=>'form-control',
 									'value' => $nurse_maid['birthdate']
+								)); ?>
+							<h4>Marital status</h4>
+								<?php echo $this->Form->input('marital_status', array(
+									'options' => Configure::read('marital_status'),
+									'required' => true,
+									'label' => false,
+									'div'=> false,
+									'autocomplete' => 'off',
+									'class'=>'form-control',
+									'value' => $nurse_maid['marital_status']
+								)); ?>
+							<h4>Phone number</h4>
+								<?php echo $this->Form->input('phone_number', array(
+									'type' => 'text',
+									'required' => true,
+									'label' => false,
+									'div'=> false,
+									'autocomplete' => 'off',
+									'class'=>'form-control',
+									'value' => $nurse_maid['phone_number']
+								)); ?>
+							<h4>NO. of years experience</h4>
+								<?php echo $this->Form->input('years_experience', array(
+									'type' => 'text',
+									'required' => true,
+									'label' => false,
+									'div'=> false,
+									'autocomplete' => 'off',
+									'class'=>'form-control',
+									'value' => $nurse_maid['years_experience']
 								)); ?>
 						</div>
 					</div>

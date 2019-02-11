@@ -71,6 +71,7 @@
 							<?php endif; ?>
 							<h4>
 								<?php echo isset($nurse_maid['first_name']) ? $nurse_maid['first_name'] : '' ?>
+								<?php echo isset($nurse_maid['middle_name']) ? $nurse_maid['middle_name'] : '' ?>
 								<?php echo isset($nurse_maid['last_lname']) ? $nurse_maid['last_lname'] : '' ?>
 							</h4>
 							<p><?php echo isset($nurse_maid['self_introduction']) ? $nurse_maid['self_introduction'] : '-' ?></p>
@@ -89,6 +90,15 @@
 									echo $interval->format('%y yrs');
 								endif;
 							?></p>
+							<h4>Marital Status</h4>
+							<p><?php
+								$marital_status_arr = Configure::read('marital_status');
+								echo isset($nurse_maid['marital_status']) ? $marital_status_arr[$nurse_maid['marital_status']] : '--' ?>
+							</p>
+							<h4>Phone number</h4>
+							<p><?php echo isset($nurse_maid['phone_number']) ? $nurse_maid['phone_number'] : ' ' ?></p>
+							<h4>No. of years experience</h4>
+							<p><?php echo isset($nurse_maid['years_experience']) ? $nurse_maid['years_experience'] : ' ' ?></p>
 						</div>
 					</div>
 					<div class="col-lg-12 col-xlg-12 col-md-12 nurse-item-container">

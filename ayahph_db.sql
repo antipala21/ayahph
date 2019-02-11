@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 10, 2019 at 04:17 PM
+-- Generation Time: Feb 11, 2019 at 03:55 PM
 -- Server version: 5.6.37
 -- PHP Version: 7.1.8
 
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `agencies` (
 --
 
 INSERT INTO `agencies` (`id`, `email`, `password`, `status`, `name`, `description`, `short_description`, `representative_name`, `address`, `phone_number`, `image_url`, `business_permit_flg`, `display_flg`, `api_token`, `created`, `modified`) VALUES
-(1, 'agency1@test.com', '99fbb8b890506f686aa62915e90bba06a2bd07d0', 1, 'Agency One Edit e', 'short edit eee is a test description Edtdfdf', 'Edited descritpon Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation', 'Juan', 'Cebu City phf', '09876423000eee', '1_profile.jpg', 1, 1, '', '2018-12-24 09:57:38', '2019-02-10 05:43:31'),
+(1, 'agency1@test.com', '99fbb8b890506f686aa62915e90bba06a2bd07d0', 1, 'Agency One Edit e', 'short edit eee is a test description Edtdfdf', 'Edited descritpon Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation', 'Juan', 'Cebu City phf', '09876423000eee', '1_profile.jpg', 1, 1, '', '2018-12-24 09:57:38', '2019-02-11 15:49:05'),
 (4, 'agency2@test.com', '99fbb8b890506f686aa62915e90bba06a2bd07d0', 1, 'Number 2 Agency', 'This is a test description Edtdfdf', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation', 'Sample', 'Cebu city', '09876423', '', 0, 1, '', '2019-01-05 15:33:46', '2019-01-05 15:33:46');
 
 -- --------------------------------------------------------
@@ -163,6 +163,36 @@ CREATE TABLE IF NOT EXISTS `nurse_maid_ratings` (
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payments`
+--
+
+CREATE TABLE IF NOT EXISTS `payments` (
+  `id` int(11) NOT NULL,
+  `payment_id` varchar(100) DEFAULT NULL,
+  `agency_id` int(11) NOT NULL,
+  `transaction_date` datetime DEFAULT NULL,
+  `type` varchar(10) DEFAULT NULL,
+  `status` tinyint(4) DEFAULT '1',
+  `customer_name` varchar(100) DEFAULT NULL,
+  `card_no` varchar(100) DEFAULT NULL,
+  `card_type` varchar(10) DEFAULT NULL,
+  `amount` double DEFAULT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `payments`
+--
+
+INSERT INTO `payments` (`id`, `payment_id`, `agency_id`, `transaction_date`, `type`, `status`, `customer_name`, `card_no`, `card_type`, `amount`, `created`, `modified`) VALUES
+(2, '94yfac9p', 4, '2019-02-11 15:07:04', 'sale', 1, 'Test name', '1210', 'Visa', 500, '2019-02-11 15:07:04', '2019-02-11 15:07:04'),
+(3, 'ppx1mdfm', 1, '2019-02-11 15:45:25', 'sale', 1, 'TestPayment', '1210', 'Visa', 500, '2019-02-11 15:45:25', '2019-02-11 15:45:25'),
+(4, 'ee1aknns', 1, '2019-02-11 15:49:05', 'sale', 1, 'Juan', '1210', 'Visa', 500, '2019-02-11 15:49:05', '2019-02-11 15:49:05');
 
 -- --------------------------------------------------------
 
@@ -274,6 +304,12 @@ ALTER TABLE `nurse_maid_ratings`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `payments`
+--
+ALTER TABLE `payments`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `transactions`
 --
 ALTER TABLE `transactions`
@@ -328,6 +364,11 @@ ALTER TABLE `nurse_maids`
 --
 ALTER TABLE `nurse_maid_ratings`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `payments`
+--
+ALTER TABLE `payments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `transactions`
 --

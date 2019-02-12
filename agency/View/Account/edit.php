@@ -222,20 +222,6 @@
 										</div>
 									</div>
 									<hr>
-									<div class="row">
-										<div class="col-md-6">
-											<label>Description</label>
-										</div>
-										<div class="col-md-6">
-											<?php echo $this->Form->input('description', array(
-												'label' => false,
-												'class' => 'form-control',
-												'required' => true,
-												'value' => $agency['description']
-											)); ?>
-										</div>
-									</div>
-									<hr>
 								</div>
 							</div>
 						</div>

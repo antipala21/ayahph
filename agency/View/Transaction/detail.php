@@ -46,7 +46,7 @@
 				</div>
 				<div>
 					<b>Address</b>
-					<p><?php echo $transaction['Transaction']['address'] ?></p>
+					<p><?php echo $transaction['Transaction']['user_address'] ?></p>
 				</div>
 				<div>
 					<b>Contact No.</b>

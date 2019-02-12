@@ -17,11 +17,6 @@ class AccountController extends AppController {
 	}
 
 	public function index () {
-		header("Pragma-directive: no-cache");
-		header("Cache-directive: no-cache");
-		header("Cache-control: no-cache");
-		header("Pragma: no-cache");
-		header("Expires: 0");
 
 		$this->User->virtualFields['total_transaction'] = "SELECT COUNT(*) FROM `transactions` WHERE `user_id` = `User`.`id`";
 		$user = $this->User->find('first', array(
@@ -67,12 +62,6 @@ class AccountController extends AppController {
 	}
 
 	public function updateRequirements () {
-
-		header("Pragma-directive: no-cache");
-		header("Cache-directive: no-cache");
-		header("Cache-control: no-cache");
-		header("Pragma: no-cache");
-		header("Expires: 0");
 
 		if ($this->Auth->user('id')) {
 			$user_id = $this->Auth->user('id');

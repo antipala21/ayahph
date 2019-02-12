@@ -230,10 +230,6 @@
 			var user_address = $('#TransactionUserAddress').val();
 			var transaction_time = $('#TransactionTransactionTime').val();
 
-			console.log('comment ' + comment);
-			console.log('phone_number ' + phone_number);
-			console.log('user_address ' + user_address);
-
 			$.ajax({
 				type: 'POST',
 				url: '/ajax/send_hire_request',

@@ -260,18 +260,10 @@
 
 			var nurse_maid_id = $('#TransactionNurseMaidId').val();
 			var agency_id = $('#TransactionAgencyId').val();
-
 			var comment = $('#TransactionComment').val();
 			var phone_number = $('#TransactionUserPhoneNumber').val();
 			var user_address = $('#TransactionUserAddress').val();
 			var transaction_time = $('#TransactionTransactionTime').val();
-
-			// console.log('nurse_maid_id ' + nurse_maid_id);
-			// console.log('agency_id ' + agency_id);
-			// console.log('comment ' + comment);
-			// console.log('phone_number ' + phone_number);
-			// console.log('user_address ' + user_address);
-			// console.log('transaction_time ' + transaction_time);
 
 			$.ajax({
 				type: 'POST',

@@ -19,6 +19,7 @@ class TransactionController extends AppController {
 		$transactions = $this->Transaction->find('all', array(
 			'fields' => array(
 				'Transaction.*',
+				'User.id',
 				'User.display_name'
 			),
 			'joins' => array(

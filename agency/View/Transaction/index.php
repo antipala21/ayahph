@@ -33,7 +33,9 @@
 									<td>
 										<a href="transaction/detail/<?php echo $value['Transaction']['id']; ?>"><?php echo $value['Transaction']['id']; ?></a>
 									</td>
-									<td><?php echo isset($value['User']['display_name']) ? $value['User']['display_name'] : '' ?></td>
+									<td>
+										<a href="/agency/user/<?php echo $value['User']['id'] ?>"><?php echo $value['User']['display_name'] ?></a>
+									</td>
 									<td><?php echo isset($value['Transaction']['comment']) ? $value['Transaction']['comment'] : '' ?></td>
 									<td><?php echo isset($value['Transaction']['user_phone_number']) ? $value['Transaction']['user_phone_number'] : '' ?></td>
 									<td><?php echo isset($value['Transaction']['user_address']) ? $value['Transaction']['user_address'] : '' ?></td>

@@ -60,6 +60,9 @@
 	Router::connect('/token', array('controller' => 'Transaction', 'action' => 'token'));
 	Router::connect('/payment', array('controller' => 'Transaction', 'action' => 'payment'));
 
+	// view user data
+	Router::connect('/user/:id', array('controller' => 'User', 'action' => 'index'));
+
 /**
  * Load all plugin routes. See the CakePlugin documentation on
  * how to customize the loading of plugin routes.

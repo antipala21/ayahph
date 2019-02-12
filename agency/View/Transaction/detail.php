@@ -24,25 +24,14 @@
 			</div>
 			<div class="col-md-8">
 				<div>
-					<b>Schedule Time</b>
-					<p>
-						From: <br>
-						<span><?php echo date('Y-m-d h:i:sa', strtotime($transaction['Transaction']['transaction_start'])) ?></span>
-						<br> To: <br>
-						<span><?php echo date('Y-m-d h:i:sa', strtotime($transaction['Transaction']['transaction_end'])) ?></span>
-					</p>
+					<b>Client Name</b>
+					<p><a href="/agency/user/<?php echo $transaction['Transaction']['user_id'] ?>"><?php echo $transaction['User']['display_name'] ?></a></p>
 				</div>
 			</div>
 			<div class="col-md-8">
 				<div>
 					<b>Content</b>
 					<p><?php echo $transaction['Transaction']['comment'] ?></p>
-				</div>
-			</div>
-			<div class="col-md-8">
-				<div>
-					<b>User Name</b>
-					<p><?php echo $transaction['User']['display_name'] ?></p>
 				</div>
 				<div>
 					<b>Address</b>
@@ -51,6 +40,17 @@
 				<div>
 					<b>Contact No.</b>
 					<p><?php echo $transaction['Transaction']['user_phone_number'] ?></p>
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div>
+					<b>Schedule Time</b>
+					<p>
+						From: <br>
+						<span><?php echo date('F j, Y, g:i a', strtotime($transaction['Transaction']['transaction_start'])) ?></span>
+						<br> To: <br>
+						<span><?php echo date('F j, Y, g:i a', strtotime($transaction['Transaction']['transaction_end'])) ?></span>
+					</p>
 				</div>
 			</div>
 		</div>

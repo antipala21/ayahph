@@ -91,6 +91,14 @@
 							<td><?php echo $nurse_maid['NurseMaid']['phone_number'] ?></td>
 						</tr>
 						<tr class="active">
+							<td>Skills :</td>
+							<td><?php echo $nurse_maid['NurseMaid']['skills'] ?></td>
+						</tr>
+						<tr class="active">
+							<td>Jobs Experience :</td>
+							<td><?php echo $nurse_maid['NurseMaid']['jobs_experience'] ?></td>
+						</tr>
+						<tr class="active">
 							<td>Created :</td>
 							<td><?php echo $nurse_maid['NurseMaid']['created'] ?></td>
 						</tr>

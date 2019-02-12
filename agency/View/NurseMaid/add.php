@@ -1,5 +1,6 @@
 
 <link rel="stylesheet" href="/agency/css/jquery-ui.css">
+<link rel="stylesheet" href="/agency/css/flat-ui.css">
 
 <div class="page-wrapper">
 	<div class="container-fluid">
@@ -151,6 +152,48 @@
 				</div>
 
 				<div class="form-row">
+					<div class="tagsinput-primary">
+						<?php echo $this->Form->input('skills' , array(
+								'type' => 'hidden',
+								'value' => (isset($detail->hobby)? $detail->hobby : 'a')
+						)) ?>
+						<label for="">
+						Skills *
+						</label>
+						<?php echo $this->Form->input('skills_val', array(
+							'type' => 'text',
+							'label' => false,
+							'div' => false,
+							'error' => false,
+							'class' => 'form-control tagsinput',
+							'data-role' => 'tagsinput',
+							'name' => 'tagsinput',
+							'value' => (isset($detail->hobby)? $detail->hobby : 'a')
+						)) ?>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="tagsinput-primary">
+						<?php echo $this->Form->input('jobs_experience' , array(
+								'type' => 'hidden',
+								'value' => (isset($detail->hobby)? $detail->hobby : 'a')
+						)) ?>
+						<label for="">
+						Jobs Experience *
+						</label>
+						<?php echo $this->Form->input('jobs_experience_val', array(
+							'type' => 'text',
+							'label' => false,
+							'div' => false,
+							'error' => false,
+							'class' => 'form-control tagsinput2',
+							'data-role' => 'tagsinput',
+							'name' => 'tagsinput',
+							'value' => (isset($detail->hobby)? $detail->hobby : 'a')
+						)) ?>
+					</div>
+				</div>
+				<div class="form-row">
 					<br>
 					<button type="submit" class="btn btn-success">Submit</button>
 				</div>
@@ -161,13 +204,23 @@
 </div>
 
 <script src="/agency/js/jquery-ui.js"></script>
+<script src="/agency/js/flat-ui.js"></script>
 
 <script type="text/javascript">
+(function(){
 	$(document).ready(function() {
 		$("#NurseMaidBirthdate").datepicker({
 			changeMonth: true,
 			changeYear: true,
 			dateFormat: 'yy-mm-dd'
 		});
+
+		$('#nurseMaidAdd').submit(function(){
+			$('input[name="data[NurseMaid][skills]"]').val($('.tagsinput').val());
+			$('input[name="data[NurseMaid][jobs_experience]"]').val($('.tagsinput2').val());
+		});
+
+
 	});
+})();
 </script>

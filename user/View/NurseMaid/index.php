@@ -124,24 +124,25 @@
 									<?php echo isset($value['NurseMaid']['first_name']) ? $value['NurseMaid']['first_name'] : ' ' ?>
 									<?php echo isset($value['NurseMaid']['last_lname']) ? $value['NurseMaid']['last_lname'] : ' ' ?>
 								</h4>
-								<h5 style="color: #eaa70a">Rating: 
+								<p><?php echo isset($value['NurseMaid']['self_introduction']) ? $value['NurseMaid']['self_introduction'] : ' ' ?></p>
+								<h5 style="color: #eaa70a">Rating : 
 									<span>
 										<b><?php echo isset($value['NurseMaid']['rating']) ? round($value['NurseMaid']['rating'],2) . ' <i class="fa fa-star text-warning" aria-hidden="true"></i>' : '-' ?></b>
 									</span>
 								</h5>
-								<h5>Total hire: 
+								<h5>Total hire : 
 									<span>
 										<?php echo isset($value['NurseMaid']['total_hire']) ? $value['NurseMaid']['total_hire'] : '0' ?>
 									</span>
 								</h5>
-								<h5>Gender: 
+								<h5>Gender : 
 									<span>
 										<?php 
 										$gender_array = Configure::read('gender_array');
 										echo isset($value['NurseMaid']['total_hire']) ? $gender_array[$value['NurseMaid']['gender']] : '-' ?>
 									</span>
 								</h5>
-								<h5>Age: 
+								<h5>Age : 
 									<span>
 										<?php 
 										if(isset($value['NurseMaid']['birthdate'])):
@@ -151,7 +152,12 @@
 										endif; ?>
 									</span>
 								</h5>
-								<p><?php echo isset($value['NurseMaid']['self_introduction']) ? $value['NurseMaid']['self_introduction'] : ' ' ?></p>
+								<h5>Skills : 
+									<span><?php echo isset($value['NurseMaid']['skills']) ? $value['NurseMaid']['skills'] : ' ' ?></span>
+								</h5>
+								<h5>Jobs Experience : 
+									<span><?php echo isset($value['NurseMaid']['jobs_experience']) ? $value['NurseMaid']['jobs_experience'] : ' ' ?></span>
+								</h5>
 							</div>
 						</div>
 						<div class="col-md-2">

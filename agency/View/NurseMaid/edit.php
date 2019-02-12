@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/agency/css/flat-ui.css">
 <style type="text/css">
 
 	.row.nurse-item {
@@ -269,6 +270,45 @@
 									'class'=>'form-control',
 									'value' => $nurse_maid['years_experience']
 								)); ?>
+
+							<h4>Skills</h4>
+								<div class="tagsinput-primary">
+									<?php echo $this->Form->input('skills' , array(
+										'type' => 'hidden',
+										'value' => (isset($nurse_maid['skills'])? $nurse_maid['skills'] : 'a')
+									)) ?>
+									<?php echo $this->Form->input('skills_val', array(
+										'type' => 'text',
+										'label' => false,
+										'div' => false,
+										'error' => false,
+										'class' => 'form-control tagsinput',
+										'data-role' => 'tagsinput',
+										'name' => 'tagsinput',
+										'value' => (isset($nurse_maid['skills'])? $nurse_maid['skills'] : 'a')
+									)) ?>
+								</div>
+
+							<h4>Jobs Experience</h4>
+								<div class="tagsinput-primary">
+									<?php echo $this->Form->input('jobs_experience' , array(
+										'type' => 'hidden',
+										'value' => (isset($nurse_maid['jobs_experience'])? $nurse_maid['jobs_experience'] : 'a')
+									)) ?>
+									<label for="">
+									Jobs Experience *
+									</label>
+									<?php echo $this->Form->input('jobs_experience_val', array(
+										'type' => 'text',
+										'label' => false,
+										'div' => false,
+										'error' => false,
+										'class' => 'form-control tagsinput2',
+										'data-role' => 'tagsinput',
+										'name' => 'tagsinput',
+										'value' => (isset($nurse_maid['jobs_experience'])? $nurse_maid['jobs_experience'] : 'a')
+									)) ?>
+								</div>
 						</div>
 					</div>
 					<div class="col-12 nurse-item-container">
@@ -308,6 +348,7 @@
 
 <script src="/agency/js/jquery-ui.js"></script>
 <script src="/agency/js/cropper.min.js"></script>
+<script src="/agency/js/flat-ui.js"></script>
 
 <script type="text/javascript">
 (function(){
@@ -455,6 +496,11 @@
 
 		$('.upload_btn_close').click(function(){
 			$('#success_upload').modal('hide');
+		});
+
+		$('#nurseMaidAcountUpdate').submit(function(){
+			$('input[name="data[NurseMaid][skills]"]').val($('.tagsinput').val());
+			$('input[name="data[NurseMaid][jobs_experience]"]').val($('.tagsinput2').val());
 		});
 
 

@@ -99,6 +99,10 @@
 							<p><?php echo isset($nurse_maid['phone_number']) ? $nurse_maid['phone_number'] : ' ' ?></p>
 							<h4>No. of years experience</h4>
 							<p><?php echo isset($nurse_maid['years_experience']) ? $nurse_maid['years_experience'] : ' ' ?></p>
+							<h4>Skills</h4>
+							<p><?php echo isset($nurse_maid['skills']) ? $nurse_maid['skills'] : ' ' ?></p>
+							<h4>Jobs Experience</h4>
+							<p><?php echo isset($nurse_maid['jobs_experience']) ? $nurse_maid['jobs_experience'] : ' ' ?></p>
 						</div>
 					</div>
 					<div class="col-lg-12 col-xlg-12 col-md-12 nurse-item-container">

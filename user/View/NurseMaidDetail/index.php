@@ -139,7 +139,7 @@
 						<div class="col-md-2">
 							<div class="media-right align-self-center">
 								<a href="/agency-nursemaid-detail/<?php echo isset($value['NurseMaid']['id']) ? $value['NurseMaid']['id'] : null; ?>" class="btn btn-info">View</a><hr>
-								<a href="#userHireForm" class="btn btn-info hire_btn" rel="modal:open" data-nurse_maid_id="<?php echo $value['NurseMaid']['id'] ?>" data-agency_id="<?php echo $value['NurseMaid']['agency_id'] ?>">Hire Now</a><hr>
+								<a href="#userHireForm" class="btn btn-info hire_btn" rel="modal:open" data-nurse_maid_id="<?php echo $value['NurseMaid']['id'] ?>" data-agency_id="<?php echo $value['NurseMaid']['agency_id'] ?>" data-nursemaid_name="<?php echo $value['NurseMaid']['first_name'] ?>">Hire Now</a><hr>
 							</div>
 						</div>
 					</div>
@@ -176,6 +176,7 @@
 		)); ?>
 
 		<h3>Send Hire request.</h3>
+		<p>Nursemaid name : <span id="nursemaid_name"></span></p>
 
 		<label for=""> Comment * </label>
 		<?php echo $this->Form->input('comment', array(
@@ -220,7 +221,7 @@
 
 		<br>
 		<br>
-		<button class="btn btn-success">Send</button>
+		<button class="btn btn-success" id="btn_send">Send</button>
 		<a href="#close-modal" rel="modal:close" class="close-modal ">Close</a>
 <?php echo $this->Form->end(); ?>
 
@@ -250,10 +251,12 @@
 		$('a.hire_btn').click(function(){
 			$('#TransactionNurseMaidId').val($(this).attr('data-nurse_maid_id'));
 			$('#TransactionAgencyId').val($(this).attr('data-agency_id'));
+			$('#nursemaid_name').text($(this).attr('data-nursemaid_name'));
 		});
 
 		$('#userHireForm').submit(function(e){
 			e.preventDefault();
+			$('#btn_send').attr('disabled', true);
 
 			var nurse_maid_id = $('#TransactionNurseMaidId').val();
 			var agency_id = $('#TransactionAgencyId').val();
@@ -291,10 +294,12 @@
 						$('.close-modal').click();
 						$('#trigger_fail_modal').click();
 					}
+					$('#btn_send').removeAttr('disabled');
 				},
 				error: function(error){
 					console.log('error' + error);
 					console.log(error);
+					$('#btn_send').removeAttr('disabled');
 				}
 			});
 

@@ -147,6 +147,7 @@
 		)); ?>
 
 		<h3>Send Hire request.</h3>
+		<p>Nursemaid name : <span id="nursemaid_name"><?php echo isset($nurse_maid['fname']) ? $nurse_maid['first_name'] : '' ?></span></p>
 
 		<label for=""> Comment * </label>
 		<?php echo $this->Form->input('comment', array(
@@ -191,7 +192,7 @@
 
 		<br>
 		<br>
-		<button class="btn btn-success">Send</button>
+		<button class="btn btn-success" id="btn_send">Send</button>
 		<a href="#close-modal" rel="modal:close" class="close-modal ">Close</a>
 <?php echo $this->Form->end(); ?>
 
@@ -220,6 +221,7 @@
 
 		$('#userHireForm').submit(function(e){
 			e.preventDefault();
+			$('#btn_send').attr('disabled', true);
 
 			var comment = $('#TransactionComment').val();
 			var phone_number = $('#TransactionUserPhoneNumber').val();
@@ -253,10 +255,12 @@
 						$('.close-modal').click();
 						$('#trigger_fail_modal').click();
 					}
+					$('#btn_send').removeAttr('disabled');
 				},
 				error: function(error){
 					console.log('error' + error);
 					console.log(error);
+					$('#btn_send').removeAttr('disabled');
 				}
 			});
 

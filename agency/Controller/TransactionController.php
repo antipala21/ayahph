@@ -86,43 +86,45 @@ class TransactionController extends AppController {
 			$save = $this->Transaction->save();
 			if ($save) {
 
-				$user_detail = $this->User->find('first', array(
-					'fields' => array(
-						'User.display_name',
-						'User.email'
-					),
-					'conditions' => array('User.id' => $save['Transaction']['user_id'])
-				));
+				if ($status == 1) {
+					$user_detail = $this->User->find('first', array(
+						'fields' => array(
+							'User.display_name',
+							'User.email'
+						),
+						'conditions' => array('User.id' => $save['Transaction']['user_id'])
+					));
 
-				$nurse_maid_detail = $this->NurseMaid->find('first', array(
-					'fields' => array(
-						'NurseMaid.first_name',
-						'NurseMaid.phone_number'
-					),
-					'conditions' => array('NurseMaid.id' => $save['Transaction']['nurse_maid_id'])
-				));
+					$nurse_maid_detail = $this->NurseMaid->find('first', array(
+						'fields' => array(
+							'NurseMaid.first_name',
+							'NurseMaid.phone_number'
+						),
+						'conditions' => array('NurseMaid.id' => $save['Transaction']['nurse_maid_id'])
+					));
 
-				$Email = new CakeEmail();
-				$Email->template('email_accepted_hire', 'email_accepted_hire')
-					->emailFormat('html')
-					->to($user_detail['User']['email'])
-					->subject('Request Hire Accepted')
-					->viewVars(
-						array(
-							'agency_name' => $this->Auth->user('name'),
-							'agency_address' => $this->Auth->user('address'),
-							'agency_phone' => $this->Auth->user('phone_number'),
-							'client_name' => $user_detail['User']['display_name'],
-							'nurse_maid_name' => $nurse_maid_detail['NurseMaid']['first_name'],
-							'nurse_maid_phone' => $nurse_maid_detail['NurseMaid']['phone_number'],
-							'transaction_start' => date("F j, Y, g:i a", strtotime($save['Transaction']['transaction_start'])),
-							'transaction_end' => date("F j, Y, g:i a", strtotime($save['Transaction']['transaction_end'])),
-							'email' => $user_detail['User']['email'],
-							'base_url' => 'ayahph.localhost/user/',
-							'transaction_id' => $save['Transaction']['id']
-						)
-					);
-				$Email->send();
+					$Email = new CakeEmail();
+					$Email->template('email_accepted_hire', 'email_accepted_hire')
+						->emailFormat('html')
+						->to($user_detail['User']['email'])
+						->subject('Request Hire Accepted')
+						->viewVars(
+							array(
+								'agency_name' => $this->Auth->user('name'),
+								'agency_address' => $this->Auth->user('address'),
+								'agency_phone' => $this->Auth->user('phone_number'),
+								'client_name' => $user_detail['User']['display_name'],
+								'nurse_maid_name' => $nurse_maid_detail['NurseMaid']['first_name'],
+								'nurse_maid_phone' => $nurse_maid_detail['NurseMaid']['phone_number'],
+								'transaction_start' => date("F j, Y, g:i a", strtotime($save['Transaction']['transaction_start'])),
+								'transaction_end' => date("F j, Y, g:i a", strtotime($save['Transaction']['transaction_end'])),
+								'email' => $user_detail['User']['email'],
+								'base_url' => 'ayahph.localhost/user/',
+								'transaction_id' => $save['Transaction']['id']
+							)
+						);
+					$Email->send();
+				}
 
 				return $this->redirect('/schedules');
 			}

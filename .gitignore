@@ -38,7 +38,7 @@ config/database.php
 ._*
 .Spotlight-V100
 .Trashes
-Icon?
+# Icon?
 ehthumbs.db
 Thumbs.db
 config/database.php

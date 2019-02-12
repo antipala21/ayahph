@@ -357,13 +357,15 @@
 										<tr>
 										<td>
 											<p>Hello <b><?php echo isset($agency_name) ? $agency_name : 'YourName'; ?></b>,</p>
-											<p>
+											<p>Client 
 												<b><?php echo isset($client_name) ? $client_name : 'YourName'; ?></b> Wants to hire <b><?php echo isset($nurse_maid) ? $nurse_maid : 'YourName'; ?></b> for AyahPH job.
 											</p>
+											<hr>
 											<p>Client address : <?php echo isset($address) ? $address : '-'; ?></p>
 											<p>Client phone number : <?php echo isset($phone_number) ? $phone_number : '-'; ?></p>
 											<p>From : <?php echo isset($transaction_start) ? $transaction_start : '-'; ?></p>
 											<p>To : <?php echo isset($transaction_end) ? $transaction_end : '-'; ?></p>
+											<hr>
 											<table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
 												<tbody>
 													<tr>
@@ -380,7 +382,6 @@
 												</tbody>
 											</table>
 											<p>You're receiving this email because you are a member of AyahPH using this address.</p>
-											<p>Didn't signup for AyahPH? <a href='<?php echo $base_url; ?>'>Close account</a></p>
 										</td>
 										</tr>
 									</table>

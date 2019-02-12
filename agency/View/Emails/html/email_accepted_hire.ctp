@@ -341,7 +341,7 @@
 					<div class="content">
 
 						<!-- START CENTERED WHITE CONTAINER -->
-						<span class="preheader">This email is to notify agency for hiring request of the nursemaids.</span>
+						<span class="preheader">This email is to notify client that the hire request was accepted by the agency.</span>
 						<table class="main">
 
 							<!-- START MAIN CONTENT AREA -->
@@ -349,20 +349,25 @@
 								<td class="wrapper">
 									<table border="0" cellpadding="0" cellspacing="0">
 										<tr>
-											<td class="emailbrand">AyahPH Request Hire</td>
+											<td class="emailbrand">AyahPH Request Hire Accepted</td>
 										</tr>
 										<tr>
 											<td class="hor-space"></td>
 										</tr>
 										<tr>
 										<td>
-											<p>Hello <b><?php echo isset($agency_name) ? $agency_name : 'YourName'; ?></b>,</p>
-											<p>Client 
-												<b><?php echo isset($client_name) ? $client_name : 'YourName'; ?></b> Wants to hire <b><?php echo isset($nurse_maid) ? $nurse_maid : 'YourName'; ?></b> for AyahPH job.
+											<p>Hello <b><?php echo isset($client_name) ? $client_name : 'YourName'; ?></b>,</p>
+											<p>
+												<b><?php echo isset($agency_name) ? $agency_name : 'YourName'; ?></b> With Nursemaid name <b><?php echo isset($nurse_maid_name) ? $nurse_maid_name : 'Nursemaid Name'; ?></b> Accepted your hire request.
 											</p>
 											<hr>
-											<p>Client address : <?php echo isset($address) ? $address : '-'; ?></p>
-											<p>Client phone number : <?php echo isset($phone_number) ? $phone_number : '-'; ?></p>
+											<p>Agency Name : <?php echo isset($agency_name) ? $agency_name : '-'; ?></p>
+											<p>Agency Address : <?php echo isset($agency_address) ? $agency_address : '-'; ?></p>
+											<p>Agency Phone : <?php echo isset($agency_phone) ? $agency_phone : '-'; ?></p>
+
+											<p>Nursemaid Name : <?php echo isset($nurse_maid_name) ? $nurse_maid_name : '-'; ?></p>
+											<p>Nursemaid Phone : <?php echo isset($nurse_maid_phone) ? $nurse_maid_phone : '-'; ?></p>
+
 											<p>From : <?php echo isset($transaction_start) ? $transaction_start : '-'; ?></p>
 											<p>To : <?php echo isset($transaction_end) ? $transaction_end : '-'; ?></p>
 											<hr>
@@ -373,7 +378,7 @@
 															<table border="0" cellpadding="0" cellspacing="0">
 																<tbody>
 																	<tr>
-																		<td> <a href="<?php echo $base_url.'agency/transaction/detail/' . $transaction_id; ?>" target="_blank">Click here view.</a> </td>
+																		<td> <a href="<?php echo $base_url.'schedule/detail/' . $transaction_id; ?>" target="_blank">Click here view.</a> </td>
 																	</tr>
 																</tbody>
 															</table>

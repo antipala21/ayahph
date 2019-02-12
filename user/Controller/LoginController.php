@@ -42,7 +42,7 @@ class LoginController extends AppController{
 			elseif(isset($data['User']) && $data['User']['status'] == 0){
 				$this->render('/Register/register_confirm');
 			} else {
-				$this->Session->setFlash(__('Invalid username or password'));
+				$this->Session->setFlash('Invalid username or password', 'default', array(), 'login_error');
 			}
 
 		}

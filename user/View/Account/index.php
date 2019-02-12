@@ -151,9 +151,9 @@
 						</div>
 						<div class="col-md-6">
 							<div class="profile-head">
-								<h5><?php echo $user['display_name'] ?></h5>
-								<h6><?php echo $user['lname'] ?></h6>
-								<p class="proile-rating">test test</p>
+								<h2><?php echo $user['display_name'] ?></h2>
+								<h3><?php echo $user['fname'] ?> , <?php echo $user['lname'] ?></h3>
+								<br>
 								<ul class="nav nav-tabs" id="myTab" role="tablist">
 									<li class="nav-item">
 										<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
@@ -193,6 +193,15 @@
 										</div>
 										<div class="col-md-6">
 											<p><?php echo $user['display_name'] ?></p>
+										</div>
+									</div>
+									<hr>
+									<div class="row">
+										<div class="col-md-6">
+											<label>First Name</label>
+										</div>
+										<div class="col-md-6">
+											<p><?php echo $user['fname'] ?></p>
 										</div>
 									</div>
 									<hr>

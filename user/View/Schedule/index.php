@@ -1,18 +1,19 @@
 <link href="/agency/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css">
 
+<style type="text/css">
+	.shedules-detail-container {
+		margin-top: 25px;
+	}
+</style>
+
 <div class="page-wrapper">
 	<div class="container-fluid">
-		<div class="row page-titles">
-			<div class="col-md-5 col-8 align-self-center">
-				<h3 class="text-themecolor">Schedules </h3>
-				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-					<li class="breadcrumb-item active">Schedule list</li>
-				</ol>
+		<div class="row">
+			<div class="col-lg-12 col-xlg-12 col-md-12 shedules-detail-container">
+				<h3>- Schedules -</h3>
 			</div>
+			<div class="col-md-12"><hr></div>
 		</div>
-		<h2>Schedules</h2>
-		<hr>
 		<div class="row">
 			<div class="col-md-12">
 				<table id="schedule_list" class="table table-striped table-bordered" style="width:100%">

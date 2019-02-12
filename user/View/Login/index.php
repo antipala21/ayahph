@@ -3,20 +3,18 @@
 
 <div class="page-wrapper" style="min-height: 818px; margin-right: 240px;">
 	<div class="container-fluid">
-
-		<?php $flash = $this->Session->flash('user-detail'); ?>
-		<?php if($flash): ?>
-			<div class="alert alert-warning">
-				<?php echo $flash; ?>
-			</div>
-		<?php endif; ?>
-
 		<div class="row page-titles">
 			<div class="col-md-5 col-8 align-self-center">
 				<h3 class="text-themecolor">User Login</h3>
 			</div>
 		</div>
 		<div id="wizard_login">
+			<?php $flash = $this->Session->flash('login_error'); ?>
+			<?php if($flash): ?>
+				<div class="alert alert-warning">
+					<?php echo $flash; ?>
+				</div>
+			<?php endif; ?>
 			<?php
 				echo $this->Form->create('User', 
 					array(
@@ -54,7 +52,7 @@
 							)
 						));
 					?>
-				
+
 			<?php echo $this->Form->end(); ?>
 			<p>For New Acccount</p>
 			<p><a href="/user/register">Register Here</a> (Or) Log in as <a href="/agency/login">Agency<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></p>

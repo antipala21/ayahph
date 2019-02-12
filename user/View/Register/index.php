@@ -106,6 +106,34 @@
 					</div>
 					<div class="form-row">
 						<label for="">
+							Last Name *
+						</label>
+						<?php echo $this->Form->input('lname', array(
+							'required' => true,
+							'label' => false,
+							'div'=> false,
+							'class'=>'form-control',
+						)); ?>
+						<div class="invalid-feedback">
+							Please provide last name
+						</div>
+					</div>
+					<div class="form-row">
+						<label for="">
+							Display Name *
+						</label>
+						<?php echo $this->Form->input('display_name', array(
+							'required' => true,
+							'label' => false,
+							'div'=> false,
+							'class'=>'form-control',
+						)); ?>
+						<div class="invalid-feedback">
+							Please provide display name
+						</div>
+					</div>
+					<div class="form-row">
+						<label for="">
 							Address *
 						</label>
 						<?php echo $this->Form->input('address', array(
@@ -163,20 +191,6 @@
 							Please provide Phone number
 						</div>
 					</div>
-					<div class="form-row">
-						<label for="">
-							Display Name *
-						</label>
-						<?php echo $this->Form->input('display_name', array(
-							'required' => true,
-							'label' => false,
-							'div'=> false,
-							'class'=>'form-control',
-						)); ?>
-						<div class="invalid-feedback">
-							Please provide display name
-						</div>
-					</div>
 				</section>
 
 				<!-- SECTION 3 -->
@@ -226,8 +240,10 @@
 		});
 
 		function validateEmail($email) {
-			var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-			return emailReg.test($email);
+			// var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+			var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			return re.test(String($email).toLowerCase());
+			// return emailReg.test($email);
 		}
 
 		$(document).keypress(function(e) {

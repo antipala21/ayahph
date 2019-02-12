@@ -43,7 +43,7 @@
 				<!-- ============================================================== -->
 				<li class="nav-item dropdown">
 					<?php $url = $this->Session->read('Auth.User.image_url') ? $this->Session->read('Auth.User.id') . '_profile.jpg?v=' . strtotime("now") : 'picture.jpg'; ?>
-					<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="/user/account"><img src="/user/images/<?php echo $url; ?>" alt="user" class="profile-pic m-r-10" /><?php echo $this->Session->read('Auth.User.email') ?></a>
+					<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="/user/account"><img src="/user/images/<?php echo $url; ?>" alt="user" class="profile-pic m-r-10" /><?php echo $this->Session->read('Auth.User.display_name') ?></a>
 				</li>
 			</ul>
 			<?php endif; ?>

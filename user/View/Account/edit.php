@@ -157,6 +157,20 @@
 									<hr>
 									<div class="row">
 										<div class="col-md-6">
+											<label>First Name</label>
+										</div>
+										<div class="col-md-6">
+											<?php echo $this->Form->input('fname', array(
+												'label' => false,
+												'class' => 'form-control',
+												'required' => true,
+												'value' => $user['fname']
+											)); ?>
+										</div>
+									</div>
+									<hr>
+									<div class="row">
+										<div class="col-md-6">
 											<label>Last Name</label>
 										</div>
 										<div class="col-md-6">

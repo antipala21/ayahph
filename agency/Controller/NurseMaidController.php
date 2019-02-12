@@ -2,7 +2,10 @@
 App::uses('AppController', 'Controller');
 class NurseMaidController extends AppController {
 
-	public $uses = array('NurseMaid');
+	public $uses = array(
+		'NurseMaid',
+		'Lungsod'
+	);
 
 	public function beforeFilter() {
 		parent::beforeFilter();
@@ -31,6 +34,7 @@ class NurseMaidController extends AppController {
 			$data = $this->request->data;
 
 			$data['NurseMaid']['agency_id'] = $this->Auth->user('id');
+			$data['NurseMaid']['address_key'] = strtolower(str_replace(array(' ', '-', '/'), '_', $data['NurseMaid']['address']));
 
 			$this->NurseMaid->set($data);
 
@@ -43,15 +47,16 @@ class NurseMaidController extends AppController {
 			$this->Session->setFlash('Adding NurseMaid Fail', 'default', array(), 'nurse-maid-add-error');
 
 		}
+		$address = $this->Lungsod->find('list', array(
+			'fields' => array(
+				'Lungsod.name',
+				'Lungsod.name'
+			)
+		));
+		$this->set('address', $address);
 	}
 
 	public function detail () {
-
-		header("Pragma-directive: no-cache");
-		header("Cache-directive: no-cache");
-		header("Cache-control: no-cache");
-		header("Pragma: no-cache");
-		header("Expires: 0");
 
 		$nursemaid_id = isset($this->params['nursemaid_id']) ? $this->params['nursemaid_id'] : null;
 
@@ -87,12 +92,6 @@ class NurseMaidController extends AppController {
 
 	public function edit () {
 
-		header("Pragma-directive: no-cache");
-		header("Cache-directive: no-cache");
-		header("Cache-control: no-cache");
-		header("Pragma: no-cache");
-		header("Expires: 0");
-
 		$nursemaid_id = isset($this->params['nursemaid_id']) ? $this->params['nursemaid_id'] : null;
 
 		$nursemaid = $this->NurseMaid->find('first', array(
@@ -105,6 +104,7 @@ class NurseMaidController extends AppController {
 
 		if ($this->request->is('post')) {
 			$data = $this->request->data;
+			$data['NurseMaid']['address_key'] = strtolower(str_replace(array(' ', '-', '/'), '_', $data['NurseMaid']['address']));
 
 			$this->NurseMaid->clear();
 			$this->NurseMaid->read(null, $data['NurseMaid']['id']);
@@ -115,6 +115,13 @@ class NurseMaidController extends AppController {
 			return $this->redirect('/nursemaid');
 		}
 
+		$address = $this->Lungsod->find('list', array(
+			'fields' => array(
+				'Lungsod.name',
+				'Lungsod.name'
+			)
+		));
+		$this->set('address', $address);
 		$this->set('nurse_maid', $nursemaid['NurseMaid']);
 	}
 

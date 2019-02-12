@@ -71,6 +71,13 @@
 	div#ui-datepicker-div {
 		z-index: 99 !important;
 	}
+	.form-group.sort_key {
+		width: 300px;
+	}
+	label {
+		margin-bottom: 0px;
+		margin-top: .5rem;
+	}
 
 </style>
 
@@ -81,6 +88,40 @@
 				<p><b>Agency Name: </b><?php echo isset($agency['name']) ? $agency['name'] : '-'; ?></p>
 				<p><b>Agency Address: </b><?php echo isset($agency['address']) ? $agency['address'] : '-'; ?></p>
 				<p><b>Agency Contact: </b><?php echo isset($agency['phone_number']) ? $agency['phone_number'] : '-'; ?></p>
+				<div class="form-group sort_key">
+					<?php echo $this->Form->input('Sort', array(
+						'options' => array_flip(Configure::read('sort_nursemaid')),
+						'label' => 'Sort By ',
+						'class' => 'form-control',
+						'id' => 'sort_key',
+						'div' => false,
+						'empty' => '---',
+						'default' => isset($get['order']) ? $get['order'] : ''
+					)); ?>
+					<?php
+					$nursemaid_filter_key = array_flip(Configure::read('nursemaid_filter_key'));
+					echo $this->Form->input('Filter', array(
+						'options' => $nursemaid_filter_key,
+						'label' => 'Filter By ',
+						'class' => 'form-control',
+						'id' => 'nursemaid_filter_key',
+						'div' => false,
+						'empty' => 'All',
+						'default' => isset($get['filter']) ? $get['filter'] : ''
+					)); ?>
+					<?php
+					echo $this->Form->input('Address', array(
+						'options' => $address,
+						'label' => 'Filter By Address',
+						'class' => 'form-control',
+						'id' => 'address_key',
+						'div' => false,
+						'empty' => 'All',
+						'default' => isset($get['address']) ? $get['address'] : ''
+					)); ?>
+					<br><br>
+					<button class="btn btn-info" id="btn_search">Search</button>
+				</div>
 			</div>
 			<div class="col-md-12"><hr></div>
 			<div class="col-lg-12 col-xlg-12 col-md-12 nurse-item-container">
@@ -111,6 +152,11 @@
 										<?php echo isset($value['NurseMaid']['total_hire']) ? $value['NurseMaid']['total_hire'] : '0' ?>
 									</span>
 								</h5>
+								<h5>Address : 
+									<span>
+										<?php echo isset($value['NurseMaid']['address']) ? $value['NurseMaid']['address'] : '0' ?>
+									</span>
+								</h5>
 								<h5>Gender : 
 									<span>
 										<?php 
@@ -133,6 +179,9 @@
 								</h5>
 								<h5>Jobs Experience : 
 									<span><?php echo isset($value['NurseMaid']['jobs_experience']) ? $value['NurseMaid']['jobs_experience'] : ' ' ?></span>
+								</h5>
+								<h5>Years Experience : 
+									<span><?php echo isset($value['NurseMaid']['years_experience']) ? $value['NurseMaid']['years_experience'] : 0 ?></span>
 								</h5>
 							</div>
 						</div>
@@ -295,6 +344,15 @@
 				}
 			});
 
+		});
+
+		var agency_id = "<?php echo isset($agency['id']) ? $agency['id'] : 0; ?>";
+
+		$('#btn_search').click(function(){
+			var sort_key = $("#sort_key option:selected" ).val();
+			var filter_key = $("#nursemaid_filter_key option:selected" ).val();
+			var address = $("#address_key option:selected" ).val();
+			window.location.href = "/agency-nursemaid/" + agency_id + "/?order=" + sort_key + "&filter=" + filter_key + "&address=" + address;
 		});
 
 	}); // end doc ready.

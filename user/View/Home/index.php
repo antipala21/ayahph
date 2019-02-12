@@ -29,7 +29,7 @@
 		<br>
 		<div>
 			<?php echo $this->Form->input('Sort', array(
-				'options' => Configure::read('sort_key'),
+				'options' => array_flip(Configure::read('sort_key')),
 				'label' => 'Sort By ',
 				'class' => 'form-control',
 				'id' => 'sort_key',
@@ -146,7 +146,7 @@
 
 			// Sort Trigger
 			$('#sort_key').change(function(){
-				window.location.href = "/?order=" + $("#sort_key option:selected" ).text();
+				window.location.href = "/?order=" + $("#sort_key option:selected" ).val();
 			});
 
 		});

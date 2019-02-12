@@ -137,6 +137,7 @@
 							Address *
 						</label>
 						<?php echo $this->Form->input('address', array(
+							'options' => $address,
 							'required' => true,
 							'label' => false,
 							'div'=> false,
@@ -170,8 +171,7 @@
 							'required' => true,
 							'label' => false,
 							'div'=> false,
-							'class'=>'form-control',
-							'empty' => '--'
+							'class'=>'form-control'
 						)); ?>
 						<div class="invalid-feedback">
 							Please provide Gender

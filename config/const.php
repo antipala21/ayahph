@@ -15,15 +15,16 @@ $config['status'] = array(
 );
 
 $config['sort_key'] = array(
-	0 => 'total_nursemaid',
-	1 => 'current_available',
-	2 => 'rating',
-	3 => 'total_transaction'
+	'Total Nursemaid'		=> 'total_nursemaid',
+	'Nursemaid Available'	=> 'current_available',
+	'Rating'				=> 'rating',
+	'Total Transactions'	=> 'total_transaction'
 );
 
 $config['sort_nursemaid'] = array(
-	0 => 'rating',
-	1 => 'total_hire'
+	'Rating'				=> 'rating',
+	'Total Hire'			=> 'total_hire',
+	'Years of experience'	=> 'years_experience'
 );
 
 $config['marital_status'] = array(
@@ -31,4 +32,13 @@ $config['marital_status'] = array(
 	1 => 'Married',
 	2 => 'Widowed',
 	3 => 'Divorced'
+);
+
+$config['nursemaid_filter_key'] = array(
+	'Age Below 20			'	=> 'age_1',
+	"Age 20's and above"	=> 'age_2',
+	'Single'					=> 'single',
+	'Married'					=> 'married',
+	'Female'					=> 'female',
+	'Male'						=> 'male'
 );

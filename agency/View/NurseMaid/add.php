@@ -133,6 +133,7 @@
 					Address *
 					</label>
 					<?php echo $this->Form->input('address', array(
+						'options' => $address,
 						'required' => true,
 						'label' => false,
 						'div'=> false,
@@ -155,7 +156,7 @@
 					<div class="tagsinput-primary">
 						<?php echo $this->Form->input('skills' , array(
 								'type' => 'hidden',
-								'value' => (isset($detail->hobby)? $detail->hobby : 'a')
+								'value' => (isset($detail->hobby)? $detail->hobby : '')
 						)) ?>
 						<label for="">
 						Skills *
@@ -168,7 +169,7 @@
 							'class' => 'form-control tagsinput',
 							'data-role' => 'tagsinput',
 							'name' => 'tagsinput',
-							'value' => (isset($detail->hobby)? $detail->hobby : 'a')
+							'value' => (isset($detail->hobby)? $detail->hobby : '')
 						)) ?>
 					</div>
 				</div>
@@ -176,7 +177,7 @@
 					<div class="tagsinput-primary">
 						<?php echo $this->Form->input('jobs_experience' , array(
 								'type' => 'hidden',
-								'value' => (isset($detail->hobby)? $detail->hobby : 'a')
+								'value' => (isset($detail->hobby)? $detail->hobby : '')
 						)) ?>
 						<label for="">
 						Jobs Experience *
@@ -189,7 +190,7 @@
 							'class' => 'form-control tagsinput2',
 							'data-role' => 'tagsinput',
 							'name' => 'tagsinput',
-							'value' => (isset($detail->hobby)? $detail->hobby : 'a')
+							'value' => (isset($detail->hobby)? $detail->hobby : '')
 						)) ?>
 					</div>
 				</div>

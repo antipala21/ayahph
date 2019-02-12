@@ -39,6 +39,10 @@
 	Router::connect('/nursemaid-detail/:id', array('controller' => 'NurseMaid', 'action' => 'detail'));
 	Router::connect('/payments', array('controller' => 'Payment', 'action' => 'index'));
 
+	// Cebu City municipalities
+	Router::connect('/municipal', array('controller' => 'Lungsod', 'action' => 'index'));
+	Router::connect('/municipal/add', array('controller' => 'Lungsod', 'action' => 'add'));
+
 	Router::connect('/logout', array('controller' => 'Login', 'action' => 'logout'));
 
 /**

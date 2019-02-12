@@ -216,6 +216,7 @@
 									)); ?>
 							<h4>Address</h4>
 								<?php echo $this->Form->input('address', array(
+										'options' => $address,
 										'label' => false,
 										'class' => 'form-control',
 										'required' => true,

@@ -26,6 +26,9 @@
 				<li>
 					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'Payment' ? 'active' : ''; ?>" href="/admin/payments" aria-expanded="false"><i class="fa fa-money" aria-hidden="true"></i><span class="hide-menu">Payments</span></a>
 				</li>
+				<li>
+					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'Lungsod' ? 'active' : ''; ?>" href="/admin/municipal" aria-expanded="false"><i class="fa fa-money" aria-hidden="true"></i><span class="hide-menu">Address</span></a>
+				</li>
 				<?php endif; ?>
 			</ul>
 			<?php if (!$this->Session->read('Auth.User')): ?>

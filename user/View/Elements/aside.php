@@ -31,6 +31,9 @@
 				<li>
 					<a class="waves-effect waves-dark" href="/announcements" aria-expanded="false"><i class="fa fa-bullhorn" aria-hidden="true"></i><span class="hide-menu">Announcement</span></a>
 				</li>
+				<li>
+					<a class="waves-effect waves-dark" href="/history" aria-expanded="false"><i class="fa fa-bullhorn" aria-hidden="true"></i><span class="hide-menu">History</span></a>
+				</li>
 				<?php endif; ?>
 				<li>
 					<a class="waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-help-circle"></i><span class="hide-menu">Help</span></a>

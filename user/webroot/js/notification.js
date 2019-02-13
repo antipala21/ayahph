@@ -22,12 +22,12 @@
 					var data = JSON.parse(data);
 					console.log(data.count);
 					if (data.count > hire_accept_count) {
-							$.notify({
-								message: "Hire Request was accepted.",
-								url: "/user/schedules"
-							},{
-								url_target: "_self"
-							});
+						$.notify({
+							message: "Hire Request was accepted.",
+							url: "/user/schedules"
+						},{
+							url_target: "_self"
+						});
 						hire_accept_count = hire_accept_count + 1;
 						localStorage.setItem("notif_schedules_flg", "show");
 						localStorage.setItem("notif_schedules_count", data.count);

@@ -22,12 +22,12 @@
 					var data = JSON.parse(data);
 					console.log(data.count);
 					if (data.count > hire_request_count) {
-							$.notify({
-								message: "New Hire Request!",
-								url: "/agency/transaction"
-							},{
-								url_target: "_self"
-							});
+						$.notify({
+							message: "New Hire Request!",
+							url: "/agency/transaction"
+						},{
+							url_target: "_self"
+						});
 						hire_request_count = hire_request_count + 1;
 						localStorage.setItem("notif_request_flg", "show");
 						localStorage.setItem("notif_request_count", data.count);

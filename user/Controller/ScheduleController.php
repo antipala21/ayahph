@@ -10,6 +10,10 @@ class ScheduleController extends AppController {
 
 	public function beforeFilter() {
 		parent::beforeFilter();
+		// $this->Auth->allow(
+		// 	'calendar',
+		// 	'getCalendarData'
+		// );
 	}
 
 	public function index() {
@@ -84,7 +88,6 @@ class ScheduleController extends AppController {
 
 		if ($this->request->is('post')) {
 			$data = $this->request->data;
-			
 			$rate = isset($data['rate']) ? $data['rate'] : 5;
 			$data['Rating']['rate'] = $rate;
 			$data['Rating']['user_id'] = $this->Auth->user('id');
@@ -131,7 +134,61 @@ class ScheduleController extends AppController {
 		));
 		$this->set('to_rate', $to_rate);
 
+	}
 
+	public function calendar () {
+
+	}
+
+	public function getCalendarData () {
+		$this->autoRender = false;
+		$result = array();
+
+		$calendar_data = $this->Transaction->find('all', array(
+			'fields' => array(
+				'Transaction.*',
+				'Agency.name',
+				'NurseMaid.first_name'
+			),
+			'joins' => array(
+				array(
+					'table' => 'agencies',
+					'alias' => 'Agency',
+					'type' => 'LEFT',
+					'conditions' => 'Agency.id = Transaction.agency_id'
+				),
+				array(
+					'table' => 'nurse_maids',
+					'alias' => 'NurseMaid',
+					'type' => 'LEFT',
+					'conditions' => 'NurseMaid.id = Transaction.nurse_maid_id'
+				)
+			),
+			'conditions' => array(
+				'Transaction.status' => 1,
+				'Transaction.user_id' => $this->Auth->user('id')
+			),
+			'order' => 'Transaction.id DESC'
+		));
+
+		if ($calendar_data) {
+			$_calendar_data = array();
+			foreach ($calendar_data as $key => $value) {
+				$_calendar_data[] = $value['Transaction'];
+
+				$_calendar_data[$key]['start'] = date('Y-m-d', strtotime($value['Transaction']['transaction_start']));
+				$_calendar_data[$key]['end'] = date('Y-m-d', strtotime($value['Transaction']['transaction_end']));
+				$_calendar_data[$key]['url'] = '/schedule/detail/' . $value['Transaction']['id'];
+
+				if (isset($value['NurseMaid']['first_name'])) {
+					$_calendar_data[$key]['title'] = $value['NurseMaid']['first_name'];
+				} else {
+					$_calendar_data[$key]['title'] = 'Nursemaid';
+				}
+			}
+			$result = $_calendar_data;
+		}
+		return json_encode($result);
 	}
 
 }

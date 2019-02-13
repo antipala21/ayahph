@@ -1,0 +1,12 @@
+1. PHP
+2. Cakephp (Framework)
+3. jQuery
+4. jQuery DataTables (For displaying data with paginate)
+5. Bootstrap - CSS
+6. Braintree api - sandbox (Test Payments)
+7. Smtp (Email) - included in Cakephp
+8. Bootstrap-Notify JS - for notification (use javascript interval only)
+9. Nexmo api (for automated SMS) -> NOT YET IMPLEMENTED, LIMIT 50 sms only.
+
+1. Java
+2. API - ayahph custom call api.

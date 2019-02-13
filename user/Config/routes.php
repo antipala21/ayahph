@@ -45,11 +45,13 @@
 
 	// Transactions
 	Router::connect('/ajax/send_hire_request', array('controller' => 'Transaction', 'action' => 'saveRequest'));
+	Router::connect('/ajax/get_calendar_data', array('controller' => 'Schedule', 'action' => 'getCalendarData'));
 
 	Router::connect('/account/requirements', array('controller' => 'Account', 'action' => 'updateRequirements'));
 	Router::connect('/account/ajax_image_upload', array('controller' => 'Account', 'action' => 'ajax_image_upload'));
 
 	Router::connect('/schedules', array('controller' => 'Schedule', 'action' => 'index'));
+	Router::connect('/schedules/calendar', array('controller' => 'Schedule', 'action' => 'calendar'));
 	Router::connect('/schedule/detail/:schedule_id', array('controller' => 'Schedule', 'action' => 'detail'));
 	Router::connect('/to_rate', array('controller' => 'Schedule', 'action' => 'to_rate'));
 	Router::connect('/completeTransaction', array('controller' => 'Schedule', 'action' => 'completeTransaction'));

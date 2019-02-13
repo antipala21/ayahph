@@ -1,6 +1,5 @@
 <?php
 App::uses('AppController', 'Controller');
-App::uses('ApiCommonController', 'Controller');
 App::uses('User', 'Model/Base');
 class UsersLoginController extends AppController {
 	public $uses = array('User');
@@ -44,13 +43,11 @@ class UsersLoginController extends AppController {
 				'fields' => array(
 					'id',
 					'status',
-					'api_token',
 					'display_name'
 				)
 			));
 			$this->log('[User] ' . json_encode($User), 'debug');
 			if (isset($User['User'])) {
-				$api_token = $User['User']['api_token'];
 				$user_display_name = $User['User']['display_name'];
 				if ($User['User']['status'] == 0) {
 					$response['id'] = $User['User']['id'];
@@ -66,31 +63,5 @@ class UsersLoginController extends AppController {
 		}
 		return json_encode($response);
 	}
-
-	/**
-	* add Log History
-	* @param $id
-	*/
-	private function setLoginLog($id){
-
-	// 	$this->User->validate = array();
-	// 	$this->User->read(null,$id);
-	// 	$this->User->set('last_login_time',myTools::myDate());
-	// 	$this->User->save();
-
-	// 	$this->UsersLoginHistory->read(null);
-	// 	$this->UsersLoginHistory->set('user_id',$id);
-	// 	$this->UsersLoginHistory->set('login_time',myTools::myDate());
-	// 	$this->UsersLoginHistory->save();
-	}
-
-	/**
-  * Generate User Token
-  * @param string $ip users ip
-  * @return string token
-  */  
-	 public function generateAPIToken($ip){
-	  return md5(time() . ip2long($ip) . uniqid()); 
-	 }
 
 }

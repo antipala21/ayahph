@@ -62,18 +62,12 @@ class AppController extends Controller {
 			'Vendor'=>array(CAKE_CORE_INCLUDE_PATH.'/Vendor/')
 		));
 
-		/*Autoload Model*/
-		// App::import('Model',array('CommonTable'));
-		// App::import('Model',array('DefineMaster'));
-
 		/*for content type*/
 		ob_start();
 		$this->response->type('application/json');
 
 		/*Autoload Lib*/
 		App::uses('myTools','Lib');
-		// App::uses('myMailer','Lib');
-		// App::uses('myError','Lib');
 
 		/*Autoload table class*/
 		spl_autoload_register(function($class){
@@ -84,7 +78,6 @@ class AppController extends Controller {
 		});
 
 		/*Autoload Lib*/
-		// Configure::load('my');
 		Configure::load('const');
 
 		/*meta title*/

@@ -6,7 +6,7 @@
 		margin-top: 25px;
 	}
 	#calendar {
-		max-width: 800px;
+		max-width: 900px;
 		margin: 0 auto;
 	}
 </style>
@@ -15,7 +15,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-12 col-xlg-12 col-md-12 shedules-detail-container">
-				<h3>-  -</h3>
+				<h3>- Schedules -</h3>
 			</div>
 			<div class="col-md-12"><hr></div>
 		</div>

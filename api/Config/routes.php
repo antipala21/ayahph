@@ -26,6 +26,8 @@ Router::connect('/users/agencies', array('controller' => 'Agency', 'action' => '
 Router::connect('/users/nursemaids', array('controller' => 'NurseMaid', 'action' => 'index'));
 Router::connect('/users/schedules', array('controller' => 'Schedule', 'action' => 'index'));
 Router::connect('/users/acount', array('controller' => 'Account', 'action' => 'index'));
+Router::connect('/users/address', array('controller' => 'Lungsod', 'action' => 'index'));
+Router::connect('/users/request_hire', array('controller' => 'Transaction', 'action' => 'index'));
 
 /**
 * Load all plugin routes. See the CakePlugin documentation on

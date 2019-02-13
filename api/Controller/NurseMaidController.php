@@ -15,8 +15,48 @@ class NurseMaidController extends AppController {
 		$this->autoRender = false;
 		$response = array();
 
-		$this->NurseMaid->virtualFields['rating'] = "SELECT AVG(`rate`) FROM `nurse_maid_ratings` WHERE `nurse_maid_ratings`.`nurse_maid_id` = `NurseMaid`.`id`";
+		$request_data = json_decode(stripslashes($this->request->data['params']));
+		$data = (array) $request_data;
 
+		$order_by = 'id DESC';
+		$conditions = array('NurseMaid.status' => 1);
+
+		if (isset($data['order']) && !empty($data['order']) && in_array($data['order'], Configure::read('sort_nursemaid'))) {
+			$order_by = $data['order'] . ' DESC';
+		}
+
+		if (isset($data['filter']) && !empty($data['filter'])) {
+
+			switch ($data['filter']) {
+				case 'age_1':
+					$conditions['DATE(NurseMaid.birthdate) >='] = $this->birthday(19);
+					break;
+				case 'age_2':
+					$conditions['DATE(NurseMaid.birthdate) <='] = $this->birthday(20);
+					break;
+				case 'single':
+					$conditions['NurseMaid.marital_status'] = 0;
+					break;
+				case 'married':
+					$conditions['NurseMaid.marital_status'] = 1;
+					break;
+				case 'female':
+					$conditions['NurseMaid.gender'] = 0;
+					break;
+				case 'male':
+					$conditions['NurseMaid.gender'] = 1;
+					break;
+				default:
+					break;
+			}
+		}
+
+		if (isset($data['address']) && !empty($data['address'])) {
+			$conditions['NurseMaid.address_key'] = strtolower(str_replace(array(' ', '-', '/'), '_', $data['address']));
+		}
+
+		$this->NurseMaid->virtualFields['rating'] = "SELECT AVG(`rate`) FROM `nurse_maid_ratings` WHERE `nurse_maid_ratings`.`nurse_maid_id` = `NurseMaid`.`id`";
+		$this->NurseMaid->virtualFields['total_hire'] = "SELECT COUNT(*) FROM `transactions` WHERE `nurse_maid_id` = `NurseMaid`.`id`";
 		$nurse_maids = $this->NurseMaid->find('all', array(
 			'fields' => array(
 				'NurseMaid.*',
@@ -30,7 +70,8 @@ class NurseMaidController extends AppController {
 					'conditions' => 'Agency.id = NurseMaid.agency_id'
 				)
 			),
-			'conditions' => array('NurseMaid.status' => 1)
+			'conditions' => $conditions,
+			'order' => $order_by
 		));
 
 		if ($nurse_maids) {
@@ -45,6 +86,10 @@ class NurseMaidController extends AppController {
 			$response['nurse_maids'] = $_nurse_maids;
 		}
 		return json_encode($response);
+	}
+
+	private function birthday($years){
+		return date('Y-m-d', strtotime($years . ' years ago'));
 	}
 
 }

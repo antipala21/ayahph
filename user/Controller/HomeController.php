@@ -25,7 +25,6 @@ class HomeController extends AppController {
 			$this->set('get',$get);
 		}
 
-		$order_key = Configure::read('sort_key');
 		$order_by = 'id DESC';
 
 		if (isset($get['order']) && !empty($get['order']) && in_array($get['order'], Configure::read('sort_key'))) {
@@ -37,7 +36,6 @@ class HomeController extends AppController {
 		$this->Agency->virtualFields['female_nursemaid'] = "SELECT COUNT(*) FROM `nurse_maids` WHERE `agency_id` = `Agency`.`id` AND `gender` = 0";
 		$this->Agency->virtualFields['current_available'] = "SELECT COUNT(*) FROM `nurse_maids` WHERE `agency_id` = `Agency`.`id` AND `status` = 1";
 		$this->Agency->virtualFields['total_transaction'] = "SELECT COUNT(*) FROM `transactions` WHERE `agency_id` = `Agency`.`id`";
-
 		$this->Agency->virtualFields['rating'] = "SELECT AVG(`rate`) FROM `nurse_maid_ratings` WHERE `nurse_maid_ratings`.`agency_id` = `Agency`.`id`";
 		$this->Agency->virtualFields['rating_count'] = "SELECT COUNT(`rate`) FROM `nurse_maid_ratings` WHERE `nurse_maid_ratings`.`agency_id` = `Agency`.`id`";
 

@@ -10,7 +10,6 @@ class AgencyDetailController extends AppController {
 
 	public function beforeFilter() {
 		parent::beforeFilter();
-		// $this->Auth->allow('detail');
 	}
 
 	public function detail () {
@@ -28,7 +27,6 @@ class AgencyDetailController extends AppController {
 		$this->Agency->virtualFields['current_available'] = "SELECT COUNT(*) FROM `nurse_maids` WHERE `agency_id` = $id AND `status` = 1";
 		$this->Agency->virtualFields['total_transaction'] = "SELECT COUNT(*) FROM `transactions` WHERE `agency_id` = `Agency`.`id`";
 		$this->Agency->virtualFields['total_announcements'] = "SELECT COUNT(*) FROM `announcements` WHERE `agency_id` = `Agency`.`id`";
-
 		$this->Agency->virtualFields['rating'] = "SELECT AVG(`rate`) FROM `nurse_maid_ratings` WHERE `nurse_maid_ratings`.`agency_id` = `Agency`.`id`";
 		$this->Agency->virtualFields['rating_count'] = "SELECT COUNT(`rate`) FROM `nurse_maid_ratings` WHERE `nurse_maid_ratings`.`agency_id` = `Agency`.`id`";
 
@@ -63,17 +61,7 @@ class AgencyDetailController extends AppController {
 		if (!isset($agency['Agency'])) {
 			return $this->redirect('/');
 		}
-
-		// myTools::display($agency);
-		// exit;
-
 		$this->set('agency', $agency['Agency']);
-		// $this->render('detail');
-
-		// myTools::outputSqlLogs($this->Agency);
-		// myTools::display($agency);
-		// exit;
-
 	}
 
 

@@ -26,13 +26,9 @@ class TransactionController extends AppController {
 			$data = $this->request->data;
 
 			$data['user_id'] = $this->Auth->user('id');
-
 			$result['sucess'] = false;
-
 			$transaction_time = explode(' - ', $data['transaction_time']);
-
 			$transaction_start = $transaction_time[0];
-
 			$transaction_end = $transaction_time[1];
 
 			$data['transaction_start'] = $transaction_start;
@@ -67,7 +63,6 @@ class TransactionController extends AppController {
 						'conditions' => array('NurseMaid.id' => $data['nurse_maid_id'])
 					));
 
-					$base_url = Router::url('/', true);
 					$Email = new CakeEmail();
 					$Email->template('email_request_hire', 'email_request_hire')
 						->emailFormat('html')

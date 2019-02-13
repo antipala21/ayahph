@@ -15,7 +15,10 @@
 					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'Announcement' ? 'active' : ''; ?>" href="/agency/announcement" aria-expanded="false"><i class="fa fa-bullhorn" aria-hidden="true"></i><span class="hide-menu">Announcement</span></a>
 				</li>
 				<li>
-					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'Transaction' ? 'active' : ''; ?>" href="/agency/transaction" aria-expanded="false"><i class="fa fa-briefcase" aria-hidden="true"></i><span class="hide-menu">Transactions</span></a>
+					<div class="notif_container hide" id="notif_requests">
+						<span class="notif_count">0</span>
+					</div>
+					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'Transaction' ? 'active' : ''; ?>" href="/agency/transaction" aria-expanded="false"><i class="fa fa-briefcase" aria-hidden="true"></i><span class="hide-menu">Hire Requests</span></a>
 				</li>
 				<li>
 					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'Schedule' ? 'active' : ''; ?>" href="/agency/schedules" aria-expanded="false"><i class="fa fa-calendar-check-o" aria-hidden="true"></i><span class="hide-menu">Schedules</span></a>
@@ -43,3 +46,16 @@
 	<!-- End Bottom points-->
 	<?php endif; ?>
 </aside>
+<script type="text/javascript">
+(function(){
+	$('#notif_requests span.notif_count').text(localStorage.getItem("notif_request_count"));
+	setTimeout(function(){
+		if (
+			localStorage.getItem("notif_request_flg") !== 'hide'
+			&& $('#notif_requests span.notif_count').text() > 0
+			) {
+			$('#notif_requests').show();
+		}
+	},200);
+})();
+</script>

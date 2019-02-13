@@ -29,6 +29,10 @@
 								url_target: "_self"
 							});
 						hire_request_count = hire_request_count + 1;
+						localStorage.setItem("notif_request_flg", "show");
+						localStorage.setItem("notif_request_count", data.count);
+						$('#notif_requests span.notif_count').text(data.count);
+						$('#notif_requests').show();
 					}
 				},
 				error: function(){console.log('error')},

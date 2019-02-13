@@ -110,6 +110,24 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		var is_login = <?php echo $this->Session->read('Auth.User.id') ? 1 : 0; ?>;
 	</script>
 
+	<!-- NOTIFICATION STYLE -->
+	<style type="text/css">
+		nav ul li div.notif_container {
+			position: relative;
+		}
+		nav ul li div.notif_container span.notif_count {
+			position: absolute;
+			right: 96px;
+			top: 5px;
+			background-color: #f36e3b;
+			padding: 5px;
+			border-radius: 15px;
+			width: 30px;
+			color: #FFF;
+			text-align: center;
+		}
+	</style>
+
 </head>
 <body class="fix-header fix-sidebar card-no-border">
 

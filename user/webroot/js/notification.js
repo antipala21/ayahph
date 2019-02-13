@@ -29,6 +29,10 @@
 								url_target: "_self"
 							});
 						hire_accept_count = hire_accept_count + 1;
+						localStorage.setItem("notif_schedules_flg", "show");
+						localStorage.setItem("notif_schedules_count", data.count);
+						$('#notif_schedules span.notif_count').text(data.count);
+						$('#notif_schedules').show();
 					}
 				},
 				error: function(){console.log('error')},

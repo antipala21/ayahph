@@ -89,6 +89,24 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	<script src="/js/jquery.modal.min.js"></script>
 	<link rel="stylesheet" href="/css/jquery.modal.min.css" />
 
+	<!-- NOTIFICATION STYLE -->
+	<style type="text/css">
+		nav ul li div.notif_container {
+			position: relative;
+		}
+		nav ul li div.notif_container span.notif_count {
+			position: absolute;
+			right: 96px;
+			top: 5px;
+			background-color: #f36e3b;
+			padding: 5px;
+			border-radius: 15px;
+			width: 30px;
+			color: #FFF;
+			text-align: center;
+		}
+	</style>
+
 </head>
 <body class="fix-header fix-sidebar card-no-border">
 

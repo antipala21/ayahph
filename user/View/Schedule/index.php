@@ -55,5 +55,10 @@
 		$('#schedule_list').DataTable({
 			 "order": [[ 0, 'desc' ]]
 		});
+
+		localStorage.setItem("notif_schedules_flg", "hide");
+		localStorage.setItem("notif_schedules_count", 0);
+		$('#notif_schedules').hide();
+
 	});
 </script>

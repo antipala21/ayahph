@@ -19,6 +19,9 @@
 					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'account' ? 'active' : ''; ?>" href="/user/account" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">Profile</span></a>
 				</li>
 				<li>
+					<div class="notif_container hide" id="notif_schedules">
+						<span class="notif_count">0</span>
+					</div>
 					<a class="waves-effect waves-dark <?php echo 
 					$this->params['controller'] == 'Schedule'
 					&& ($this->params['action'] == 'index' || $this->params['action'] == 'detail') ? 'active' : ''; ?>" href="/user/schedules" aria-expanded="false"><i class="fa fa-calendar-check-o" aria-hidden="true"></i><span class="hide-menu">Schedules</span></a>
@@ -61,3 +64,16 @@
 	<!-- End Bottom points-->
 	<?php endif; ?>
 </aside>
+<script type="text/javascript">
+(function(){
+	$('#notif_schedules span.notif_count').text(localStorage.getItem("notif_schedules_count"));
+	setTimeout(function(){
+		if (
+			localStorage.getItem("notif_schedules_flg") !== 'hide'
+			&& $('#notif_schedules span.notif_count').text() > 0
+			) {
+			$('#notif_schedules').show();
+		}
+	},200);
+})();
+</script>

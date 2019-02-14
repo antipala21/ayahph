@@ -98,7 +98,7 @@ class TransactionController extends AppController {
 					$nurse_maid_detail = $this->NurseMaid->find('first', array(
 						'fields' => array(
 							'NurseMaid.first_name',
-							'NurseMaid.phone_number'
+							'NurseMaid.address'
 						),
 						'conditions' => array('NurseMaid.id' => $save['Transaction']['nurse_maid_id'])
 					));
@@ -115,7 +115,7 @@ class TransactionController extends AppController {
 								'agency_phone' => $this->Auth->user('phone_number'),
 								'client_name' => $user_detail['User']['display_name'],
 								'nurse_maid_name' => $nurse_maid_detail['NurseMaid']['first_name'],
-								'nurse_maid_phone' => $nurse_maid_detail['NurseMaid']['phone_number'],
+								'nurse_maid_address' => $nurse_maid_detail['NurseMaid']['address'],
 								'transaction_start' => date("F j, Y, g:i a", strtotime($save['Transaction']['transaction_start'])),
 								'transaction_end' => date("F j, Y, g:i a", strtotime($save['Transaction']['transaction_end'])),
 								'email' => $user_detail['User']['email'],

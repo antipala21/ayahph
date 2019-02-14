@@ -366,7 +366,7 @@
 											<p>Agency Phone : <?php echo isset($agency_phone) ? $agency_phone : '-'; ?></p>
 
 											<p>Nursemaid Name : <?php echo isset($nurse_maid_name) ? $nurse_maid_name : '-'; ?></p>
-											<p>Nursemaid Phone : <?php echo isset($nurse_maid_phone) ? $nurse_maid_phone : '-'; ?></p>
+											<p>Nursemaid Address : <?php echo isset($nurse_maid_address) ? $nurse_maid_address : '-'; ?></p>
 
 											<p>From : <?php echo isset($transaction_start) ? $transaction_start : '-'; ?></p>
 											<p>To : <?php echo isset($transaction_end) ? $transaction_end : '-'; ?></p>

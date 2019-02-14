@@ -18,13 +18,15 @@ class ScheduleController extends AppController {
 		$request_data = json_decode(stripslashes($this->request->data['params']));
 		$data = (array) $request_data;
 
-		$this->log('[status] ' . $data['status'], 'debug');
-		$this->log('[user_id] ' . $data['user_id'], 'debug');
+		// $this->log('[status] ' . $data['status'], 'debug');
+		// $this->log('[user_id] ' . $data['user_id'], 'debug');
 
 		$schedules = $this->Transaction->find('all', array(
 			'fields' => array(
 				'Transaction.*',
-				'Agency.name'
+				'Agency.name',
+				'Agency.phone_number',
+				'NurseMaid.first_name'
 			),
 			'joins' => array(
 				array(
@@ -32,6 +34,12 @@ class ScheduleController extends AppController {
 					'alias' => 'Agency',
 					'type' => 'LEFT',
 					'conditions' => 'Agency.id = Transaction.agency_id'
+				),
+				array(
+					'table' => 'nurse_maids',
+					'alias' => 'NurseMaid',
+					'type' => 'LEFT',
+					'conditions' => 'NurseMaid.id = Transaction.nurse_maid_id'
 				)
 			),
 			'conditions' => array(
@@ -49,6 +57,12 @@ class ScheduleController extends AppController {
 				$_schedules[] = $value['Transaction'];
 				if (isset($value['Agency']['name'])) {
 					$_schedules[$key]['agency_name'] = $value['Agency']['name'];
+				}
+				if (isset($value['Agency']['phone_number'])) {
+					$_schedules[$key]['agency_phone_number'] = $value['Agency']['phone_number'];
+				}
+				if (isset($value['NurseMaid']['first_name'])) {
+					$_schedules[$key]['nursemaid_name'] = $value['NurseMaid']['first_name'];
 				}
 			}
 			$response['schedules'] = $_schedules;

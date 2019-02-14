@@ -8,7 +8,7 @@ class NurseMaidController extends AppController {
 
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->Auth->allow('index');
+		$this->Auth->allow('index', 'detail');
 	}
 
 	public function index() {
@@ -89,6 +89,48 @@ class NurseMaidController extends AppController {
 			$response['nurse_maids'] = $_nurse_maids;
 		}
 		return json_encode($response);
+	}
+
+	public function detail () {
+
+		$this->log('detail', 'debug');
+
+		$this->autoRender = false;
+		$response = array();
+
+		$data = null;
+		if (isset($this->request->data['params'])) {
+			$request_data = json_decode(stripslashes($this->request->data['params']));
+			$data = (array) $request_data;
+		}
+
+		if (!$data) {
+			$response['success'] = false;
+			return json_encode($response);
+		}
+
+		$nursemaid_id = isset($data['nursemaid_id']) ? $data['nursemaid_id'] : NULL;
+
+		$this->NurseMaid->virtualFields['rating'] = "SELECT AVG(`rate`) FROM `nurse_maid_ratings` WHERE `nurse_maid_id` = $nursemaid_id";
+		$this->NurseMaid->virtualFields['agency_name'] = "SELECT `name` FROM `agencies` WHERE `id` = `NurseMaid`.`agency_id`";
+		$nurse_maid = $this->NurseMaid->find('first', array(
+			'fields' => array(
+				'NurseMaid.*'
+			),
+			'conditions' => array(
+				'NurseMaid.id' => $nursemaid_id,
+				'NurseMaid.status' => 1
+			)
+		));
+
+		$this->log('[nurse_maid] ' . json_encode($nurse_maid), 'debug');
+
+		if ($nurse_maid) {
+			$response['nurse_maid'] = $nurse_maid['NurseMaid'];
+		}
+
+		return json_encode($response['nurse_maid']);
+
 	}
 
 	private function birthday($years){

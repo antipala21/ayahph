@@ -96,7 +96,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		}
 		nav ul li div.notif_container span.notif_count {
 			position: absolute;
-			right: 96px;
+			left: 157px;
 			top: 5px;
 			background-color: #f36e3b;
 			padding: 5px;

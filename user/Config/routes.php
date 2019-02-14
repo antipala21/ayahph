@@ -62,6 +62,10 @@
 	// Notification
 	Router::connect('/notif/hire_accept', array('controller' => 'Notification', 'action' => 'hire_accept'));
 
+	// History
+	Router::connect('/history', array('controller' => 'History', 'action' => 'index'));
+	Router::connect('/history/detail/:id', array('controller' => 'History', 'action' => 'index'));
+
 /**
  * Load all plugin routes. See the CakePlugin documentation on
  * how to customize the loading of plugin routes.

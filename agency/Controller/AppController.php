@@ -71,12 +71,12 @@ class AppController extends Controller {
 		Configure::load('const');
 
 		// Braintree
-		App::import('Vendor', 'autoload');
+		// App::import('Vendor', 'autoload');
 
-		Braintree_Configuration::environment('sandbox');
-		Braintree_Configuration::merchantId('tnnc2y3sq3ctj5cb');
-		Braintree_Configuration::publicKey('9pzgf9x7z4g3hmz8');
-		Braintree_Configuration::privateKey('ee008d3d62a3f086dcb655424a3929d0');
+		// Braintree_Configuration::environment('sandbox');
+		// Braintree_Configuration::merchantId('tnnc2y3sq3ctj5cb');
+		// Braintree_Configuration::publicKey('9pzgf9x7z4g3hmz8');
+		// Braintree_Configuration::privateKey('ee008d3d62a3f086dcb655424a3929d0');
 
 		/*Autoload table class*/
 		spl_autoload_register(function($class){

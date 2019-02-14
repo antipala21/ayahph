@@ -123,7 +123,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 			strtolower($this->params['controller']) != "register"
 			&& strtolower($this->params['controller']) != "login"
 		): ?>
-			<?php echo $this->element('aside'); ?>
+			<?php // echo $this->element('aside'); ?>
 		<?php endif; ?>
 
 		<div id="content">

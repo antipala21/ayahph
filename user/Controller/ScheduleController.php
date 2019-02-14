@@ -10,10 +10,10 @@ class ScheduleController extends AppController {
 
 	public function beforeFilter() {
 		parent::beforeFilter();
-		// $this->Auth->allow(
-		// 	'calendar',
-		// 	'getCalendarData'
-		// );
+		$this->Auth->allow(
+			'calendar',
+			'getCalendarData'
+		);
 	}
 
 	public function index() {

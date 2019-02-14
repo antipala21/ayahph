@@ -7,7 +7,8 @@ class TransactionController extends AppController {
 		'User',
 		'Transaction',
 		'Agency',
-		'NurseMaid'
+		'NurseMaid',
+		'NurseMaidRating'
 	);
 
 	public function beforeFilter() {
@@ -108,6 +109,64 @@ class TransactionController extends AppController {
 					}
 				}
 			}
+		}
+		return json_encode($response);
+	}
+
+	public function addRate () {
+
+		$this->autoRender = false;
+		if (!isset($this->request->data['params'])) {
+			$response['success'] = false
+			return json_encode($response);
+		}
+
+		$request_data = json_decode(stripslashes($this->request->data['params']));
+		$data = (array) $request_data;
+
+		if (!$data) {
+			$response['error']['message'] = 'Invalid request';
+		}
+		else if (!isset($data['user_id']) || empty($data['user_id'])) {
+			$response['error']['message'] = 'Auth Error';
+		}
+		else if (!isset($data['agency_id']) || empty($data['agency_id']))  {
+			$response['error']['message'] = 'Agency ID is required';
+		}
+		else if (!isset($data['nurse_maid_id']) || empty($data['nurse_maid_id']))  {
+			$response['error']['message'] = 'Nursemaid ID is required';
+		}
+		else if (!isset($data['comment']) || empty($data['comment']))  {
+			$response['error']['message'] = 'Comment is required';
+		}
+		else if (!isset($data['transaction_id']) || empty($data['transaction_id']))  {
+			$response['error']['message'] = 'Transaction id is required';
+		} else {
+
+			$user_id = isset($data['user_id']) ? $data['user_id'] : NULL;
+
+			if (!$user_id) {
+				$response['success'] = false
+				return json_encode($response);
+			}
+
+			$rate = isset($data['rate']) ? $data['rate'] : 5;
+			$data['rate'] = $rate;
+			$data['user_id'] = $user_id;
+
+			$this->NurseMaidRating->create();
+			$this->NurseMaidRating->set($data);
+			if ($this->NurseMaidRating->save()) {
+				// updat transaction status
+				$this->Transaction->clear();
+				$this->Transaction->read(array('status'), $data['transaction_id']);
+				$this->Transaction->set(array('status' => 3));
+
+				if ($this->Transaction->save()) {
+					$response['success'] = true;
+				}
+			}
+
 		}
 		return json_encode($response);
 	}

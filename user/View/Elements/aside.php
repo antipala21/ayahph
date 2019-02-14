@@ -37,10 +37,12 @@
 					&& $this->params['action'] == 'to_rate' ? 'active' : ''; ?>" href="/user/to_rate" aria-expanded="false"><i class="fa fa-star-o" aria-hidden="true"></i><span class="hide-menu">To rate</span></a>
 				</li>
 				<li>
-					<a class="waves-effect waves-dark" href="/announcements" aria-expanded="false"><i class="fa fa-bullhorn" aria-hidden="true"></i><span class="hide-menu">Announcement</span></a>
+					<a class="waves-effect waves-dark <?php echo 
+					$this->params['controller'] == 'Announcement' ? 'active' : ''; ?>" href="/announcements" aria-expanded="false"><i class="fa fa-bullhorn" aria-hidden="true"></i><span class="hide-menu">Announcement</span></a>
 				</li>
 				<li>
-					<a class="waves-effect waves-dark" href="/history" aria-expanded="false"><i class="fa fa-bullhorn" aria-hidden="true"></i><span class="hide-menu">History</span></a>
+					<a class="waves-effect waves-dark <?php echo 
+					$this->params['controller'] == 'History' ? 'active' : ''; ?>" href="/history" aria-expanded="false"><i class="fa fa-bullhorn" aria-hidden="true"></i><span class="hide-menu">History</span></a>
 				</li>
 				<?php endif; ?>
 				<li>

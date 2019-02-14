@@ -42,3 +42,5 @@ $config['nursemaid_filter_key'] = array(
 	'Female'					=> 'female',
 	'Male'						=> 'male'
 );
+
+$config['google_map_api_key'] = 'AIzaSyAvXK4Cfamm2QoiLkWBHp-XaSl6fpBix8s';

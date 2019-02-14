@@ -16,6 +16,9 @@ class UsersLoginController extends AppController {
 		$request_data = json_decode(stripslashes($this->request->data['params']));
 		$data = (array) $request_data;
 
+		$data['users_email'] = str_replace(' ', '+', $data['users_email']);
+
+		$this->log('[request_data] ' . json_encode($this->request->data['params']), 'debug');
 		$this->log('[username] ' . $data['users_email'], 'debug');
 		$this->log('[password] ' . $data['password'], 'debug');
 

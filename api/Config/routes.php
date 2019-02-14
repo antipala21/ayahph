@@ -23,6 +23,7 @@
 //Users
 Router::connect('/users/login', array('controller' => 'UsersLogin', 'action' => 'index'));
 Router::connect('/users/agencies', array('controller' => 'Agency', 'action' => 'index'));
+Router::connect('/users/agency/detail', array('controller' => 'Agency', 'action' => 'detail'));
 Router::connect('/users/nursemaids', array('controller' => 'NurseMaid', 'action' => 'index'));
 Router::connect('/users/schedules', array('controller' => 'Schedule', 'action' => 'index'));
 Router::connect('/users/acount', array('controller' => 'Account', 'action' => 'index'));

@@ -15,8 +15,11 @@ class NurseMaidController extends AppController {
 		$this->autoRender = false;
 		$response = array();
 
-		$request_data = json_decode(stripslashes($this->request->data['params']));
-		$data = (array) $request_data;
+		$data = null;
+		if (isset($this->request->data['params'])) {
+			$request_data = json_decode(stripslashes($this->request->data['params']));
+			$data = (array) $request_data;
+		}
 
 		$order_by = 'id DESC';
 		$conditions = array('NurseMaid.status' => 1);

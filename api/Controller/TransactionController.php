@@ -7,12 +7,16 @@ class TransactionController extends AppController {
 		'User',
 		'Transaction',
 		'Agency',
-		'NurseMaid'
+		'NurseMaid',
+		'NurseMaidRating'
 	);
 
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->Auth->allow(array('index'));
+		$this->Auth->allow(array(
+			'index',
+			'add_rate'
+		));
 	}
 
 	public function index() {
@@ -117,5 +121,54 @@ class TransactionController extends AppController {
 		}
 		return json_encode($response);
 	}
+
+	public function add_rate () {
+
+		$this->autoRender = false;
+
+		if (!isset($this->request->data['params'])) {
+			$response['success'] = false;
+			return json_encode($response);
+		}
+
+		$request_data = json_decode(stripslashes($this->request->data['params']));
+		$data = (array) $request_data;
+
+		$response['success'] = false;
+
+		if (!$data) {
+			$response['error']['message'] = 'Invalid request';
+		}
+		else if (!isset($data['user_id']) || empty($data['user_id'])) {
+			$response['error']['message'] = 'Auth Error';
+		}
+		else if (!isset($data['transaction_id']) || empty($data['transaction_id'])) {
+			$response['error']['message'] = 'Transaction ID Error';
+		}
+		else if (!isset($data['agency_id']) || empty($data['agency_id']))  {
+			$response['error']['message'] = 'Agency ID is required';
+		}
+		else if (!isset($data['nurse_maid_id']) || empty($data['nurse_maid_id']))  {
+			$response['error']['message'] = 'Agency ID is required';
+		} else {
+
+			$rate = isset($data['rate']) ? $data['rate'] : 5;
+			$data['rate'] = $rate;
+			$data['user_id'] = $data['user_id'];
+			$this->NurseMaidRating->create();
+			$this->NurseMaidRating->set($data);
+			if ($this->NurseMaidRating->save()) {
+				$this->Transaction->clear();
+				$this->Transaction->read(array('status'), $data['transaction_id']);
+				$this->Transaction->set(array('status' => 3));
+				if ($this->Transaction->save()) {
+					$response['success'] = true;
+					$response['result'] = "Success";
+				}
+			}
+		}
+		return json_encode($response);
+	}
+
 
 }

@@ -30,6 +30,14 @@
 			</div>
 			<div class="col-md-8">
 				<div>
+					<b>Nursemaid Name</b>
+					<p>
+						<a href="/agency/nursemaid/detail/<?php echo $transaction['NurseMaid']['id'] ?>">
+							<?php echo $transaction['NurseMaid']['first_name'] ?>
+						</a>
+					</p>
+				</div>
+				<div>
 					<b>Content</b>
 					<p><?php echo $transaction['Transaction']['comment'] ?></p>
 				</div>

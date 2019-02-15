@@ -31,6 +31,9 @@ Router::connect('/users/acount', array('controller' => 'Account', 'action' => 'i
 Router::connect('/users/address', array('controller' => 'Lungsod', 'action' => 'index'));
 Router::connect('/users/request_hire', array('controller' => 'Transaction', 'action' => 'index'));
 
+// add rate
+Router::connect('/users/transaction/add_rate', array('controller' => 'Transaction', 'action' => 'add_rate'));
+
 /**
 * Load all plugin routes. See the CakePlugin documentation on
 * how to customize the loading of plugin routes.

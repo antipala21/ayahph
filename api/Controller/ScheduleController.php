@@ -15,17 +15,22 @@ class ScheduleController extends AppController {
 
 	public function index() {
 		$this->autoRender = false;
+
+		if (!isset($this->request->data['params'])) {
+			$response['success'] = false;
+			return json_encode($response);
+		}
+
 		$request_data = json_decode(stripslashes($this->request->data['params']));
 		$data = (array) $request_data;
-
-		// $this->log('[status] ' . $data['status'], 'debug');
-		// $this->log('[user_id] ' . $data['user_id'], 'debug');
 
 		$schedules = $this->Transaction->find('all', array(
 			'fields' => array(
 				'Transaction.*',
+				'Agency.id',
 				'Agency.name',
 				'Agency.phone_number',
+				'NurseMaid.id',
 				'NurseMaid.first_name'
 			),
 			'joins' => array(
@@ -46,7 +51,7 @@ class ScheduleController extends AppController {
 				'Transaction.status' => $data['status'],
 				'Transaction.user_id' => $data['user_id']
 			),
-			'order' => 'Transaction.id DESC'
+			'order' => 'Transaction.transaction_start'
 		));
 
 		$response = array();
@@ -58,11 +63,17 @@ class ScheduleController extends AppController {
 				if (isset($value['Agency']['name'])) {
 					$_schedules[$key]['agency_name'] = $value['Agency']['name'];
 				}
+				if (isset($value['Agency']['id'])) {
+					$_schedules[$key]['agency_id'] = $value['Agency']['id'];
+				}
 				if (isset($value['Agency']['phone_number'])) {
 					$_schedules[$key]['agency_phone_number'] = $value['Agency']['phone_number'];
 				}
 				if (isset($value['NurseMaid']['first_name'])) {
 					$_schedules[$key]['nursemaid_name'] = $value['NurseMaid']['first_name'];
+				}
+				if (isset($value['NurseMaid']['id'])) {
+					$_schedules[$key]['nurse_maid_id'] = $value['NurseMaid']['id'];
 				}
 			}
 			$response['schedules'] = $_schedules;
@@ -97,74 +108,6 @@ class ScheduleController extends AppController {
 			return $this->redirect('/schedules');
 		}
 		$this->set('schedule', $schedule);
-	}
-
-	public function completeTransaction () {
-		$this->autoRender = false;
-		if ($this->request->is('post')) {
-			$data = $this->request->data;
-			if ($data['value_transaction'] == 'Complete') {
-				$this->Transaction->clear();
-				$this->Transaction->read(array('status'), $data['Schedule']['id']);
-				$this->Transaction->set(array('status' => 2));
-				if ($this->Transaction->save()) {
-					return $this->redirect('/to_rate');
-				}
-			}
-		}
-	}
-
-	public function to_rate () {
-
-		if ($this->request->is('post')) {
-			$data = $this->request->data;
-			
-			$rate = isset($data['rate']) ? $data['rate'] : 5;
-			$data['Rating']['rate'] = $rate;
-			$data['Rating']['user_id'] = $this->Auth->user('id');
-			$this->NurseMaidRating->create();
-			$this->NurseMaidRating->set($data['Rating']);
-			if ($this->NurseMaidRating->save()) {
-				// updat transaction status
-				$this->Transaction->clear();
-				$this->Transaction->read(array('status'), $data['Rating']['transaction_id']);
-				$this->Transaction->set(array('status' => 3));
-				$this->Transaction->save();
-			}
-		}
-
-		$to_rate = $this->Transaction->find('all', array(
-			'fields' => array(
-				'Transaction.*',
-				'Agency.*',
-				'NurseMaid.id',
-				'NurseMaid.phone_number',
-				'NurseMaid.first_name',
-				'NurseMaid.last_lname',
-				'NurseMaid.address',
-			),
-			'joins' => array(
-				array(
-					'table' => 'agencies',
-					'alias' => 'Agency',
-					'type' => 'LEFT',
-					'conditions' => 'Agency.id = Transaction.agency_id'
-				),
-				array(
-					'table' => 'nurse_maids',
-					'alias' => 'NurseMaid',
-					'type' => 'LEFT',
-					'conditions' => 'NurseMaid.id = Transaction.nurse_maid_id'
-				)
-			),
-			'conditions' => array(
-				'Transaction.status' => 2,
-				'Transaction.user_id' => $this->Auth->user('id')
-			)
-		));
-		$this->set('to_rate', $to_rate);
-
-
 	}
 
 }

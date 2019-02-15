@@ -47,7 +47,9 @@ class TransactionController extends AppController {
 		$transaction = $this->Transaction->find('first', array(
 			'fields' => array(
 				'Transaction.*',
-				'User.display_name'
+				'User.display_name',
+				'NurseMaid.id',
+				'NurseMaid.first_name'
 			),
 			'joins' => array(
 				array(
@@ -55,6 +57,12 @@ class TransactionController extends AppController {
 					'alias' => 'User',
 					'type' => 'LEFT',
 					'conditions' => 'User.id = Transaction.user_id'
+				),
+				array(
+					'table' => 'nurse_maids',
+					'alias' => 'NurseMaid',
+					'type' => 'LEFT',
+					'conditions' => 'NurseMaid.id = Transaction.nurse_maid_id'
 				)
 			),
 			'conditions' => array(

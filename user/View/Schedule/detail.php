@@ -41,6 +41,10 @@
 			</div>
 			<div class="col-md-8">
 				<div>
+					<b>Nursemaid Name</b>
+					<p><?php echo $schedule['NurseMaid']['first_name'] ?></p>
+				</div>
+				<div>
 					<b>Agency Name</b>
 					<p><?php echo $schedule['Agency']['name'] ?></p>
 				</div>

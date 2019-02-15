@@ -23,8 +23,11 @@ class AgencyController extends AppController {
 
 		$order_by = 'id DESC';
 
-		if (isset($data['order']) && !empty($data['order']) && in_array($data['order'], Configure::read('sort_key'))) {
-			$order_by = $data['order'] . ' DESC';
+		$flip_sort = array_flip(Configure::read('sort_key'));
+
+		if (isset($data['order']) && !empty($data['order']) && in_array($data['order'], $flip_sort)) {
+			$_order = strtolower(str_replace(' ', '_', $data['order']));
+			$order_by = $_order . ' DESC';
 		}
 
 		$this->Agency->virtualFields['total_nursemaid'] = "SELECT COUNT(*) FROM `nurse_maids` WHERE `agency_id` = `Agency`.`id`";

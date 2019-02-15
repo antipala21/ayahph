@@ -1,3 +1,4 @@
+Web
 1. PHP
 2. Cakephp (Framework)
 3. jQuery
@@ -8,5 +9,9 @@
 8. Bootstrap-Notify JS - for notification (use javascript interval only)
 9. Nexmo api (for automated SMS) -> NOT YET IMPLEMENTED, LIMIT 50 sms only.
 
+ 
+
+Mobile
 1. Java
+
 2. API - ayahph custom call api.

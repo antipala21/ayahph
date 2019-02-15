@@ -18,11 +18,15 @@ class TransactionController extends AppController {
 	public function index() {
 		$this->autoRender = false;
 
+		if (!isset($this->request->data['params'])) {
+			$response['success'] = false;
+			return json_encode($response);
+		}
+
 		$request_data = json_decode(stripslashes($this->request->data['params']));
 		$data = (array) $request_data;
-		$response['sucess'] = false;
-
-		$this->log('[DATA] ' . json_encode($data), 'debug');
+		$response['success'] = false;
+		$response['duplicate'] = false;
 
 		if (!$data) {
 			$response['error']['message'] = 'Invalid request';
@@ -46,9 +50,9 @@ class TransactionController extends AppController {
 			$response['error']['message'] = 'Phone number is required';
 		} else {
 
-			$transaction_time = explode(' - ', $data['transaction_time']);
-			$transaction_start = $transaction_time[0];
-			$transaction_end = $transaction_time[1];
+			// $transaction_time = explode(' - ', $data['transaction_time']);
+			$transaction_start = $data['transaction_time'];
+			$transaction_end = $data['transaction_time'];
 
 			$data['transaction_start'] = $transaction_start;
 			$data['transaction_end'] = $transaction_end;
@@ -67,7 +71,7 @@ class TransactionController extends AppController {
 				$this->Transaction->set($data);
 				$save = $this->Transaction->save();
 				if ($save) {
-					$response['sucess'] = true;
+					$response['success'] = true;
 
 					$agency_detail = $this->Agency->find('first', array(
 						'fields' => array(
@@ -104,9 +108,11 @@ class TransactionController extends AppController {
 							);
 						$Email->send();
 					} catch (Exception $e) {
-						$this->log('[Exception Email] ' . json_encode($e), 'debug');
+						// $this->log('[Exception Email] ' . json_encode($e), 'debug');
 					}
 				}
+			} else {
+				$response['duplicate'] = true;
 			}
 		}
 		return json_encode($response);

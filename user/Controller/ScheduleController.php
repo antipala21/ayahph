@@ -20,7 +20,10 @@ class ScheduleController extends AppController {
 		$schedules = $this->Transaction->find('all', array(
 			'fields' => array(
 				'Transaction.*',
-				'Agency.name'
+				'Agency.id',
+				'Agency.name',
+				'NurseMaid.id',
+				'NurseMaid.first_name'
 			),
 			'joins' => array(
 				array(
@@ -28,6 +31,12 @@ class ScheduleController extends AppController {
 					'alias' => 'Agency',
 					'type' => 'LEFT',
 					'conditions' => 'Agency.id = Transaction.agency_id'
+				),
+				array(
+					'table' => 'nurse_maids',
+					'alias' => 'NurseMaid',
+					'type' => 'LEFT',
+					'conditions' => 'NurseMaid.id = Transaction.nurse_maid_id'
 				)
 			),
 			'conditions' => array(

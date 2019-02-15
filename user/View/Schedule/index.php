@@ -23,6 +23,7 @@
 							<th>Agency Name</th>
 							<th>User Phone</th>
 							<th>Address</th>
+							<th>Nursemaid</th>
 							<th>Schedule</th>
 						</tr>
 					</thead>
@@ -33,9 +34,14 @@
 									<td>
 										<a href="schedule/detail/<?php echo $value['Transaction']['id']; ?>"><?php echo $value['Transaction']['id']; ?></a>
 									</td>
-									<td><?php echo isset($value['Agency']['name']) ? $value['Agency']['name'] : '' ?></td>
+									<td>
+										<a href="agency-detail/<?php echo $value['Agency']['id']; ?>"><?php echo isset($value['Agency']['name']) ? $value['Agency']['name'] : '' ?></a>
+									</td>
 									<td><?php echo isset($value['Transaction']['user_phone_number']) ? $value['Transaction']['user_phone_number'] : '' ?></td>
 									<td><?php echo isset($value['Transaction']['user_address']) ? $value['Transaction']['user_address'] : '' ?></td>
+									<td>
+										<a href="agency-nursemaid-detail/<?php echo $value['NurseMaid']['id']; ?>"><?php echo isset($value['NurseMaid']['first_name']) ? $value['NurseMaid']['first_name'] : '' ?></a>
+									</td>
 									<td><?php echo isset($value['Transaction']['transaction_start']) ? date('Y-m-d h:i:sa', strtotime($value['Transaction']['transaction_start'])) : '' ?></td>
 								</tr>
 							<?php endforeach; ?>

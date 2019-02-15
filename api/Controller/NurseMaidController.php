@@ -93,8 +93,6 @@ class NurseMaidController extends AppController {
 
 	public function detail () {
 
-		$this->log('detail', 'debug');
-
 		$this->autoRender = false;
 		$response = array();
 
@@ -122,8 +120,6 @@ class NurseMaidController extends AppController {
 				'NurseMaid.status' => 1
 			)
 		));
-
-		$this->log('[nurse_maid] ' . json_encode($nurse_maid), 'debug');
 
 		if ($nurse_maid) {
 			$response['nurse_maid'] = $nurse_maid['NurseMaid'];

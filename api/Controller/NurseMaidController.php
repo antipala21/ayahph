@@ -58,7 +58,7 @@ class NurseMaidController extends AppController {
 			$conditions['NurseMaid.address_key'] = strtolower(str_replace(array(' ', '-', '/'), '_', $data['address']));
 		}
 
-		$this->NurseMaid->virtualFields['rating'] = "SELECT AVG(`rate`) FROM `nurse_maid_ratings` WHERE `nurse_maid_ratings`.`nurse_maid_id` = `NurseMaid`.`id`";
+		$this->NurseMaid->virtualFields['rating'] = "SELECT ROUND(AVG(`rate`), 2) FROM `nurse_maid_ratings` WHERE `nurse_maid_ratings`.`nurse_maid_id` = `NurseMaid`.`id`";
 		$this->NurseMaid->virtualFields['total_hire'] = "SELECT COUNT(*) FROM `transactions` WHERE `nurse_maid_id` = `NurseMaid`.`id`";
 		$nurse_maids = $this->NurseMaid->find('all', array(
 			'fields' => array(

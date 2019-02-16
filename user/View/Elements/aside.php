@@ -29,11 +29,6 @@
 				<li>
 					<a class="waves-effect waves-dark <?php echo 
 					$this->params['controller'] == 'Schedule'
-					&& ($this->params['action'] == 'calendar') ? 'active' : ''; ?>" href="/user/schedules/calendar" aria-expanded="false"><i class="fa fa-calendar-check-o" aria-hidden="true"></i><span class="hide-menu">Calendar</span></a>
-				</li>
-				<li>
-					<a class="waves-effect waves-dark <?php echo 
-					$this->params['controller'] == 'Schedule'
 					&& $this->params['action'] == 'to_rate' ? 'active' : ''; ?>" href="/user/to_rate" aria-expanded="false"><i class="fa fa-star-o" aria-hidden="true"></i><span class="hide-menu">To rate</span></a>
 				</li>
 				<li>

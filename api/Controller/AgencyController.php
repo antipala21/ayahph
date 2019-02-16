@@ -27,6 +27,9 @@ class AgencyController extends AppController {
 
 		if (isset($data['order']) && !empty($data['order']) && in_array($data['order'], $flip_sort)) {
 			$_order = strtolower(str_replace(' ', '_', $data['order']));
+			if ($_order == 'total_transactions') {
+				$_order = 'total_transaction';
+			}
 			$order_by = $_order . ' DESC';
 		}
 

@@ -43,6 +43,10 @@
 	Router::connect('/municipal', array('controller' => 'Lungsod', 'action' => 'index'));
 	Router::connect('/municipal/add', array('controller' => 'Lungsod', 'action' => 'add'));
 
+	// Announcement
+	Router::connect('/announcements', array('controller' => 'Announcement', 'action' => 'index'));
+	Router::connect('/announcement/update/:id/:status', array('controller' => 'Announcement', 'action' => 'index'));
+
 	Router::connect('/logout', array('controller' => 'Login', 'action' => 'logout'));
 
 /**

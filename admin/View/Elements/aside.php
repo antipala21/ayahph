@@ -18,10 +18,10 @@
 					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'Transaction' ? 'active' : ''; ?>" href="/admin/transactions" aria-expanded="false"><i class="fa fa-briefcase" aria-hidden="true"></i><span class="hide-menu">Transactions</span></a>
 				</li>
 				<li>
-					<a class="waves-effect waves-dark" href="#" aria-expanded="false"><i class="fa fa-calendar-check-o" aria-hidden="true"></i><span class="hide-menu">Schedules</span></a>
+					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'Announcement' ? 'active' : ''; ?>" href="/admin/announcements" aria-expanded="false"><i class="fa fa-bullhorn" aria-hidden="true"></i><span class="hide-menu">Announcements</span></a>
 				</li>
 				<li>
-					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'Transaction' ? 'active' : ''; ?>" href="/admin/nursemaid_ratings" aria-expanded="false"><i class="fa fa-comments-o" aria-hidden="true"></i><span class="hide-menu">Rating and Feedbacks</span></a>
+					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'NurseMaidRating' ? 'active' : ''; ?>" href="/admin/nursemaid_ratings" aria-expanded="false"><i class="fa fa-comments-o" aria-hidden="true"></i><span class="hide-menu">Rating and Feedbacks</span></a>
 				</li>
 				<li>
 					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'Payment' ? 'active' : ''; ?>" href="/admin/payments" aria-expanded="false"><i class="fa fa-money" aria-hidden="true"></i><span class="hide-menu">Payments</span></a>

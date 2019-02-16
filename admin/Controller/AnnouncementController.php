@@ -24,9 +24,19 @@ class AnnouncementController extends AppController {
 					'type' => 'LEFT',
 					'conditions' => 'Agency.id = Announcement.agency_id'
 				)
-			),
-			'conditions' => array('Announcement.status' => 1)
+			)
 		));
+
+		$announcement_id = isset($this->params['id']) ? $this->params['id'] : null;
+		$status = isset($this->params['status']) ? $this->params['status'] : null;
+
+		if ($announcement_id) {
+			$this->Announcement->clear();
+			$this->Announcement->read(array('status'), $announcement_id);
+			$this->Announcement->set(array('status' => $status));
+			$this->Announcement->save();
+			return $this->redirect('/announcements');
+		}
 
 		$this->set('announcements', $announcements);
 	}

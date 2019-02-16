@@ -29,6 +29,9 @@ class NurseMaidController extends AppController {
 		$conditions = array('NurseMaid.status' => 1);
 
 		if (isset($data['order']) && !empty($data['order'])) {
+			if ($data['order'] == 'Years experience') {
+				$data['order'] = 'Years of experience';
+			}
 			$_order = $sort_nursemaid[$data['order']];
 			$order_by = $_order . ' DESC';
 		}

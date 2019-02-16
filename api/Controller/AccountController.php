@@ -56,6 +56,7 @@ class AccountController extends AppController {
 		else if (!isset($data['user_id']) || empty($data['user_id'])) {
 			$response['error']['message'] = 'User id is required';
 		} else {
+			unset($data['image_url']);
 			$this->User->clear();
 			$this->User->read(array(
 				'display_name',

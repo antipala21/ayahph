@@ -64,6 +64,7 @@
 
 	// history
 	Router::connect('/history', array('controller' => 'History', 'action' => 'index'));
+	Router::connect('/history/detail/:id', array('controller' => 'History', 'action' => 'detail'));
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on

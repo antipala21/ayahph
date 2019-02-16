@@ -33,7 +33,7 @@
 							<?php foreach ($history as $key => $value): ?>
 								<tr>
 									<td>
-										<?php echo $value['Transaction']['id']; ?>
+										<a href="user/history/detail/<?php echo $value['Transaction']['id']; ?>"><?php echo $value['Transaction']['id']; ?></a>
 									</td>
 									<td>
 										<a href="agency-detail/<?php echo $value['Agency']['id']; ?>"><?php echo isset($value['Agency']['name']) ? $value['Agency']['name'] : '' ?></a>

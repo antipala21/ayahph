@@ -15,6 +15,10 @@ class NurseMaidController extends AppController {
 		$this->autoRender = false;
 		$response = array();
 
+		$nursemaid_filter_key = Configure::read('nursemaid_filter_key');
+		$sort_nursemaid = Configure::read('sort_nursemaid');
+		$filter_address = Configure::read('filter_address');
+
 		$data = null;
 		if (isset($this->request->data['params'])) {
 			$request_data = json_decode(stripslashes($this->request->data['params']));
@@ -24,13 +28,14 @@ class NurseMaidController extends AppController {
 		$order_by = 'id DESC';
 		$conditions = array('NurseMaid.status' => 1);
 
-		if (isset($data['order']) && !empty($data['order']) && in_array($data['order'], Configure::read('sort_nursemaid'))) {
-			$order_by = $data['order'] . ' DESC';
+		if (isset($data['order']) && !empty($data['order'])) {
+			$_order = $sort_nursemaid[$data['order']];
+			$order_by = $_order . ' DESC';
 		}
 
 		if (isset($data['filter']) && !empty($data['filter'])) {
-
-			switch ($data['filter']) {
+			$_filter = $nursemaid_filter_key[$data['filter']];
+			switch ($_filter) {
 				case 'age_1':
 					$conditions['DATE(NurseMaid.birthdate) >='] = $this->birthday(19);
 					break;
@@ -55,6 +60,7 @@ class NurseMaidController extends AppController {
 		}
 
 		if (isset($data['address']) && !empty($data['address'])) {
+			$_address = $filter_address[$data['address']];
 			$conditions['NurseMaid.address_key'] = strtolower(str_replace(array(' ', '-', '/'), '_', $data['address']));
 		}
 
@@ -109,7 +115,7 @@ class NurseMaidController extends AppController {
 
 		$nursemaid_id = isset($data['nursemaid_id']) ? $data['nursemaid_id'] : NULL;
 
-		$this->NurseMaid->virtualFields['rating'] = "SELECT AVG(`rate`) FROM `nurse_maid_ratings` WHERE `nurse_maid_id` = $nursemaid_id";
+		$this->NurseMaid->virtualFields['rating'] = "SELECT ROUND(AVG(`rate`), 2) FROM `nurse_maid_ratings` WHERE `nurse_maid_id` = $nursemaid_id";
 		$this->NurseMaid->virtualFields['agency_name'] = "SELECT `name` FROM `agencies` WHERE `id` = `NurseMaid`.`agency_id`";
 		$nurse_maid = $this->NurseMaid->find('first', array(
 			'fields' => array(

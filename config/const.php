@@ -16,7 +16,7 @@ $config['status'] = array(
 
 $config['sort_key'] = array(
 	'Total Nursemaid'		=> 'total_nursemaid',
-	'Nursemaid Available'	=> 'current_available',
+	'Current Available'	=> 'current_available',
 	'Rating'				=> 'rating',
 	'Total Transactions'	=> 'total_transaction'
 );
@@ -35,10 +35,20 @@ $config['marital_status'] = array(
 );
 
 $config['nursemaid_filter_key'] = array(
-	'Age Below 20			'	=> 'age_1',
+	'Age Below 20'	=> 'age_1',
 	"Age 20's and above"	=> 'age_2',
 	'Single'					=> 'single',
 	'Married'					=> 'married',
 	'Female'					=> 'female',
 	'Male'						=> 'male'
+);
+
+$config['filter_address'] = array(
+	'Cebu City' => 'cebu_city',
+	'Lapu-lapu City' => 'lapu_lapu_city',
+	'Mandaue City' => 'mandaue_city',
+	'Talisay' => 'talisay',
+	'Cebu Province' => 'cebu_province',
+	'Consolacion' => 'consolacion',
+	'Minglanilla' => 'minglanilla'
 );

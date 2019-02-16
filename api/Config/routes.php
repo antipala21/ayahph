@@ -34,7 +34,7 @@ Router::connect('/users/acount/update', array('controller' => 'Account', 'action
 Router::connect('/users/acount/update_image', array('controller' => 'Account', 'action' => 'update_image'));
 
 
-Router::connect('/users/address', array('controller' => 'Lungsod', 'action' => 'index'));
+Router::connect('/users/address', array('controller' => 'Lungsod', 'action' => 'index')); // wala
 Router::connect('/users/request_hire', array('controller' => 'Transaction', 'action' => 'index'));
 
 // add rate

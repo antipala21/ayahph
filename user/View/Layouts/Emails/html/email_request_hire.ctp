@@ -382,6 +382,14 @@
 												</tbody>
 											</table>
 											<p>You're receiving this email because you are a member of AyahPH using this address.</p>
+											<b>AYAHPH Terms and Condition:</b>
+											<p>Ayahph cannot be held liable for whatever may happen between client and nursemaid from the time agency approved the request of client to hire the nursemaid.  The AGENCY will be held liable to every concern of client may have. Ayahph is not involved to whatever legal issues concerning job employment contract agreed between client and agency.
+											</p>
+											<p>
+												For any concerns please contact the agency directly using the phone number provided in the website or from the confirmation email, Thank you!
+											</p>
+											<p>
+											****Please be reminded, If nursemaids that are requested by the client was not provided by the agency Ayahph will automatically block the agency and nursemaid involved without notice or motivation. ****</p>
 										</td>
 										</tr>
 									</table>

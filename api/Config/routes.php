@@ -27,12 +27,24 @@ Router::connect('/users/agency/detail', array('controller' => 'Agency', 'action'
 Router::connect('/users/nursemaids', array('controller' => 'NurseMaid', 'action' => 'index'));
 Router::connect('/users/nursemaid/detail', array('controller' => 'NurseMaid', 'action' => 'detail'));
 Router::connect('/users/schedules', array('controller' => 'Schedule', 'action' => 'index'));
+
+// Acount
 Router::connect('/users/acount', array('controller' => 'Account', 'action' => 'index'));
+Router::connect('/users/acount/update', array('controller' => 'Account', 'action' => 'update'));
+Router::connect('/users/acount/update_image', array('controller' => 'Account', 'action' => 'update_image'));
+
+
 Router::connect('/users/address', array('controller' => 'Lungsod', 'action' => 'index'));
 Router::connect('/users/request_hire', array('controller' => 'Transaction', 'action' => 'index'));
 
 // add rate
 Router::connect('/users/transaction/add_rate', array('controller' => 'Transaction', 'action' => 'add_rate'));
+
+// notification
+Router::connect('/users/notification', array('controller' => 'Notification', 'action' => 'index'));
+
+// Announcements
+Router::connect('/users/announcements', array('controller' => 'Announcement', 'action' => 'index'));
 
 /**
 * Load all plugin routes. See the CakePlugin documentation on

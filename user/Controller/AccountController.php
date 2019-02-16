@@ -36,8 +36,9 @@ class AccountController extends AppController {
 
 			$this->User->clear();
 			$this->User->read(array(
-				'name',
-				'description',
+				'display_name',
+				'fname',
+				'lname',
 				'phone_number',
 				'address'
 			), $this->Auth->user('id'));

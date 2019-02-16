@@ -89,6 +89,12 @@ class AccountController extends AppController {
 		}
 
 		try {
+
+			$this->User->clear();
+			$this->User->read(array('image_url'), $request_shit['user_id']);
+			$this->User->set(array('image_url' => $request_shit['user_id'] . '_profile' . ".jpg"));
+			$this->User->save();
+
 			$decodedImage = base64_decode($request_shit['image']);
 			file_put_contents($fileDir . $request_shit['user_id'] . '_profile' . ".jpg", $decodedImage);
 			$response['success'] = true;

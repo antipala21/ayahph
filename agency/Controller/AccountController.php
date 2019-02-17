@@ -18,7 +18,14 @@ class AccountController extends AppController {
 
 	public function index () {
 
+		$this->Agency->virtualFields['rating'] = "SELECT AVG(`rate`) FROM `nurse_maid_ratings` WHERE `nurse_maid_ratings`.`agency_id` = `Agency`.`id`";
+		$this->Agency->virtualFields['total_transaction'] = "SELECT COUNT(*) FROM `transactions` WHERE `agency_id` = `Agency`.`id`";
+		$this->Agency->virtualFields['total_announcements'] = "SELECT COUNT(*) FROM `announcements` WHERE `agency_id` = `Agency`.`id`";
+		$this->Agency->virtualFields['total_nursemaid'] = "SELECT COUNT(*) FROM `nurse_maids` WHERE `agency_id` = `Agency`.`id`";
 		$agency = $this->Agency->find('first', array(
+			'fields' => array(
+				'Agency.*'
+			),
 			'conditions' => array('Agency.id' => $this->Auth->user('id'))
 		));
 

@@ -265,10 +265,18 @@
 								<div class="tab-pane fade" id="overview" role="tabpanel" aria-labelledby="overview-tab">
 									<div class="row">
 										<div class="col-md-6">
+											<label>Rating.</label>
+										</div>
+										<div class="col-md-6">
+											<p><?php echo isset($agency['rating']) ? round($agency['rating'], 2) : '-'; ?></p>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-6">
 											<label>Total transactions</label>
 										</div>
 										<div class="col-md-6">
-											<p>121</p>
+											<p><?php echo isset($agency['total_transaction']) ? $agency['total_transaction'] : '-'; ?></p>
 										</div>
 									</div>
 									<hr>
@@ -277,7 +285,7 @@
 											<label>Total Nursemaid</label>
 										</div>
 										<div class="col-md-6">
-											<p>9</p>
+											<p><?php echo isset($agency['total_nursemaid']) ? $agency['total_nursemaid'] : '-'; ?></p>
 										</div>
 									</div>
 									<hr>
@@ -286,7 +294,7 @@
 											<label>Total Anouncement</label>
 										</div>
 										<div class="col-md-6">
-											<p>230</p>
+											<p><?php echo isset($agency['total_announcements']) ? $agency['total_announcements'] : '-'; ?></p>
 										</div>
 									</div>
 									<hr>
@@ -299,25 +307,7 @@
 											<label>Total transactions</label>
 										</div>
 										<div class="col-md-6">
-											<p>121</p>
-										</div>
-									</div>
-									<hr>
-									<div class="row">
-										<div class="col-md-6">
-											<label>Total Nursemaid</label>
-										</div>
-										<div class="col-md-6">
-											<p>9</p>
-										</div>
-									</div>
-									<hr>
-									<div class="row">
-										<div class="col-md-6">
-											<label>Total Anouncement</label>
-										</div>
-										<div class="col-md-6">
-											<p>230</p>
+											<p><?php echo isset($agency['total_transaction']) ? $agency['total_transaction'] : '-'; ?></p>
 										</div>
 									</div>
 									<hr>

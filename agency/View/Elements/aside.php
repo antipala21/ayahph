@@ -23,6 +23,9 @@
 				<li>
 					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'Schedule' ? 'active' : ''; ?>" href="/agency/schedules" aria-expanded="false"><i class="fa fa-calendar-check-o" aria-hidden="true"></i><span class="hide-menu">Schedules</span></a>
 				</li>
+				<li>
+					<a class="waves-effect waves-dark" href="/agency/history" aria-expanded="false"><i class="fa fa-history" aria-hidden="true"></i><span class="hide-menu">History</span></a>
+				</li>
 				<?php endif; ?>
 				<li>
 					<a class="waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-help-circle"></i><span class="hide-menu">Help</span></a>

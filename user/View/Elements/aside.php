@@ -39,7 +39,7 @@
 				</li>
 				<?php endif; ?>
 				<li>
-					<a class="waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-help-circle"></i><span class="hide-menu">Help</span></a>
+					<a class="waves-effect waves-dark" href="/about" aria-expanded="false"><i class="mdi mdi-help-circle"></i><span class="hide-menu">About</span></a>
 				</li>
 			</ul>
 			<?php if (!$this->Session->read('Auth.User') && !$this->Session->read('user_id')): ?>

@@ -9,11 +9,6 @@
 					$this->params['controller'] == 'home'
 					|| $this->params['controller'] == 'AgencyDetail' ? 'active' : ''; ?>" href="/" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Agencies</span></a>
 				</li>
-				<li>
-					<a class="waves-effect waves-dark <?php echo 
-					$this->params['controller'] == 'NurseMaid'
-					|| $this->params['controller'] == 'NurseMaidDetail' ? 'active' : ''; ?>" href="/user/nursemaids" aria-expanded="false"><i class="fa fa-user-md" aria-hidden="true"></i><span class="hide-menu">Nursemaids</span></a>
-				</li>
 				<?php if ($this->Session->read('Auth.User') || $this->Session->read('user_id')): ?>
 				<li>
 					<a class="waves-effect waves-dark <?php echo $this->params['controller'] == 'account' ? 'active' : ''; ?>" href="/user/account" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">Profile</span></a>

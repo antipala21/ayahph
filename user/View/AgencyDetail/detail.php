@@ -153,6 +153,7 @@
 								<h5>Rating: <span><?php echo round($agency['rating'], 2) ?> <i class="fa fa-star text-warning" aria-hidden="true"></i></span></h5>
 								<h5><a class="link" href="/agency-nursemaid/<?php echo $agency['id']; ?>">Nursemaids list (<?php echo isset($agency['total_nursemaid']) ? $agency['total_nursemaid'] : '0'  ?>) <i class="fa fa-external-link" aria-hidden="true"></i></a></h5>
 								<h5><a class="link" href="/agency-detail/announcement/<?php echo $agency['id']; ?>">Announcements list (<?php echo isset($agency['total_announcements']) ? $agency['total_announcements'] : 0; ?>) <i class="fa fa-external-link" aria-hidden="true"></i></a></h5>
+								<a href="/request" class="btn btn-info">Request Nursemaid</a>
 							</div>
 						</div>
 						<div class="col-md-8">

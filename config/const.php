@@ -1,9 +1,6 @@
 <?php
 $config['tete'] = 'testabc';
 
-
-$config['ggna'] = 'GGWP';
-
 $config['gender_array'] = array(
 	1 => 'Male',
 	0 => 'Female'
@@ -32,6 +29,21 @@ $config['marital_status'] = array(
 	1 => 'Married',
 	2 => 'Widowed',
 	3 => 'Divorced'
+);
+
+$config['education_list'] = array(
+	0 => 'No formal education',
+	1 => 'Primary education',
+	2 => 'Secondary education',
+	3 => 'TESDA education',
+	4 => 'Vocational qualification',
+	5 => 'College level',
+	6 => 'Bachelors degree'
+);
+
+$config['years_experience'] = array(
+	0 => '1 and below',
+	1 => 'More than 1'
 );
 
 $config['nursemaid_filter_key'] = array(

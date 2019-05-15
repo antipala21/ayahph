@@ -70,7 +70,7 @@
 	Router::connect('/about', array('controller' => 'About', 'action' => 'index'));
 
 	// Nurse maid request
-	Router::connect('/request', array('controller' => 'NurseMaidRequest', 'action' => 'index'));
+	Router::connect('/request/:agency_id', array('controller' => 'NurseMaidRequest', 'action' => 'index'));
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on

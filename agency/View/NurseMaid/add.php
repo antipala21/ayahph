@@ -118,6 +118,19 @@
 				</div>
 				<div class="form-row">
 					<label for="">
+					Education *
+					</label>
+					<?php echo $this->Form->input('education', array(
+						'options' => Configure::read('education_list'),
+						'required' => true,
+						'label' => false,
+						'div'=> false,
+						'class'=>'form-control',
+						'empty' => '--'
+					)); ?>
+				</div>
+				<div class="form-row">
+					<label for="">
 					Years of experience *
 					</label>
 					<?php echo $this->Form->input('years_experience', array(

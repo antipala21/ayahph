@@ -50,6 +50,12 @@ class TransactionController extends AppController {
 				if ($save) {
 					$result['sucess'] = true;
 
+					// make nursemaid not available
+					$this->NurseMaid->clear();
+					$this->NurseMaid->read(array('status'), $data['nurse_maid_id']);
+					$this->NurseMaid->set(array('status' => 0));
+					$this->NurseMaid->save();
+
 					$agency_detail = $this->Agency->find('first', array(
 						'fields' => array(
 							'Agency.name',

@@ -121,8 +121,6 @@
 								<!-- Nurse maid list -->
 								<div class="tab-pane" id="nursemaidlist<?php echo $id;?>" role="tabpanel">
 									<div class="card-block">
-										<a href="/agency-nursemaid/<?php echo $value['Agency']['id']; ?>">Nursemaid Detail</a>
-										<br><br>
 										<ul>
 											<li><p>Total nurse maid (<?php echo isset($value['Agency']['total_nursemaid']) ? $value['Agency']['total_nursemaid'] : '0' ?>)</p></li>
 											<li><p>Male (<?php echo isset($value['Agency']['male_nursemaid']) ? $value['Agency']['male_nursemaid'] : '0' ?>)</p></li>

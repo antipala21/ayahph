@@ -17,6 +17,7 @@
 						'url' => array('controller' => 'Schedule','action' => 'completeTransaction'),
 					)); ?>
 				<?php echo $this->Form->hidden('id', array('value' => $schedule['Transaction']['id'])); ?>
+				<?php echo $this->Form->hidden('nurse_maid_id', array('value' => $schedule['Transaction']['nurse_maid_id'])); ?>
 				<input class="btn btn-success" type="submit" name="value_transaction" value="Complete">
 				<!-- <input class="btn btn-danger" type="submit" name="value_transaction" value="Decline"> -->
 				<?php echo $this->Form->end(); ?>

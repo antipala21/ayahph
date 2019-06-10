@@ -94,6 +94,13 @@ class ScheduleController extends AppController {
 				$this->Transaction->read(array('status'), $data['Schedule']['id']);
 				$this->Transaction->set(array('status' => 2));
 				if ($this->Transaction->save()) {
+
+					// make nursemaid available
+					$this->NurseMaid->clear();
+					$this->NurseMaid->read(array('status'), $data['Schedule']['nurse_maid_id']);
+					$this->NurseMaid->set(array('status' => 1));
+					$this->NurseMaid->save();
+
 					return $this->redirect('/to_rate');
 				}
 			}
